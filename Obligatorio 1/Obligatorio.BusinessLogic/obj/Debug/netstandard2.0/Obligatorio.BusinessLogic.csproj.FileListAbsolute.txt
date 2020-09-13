@@ -1,0 +1,9 @@
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.deps.json
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.csprojAssemblyReference.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.AssemblyInfoInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.AssemblyInfo.cs
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.pdb

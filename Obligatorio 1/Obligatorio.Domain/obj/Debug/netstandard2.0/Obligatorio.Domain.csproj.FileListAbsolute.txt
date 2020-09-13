@@ -1,0 +1,9 @@
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\bin\Debug\netstandard2.0\Obligatorio.Domain.deps.json
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.csprojAssemblyReference.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.csproj.CoreCompileInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.AssemblyInfoInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.AssemblyInfo.cs
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.pdb

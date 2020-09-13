@@ -1,0 +1,9 @@
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccess.deps.json
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccess.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccess.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csprojAssemblyReference.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csproj.CoreCompileInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.AssemblyInfoInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.AssemblyInfo.cs
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.pdb
