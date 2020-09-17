@@ -7,3 +7,15 @@ D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\n
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.AssemblyInfo.cs
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.dll
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.deps.json
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.csprojAssemblyReference.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.AssemblyInfoInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.AssemblyInfo.cs
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.csproj.CopyComplete

@@ -7,7 +7,8 @@ namespace Obligatorio.Domain
         public string Name { set; get; }
         public string Description { set; get; }
         public string Image { set; get; }
-        
+        public Region Region { get; set; }
+
         public TouristSpot()
         {
             Name = "Default Name";

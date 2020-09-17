@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Juan\\Ort\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {}
+    "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {}
   },
   "projects": {
-    "D:\\Juan\\Ort\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+    "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Juan\\Ort\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj",
+        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj",
         "projectName": "Obligatorio.Domain",
-        "projectPath": "D:\\Juan\\Ort\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj",
-        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
-        "outputPath": "D:\\Juan\\Ort\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\obj\\",
+        "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +58,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

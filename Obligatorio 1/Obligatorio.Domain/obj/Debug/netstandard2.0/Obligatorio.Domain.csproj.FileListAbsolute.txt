@@ -7,3 +7,12 @@ D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstand
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.AssemblyInfo.cs
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.dll
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\bin\Debug\netstandard2.0\Obligatorio.Domain.deps.json
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.AssemblyInfoInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.AssemblyInfo.cs
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.csproj.CoreCompileInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.csprojAssemblyReference.cache
