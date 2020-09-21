@@ -18,8 +18,6 @@ D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcorea
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.dll
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.pdb
 D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.genruntimeconfig.cache
-D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
-D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\Obligatorio.WebApi.exe
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\Obligatorio.WebApi.deps.json

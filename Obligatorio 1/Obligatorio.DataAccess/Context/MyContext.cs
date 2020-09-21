@@ -10,7 +10,9 @@ namespace Obligatorio.DataAccess.Context
 {
     public class MyContext : DbContext
     {
-        public DbSet<TouristSpot> touristSpots { get; set; }
+        public virtual DbSet<TouristSpot> TouristSpots { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Region> Regions { get; set; }
         public MyContext() { }
         public MyContext(DbContextOptions options) : base(options) { }
 
