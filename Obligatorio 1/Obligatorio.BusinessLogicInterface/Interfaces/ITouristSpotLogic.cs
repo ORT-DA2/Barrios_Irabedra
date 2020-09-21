@@ -1,4 +1,4 @@
-﻿namespace Obligatorio.BusinessLogicInterface
+﻿namespace Obligatorio.BusinessLogicInterface.Interfaces
 {
     public interface ITouristSpotLogic
     {

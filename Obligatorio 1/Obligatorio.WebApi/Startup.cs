@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Obligatorio.BusinessLogic.Logics;
+using Obligatorio.BusinessLogicInterface.Interfaces;
+using Obligatorio.Factory.Factories;
 
 namespace Obligatorio.WebApi
 {
@@ -25,7 +28,11 @@ namespace Obligatorio.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            //services.AddControllers();                 --¡¡¡¡¡¡¡¡¡¡¡ROMPER EN CASO DE EMERGENCIA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            services.AddScoped<ITouristSpotLogic, TouristSpotLogic>();
+            ServiceFactory factory = new ServiceFactory(services);
+            factory.AddCustomServices();
+            factory.AddDbContextService(this.Configuration.GetConnectionString("Obligatorio1Db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

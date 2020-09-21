@@ -35,6 +35,16 @@
         "runtime": {
           "bin/placeholder/Obligatorio.BusinessLogicInterface.dll": {}
         }
+      },
+      "Obligatorio.DataAccessInterface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Obligatorio.DataAccessInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Obligatorio.DataAccessInterface.dll": {}
+        }
       }
     }
   },
@@ -186,12 +196,18 @@
       "type": "project",
       "path": "../Obligatorio.BusinessLogicInterface/Obligatorio.BusinessLogicInterface.csproj",
       "msbuildProject": "../Obligatorio.BusinessLogicInterface/Obligatorio.BusinessLogicInterface.csproj"
+    },
+    "Obligatorio.DataAccessInterface/1.0.0": {
+      "type": "project",
+      "path": "../Obligatorio.DataAccessInterface/Obligatorio.DataAccessInterface.csproj",
+      "msbuildProject": "../Obligatorio.DataAccessInterface/Obligatorio.DataAccessInterface.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "Obligatorio.BusinessLogicInterface >= 1.0.0"
+      "Obligatorio.BusinessLogicInterface >= 1.0.0",
+      "Obligatorio.DataAccessInterface >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -226,6 +242,9 @@
           "projectReferences": {
             "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
               "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
+            },
+            "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
+              "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
             }
           }
         }

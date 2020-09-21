@@ -13,6 +13,11 @@ D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csprojAssemblyReference.cache
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.AssemblyInfoInputs.cache
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.AssemblyInfo.cs
-D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csproj.CoreCompileInputs.cache
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.dll
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccessInterface.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccessInterface.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csproj.CopyComplete
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csproj.CoreCompileInputs.cache

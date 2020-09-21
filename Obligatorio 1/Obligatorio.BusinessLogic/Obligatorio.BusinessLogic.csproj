@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Obligatorio.BusinessLogicInterface\Obligatorio.BusinessLogicInterface.csproj" />
+    <ProjectReference Include="..\Obligatorio.DataAccessInterface\Obligatorio.DataAccessInterface.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

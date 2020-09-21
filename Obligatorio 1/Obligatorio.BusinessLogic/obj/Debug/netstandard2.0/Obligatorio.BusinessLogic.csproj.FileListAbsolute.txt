@@ -19,3 +19,5 @@ D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\o
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.dll
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.pdb
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\obj\Debug\netstandard2.0\Obligatorio.BusinessLogic.csproj.CopyComplete
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.DataAccessInterface.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogic\bin\Debug\netstandard2.0\Obligatorio.DataAccessInterface.pdb
