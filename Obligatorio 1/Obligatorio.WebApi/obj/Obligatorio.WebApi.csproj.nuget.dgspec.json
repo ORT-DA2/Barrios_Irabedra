@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+                "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -152,7 +156,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+                "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

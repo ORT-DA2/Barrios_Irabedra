@@ -5,7 +5,7 @@ using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccess.Context;
 using Obligatorio.DataAccess.Repositories;
 using Obligatorio.DataAccessInterface.Interfaces;
-using Microsoft.EntityFrameworkCore;
+
 
 
 namespace Obligatorio.Factory.Factories

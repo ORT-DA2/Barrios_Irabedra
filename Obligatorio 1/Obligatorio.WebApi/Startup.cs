@@ -28,8 +28,8 @@ namespace Obligatorio.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllers();                 --¡¡¡¡¡¡¡¡¡¡¡ROMPER EN CASO DE EMERGENCIA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            services.AddScoped<ITouristSpotLogic, TouristSpotLogic>();
+            services.AddControllers();               
+            //services.AddScoped<ITouristSpotLogic, TouristSpotLogic>();
             ServiceFactory factory = new ServiceFactory(services);
             factory.AddCustomServices();
             factory.AddDbContextService(this.Configuration.GetConnectionString("Obligatorio1Db"));

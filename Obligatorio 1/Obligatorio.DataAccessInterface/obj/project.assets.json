@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Obligatorio.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Obligatorio.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Obligatorio.Domain.dll": {}
+        }
       }
     }
   },
@@ -171,11 +181,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Obligatorio.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Obligatorio.Domain/Obligatorio.Domain.csproj",
+      "msbuildProject": "../Obligatorio.Domain/Obligatorio.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "Obligatorio.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -207,7 +223,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+              "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

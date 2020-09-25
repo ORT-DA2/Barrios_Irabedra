@@ -1,6 +1,10 @@
-﻿namespace Obligatorio.BusinessLogicInterface.Interfaces
+﻿using Obligatorio.Domain;
+using System;
+using System.Collections.Generic;
+
+namespace Obligatorio.BusinessLogicInterface.Interfaces
 {
-    public interface ITouristSpotLogic
+    public interface ITouristSpotLogic : ILogic<TouristSpot>
     {
     }
 }

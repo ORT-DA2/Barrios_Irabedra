@@ -29,6 +29,9 @@
       "Obligatorio.BusinessLogicInterface/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Obligatorio.BusinessLogicInterface.dll": {}
         },
@@ -39,11 +42,24 @@
       "Obligatorio.DataAccessInterface/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Obligatorio.DataAccessInterface.dll": {}
         },
         "runtime": {
           "bin/placeholder/Obligatorio.DataAccessInterface.dll": {}
+        }
+      },
+      "Obligatorio.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Obligatorio.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Obligatorio.Domain.dll": {}
         }
       }
     }
@@ -201,6 +217,11 @@
       "type": "project",
       "path": "../Obligatorio.DataAccessInterface/Obligatorio.DataAccessInterface.csproj",
       "msbuildProject": "../Obligatorio.DataAccessInterface/Obligatorio.DataAccessInterface.csproj"
+    },
+    "Obligatorio.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Obligatorio.Domain/Obligatorio.Domain.csproj",
+      "msbuildProject": "../Obligatorio.Domain/Obligatorio.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {

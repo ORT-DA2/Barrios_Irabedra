@@ -6,4 +6,8 @@
     <RootNamespace>Obligatorio.BusinessLogicInterface</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Obligatorio.Domain\Obligatorio.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

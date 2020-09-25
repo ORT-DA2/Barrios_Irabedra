@@ -24,13 +24,24 @@
         }
       },
       "Obligatorio.BusinessLogicInterface/1.0.0": {
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
         "runtime": {
           "Obligatorio.BusinessLogicInterface.dll": {}
         }
       },
       "Obligatorio.DataAccessInterface/1.0.0": {
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
         "runtime": {
           "Obligatorio.DataAccessInterface.dll": {}
+        }
+      },
+      "Obligatorio.Domain/1.0.0": {
+        "runtime": {
+          "Obligatorio.Domain.dll": {}
         }
       }
     }
@@ -61,6 +72,11 @@
       "sha512": ""
     },
     "Obligatorio.DataAccessInterface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Obligatorio.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

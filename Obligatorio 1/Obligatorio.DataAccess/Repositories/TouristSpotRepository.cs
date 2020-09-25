@@ -14,8 +14,12 @@ namespace Obligatorio.DataAccess.Repositories
         public TouristSpotRepository(DbContext context)
         {
             this.myContext = context;
-            this.touristSpots = context.Set<TouristSpot>();
+            this.touristSpots = context.Set<TouristSpot>(); //creemos que esto trae a memoria todo magicamente.
+        }
 
+        public IEnumerable<TouristSpot> GetAll()
+        {
+            return this.touristSpots;
         }
     }
 }

@@ -1330,6 +1330,9 @@
         }
       },
       "Obligatorio.DataAccessInterface/1.0.0": {
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
         "runtime": {
           "Obligatorio.DataAccessInterface.dll": {}
         }

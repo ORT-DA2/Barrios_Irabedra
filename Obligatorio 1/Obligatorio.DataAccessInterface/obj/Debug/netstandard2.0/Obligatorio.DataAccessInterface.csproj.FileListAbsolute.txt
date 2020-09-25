@@ -7,3 +7,6 @@ D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccessInter
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccessInterface\obj\Debug\netstandard2.0\Obligatorio.DataAccessInterface.dll
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccessInterface\obj\Debug\netstandard2.0\Obligatorio.DataAccessInterface.pdb
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccessInterface\obj\Debug\netstandard2.0\Obligatorio.DataAccessInterface.csprojAssemblyReference.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccessInterface\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccessInterface\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccessInterface\obj\Debug\netstandard2.0\Obligatorio.DataAccessInterface.csproj.CopyComplete
