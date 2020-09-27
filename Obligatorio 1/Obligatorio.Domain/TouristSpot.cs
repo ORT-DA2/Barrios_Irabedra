@@ -19,8 +19,17 @@ namespace Obligatorio.Domain
 
         public override bool Equals(object obj)
         {
-            return obj is TouristSpot spot &&
-                   Name == spot.Name;
+            var result = false;
+            if (obj is TouristSpot touristSpot)
+            {
+                result = this.Id == touristSpot.Id & this.Name.Equals(touristSpot.Name);
+            }
+            return result;
+        }
+
+        public bool Validate()
+        {
+            return this.Description.Length <= 2000;
         }
 
         public override string ToString()

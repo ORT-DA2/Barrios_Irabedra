@@ -1613,6 +1613,19 @@
         "runtime": {
           "bin/placeholder/Obligatorio.Factory.dll": {}
         }
+      },
+      "Obligatorio.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Obligatorio.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Obligatorio.Model.dll": {}
+        }
       }
     }
   },
@@ -5843,13 +5856,19 @@
       "type": "project",
       "path": "../Obligatorio.Factory/Obligatorio.Factory.csproj",
       "msbuildProject": "../Obligatorio.Factory/Obligatorio.Factory.csproj"
+    },
+    "Obligatorio.Model/1.0.0": {
+      "type": "project",
+      "path": "../Model/Obligatorio.Model.csproj",
+      "msbuildProject": "../Model/Obligatorio.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Obligatorio.BusinessLogic >= 1.0.0",
       "Obligatorio.BusinessLogicInterface >= 1.0.0",
-      "Obligatorio.Factory >= 1.0.0"
+      "Obligatorio.Factory >= 1.0.0",
+      "Obligatorio.Model >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5882,6 +5901,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj": {
+              "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj"
+            },
             "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
               "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
             },

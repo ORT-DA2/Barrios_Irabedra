@@ -93,3 +93,5 @@ D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debu
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\Obligatorio.Model.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\bin\Debug\netcoreapp3.1\Obligatorio.Model.pdb

@@ -19,6 +19,21 @@ namespace Obligatorio.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Obligatorio.Domain.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("Obligatorio.Domain.Region", b =>
                 {
                     b.Property<int>("Id")
@@ -31,7 +46,7 @@ namespace Obligatorio.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Region");
+                    b.ToTable("Regions");
                 });
 
             modelBuilder.Entity("Obligatorio.Domain.TouristSpot", b =>
@@ -57,7 +72,7 @@ namespace Obligatorio.DataAccess.Migrations
 
                     b.HasIndex("RegionId");
 
-                    b.ToTable("touristSpots");
+                    b.ToTable("TouristSpots");
                 });
 
             modelBuilder.Entity("Obligatorio.Domain.TouristSpot", b =>

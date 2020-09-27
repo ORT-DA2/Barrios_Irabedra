@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Model.Models.Out;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 
 namespace Obligatorio.WebApi.Controllers
@@ -23,16 +24,40 @@ namespace Obligatorio.WebApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(this.touristSpotLogic.GetAll());
+            return Ok(this.touristSpotLogic.GetAll().Select(ts => new TouristSpotModel(ts)));
         }
 
-        //api/touristSpots?id=5
+        //api/touristSpots/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id) //id con minuscula pero no sabemos si es el mismo que el de la clase TouristSpot.Id
+        public IActionResult Get(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var touristSpot = this.touristSpotLogic.Get(id);
+                return Ok(new TouristSpotModel(touristSpot));
+            }
+            catch (Exception ex)
+            {
+                return NotFound("There is no such tourist spot id.");
+            }
         }
 
-
+        //api/touristSpots/11
+        [HttpPost]
+        public IActionResult Post([FromBody] TouristSpotModel touristSpotModel)
+        {
+            try
+            {
+                var touristSpot = touristSpotModel.ToEntity();
+                this.touristSpotLogic.Add(touristSpot);
+                return CreatedAtRoute(routeName: "GetTouristSpot",
+                                                    routeValues: new { id = touristSpotModel.Id },
+                                                        value: new TouristSpotModel(touristSpot));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("A tourist spot with such id has been already registered.");
+            }
+        }
     }
 }

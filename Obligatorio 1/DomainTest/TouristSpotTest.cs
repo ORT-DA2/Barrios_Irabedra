@@ -56,19 +56,28 @@ namespace Tests.DomainTest
         }
 
         [TestMethod]
-        public void EqualsIsNotEqualsTest()
+        public void EqualsNameIsNotEqualTest()
         {
             TouristSpot anotherTouristSpot = new TouristSpot();
             anotherTouristSpot.Name = "Mercado del puerto";
             Assert.IsFalse(myTouristSpot.Equals(anotherTouristSpot));
         }
 
+        public void EqualsIdIsNotEqualTest()
+        {
+            TouristSpot anotherTouristSpot = new TouristSpot();
+            anotherTouristSpot.Id = 33;
+            Assert.IsFalse(myTouristSpot.Equals(anotherTouristSpot));
+        }
+
         [TestMethod]
-        public void EqualsTest()
+        public void EqualsTestOk()
         {
             TouristSpot anotherTouristSpot = new TouristSpot();
             anotherTouristSpot.Name = "Mercado del puerto";
+            anotherTouristSpot.Id = 55;
             myTouristSpot.Name = "Mercado del puerto";
+            myTouristSpot.Id = 55;
             Assert.IsTrue(myTouristSpot.Equals(anotherTouristSpot));
         }
 

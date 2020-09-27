@@ -155,3 +155,5 @@ D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\bin\Debug\netcor
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.csproj.CoreCompileInputs.cache
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.dll
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\bin\Debug\netcoreapp3.1\Obligatorio.Model.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\bin\Debug\netcoreapp3.1\Obligatorio.Model.pdb

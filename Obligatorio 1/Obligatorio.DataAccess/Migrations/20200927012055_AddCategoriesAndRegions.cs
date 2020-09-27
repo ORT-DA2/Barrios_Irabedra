@@ -2,12 +2,12 @@
 
 namespace Obligatorio.DataAccess.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class AddCategoriesAndRegions : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Region",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -16,11 +16,24 @@ namespace Obligatorio.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Region", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "touristSpots",
+                name: "Regions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Regions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TouristSpots",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -32,28 +45,31 @@ namespace Obligatorio.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_touristSpots", x => x.Id);
+                    table.PrimaryKey("PK_TouristSpots", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_touristSpots_Region_RegionId",
+                        name: "FK_TouristSpots_Regions_RegionId",
                         column: x => x.RegionId,
-                        principalTable: "Region",
+                        principalTable: "Regions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_touristSpots_RegionId",
-                table: "touristSpots",
+                name: "IX_TouristSpots_RegionId",
+                table: "TouristSpots",
                 column: "RegionId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "touristSpots");
+                name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Region");
+                name: "TouristSpots");
+
+            migrationBuilder.DropTable(
+                name: "Regions");
         }
     }
 }

@@ -27,6 +27,7 @@
           "Obligatorio.BusinessLogic": "1.0.0",
           "Obligatorio.BusinessLogicInterface": "1.0.0",
           "Obligatorio.Factory": "1.0.0",
+          "Obligatorio.Model": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1520,6 +1521,17 @@
         },
         "compile": {
           "Obligatorio.Factory.dll": {}
+        }
+      },
+      "Obligatorio.Model/1.0.0": {
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Obligatorio.Model.dll": {}
+        },
+        "compile": {
+          "Obligatorio.Model.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3861,6 +3873,11 @@
       "sha512": ""
     },
     "Obligatorio.Factory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Obligatorio.Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

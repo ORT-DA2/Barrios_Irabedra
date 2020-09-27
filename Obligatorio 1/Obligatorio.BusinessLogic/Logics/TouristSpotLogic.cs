@@ -1,4 +1,5 @@
-﻿using Obligatorio.BusinessLogicInterface.Interfaces;
+﻿using Obligatorio.BusinessLogic.CustomExceptions;
+using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using System;
@@ -17,7 +18,17 @@ namespace Obligatorio.BusinessLogic.Logics
 
         public void Add(TouristSpot newEntity)
         {
-            throw new NotImplementedException();
+            if (newEntity.Validate())
+            {
+                try
+                {
+                    this.touristSpotRepository.Add(newEntity);
+                }
+                catch(RepeatedObjectException ex)
+                {
+                    throw new RepeatedObjectException();
+                }
+            }
         }
 
         public void Delete(int id)
@@ -27,7 +38,14 @@ namespace Obligatorio.BusinessLogic.Logics
 
         public TouristSpot Get(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return this.touristSpotRepository.Get(id);
+            }
+            catch (Exception ex)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
         }
 
         public IEnumerable<TouristSpot> GetAll()

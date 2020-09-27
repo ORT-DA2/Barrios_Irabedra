@@ -10,8 +10,8 @@ using Obligatorio.DataAccess.Context;
 namespace Obligatorio.DataAccess.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20200921183627_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20200927012055_AddCategoriesAndRegions")]
+    partial class AddCategoriesAndRegions
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,21 @@ namespace Obligatorio.DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "3.1.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Obligatorio.Domain.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
 
             modelBuilder.Entity("Obligatorio.Domain.Region", b =>
                 {
@@ -33,7 +48,7 @@ namespace Obligatorio.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Region");
+                    b.ToTable("Regions");
                 });
 
             modelBuilder.Entity("Obligatorio.Domain.TouristSpot", b =>
@@ -59,7 +74,7 @@ namespace Obligatorio.DataAccess.Migrations
 
                     b.HasIndex("RegionId");
 
-                    b.ToTable("touristSpots");
+                    b.ToTable("TouristSpots");
                 });
 
             modelBuilder.Entity("Obligatorio.Domain.TouristSpot", b =>

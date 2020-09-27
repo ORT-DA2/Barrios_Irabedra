@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Obligatorio.DataAccessInterface.Interfaces
 {
-    public interface ITouristSpotRepository
+    public interface ITouristSpotRepository : ILogic<TouristSpot>
     {
-        IEnumerable<TouristSpot> GetAll();
+        void Add(TouristSpot newEntity);
     }
 }
