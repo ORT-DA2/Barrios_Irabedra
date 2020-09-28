@@ -22,6 +22,13 @@ namespace Model.Models.Out
             this.Id = touristSpot.Id;
         }
 
+        public TouristSpotModel()
+        {
+            Name = "Default Name";
+            Description = "Default Description";
+            Image = "Default Image";
+        }
+
         public override bool Equals(object obj)
         {
             var result = false;
@@ -34,7 +41,7 @@ namespace Model.Models.Out
 
         public TouristSpot ToEntity()
         {
-            return new TouristSpot()
+            TouristSpot ret = new TouristSpot
             {
                 Description = this.Description,
                 Name = this.Name,
@@ -43,6 +50,7 @@ namespace Model.Models.Out
                 Region = new Region(),
                 //Category = new Category(),
             };
+            return ret;
         }
     }
 }

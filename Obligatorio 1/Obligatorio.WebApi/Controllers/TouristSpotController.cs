@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.Models.Out;
+using Newtonsoft.Json;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 
 namespace Obligatorio.WebApi.Controllers
@@ -25,20 +26,28 @@ namespace Obligatorio.WebApi.Controllers
         public IActionResult Get()
         {
             return Ok(this.touristSpotLogic.GetAll().Select(ts => new TouristSpotModel(ts)));
+            //return Ok(1);
         }
 
         //api/touristSpots/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetTouristSpot")]
         public IActionResult Get(int id)
         {
-            try
+            if(id == -1) 
             {
-                var touristSpot = this.touristSpotLogic.Get(id);
-                return Ok(new TouristSpotModel(touristSpot));
+                return Ok(this.touristSpotLogic.GetAll().Select(ts => new TouristSpotModel(ts)));
             }
-            catch (Exception ex)
+            else
             {
-                return NotFound("There is no such tourist spot id.");
+                try
+                {
+                    var touristSpot = this.touristSpotLogic.Get(id);
+                    return Ok(new TouristSpotModel(touristSpot));
+                }
+                catch (Exception ex)
+                {
+                    return NotFound("There is no such tourist spot id.");
+                }
             }
         }
 
@@ -46,6 +55,7 @@ namespace Obligatorio.WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] TouristSpotModel touristSpotModel)
         {
+            var anotherTSM = touristSpotModel;
             try
             {
                 var touristSpot = touristSpotModel.ToEntity();
@@ -58,6 +68,12 @@ namespace Obligatorio.WebApi.Controllers
             {
                 return BadRequest("A tourist spot with such id has been already registered.");
             }
+        }
+
+        [HttpDelete]
+        public IActionResult Delete([FromBody] TouristSpotModel touristSpotModel)
+        {
+            throw new NotImplementedException();
         }
     }
 }

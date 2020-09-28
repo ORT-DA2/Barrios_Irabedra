@@ -49,7 +49,7 @@ namespace Obligatorio.DataAccess.Repositories
 
         private bool AlreadyExists(TouristSpot newEntity)
         {
-            return (touristSpots.Find(newEntity.Id) is null);
+            return (!(touristSpots.Find(newEntity.Id) is null));
         }
     }
 }

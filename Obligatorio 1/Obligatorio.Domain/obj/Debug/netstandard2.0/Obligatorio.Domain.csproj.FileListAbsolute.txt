@@ -15,4 +15,3 @@ D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debu
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.csproj.CoreCompileInputs.cache
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.dll
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.pdb
-D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Domain\obj\Debug\netstandard2.0\Obligatorio.Domain.csprojAssemblyReference.cache

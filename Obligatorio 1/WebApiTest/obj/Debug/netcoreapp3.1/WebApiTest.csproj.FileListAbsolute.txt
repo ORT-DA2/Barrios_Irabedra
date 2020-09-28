@@ -157,3 +157,4 @@ D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\obj\Debug\netcor
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.pdb
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\bin\Debug\netcoreapp3.1\Obligatorio.Model.dll
 D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\bin\Debug\netcoreapp3.1\Obligatorio.Model.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Obligatorio 1\WebApiTest\bin\Debug\netcoreapp3.1\appsettings.json

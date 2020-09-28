@@ -32,7 +32,8 @@ namespace Obligatorio.WebApi
             //services.AddScoped<ITouristSpotLogic, TouristSpotLogic>();
             ServiceFactory factory = new ServiceFactory(services);
             factory.AddCustomServices();
-            factory.AddDbContextService(this.Configuration.GetConnectionString("Obligatorio1Db"));
+            //var connectStr = this.Configuration.GetConnectionString("Obligatorio1Db");
+            factory.AddDbContextService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

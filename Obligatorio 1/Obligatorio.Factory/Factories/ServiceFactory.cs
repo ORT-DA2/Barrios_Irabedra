@@ -22,9 +22,9 @@ namespace Obligatorio.Factory.Factories
             services.AddScoped<ITouristSpotRepository, TouristSpotRepository>();
             services.AddScoped<ITouristSpotLogic, TouristSpotLogic>();
         }
-        public void AddDbContextService(string connectionString)
+        public void AddDbContextService()
         {
-            services.AddDbContext<DbContext, MyContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<DbContext, MyContext>();
         }
     }
 }
