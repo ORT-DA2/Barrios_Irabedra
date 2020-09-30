@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApi.Models.Out
+namespace Model.Models.Out
 {
-    public class CategoryModel
+    public class RegionModelIn
     {
         public string Name { get; set; }
 
@@ -13,7 +13,7 @@ namespace WebApi.Models.Out
 
         public override bool Equals(object obj)
         {
-            return obj is CategoryModel model &&
+            return obj is RegionModelIn model &&
                    Name == model.Name &&
                    Id == model.Id;
         }

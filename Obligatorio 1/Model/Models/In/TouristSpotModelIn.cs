@@ -5,16 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Model.Models.Out
+namespace Model.Models.In
 {
-    public class TouristSpotModel
+    public class TouristSpotModelIn
     {
-        public string Name { private set; get; }
-        public string Description { private set; get; }
-        public string Image { private set; get; }
-        public int Id { private set; get; }
+        public string Name { set; get; }
+        public string Description {  set; get; }
+        public string Image {set; get; }
+        public int Id {  set; get; }
 
-        public TouristSpotModel(TouristSpot touristSpot)
+        public TouristSpotModelIn(TouristSpot touristSpot)
         {
             this.Description = touristSpot.Description;
             this.Name = touristSpot.Name;
@@ -22,21 +22,11 @@ namespace Model.Models.Out
             this.Id = touristSpot.Id;
         }
 
-        public TouristSpotModel()
+        public TouristSpotModelIn()
         {
             Name = "Default Name";
             Description = "Default Description";
             Image = "Default Image";
-        }
-
-        public override bool Equals(object obj)
-        {
-            var result = false;
-            if (obj is TouristSpotModel touristSpot)
-            {
-                result = this.Id == touristSpot.Id & this.Name.Equals(touristSpot.Name);
-            }
-            return result;
         }
 
         public TouristSpot ToEntity()
@@ -46,11 +36,21 @@ namespace Model.Models.Out
                 Description = this.Description,
                 Name = this.Name,
                 Image = this.Image,
-                Id = this.Id,
                 Region = new Region(),
-                //Category = new Category(),
             };
             return ret;
         }
+
+        public override bool Equals(object obj)
+        {
+            var result = false;
+            if (obj is TouristSpotModelIn touristSpot)
+            {
+                result = this.Name.Equals(touristSpot.Name);
+            }
+            return result;
+        }
+
+    
     }
 }

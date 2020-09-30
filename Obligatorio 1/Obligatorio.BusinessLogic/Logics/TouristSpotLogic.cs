@@ -33,7 +33,14 @@ namespace Obligatorio.BusinessLogic.Logics
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                this.touristSpotRepository.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
         }
 
         public TouristSpot Get(int id)
@@ -55,12 +62,19 @@ namespace Obligatorio.BusinessLogic.Logics
 
         public IEnumerable<TouristSpot> GetAllByCondition(Func<TouristSpot, bool> predicate)
         {
-            throw new NotImplementedException();
+            return this.touristSpotRepository.GetAllByCondition(predicate);
         }
 
         public void Update(int id, TouristSpot newEntity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                this.touristSpotRepository.Update(id, newEntity);
+            }
+            catch (Exception ex)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
         }
     }
 }

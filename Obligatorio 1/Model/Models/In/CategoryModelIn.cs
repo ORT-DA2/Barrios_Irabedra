@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Model.Models.Out
+namespace Model.Models.In
 {
-    public class RegionModel
+    public class CategoryModelIn
     {
         public string Name { get; set; }
 
@@ -13,7 +13,7 @@ namespace Model.Models.Out
 
         public override bool Equals(object obj)
         {
-            return obj is RegionModel model &&
+            return obj is CategoryModelIn model &&
                    Name == model.Name &&
                    Id == model.Id;
         }

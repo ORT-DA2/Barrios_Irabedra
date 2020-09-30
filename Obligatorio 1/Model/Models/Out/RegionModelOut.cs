@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Model.Models.Out
 {
-    public class CategoryModel
+    public class RegionModelOut
     {
         public string Name { get; set; }
 
@@ -13,7 +13,7 @@ namespace Model.Models.Out
 
         public override bool Equals(object obj)
         {
-            return obj is CategoryModel model &&
+            return obj is RegionModelOut model &&
                    Name == model.Name &&
                    Id == model.Id;
         }
