@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\WebApiTest.csproj": {}
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\WebApiTest.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj",
         "projectName": "Obligatorio.Model",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Model\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Model\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +27,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
               }
             }
           }
@@ -62,24 +59,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj",
         "projectName": "Obligatorio.BusinessLogicInterface",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,8 +86,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
               }
             }
           }
@@ -124,24 +118,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj",
         "projectName": "Obligatorio.BusinessLogic",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,11 +145,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
               }
             }
           }
@@ -189,24 +180,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj",
         "projectName": "Obligatorio.DataAccessInterface",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -219,8 +207,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
               }
             }
           }
@@ -251,24 +239,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj",
         "projectName": "Obligatorio.DataAccess",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -281,11 +266,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
               }
             }
           }
@@ -328,24 +313,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj",
         "projectName": "Obligatorio.Domain",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -386,24 +368,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj",
         "projectName": "Obligatorio.Factory",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -416,17 +395,17 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj"
               }
             }
           }
@@ -469,24 +448,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj",
         "projectName": "Obligatorio.WebApi",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -499,17 +475,17 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Model\\Obligatorio.Model.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Factory\\Obligatorio.Factory.csproj"
               }
             }
           }
@@ -540,24 +516,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\WebApiTest.csproj": {
+    "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\WebApiTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\WebApiTest.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\WebApiTest.csproj",
         "projectName": "WebApiTest",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\WebApiTest.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\WebApiTest.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\WebApiTest\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -570,14 +543,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogicInterface\\Obligatorio.BusinessLogicInterface.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Domain\\Obligatorio.Domain.csproj"
               },
-              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj": {
-                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj"
+              "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj": {
+                "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.WebApi\\Obligatorio.WebApi.csproj"
               }
             }
           }
@@ -630,7 +603,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

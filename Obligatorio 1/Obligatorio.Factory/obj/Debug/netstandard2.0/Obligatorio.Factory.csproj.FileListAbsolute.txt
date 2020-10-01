@@ -18,3 +18,23 @@ D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligat
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.csproj.CopyComplete
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.dll
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.pdb
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.Factory.deps.json
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.Factory.dll
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.Factory.pdb
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.dll
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.dll
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.DataAccess.dll
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.DataAccessInterface.dll
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.pdb
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.pdb
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.DataAccess.pdb
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.DataAccessInterface.pdb
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.csprojAssemblyReference.cache
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.csproj.CoreCompileInputs.cache
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.AssemblyInfoInputs.cache
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.AssemblyInfo.cs
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.csproj.CopyComplete
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.dll
+D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Factory\obj\Debug\netstandard2.0\Obligatorio.Factory.pdb
