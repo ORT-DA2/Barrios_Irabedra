@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "atYt0sAqBebuS8ZrTMvbshgWPVR1Jn8FJKiVs+1/wnoq7UJD25jiPD5LsELprX2yleq/j+3NR153SdYHZH1FvA==",
+  "dgSpecHash": "CPFhP95ZA4WdU6vPtFslLijPXpJeqOvLmbLYzxOtQxJcW6yLIbgX1kn0lRfUqDyn/N4+GvzI+p33FayZ1tTyEA==",
   "success": true,
-  "projectFilePath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj",
+  "projectFilePath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Juan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Juan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

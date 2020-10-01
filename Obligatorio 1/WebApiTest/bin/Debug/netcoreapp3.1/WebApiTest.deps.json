@@ -11,7 +11,6 @@
           "MSTest.TestAdapter": "2.1.0",
           "MSTest.TestFramework": "2.1.0",
           "Microsoft.NET.Test.Sdk": "16.5.0",
-          "Models": "1.0.0",
           "Moq": "4.14.5",
           "Obligatorio.BusinessLogicInterface": "1.0.0",
           "Obligatorio.Domain": "1.0.0",
@@ -1722,14 +1721,6 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "Models/1.0.0": {
-        "dependencies": {
-          "Obligatorio.Domain": "1.0.0"
-        },
-        "runtime": {
-          "Models.dll": {}
-        }
-      },
       "Obligatorio.BusinessLogic/1.0.0": {
         "dependencies": {
           "Obligatorio.BusinessLogicInterface": "1.0.0",
@@ -2841,11 +2832,6 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
-    },
-    "Models/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Obligatorio.BusinessLogic/1.0.0": {
       "type": "project",

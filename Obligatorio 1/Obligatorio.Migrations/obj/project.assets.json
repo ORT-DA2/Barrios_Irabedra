@@ -5826,23 +5826,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Juan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Migrations\\Obligatorio.Migrations.csproj",
+      "projectUniqueName": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Migrations\\Obligatorio.Migrations.csproj",
       "projectName": "Obligatorio.Migrations",
-      "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Migrations\\Obligatorio.Migrations.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Migrations\\obj\\",
+      "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Migrations\\Obligatorio.Migrations.csproj",
+      "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+      "outputPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.Migrations\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5855,8 +5851,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj": {
-              "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj"
+            "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj": {
+              "projectPath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccess\\Obligatorio.DataAccess.csproj"
             }
           }
         }
@@ -5900,7 +5896,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

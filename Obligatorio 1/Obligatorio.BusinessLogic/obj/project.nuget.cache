@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yWsKEZYKOMrnJxx3MjWVyEPGBTUrChnTUqw1vCnj/XdCmSm74GvLAC1y6mGAZzq7tv53sQQlVEEEjMgVRdNKmA==",
+  "dgSpecHash": "mZ4Q3LLwwt3yYoSAPRGOVvY1+zHFwh/KMSA+IAUhJvi2cWG4SEkZ1iBrZ2eXE1K7fcb2CyD8/2o8uPAQJAXX6A==",
   "success": true,
-  "projectFilePath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj",
+  "projectFilePath": "D:\\Juan\\Ort\\Da2\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Juan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Juan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

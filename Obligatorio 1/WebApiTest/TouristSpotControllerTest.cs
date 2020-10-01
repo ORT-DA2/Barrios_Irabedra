@@ -172,7 +172,7 @@ namespace WebApiTest
         }
 
         [TestMethod]
-        public void PutSuccessfulTest()
+        public void TestPutSuccessful()
         {
             TouristSpot touristSpotToUpdate = new TouristSpot()
             {
@@ -192,6 +192,33 @@ namespace WebApiTest
 
             var result = controller.Put(touristSpotModelToUpdate.Id, newDataModel) as OkObjectResult;
             var expectedResult = new OkObjectResult(new TouristSpotModelOut(touristSpotToUpdate));
+
+            mock.VerifyAll();
+            Assert.AreEqual(expectedResult.Value, result.Value);
+        }
+
+        [TestMethod]
+        public void TestPutNotFoundObject()
+        {
+            TouristSpot touristSpotToUpdate = new TouristSpot()
+            {
+                Name = "Virgen del verdún",
+                Id = 3
+            };
+            TouristSpot newData = new TouristSpot()
+            {
+                Name = "The Green Roofs",
+            };
+            TouristSpotModelIn touristSpotModelToUpdate = new TouristSpotModelIn(touristSpotToUpdate);
+            TouristSpotModelIn newDataModel = new TouristSpotModelIn(newData);
+            var mock = new Mock<ITouristSpotLogic>(MockBehavior.Strict);
+
+            mock.Setup(ts => ts.Update(touristSpotModelToUpdate.Id, newData));
+            mock.Setup(ts => ts.Get(touristSpotToUpdate.Id)).Throws(new ObjectNotFoundInDatabaseException());
+            var controller = new TouristSpotController(mock.Object);
+
+            var result = controller.Put(touristSpotModelToUpdate.Id, newDataModel) as NotFoundObjectResult;
+            var expectedResult = new NotFoundObjectResult("There is no tourist spot with such id.");
 
             mock.VerifyAll();
             Assert.AreEqual(expectedResult.Value, result.Value);

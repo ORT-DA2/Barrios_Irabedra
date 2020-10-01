@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\Obligatorio.BusinessLogicInterface\Obligatorio.BusinessLogicInterface.csproj" />
     <ProjectReference Include="..\Obligatorio.Domain\Obligatorio.Domain.csproj" />
     <ProjectReference Include="..\Obligatorio.WebApi\Obligatorio.WebApi.csproj" />
