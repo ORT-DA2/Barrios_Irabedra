@@ -1,0 +1,12 @@
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.deps.json
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.dll
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.pdb
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\obj\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.csprojAssemblyReference.cache
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\obj\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.AssemblyInfoInputs.cache
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\obj\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.AssemblyInfo.cs
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\obj\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.csproj.CoreCompileInputs.cache
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\obj\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.csproj.CopyComplete
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\obj\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.dll
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.BusinessLogicInterface\obj\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.pdb
