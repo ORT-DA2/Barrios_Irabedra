@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Obligatorio.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Model.Models.Out
+namespace Model.Models.In
 {
     public class RegionModelIn
     {
@@ -11,11 +12,28 @@ namespace Model.Models.Out
 
         public int Id { get; set; }
 
+        public RegionModelIn()
+        {
+        }
+
+        public RegionModelIn(Region region)
+        {
+            this.Name = region.Name;
+            this.Id = region.Id;
+        }
+
         public override bool Equals(object obj)
         {
             return obj is RegionModelIn model &&
                    Name == model.Name &&
                    Id == model.Id;
+        }
+
+        public Region ToEntity()
+        {
+            Region region = new Region();
+            region.Name = this.Name;
+            return region;
         }
     }
 }

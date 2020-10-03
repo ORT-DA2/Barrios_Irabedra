@@ -6,7 +6,11 @@ namespace Obligatorio.DataAccessInterface.Interfaces
 {
     public interface ILogic<T>
     {
-        IEnumerable<T> GetAll();
         T Get(int id);
+        IEnumerable<T> GetAll();
+        IEnumerable<T> GetAllByCondition(Func<T, bool> predicate);
+        void Add(T newEntity);
+        void Update(int id, T newEntity);
+        void Delete(int id);
     }
 }

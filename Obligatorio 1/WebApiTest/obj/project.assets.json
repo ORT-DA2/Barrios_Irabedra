@@ -2528,6 +2528,7 @@
           "Microsoft.EntityFrameworkCore": "3.1.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8",
           "Microsoft.Extensions.Configuration.Json": "3.1.8",
+          "Obligatorio.BusinessLogic": "1.0.0",
           "Obligatorio.DataAccessInterface": "1.0.0",
           "Obligatorio.Domain": "1.0.0"
         },

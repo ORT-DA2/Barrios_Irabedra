@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Obligatorio.BusinessLogic\Obligatorio.BusinessLogic.csproj" />
     <ProjectReference Include="..\Obligatorio.DataAccessInterface\Obligatorio.DataAccessInterface.csproj" />
     <ProjectReference Include="..\Obligatorio.Domain\Obligatorio.Domain.csproj" />
   </ItemGroup>

@@ -134,3 +134,7 @@ D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Migrations\obj\Debug\
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Migrations\obj\Debug\netcoreapp3.1\Obligatorio.Migrations.dll
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Migrations\obj\Debug\netcoreapp3.1\Obligatorio.Migrations.pdb
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.Migrations\obj\Debug\netcoreapp3.1\Obligatorio.Migrations.genruntimeconfig.cache
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.Migrations\bin\Debug\netcoreapp3.1\Obligatorio.BusinessLogic.dll
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.Migrations\bin\Debug\netcoreapp3.1\Obligatorio.BusinessLogicInterface.dll
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.Migrations\bin\Debug\netcoreapp3.1\Obligatorio.BusinessLogic.pdb
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.Migrations\bin\Debug\netcoreapp3.1\Obligatorio.BusinessLogicInterface.pdb

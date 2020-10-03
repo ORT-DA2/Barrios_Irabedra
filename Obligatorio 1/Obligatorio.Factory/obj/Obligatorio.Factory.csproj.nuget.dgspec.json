@@ -219,6 +219,9 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
+              "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj": {
+                "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj"
+              },
               "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
                 "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
               },

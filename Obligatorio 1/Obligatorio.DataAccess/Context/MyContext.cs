@@ -16,6 +16,13 @@ namespace Obligatorio.DataAccess.Context
         public MyContext() { }
         public MyContext(DbContextOptions options) : base(options) { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Region>()
+            .HasMany(b => b.TouristSpots)
+            .WithOne();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

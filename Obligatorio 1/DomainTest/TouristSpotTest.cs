@@ -43,13 +43,6 @@ namespace Tests.DomainTest
         }
 
         [TestMethod]
-        public void RegionTest()
-        {
-            myTouristSpot.Region = new Region { Name = "CorredorPajarosPintados" };
-            Assert.AreEqual(myTouristSpot.Region, new Region { Name = "CorredorPajarosPintados" });
-        }
-
-        [TestMethod]
         public void EqualsIsNullTest()
         {
             Assert.IsFalse(myTouristSpot.Equals(null));

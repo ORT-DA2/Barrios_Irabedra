@@ -29,7 +29,6 @@ namespace WebApiTest
                     Name = "Faro de La Paloma",
                     Description = "Very tall. Traditional.",
                     Image = "image",
-                    Region = new Region(),
                 },
                 new TouristSpot()
                 {
@@ -37,7 +36,6 @@ namespace WebApiTest
                     Name = "Playa de los Pescadores",
                     Description = "Cozy, humble.",
                     Image = "image2",
-                    Region = new Region(),
                 }
             };
 
@@ -76,7 +74,6 @@ namespace WebApiTest
                 Name = "Faro de La Paloma",
                 Description = "Very tall. Traditional.",
                 Image = "image",
-                Region = new Region(),
             };
             TouristSpotModelOut modelToReturn = new TouristSpotModelOut(touristSpotToReturn);
             var mock = new Mock<ITouristSpotLogic>(MockBehavior.Strict);

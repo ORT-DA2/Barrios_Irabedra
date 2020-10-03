@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +11,17 @@ namespace Model.Models.Out
         public string Name { get; set; }
 
         public int Id { get; set; }
+
+        public RegionModelOut()
+        {
+
+        }
+
+        public RegionModelOut(Region region)
+        {
+            this.Id = region.Id;
+            this.Name = region.Name;
+        }
 
         public override bool Equals(object obj)
         {

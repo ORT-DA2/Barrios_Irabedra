@@ -77,8 +77,8 @@ namespace Obligatorio.DataAccess.Migrations
 
             modelBuilder.Entity("Obligatorio.Domain.TouristSpot", b =>
                 {
-                    b.HasOne("Obligatorio.Domain.Region", "Region")
-                        .WithMany()
+                    b.HasOne("Obligatorio.Domain.Region", null)
+                        .WithMany("touristSpots")
                         .HasForeignKey("RegionId");
                 });
 #pragma warning restore 612, 618

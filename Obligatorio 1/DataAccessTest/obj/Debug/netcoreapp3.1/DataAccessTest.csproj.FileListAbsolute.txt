@@ -288,3 +288,7 @@ D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\DataAccessTest\obj\Debug\netcorea
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\DataAccessTest\obj\Debug\netcoreapp3.1\DataAccessTest.dll
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\DataAccessTest\obj\Debug\netcoreapp3.1\DataAccessTest.pdb
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\DataAccessTest\obj\Debug\netcoreapp3.1\DataAccessTest.genruntimeconfig.cache
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\DataAccessTest\bin\Debug\netcoreapp3.1\Obligatorio.BusinessLogic.dll
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\DataAccessTest\bin\Debug\netcoreapp3.1\Obligatorio.BusinessLogicInterface.dll
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\DataAccessTest\bin\Debug\netcoreapp3.1\Obligatorio.BusinessLogic.pdb
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\DataAccessTest\bin\Debug\netcoreapp3.1\Obligatorio.BusinessLogicInterface.pdb

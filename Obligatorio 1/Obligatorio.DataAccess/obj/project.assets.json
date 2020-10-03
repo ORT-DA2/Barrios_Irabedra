@@ -1784,6 +1784,33 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Obligatorio.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Obligatorio.BusinessLogicInterface": "1.0.0",
+          "Obligatorio.DataAccessInterface": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Obligatorio.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Obligatorio.BusinessLogic.dll": {}
+        }
+      },
+      "Obligatorio.BusinessLogicInterface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Obligatorio.BusinessLogicInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Obligatorio.BusinessLogicInterface.dll": {}
+        }
+      },
       "Obligatorio.DataAccessInterface/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -6362,6 +6389,16 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Obligatorio.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../Obligatorio.BusinessLogic/Obligatorio.BusinessLogic.csproj",
+      "msbuildProject": "../Obligatorio.BusinessLogic/Obligatorio.BusinessLogic.csproj"
+    },
+    "Obligatorio.BusinessLogicInterface/1.0.0": {
+      "type": "project",
+      "path": "../Obligatorio.BusinessLogicInterface/Obligatorio.BusinessLogicInterface.csproj",
+      "msbuildProject": "../Obligatorio.BusinessLogicInterface/Obligatorio.BusinessLogicInterface.csproj"
+    },
     "Obligatorio.DataAccessInterface/1.0.0": {
       "type": "project",
       "path": "../Obligatorio.DataAccessInterface/Obligatorio.DataAccessInterface.csproj",
@@ -6379,6 +6416,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.8",
       "Microsoft.Extensions.Configuration.Json >= 3.1.8",
       "NETStandard.Library >= 2.0.3",
+      "Obligatorio.BusinessLogic >= 1.0.0",
       "Obligatorio.DataAccessInterface >= 1.0.0",
       "Obligatorio.Domain >= 1.0.0"
     ]
@@ -6413,6 +6451,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj": {
+              "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.BusinessLogic\\Obligatorio.BusinessLogic.csproj"
+            },
             "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj": {
               "projectPath": "D:\\Documentos\\ORT\\DA2\\Recursos obl 1\\Repo version nueva\\Barrios_Irabedra\\Obligatorio 1\\Obligatorio.DataAccessInterface\\Obligatorio.DataAccessInterface.csproj"
             },

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Model.Models.In
+namespace Model.Models.Out
 {
     public class TouristSpotModelOut
     {
@@ -37,7 +37,6 @@ namespace Model.Models.In
                 Name = this.Name,
                 Image = this.Image,
                 Id = this.Id,
-                Region = new Region(),
                 //Category = new Category(),
             };
             return ret;

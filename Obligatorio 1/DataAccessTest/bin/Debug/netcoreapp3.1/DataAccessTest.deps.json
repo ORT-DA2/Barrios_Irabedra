@@ -1712,11 +1712,29 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Obligatorio.BusinessLogic/1.0.0": {
+        "dependencies": {
+          "Obligatorio.BusinessLogicInterface": "1.0.0",
+          "Obligatorio.DataAccessInterface": "1.0.0"
+        },
+        "runtime": {
+          "Obligatorio.BusinessLogic.dll": {}
+        }
+      },
+      "Obligatorio.BusinessLogicInterface/1.0.0": {
+        "dependencies": {
+          "Obligatorio.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Obligatorio.BusinessLogicInterface.dll": {}
+        }
+      },
       "Obligatorio.DataAccess/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8",
           "Microsoft.Extensions.Configuration.Json": "3.1.8",
+          "Obligatorio.BusinessLogic": "1.0.0",
           "Obligatorio.DataAccessInterface": "1.0.0",
           "Obligatorio.Domain": "1.0.0"
         },
@@ -2766,6 +2784,16 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Obligatorio.BusinessLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Obligatorio.BusinessLogicInterface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Obligatorio.DataAccess/1.0.0": {
       "type": "project",

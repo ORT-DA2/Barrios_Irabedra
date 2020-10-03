@@ -14,10 +14,12 @@ namespace Obligatorio.DataAccess.Repositories
     {
         private readonly DbSet<TouristSpot> touristSpots;
         private readonly DbContext myContext;
+
+
         public TouristSpotRepository(DbContext context)
         {
             this.myContext = context;
-            this.touristSpots = context.Set<TouristSpot>(); 
+            this.touristSpots = context.Set<TouristSpot>();
         }
 
         public IEnumerable<TouristSpot> GetAll()

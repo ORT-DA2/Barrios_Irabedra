@@ -29,10 +29,8 @@ namespace Obligatorio.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();               
-            //services.AddScoped<ITouristSpotLogic, TouristSpotLogic>();
             ServiceFactory factory = new ServiceFactory(services);
             factory.AddCustomServices();
-            //var connectStr = this.Configuration.GetConnectionString("Obligatorio1Db");
             factory.AddDbContextService();
         }
 
