@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Obligatorio.DataAccess.Context;
 
 namespace Obligatorio.DataAccess.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20201003184521_ThirdMigration")]
+    partial class ThirdMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,8 +81,7 @@ namespace Obligatorio.DataAccess.Migrations
                 {
                     b.HasOne("Obligatorio.Domain.Region", null)
                         .WithMany("TouristSpots")
-                        .HasForeignKey("RegionId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("RegionId");
                 });
 #pragma warning restore 612, 618
         }

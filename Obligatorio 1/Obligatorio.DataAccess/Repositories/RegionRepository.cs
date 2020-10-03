@@ -72,7 +72,7 @@ namespace Obligatorio.DataAccess.Repositories
         {
             foreach (var item in this.regions)
             {
-                if(item.Name.Equals(name))
+                if (item.Name.Equals(name))
                 {
                     return item;
                 }
@@ -97,15 +97,24 @@ namespace Obligatorio.DataAccess.Repositories
 
         public void AddTouristSpotToRegion(string regionName, int touristSpotId)
         {
-            Region region = ValidateExistingRegion(regionName);
-            TouristSpot touristSpot = ValidateExistingTouristSpot(touristSpotId);
-            if (this.ThereIsRegionWithThisTouristSpot(touristSpot))
+            try
+            {
+                Region region = ValidateExistingRegion(regionName);
+                TouristSpot touristSpot = ValidateExistingTouristSpot(touristSpotId);
+                this.ThereIsRegionWithThisTouristSpot(touristSpot);
+                region.TouristSpots.Add(touristSpot);
+                regions.Update(region);
+                myContext.SaveChanges();
+            }
+            catch (ObjectNotFoundInDatabaseException)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+            catch (RepeatedObjectException)
             {
                 throw new RepeatedObjectException();
             }
-            region.TouristSpots.Add(touristSpot);
-            regions.Update(region);
-            myContext.SaveChanges();
+
         }
 
         private TouristSpot ValidateExistingTouristSpot(int touristSpotId)
@@ -128,20 +137,16 @@ namespace Obligatorio.DataAccess.Repositories
             return region;
         }
 
-        private bool ThereIsRegionWithThisTouristSpot(TouristSpot touristSpot)
+        private void ThereIsRegionWithThisTouristSpot(TouristSpot touristSpot)
         {
             foreach (var r in regions)
             {
-                if(r.TouristSpots is null)
+                if ((r.TouristSpots is null)
+                || (r.TouristSpots.Contains(touristSpot)))
                 {
-
-                }
-                else if (r.TouristSpots.Contains(touristSpot))
-                {
-                    return true;
+                    throw new RepeatedObjectException();
                 }
             }
-            return false;
         }
     }
 }

@@ -13,7 +13,6 @@ namespace Model.Models.In
         public string Description {  set; get; }
         public string Image {set; get; }
         public int Id {  set; get; }
-        public string RegionName { set; get; }
 
         public TouristSpotModelIn(TouristSpot touristSpot)
         {
@@ -28,7 +27,6 @@ namespace Model.Models.In
             Name = "Default Name";
             Description = "Default Description";
             Image = "Default Image";
-            RegionName = "Default Region";
         }
 
         public TouristSpot ToEntity()

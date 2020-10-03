@@ -11,7 +11,7 @@ namespace Obligatorio.Domain
         public Region()
         {
             Name = "Default Name";
-            TouristSpots = null;
+            TouristSpots = new List<TouristSpot>();
         }
 
         public override bool Equals(object obj)

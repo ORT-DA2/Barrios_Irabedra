@@ -20,7 +20,8 @@ namespace Obligatorio.DataAccess.Context
         {
             modelBuilder.Entity<Region>()
             .HasMany(b => b.TouristSpots)
-            .WithOne();
+            .WithOne()
+            .OnDelete(DeleteBehavior.Restrict);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
