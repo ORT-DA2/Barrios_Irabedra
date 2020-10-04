@@ -7,5 +7,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
     {
         Region Get(string name);
         void AddTouristSpotToRegion(string regionName, int touristSpotId);
+        void ModifyTouristSpotRegion(string regionName, int touristSpotId);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace Obligatorio.Domain
 {
@@ -8,12 +9,14 @@ namespace Obligatorio.Domain
         public string Description { set; get; }
         public string Image { set; get; } //stringbase64
         public int Id { get; set; }
+        public ICollection<TouristSpotCategory> TouristSpotCategories { get; set; }
 
         public TouristSpot()
         {
             Name = "Default Name";
             Description = "Default Description";
             Image = "Default Image";
+            TouristSpotCategories = new List<TouristSpotCategory>();
         }
 
         public override bool Equals(object obj)

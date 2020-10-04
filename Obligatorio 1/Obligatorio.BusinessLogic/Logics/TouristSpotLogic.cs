@@ -10,10 +10,12 @@ namespace Obligatorio.BusinessLogic.Logics
     public class TouristSpotLogic : ITouristSpotLogic
     {
        private readonly ITouristSpotRepository touristSpotRepository;
+       private readonly ITouristSpotCategoryLogic touristSpotCategoryLogic;
 
-        public TouristSpotLogic(ITouristSpotRepository touristSpotRepository)
+        public TouristSpotLogic(ITouristSpotRepository touristSpotRepository, ITouristSpotCategoryLogic touristSpotCategoryLogic)
         {
             this.touristSpotRepository = touristSpotRepository;
+            this.touristSpotCategoryLogic = touristSpotCategoryLogic;
         }
 
         public void Add(TouristSpot newEntity)
@@ -41,6 +43,11 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
+        }
+
+        public IEnumerable<TouristSpot> FindByCategory(string value)
+        {
+            return this.touristSpotCategoryLogic.FindByCategory(value);
         }
 
         public TouristSpot Get(int id)

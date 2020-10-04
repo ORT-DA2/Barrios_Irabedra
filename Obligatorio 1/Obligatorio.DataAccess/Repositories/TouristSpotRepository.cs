@@ -124,5 +124,23 @@ namespace Obligatorio.DataAccess.Repositories
             }
             return touristSpotsToReturn;
         }
+
+        public IEnumerable<TouristSpot> GetByCategory(string value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(TouristSpot touristSpot)
+        {
+            touristSpots.Update(touristSpot);
+            myContext.SaveChanges();
+        }
+
+        public void Add(TouristSpot touristSpot, TouristSpotCategory touristSpotCategory)
+        {
+            touristSpot.TouristSpotCategories.Add(touristSpotCategory);
+            this.touristSpots.Update(touristSpot);
+            myContext.SaveChanges();
+        }
     }
 }

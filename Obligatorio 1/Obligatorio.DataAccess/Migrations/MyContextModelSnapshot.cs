@@ -75,12 +75,42 @@ namespace Obligatorio.DataAccess.Migrations
                     b.ToTable("TouristSpots");
                 });
 
+            modelBuilder.Entity("Obligatorio.Domain.TouristSpotCategory", b =>
+                {
+                    b.Property<int>("TouristSpotId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TouristSpotId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("TouristSpotCategories");
+                });
+
             modelBuilder.Entity("Obligatorio.Domain.TouristSpot", b =>
                 {
                     b.HasOne("Obligatorio.Domain.Region", null)
                         .WithMany("TouristSpots")
                         .HasForeignKey("RegionId")
                         .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Obligatorio.Domain.TouristSpotCategory", b =>
+                {
+                    b.HasOne("Obligatorio.Domain.Category", "Category")
+                        .WithMany("TouristSpotCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Obligatorio.Domain.TouristSpot", "TouristSpot")
+                        .WithMany("TouristSpotCategories")
+                        .HasForeignKey("TouristSpotId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

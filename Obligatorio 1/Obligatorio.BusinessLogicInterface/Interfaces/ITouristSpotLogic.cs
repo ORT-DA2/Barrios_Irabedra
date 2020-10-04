@@ -6,5 +6,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
 {
     public interface ITouristSpotLogic : ILogic<TouristSpot>
     {
+        IEnumerable<TouristSpot> FindByCategory(string value);
     }
 }

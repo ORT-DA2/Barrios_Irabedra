@@ -114,7 +114,6 @@ namespace Obligatorio.DataAccess.Repositories
             {
                 throw new RepeatedObjectException();
             }
-
         }
 
         private TouristSpot ValidateExistingTouristSpot(int touristSpotId)
@@ -146,6 +145,22 @@ namespace Obligatorio.DataAccess.Repositories
                 {
                     throw new RepeatedObjectException();
                 }
+            }
+        }
+
+        public void ModifyTouristSpotRegion(string regionName, int touristSpotId)
+        {
+            try
+            {
+                Region region = ValidateExistingRegion(regionName);
+                TouristSpot touristSpot = ValidateExistingTouristSpot(touristSpotId);
+                region.TouristSpots.Add(touristSpot);
+                regions.Update(region);
+                myContext.SaveChanges();
+            }
+            catch (ObjectNotFoundInDatabaseException)
+            {
+                throw new ObjectNotFoundInDatabaseException();
             }
         }
     }

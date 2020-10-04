@@ -67,8 +67,6 @@ D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligat
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.csprojAssemblyReference.cache
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.AssemblyInfoInputs.cache
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.AssemblyInfo.cs
-D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.csproj.CoreCompileInputs.cache
-D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.RazorTargetAssemblyInfo.cache
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.csproj.CopyComplete
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\Obligatorio.WebApi.StaticWebAssets.Manifest.cache
@@ -154,3 +152,5 @@ D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netc
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.dll
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.pdb
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.genruntimeconfig.cache
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.csproj.CoreCompileInputs.cache
+D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.WebApi\obj\Debug\netcoreapp3.1\Obligatorio.WebApi.MvcApplicationPartsAssemblyInfo.cache

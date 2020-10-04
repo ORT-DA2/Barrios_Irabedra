@@ -89,6 +89,18 @@ namespace Obligatorio.BusinessLogic.Logics
             throw new NotImplementedException();
         }
 
+        public void ModifyTouristSpotRegion(string regionName, int touristSpotId)
+        {
+            try
+            {
+                this.regionRepository.ModifyTouristSpotRegion(regionName, touristSpotId);
+            }
+            catch (ObjectNotFoundInDatabaseException)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+        }
+
         public void Update(int id, Region newEntity)
         {
             throw new NotImplementedException();

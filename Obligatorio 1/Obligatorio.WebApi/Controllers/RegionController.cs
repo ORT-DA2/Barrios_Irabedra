@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Model.Models.In;
 using Model.Models.Out;
 using Obligatorio.BusinessLogic.CustomExceptions;
@@ -11,7 +12,6 @@ using Obligatorio.BusinessLogicInterface;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.WebApi.AuxiliaryObjects;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Obligatorio.WebApi.Controllers
 {
@@ -32,8 +32,6 @@ namespace Obligatorio.WebApi.Controllers
         {
             return Ok(this.regionLogic.GetAll().Select(r => new RegionModelOut(r)));
         }
-
-
 
         // https://tools.ietf.org/html/rfc3986
         //api/touristSpots/default_name
@@ -91,6 +89,25 @@ namespace Obligatorio.WebApi.Controllers
             catch (RepeatedObjectException)
             {
                 return BadRequest("This tourist spot belongs to a different region."); //our tourist spots cannot move.
+            }
+            catch (InvalidCastException)
+            {
+                return BadRequest("The input format is not correct.");
+            }
+        }
+
+        [HttpPut("modify")]
+        //[Route("api/regions/modify")]
+        public IActionResult TouristSpotRegionUpdate([FromBody] RegionAndTouristSpotIdentifier data)
+        {
+            try
+            {
+                this.regionLogic.ModifyTouristSpotRegion(data.RegionName, data.TouristSpotId);
+                return Ok("Updated");
+            }
+            catch (ObjectNotFoundInDatabaseException)
+            {
+                return NotFound("Either there is no such region in our database, or there is no such tourist spot id.");
             }
             catch (InvalidCastException)
             {
