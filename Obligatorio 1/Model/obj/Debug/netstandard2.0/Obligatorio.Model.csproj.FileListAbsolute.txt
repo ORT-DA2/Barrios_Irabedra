@@ -22,3 +22,15 @@ D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Ob
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.csproj.CopyComplete
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.dll
 D:\Juan\Ort\Da2\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\bin\Debug\netstandard2.0\Obligatorio.Model.deps.json
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\bin\Debug\netstandard2.0\Obligatorio.Model.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\bin\Debug\netstandard2.0\Obligatorio.Model.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.csprojAssemblyReference.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.csproj.CoreCompileInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.AssemblyInfoInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.AssemblyInfo.cs
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.csproj.CopyComplete
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Model\obj\Debug\netstandard2.0\Obligatorio.Model.pdb

@@ -14,6 +14,7 @@ namespace Obligatorio.DataAccess.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<Region> Regions { get; set; }
         public DbSet<TouristSpotCategory> TouristSpotCategories { get; set; }
+        public DbSet<Accommodation> Accommodations { get; set; }
         public MyContext() { }
         public MyContext(DbContextOptions options) : base(options) { }
 
@@ -23,7 +24,6 @@ namespace Obligatorio.DataAccess.Context
             .HasMany(b => b.TouristSpots)
             .WithOne()
             .OnDelete(DeleteBehavior.Restrict);
-
 
             modelBuilder.Entity<TouristSpotCategory>()
             .HasKey(tsc => new { tsc.TouristSpotId, tsc.CategoryId });

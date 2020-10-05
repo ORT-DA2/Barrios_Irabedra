@@ -30,3 +30,21 @@ D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligat
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.dll
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.pdb
 D:\Documentos\ORT\DA2\Recursos obl 1\Repo version nueva\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccess.deps.json
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccess.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccess.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccessInterface.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.BusinessLogic.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.DataAccessInterface.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\bin\Debug\netstandard2.0\Obligatorio.BusinessLogicInterface.pdb
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csprojAssemblyReference.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csproj.CoreCompileInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.AssemblyInfoInputs.cache
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.AssemblyInfo.cs
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.csproj.CopyComplete
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.dll
+D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.DataAccess\obj\Debug\netstandard2.0\Obligatorio.DataAccess.pdb

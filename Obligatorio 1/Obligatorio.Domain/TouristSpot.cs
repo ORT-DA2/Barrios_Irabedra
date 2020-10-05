@@ -9,7 +9,7 @@ namespace Obligatorio.Domain
         public string Description { set; get; }
         public string Image { set; get; } //stringbase64
         public int Id { get; set; }
-        public ICollection<TouristSpotCategory> TouristSpotCategories { get; set; }
+        public List<TouristSpotCategory> TouristSpotCategories { get; set; }
 
         public TouristSpot()
         {

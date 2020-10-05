@@ -6,7 +6,7 @@ namespace Obligatorio.Domain
     {
         public string Name { get; set; }
         public int Id { get; set; }
-        public ICollection<TouristSpotCategory> TouristSpotCategories { get; set; } 
+        public List<TouristSpotCategory> TouristSpotCategories { get; set; } 
         public Category()
         {
             Name = "Default Name";

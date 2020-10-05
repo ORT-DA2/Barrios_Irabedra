@@ -52,6 +52,11 @@ namespace Model.Models.Out
             return result;
         }
 
-    
+        public override string ToString()
+        {
+            string s = String.Format("Nombre: {0} \nDescripcion: {1} \nImagen: {2}",
+                this.Name, this.Description, this.Description);
+            return s;
+        }
     }
 }

@@ -10,5 +10,9 @@ namespace Obligatorio.Domain
         public int CategoryId { get; set; }
         public TouristSpot TouristSpot { get; set; }
         public int TouristSpotId { get; set; }
+
+        public TouristSpotCategory()
+        {
+        }
     }
 }

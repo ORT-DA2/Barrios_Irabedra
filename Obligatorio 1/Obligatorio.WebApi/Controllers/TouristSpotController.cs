@@ -29,50 +29,37 @@ namespace Obligatorio.WebApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            if(Request.QueryString.Value is null) 
+            if (Request.QueryString.Value is null)
             {
                 return Ok(this.touristSpotLogic.GetAll().Select(ts => new TouristSpotModelOut(ts)));
             }
             else
             {
-                IEnumerable<TouristSpotModelOut> touristSpots = new List<TouristSpotModelOut>();
+                List<TouristSpotModelOut> touristSpots = new List<TouristSpotModelOut>();
                 string arguments = Request.QueryString.Value.Split('?')[1];  //categoryName=%22Nautico%22&categoryName=%22Malls%22
                 List<string> criteria = arguments.Split('&').ToList<String>(); //categoryName=%22Nautico%22
                 foreach (var param in criteria)
                 {
                     string value = param.Split('=')[1].Replace("%22", "");
                     value = value.Replace("%20", " ");
-                    IEnumerable<TouristSpotModelOut> list = this.touristSpotLogic.FindByCategory(value).Select(ts => new TouristSpotModelOut(ts));
-                    touristSpots.Concat(list);
+                    touristSpots.AddRange(
+                        touristSpotLogic.FindByCategory(value).Select(ts => new TouristSpotModelOut(ts)));
                 }
                 touristSpots = touristSpots.Distinct<TouristSpotModelOut>().ToList();
+
+
+
+                //
+                //Discutir con juani tema region y categorias
+                //Para la region un string y gg ez
+                //
+
+
+
                 return Ok(touristSpots);
             }
         }
 
-        //api/touristSpots
-        //[HttpGet("{queryString}/{queryString2}")]
-        //[Route("filter{queryString}")]
-        /*public IActionResult Filter(string queryString, string queryString2) //?categoryName="Nautica"&categoryName="Playas"
-        {
-            queryString2 = queryString2.Split('?')[1];
-            string[] queryParams = queryString2.Split('&');
-            List<string> queryParamList = queryParams.ToList<string>();
-            List<string> paramValues = new List<string>();
-            foreach (var item in queryParamList)
-            {
-                paramValues.Add(item.Split('=')[1].Replace('"', ' ').Trim());
-            }
-            List<TouristSpotModelOut> touristSpots = new List<TouristSpotModelOut>();
-            foreach (var value in paramValues)
-            {
-                touristSpots.AddRange(this.touristSpotLogic.FindByCategory(value).Select(ts => new TouristSpotModelOut(ts)));
-            }
-            touristSpots = touristSpots.Distinct<TouristSpotModelOut>().ToList();
-            return Ok(touristSpots);
-        }*/
-        
-        
         //api/touristSpots/5
         [HttpGet("{id}", Name = "GetTouristSpot")]
         public IActionResult Get(int id)

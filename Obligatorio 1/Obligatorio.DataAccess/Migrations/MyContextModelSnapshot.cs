@@ -19,6 +19,44 @@ namespace Obligatorio.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Obligatorio.Domain.Accommodation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Adress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("FullCapacity")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PricePerNight")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TouristSpotId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TouristSpotId");
+
+                    b.ToTable("Accommodations");
+                });
+
             modelBuilder.Entity("Obligatorio.Domain.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -88,6 +126,13 @@ namespace Obligatorio.DataAccess.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("TouristSpotCategories");
+                });
+
+            modelBuilder.Entity("Obligatorio.Domain.Accommodation", b =>
+                {
+                    b.HasOne("Obligatorio.Domain.TouristSpot", "TouristSpot")
+                        .WithMany()
+                        .HasForeignKey("TouristSpotId");
                 });
 
             modelBuilder.Entity("Obligatorio.Domain.TouristSpot", b =>

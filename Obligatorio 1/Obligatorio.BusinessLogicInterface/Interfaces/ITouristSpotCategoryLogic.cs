@@ -9,5 +9,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
     {
         void AddTouristSpotToCategory(string categoryName, int touristSpotId);
         IEnumerable<TouristSpot> FindByCategory(string value);
+        IEnumerable<TouristSpotCategory> GetAllData();
     }
 }

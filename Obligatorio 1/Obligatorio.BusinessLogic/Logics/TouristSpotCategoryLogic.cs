@@ -4,6 +4,7 @@ using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Obligatorio.BusinessLogic.Logics
@@ -12,12 +13,20 @@ namespace Obligatorio.BusinessLogic.Logics
     {
         private readonly ITouristSpotRepository touristSpotRepository;
         private readonly ICategoryRepository categoryRepository;
+        private readonly ITouristSpotCategoryRepository touristSpotCategoryRepository;
 
-        public TouristSpotCategoryLogic(ITouristSpotRepository touristSpotRepository, ICategoryRepository categoryRepository)
+        public TouristSpotCategoryLogic(ITouristSpotRepository touristSpotRepository, ICategoryRepository categoryRepository, ITouristSpotCategoryRepository touristSpotCategoryRepository)
         {
             this.touristSpotRepository = touristSpotRepository;
             this.categoryRepository = categoryRepository;
+            this.touristSpotCategoryRepository = touristSpotCategoryRepository;
         }
+
+        public IEnumerable<TouristSpotCategory> GetAllData()
+        {
+            return this.touristSpotCategoryRepository.GetAll();
+        }
+
 
         public void AddTouristSpotToCategory(string categoryName, int touristSpotId)
         {
@@ -32,12 +41,9 @@ namespace Obligatorio.BusinessLogic.Logics
                     Category = category,
                     CategoryId = category.Id
                 };
-                //category.TouristSpotCategories.Add(touristSpotCategory);
                 this.categoryRepository.Add(category, touristSpotCategory);
-                //touristSpot.TouristSpotCategories.Add(touristSpotCategory);
                 this.touristSpotRepository.Add(touristSpot, touristSpotCategory);//----EN CASO DE EMERGENCIA AGREGAR EN LAS 3 TABLAS----//
-                //this.categoryRepository.Update(category);
-                //this.touristSpotRepository.Update(touristSpot);
+                this.touristSpotCategoryRepository.Add(category, touristSpot);
             }
             catch (ObjectNotFoundInDatabaseException)
             {
@@ -49,22 +55,19 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
-        public IEnumerable<TouristSpot> FindByCategory(string value)
+        public IEnumerable<TouristSpot> FindByCategory(string name)
         {
-            List<TouristSpot> touristSpots = new List<TouristSpot>();
-            var category = this.categoryRepository.Find(value);
-            if(category is null)
+            Category categoryToCompare = this.categoryRepository.Get(name);
+            List<TouristSpotCategory> tuplesForComparison = GetAllData().ToList();
+            List<TouristSpot> touristSpotsToReturn = new List<TouristSpot>();
+            foreach (var item in tuplesForComparison)
             {
-            }
-            else
-            {
-                IEnumerable<TouristSpotCategory> list = category.TouristSpotCategories;
-                foreach (var tuple in category.TouristSpotCategories)
+                if (categoryToCompare.Id == item.CategoryId) 
                 {
-                    touristSpots.Add(this.touristSpotRepository.Get(tuple.TouristSpotId));
+                    touristSpotsToReturn.Add(this.touristSpotRepository.Get(item.TouristSpotId));
                 }
             }
-            return touristSpots;
+            return touristSpotsToReturn;
         }
 
         private Category ValidateExistingCategory(string categoryName)

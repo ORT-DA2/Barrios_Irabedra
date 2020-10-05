@@ -37,11 +37,11 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 this.touristSpotCategoryLogic.AddTouristSpotToCategory(categoryName, touristSpotId);
             }
-            catch (RepeatedObjectException)
+            catch (RepeatedObjectException ex)
             {
                 throw new RepeatedObjectException();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
@@ -53,7 +53,7 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 return this.categoryRepository.Get(name);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw new ObjectNotFoundInDatabaseException();

@@ -132,14 +132,14 @@ namespace Obligatorio.DataAccess.Repositories
 
         public void Update(TouristSpot touristSpot)
         {
-            touristSpots.Update(touristSpot);
+            //touristSpots.Update(touristSpot);
             myContext.SaveChanges();
         }
 
         public void Add(TouristSpot touristSpot, TouristSpotCategory touristSpotCategory)
         {
             touristSpot.TouristSpotCategories.Add(touristSpotCategory);
-            this.touristSpots.Update(touristSpot);
+            //this.touristSpots.Update(touristSpot);
             myContext.SaveChanges();
         }
     }

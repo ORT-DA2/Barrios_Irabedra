@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Obligatorio.BusinessLogicInterface\Obligatorio.BusinessLogicInterface.csproj" />
     <ProjectReference Include="..\Obligatorio.BusinessLogic\Obligatorio.BusinessLogic.csproj" />
     <ProjectReference Include="..\Obligatorio.Factory\Obligatorio.Factory.csproj" />
