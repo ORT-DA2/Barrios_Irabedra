@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Obligatorio.BusinessLogicInterface.Interfaces;
+using Obligatorio.Model.Models.Out;
 
 namespace Obligatorio.WebApi.Controllers
 {
@@ -23,7 +24,7 @@ namespace Obligatorio.WebApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(this.accommodationLogic.GetAll());
+            return Ok(this.accommodationLogic.GetAll().Select(a => new AccommodationModelOut(a)));
         }
 
         // GET: api/Accommodation/5

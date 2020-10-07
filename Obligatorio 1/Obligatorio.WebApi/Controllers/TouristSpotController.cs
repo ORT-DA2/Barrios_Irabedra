@@ -38,25 +38,52 @@ namespace Obligatorio.WebApi.Controllers
                 List<TouristSpotModelOut> touristSpots = new List<TouristSpotModelOut>();
                 string arguments = Request.QueryString.Value.Split('?')[1];  //categoryName=%22Nautico%22&categoryName=%22Malls%22
                 List<string> criteria = arguments.Split('&').ToList<String>(); //categoryName=%22Nautico%22
+                string sortingRegion = "";
                 foreach (var param in criteria)
                 {
-                    string value = param.Split('=')[1].Replace("%22", "");
-                    value = value.Replace("%20", " ");
-                    touristSpots.AddRange(
-                        touristSpotLogic.FindByCategory(value).Select(ts => new TouristSpotModelOut(ts)));
+                    string regionName = param.Split('=')[0];
+                    if (regionName != "regionName")
+                    {
+                        string value = param.Split('=')[1].Replace("%22", "");
+                        value = value.Replace("%20", " ");
+                        touristSpots.AddRange(
+                            touristSpotLogic.FindByCategory(value).Select(ts => new TouristSpotModelOut(ts)));
+                    }
+                    else 
+                    {
+                        if(sortingRegion != "") 
+                        {
+                            return BadRequest("Remember to select only one region.");
+                        }
+                        sortingRegion = param.Split('=')[1].Replace("%22", "");
+                        sortingRegion = sortingRegion.Replace("%20", " ");
+                    }
                 }
-                touristSpots = touristSpots.Distinct<TouristSpotModelOut>().ToList();
-
-
-
-                //
-                //Discutir con juani tema region y categorias
-                //Para la region un string y gg ez
-                //
-
-
-
-                return Ok(touristSpots);
+                List<TouristSpotModelOut> touristSpotsWithNoDuplicates = new List<TouristSpotModelOut>();
+                foreach (var ts in touristSpots)
+                {
+                    if (!touristSpotsWithNoDuplicates.Contains(ts))
+                    {
+                        touristSpotsWithNoDuplicates.Add(ts);
+                    }
+                }
+                sortingRegion = sortingRegion.Trim();
+                if (sortingRegion is null || sortingRegion == "")
+                {
+                    return BadRequest("You need to specify the region.");
+                }
+                List<TouristSpotModelOut> touristSpotbyRegion = new List<TouristSpotModelOut>();
+                touristSpotbyRegion.AddRange(
+                            touristSpotLogic.FindByRegion(sortingRegion).Select(ts => new TouristSpotModelOut(ts)));
+                List<TouristSpotModelOut> touristSpotsReturn = new List<TouristSpotModelOut>();
+                foreach (var item in touristSpotbyRegion)
+                {
+                    if (touristSpotsWithNoDuplicates.Contains(item))
+                    {
+                        touristSpotsReturn.Add(item);
+                    }
+                }
+                return Ok(touristSpotsReturn);
             }
         }
 

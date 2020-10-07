@@ -32,6 +32,8 @@ namespace Obligatorio.Factory.Factories
             services.AddScoped<ITouristSpotCategoryRepository, TouristSpotCategoryRepository>();
             services.AddScoped<IAccommodationLogic, AccommodationLogic>();
             services.AddScoped<IAccommodationRepository, AccommodationRepository>();
+            services.AddScoped<ITouristSpotRegionLogic, TouristSpotRegionLogic>();
+            services.AddScoped<ITouristSpotRegionRepository, TouristSpotRegionRepository>();
         }
         public void AddDbContextService()
         {

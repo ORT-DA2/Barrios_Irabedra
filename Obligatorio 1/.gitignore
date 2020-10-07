@@ -1,6 +1,6 @@
 *.suo
 *.user
 /bin/
-Obligatorio 1/Obligatorio.BusinessLogic/obj/
+Obligatorio.BusinessLogic/obj/
 /obj/
 appsettings.json

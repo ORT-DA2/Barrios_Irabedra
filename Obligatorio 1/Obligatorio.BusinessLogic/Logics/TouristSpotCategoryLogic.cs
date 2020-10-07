@@ -11,8 +11,8 @@ namespace Obligatorio.BusinessLogic.Logics
 {
     public class TouristSpotCategoryLogic : ITouristSpotCategoryLogic
     {
-        private readonly ITouristSpotRepository touristSpotRepository;
-        private readonly ICategoryRepository categoryRepository;
+        private readonly ITouristSpotRepository touristSpotRepository;//ts logic
+        private readonly ICategoryRepository categoryRepository; //category logic
         private readonly ITouristSpotCategoryRepository touristSpotCategoryRepository;
 
         public TouristSpotCategoryLogic(ITouristSpotRepository touristSpotRepository, ICategoryRepository categoryRepository, ITouristSpotCategoryRepository touristSpotCategoryRepository)
@@ -57,17 +57,24 @@ namespace Obligatorio.BusinessLogic.Logics
 
         public IEnumerable<TouristSpot> FindByCategory(string name)
         {
-            Category categoryToCompare = this.categoryRepository.Get(name);
-            List<TouristSpotCategory> tuplesForComparison = GetAllData().ToList();
-            List<TouristSpot> touristSpotsToReturn = new List<TouristSpot>();
-            foreach (var item in tuplesForComparison)
+            try
             {
-                if (categoryToCompare.Id == item.CategoryId) 
+                Category categoryToCompare = this.categoryRepository.Get(name);
+                List<TouristSpotCategory> tuplesForComparison = GetAllData().ToList();
+                List<TouristSpot> touristSpotsToReturn = new List<TouristSpot>();
+                foreach (var item in tuplesForComparison)
                 {
-                    touristSpotsToReturn.Add(this.touristSpotRepository.Get(item.TouristSpotId));
+                    if (categoryToCompare.Id == item.CategoryId)
+                    {
+                        touristSpotsToReturn.Add(this.touristSpotRepository.Get(item.TouristSpotId));
+                    }
                 }
+                return touristSpotsToReturn;
             }
-            return touristSpotsToReturn;
+            catch (Exception)
+            {
+                return new List<TouristSpot>();
+            }
         }
 
         private Category ValidateExistingCategory(string categoryName)

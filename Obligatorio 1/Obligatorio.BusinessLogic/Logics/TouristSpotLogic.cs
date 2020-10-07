@@ -9,13 +9,15 @@ namespace Obligatorio.BusinessLogic.Logics
 {
     public class TouristSpotLogic : ITouristSpotLogic
     {
-       private readonly ITouristSpotRepository touristSpotRepository;
-       private readonly ITouristSpotCategoryLogic touristSpotCategoryLogic;
+        private readonly ITouristSpotRepository touristSpotRepository;
+        private readonly ITouristSpotCategoryLogic touristSpotCategoryLogic;
+        private readonly ITouristSpotRegionLogic touristSpotRegionLogic;
 
-        public TouristSpotLogic(ITouristSpotRepository touristSpotRepository, ITouristSpotCategoryLogic touristSpotCategoryLogic)
+        public TouristSpotLogic(ITouristSpotRepository touristSpotRepository, ITouristSpotCategoryLogic touristSpotCategoryLogic, ITouristSpotRegionLogic touristSpotRegionLogic)
         {
             this.touristSpotRepository = touristSpotRepository;
             this.touristSpotCategoryLogic = touristSpotCategoryLogic;
+            this.touristSpotRegionLogic = touristSpotRegionLogic;
         }
 
         public void Add(TouristSpot newEntity)
@@ -26,7 +28,7 @@ namespace Obligatorio.BusinessLogic.Logics
                 {
                     this.touristSpotRepository.Add(newEntity);
                 }
-                catch(RepeatedObjectException ex)
+                catch (RepeatedObjectException ex)
                 {
                     throw new RepeatedObjectException();
                 }
@@ -48,6 +50,11 @@ namespace Obligatorio.BusinessLogic.Logics
         public IEnumerable<TouristSpot> FindByCategory(string value)
         {
             return this.touristSpotCategoryLogic.FindByCategory(value);
+        }
+
+        public IEnumerable<TouristSpot> FindByRegion(string sortingRegion)
+        {
+            return touristSpotRegionLogic.FindByRegion(sortingRegion);
         }
 
         public TouristSpot Get(int id)
