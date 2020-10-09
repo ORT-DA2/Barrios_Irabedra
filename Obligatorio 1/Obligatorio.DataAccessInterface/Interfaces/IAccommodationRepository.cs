@@ -8,5 +8,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
     public interface IAccommodationRepository
     {
         List<Accommodation> GetAll();
+        List<Accommodation> GetByTouristSpot(string touristSpotName);
     }
 }

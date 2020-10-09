@@ -11,8 +11,8 @@ namespace Obligatorio.Domain
         public int Rating { get; set; }
         public string Address { get; set; }
         public string Description { get; set; }
-        public string Image { get; set; }
-        public int PricePerNight { get; set; }
+        public List<string> Image { get; set; }
+        public double PricePerNight { get; set; }
         public bool FullCapacity { get; set; }
         public TouristSpot TouristSpot { get; set; }
 
@@ -22,7 +22,7 @@ namespace Obligatorio.Domain
             this.Rating = -1;
             this.Address = "Default Address";
             this.Description = "Default Description";
-            this.Image = "Default Image";
+            this.Image = new List<string>();
             this.PricePerNight = -1;
             this.FullCapacity = false;
         }

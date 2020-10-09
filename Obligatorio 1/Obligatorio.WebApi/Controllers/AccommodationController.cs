@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Obligatorio.BusinessLogicInterface.Interfaces;
+using Obligatorio.Model.Dtos;
+using Obligatorio.Model.DTOS;
+using Obligatorio.Model.Models.In;
 using Obligatorio.Model.Models.Out;
 
 namespace Obligatorio.WebApi.Controllers
@@ -22,10 +25,24 @@ namespace Obligatorio.WebApi.Controllers
 
         // GET: api/Accommodation
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromBody] AccommodationModelIn accommodationModelIn)
         {
-            return Ok(this.accommodationLogic.GetAll().Select(a => new AccommodationModelOut(a)));
+            int tot = accommodationModelIn.Babies + accommodationModelIn.Kids + accommodationModelIn.Adults;
+            if (accommodationModelIn.CantTotalHuespedes != tot) 
+            {
+                return BadRequest("Wrong input: the number of hosts is incorrect.");
+            }
+            AccommodationQueryIn accommodationQueryIn = new AccommodationQueryIn(accommodationModelIn);
+            List<AccommodationQueryOut> accommodations = this.accommodationLogic.GetByTouristSpot(accommodationQueryIn);
+            List<AccommodationModelOut> accommodationsToReturn = new List<AccommodationModelOut>();
+            foreach (var item in accommodations)
+            {
+                AccommodationModelOut a = new AccommodationModelOut(item);
+                accommodationsToReturn.Add(a);
+            }
+            return Ok(accommodationsToReturn);
         }
+
 
         // GET: api/Accommodation/5
         [HttpGet("{id}", Name = "Get")]
@@ -36,8 +53,9 @@ namespace Obligatorio.WebApi.Controllers
 
         // POST: api/Accommodation
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] AccommodationRegisterModelIn value)
         {
+
         }
 
         // PUT: api/Accommodation/5

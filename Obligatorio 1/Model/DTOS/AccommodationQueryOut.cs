@@ -1,12 +1,11 @@
 ﻿using Obligatorio.Domain;
-using Obligatorio.Model.DTOS;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Obligatorio.Model.Models.Out
+namespace Obligatorio.Model.DTOS
 {
-    public class AccommodationModelOut
+    public class AccommodationQueryOut
     {
         public string Address { get; set; }
         public string Description { get; set; }
@@ -15,16 +14,16 @@ namespace Obligatorio.Model.Models.Out
         public double PricePerNight { get; set; }
         public double TotalPrice { get; set; }
         public int Rating { get; set; }
-
-        public AccommodationModelOut(AccommodationQueryOut a)
+        
+        public AccommodationQueryOut(Accommodation a)
         {
             this.Address = a.Address;
             this.Description = a.Description;
-            this.Image=a.Image;
-            this.Name=a.Name;
-            this.PricePerNight=a.PricePerNight;
+            this.Image = a.Image;
+            this.Name = a.Name;
+            this.PricePerNight = a.PricePerNight;
             this.Rating = a.Rating;
-            this.TotalPrice = a.TotalPrice;
         }
+
     }
 }
