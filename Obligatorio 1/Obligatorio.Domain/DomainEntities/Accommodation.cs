@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Domain.AuxiliaryObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,7 +12,7 @@ namespace Obligatorio.Domain
         public int Rating { get; set; }
         public string Address { get; set; }
         public string Description { get; set; }
-        public List<string> Image { get; set; }
+        public List<ImageWrapper> Images { get; set; }
         public double PricePerNight { get; set; }
         public bool FullCapacity { get; set; }
         public TouristSpot TouristSpot { get; set; }
@@ -22,7 +23,7 @@ namespace Obligatorio.Domain
             this.Rating = -1;
             this.Address = "Default Address";
             this.Description = "Default Description";
-            this.Image = new List<string>();
+            this.Images = new List<ImageWrapper>();
             this.PricePerNight = -1;
             this.FullCapacity = false;
         }

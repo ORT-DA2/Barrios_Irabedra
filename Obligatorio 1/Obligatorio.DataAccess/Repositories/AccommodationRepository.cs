@@ -13,18 +13,24 @@ namespace Obligatorio.DataAccess.Repositories
         private readonly DbContext myContext;
         private readonly DbSet<Accommodation> accommodations;
 
+        public void Add(Accommodation accommodation)
+        {
+            this.accommodations.Add(accommodation);
+            myContext.SaveChanges();
+        }
+
         public List<Accommodation> GetAll()
         {
             return this.accommodations.ToList();
         }
 
-        public List<Accommodation> GetByTouristSpot(string touristSpotName)
+        public List<Accommodation> GetByTouristSpot(int touristSpotId)
         {
             List<Accommodation> totalAccommodations = this.accommodations.ToList();
             List<Accommodation> accommodationsToReturn = new List<Accommodation>();
             foreach (var item in totalAccommodations)
             {
-                if (item.TouristSpot.Name.Equals(touristSpotName)) 
+                if (item.TouristSpot.Id.Equals(touristSpotId)) 
                 {
                     accommodationsToReturn.Add(item);
                 }

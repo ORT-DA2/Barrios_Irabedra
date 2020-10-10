@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.Model.Dtos;
 using Obligatorio.Model.DTOS;
@@ -18,8 +19,8 @@ namespace Obligatorio.WebApi.Controllers
     {
         private readonly IAccommodationLogic accommodationLogic;
 
-        public AccommodationController(IAccommodationLogic accommodationLogic) 
-        { 
+        public AccommodationController(IAccommodationLogic accommodationLogic)
+        {
             this.accommodationLogic = accommodationLogic;
         }
 
@@ -28,7 +29,7 @@ namespace Obligatorio.WebApi.Controllers
         public IActionResult Get([FromBody] AccommodationModelIn accommodationModelIn)
         {
             int tot = accommodationModelIn.Babies + accommodationModelIn.Kids + accommodationModelIn.Adults;
-            if (accommodationModelIn.CantTotalHuespedes != tot) 
+            if (accommodationModelIn.CantTotalHuespedes != tot)
             {
                 return BadRequest("Wrong input: the number of hosts is incorrect.");
             }
@@ -55,8 +56,40 @@ namespace Obligatorio.WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var accommodation = accommodationRegisterModel.ToEntity();
+                this.accommodationLogic.Add(accommodation, accommodationRegisterModel.TouristSpotId);
+                return CreatedAtRoute(routeName: "GetAccommodation",
+                                                    routeValues: new { name = accommodationRegisterModel.Name },
+                                                        value: new AccommodationRegisterModelIn(accommodation));
+            }
+            catch (ObjectNotFoundInDatabaseException ex)
+            {
+                return BadRequest("There is no such tourist spot id.");
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }
         }
+
+
+        
+
+
+
+
+
+
+        //SOLO SE PUEDE AGREGAR IMAGENES EN EL PUT
+
+
+
+
+
+
+
 
         // PUT: api/Accommodation/5
         [HttpPut("{id}")]

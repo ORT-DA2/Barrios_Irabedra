@@ -1,4 +1,5 @@
 ﻿using Obligatorio.Domain;
+using Obligatorio.Domain.AuxiliaryObjects;
 using Obligatorio.Model.DTOS;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Obligatorio.Model.Models.Out
     {
         public string Address { get; set; }
         public string Description { get; set; }
-        public List<string> Image { get; set; }
+        public List<string> Images { get; set; }
         public string Name { get; set; }
         public double PricePerNight { get; set; }
         public double TotalPrice { get; set; }
@@ -20,7 +21,7 @@ namespace Obligatorio.Model.Models.Out
         {
             this.Address = a.Address;
             this.Description = a.Description;
-            this.Image=a.Image;
+            this.Images = a.Images;
             this.Name=a.Name;
             this.PricePerNight=a.PricePerNight;
             this.Rating = a.Rating;

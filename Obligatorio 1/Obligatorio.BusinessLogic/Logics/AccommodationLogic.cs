@@ -1,4 +1,5 @@
-﻿using Obligatorio.BusinessLogicInterface.Interfaces;
+﻿using Obligatorio.BusinessLogic.CustomExceptions;
+using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using Obligatorio.Model.Dtos;
@@ -13,10 +14,30 @@ namespace Obligatorio.BusinessLogic.Logics
     public class AccommodationLogic : IAccommodationLogic
     {
         private readonly IAccommodationRepository accommodationRepository;
+        private readonly ITouristSpotLogic touristSpotLogic;
 
-        public AccommodationLogic(IAccommodationRepository accommodationRepository)
+        public AccommodationLogic(IAccommodationRepository accommodationRepository, ITouristSpotLogic touristSpotLogic)
         {
             this.accommodationRepository = accommodationRepository;
+            this.touristSpotLogic = touristSpotLogic;
+        }
+
+        public void Add(Accommodation accommodation, int touristSpotId)
+        {
+            try
+            {
+                var touristSpot = accommodation.TouristSpot = touristSpotLogic.Get(touristSpotId);
+                accommodation.TouristSpot = touristSpot;
+                accommodationRepository.Add(accommodation);
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception();
+            }
         }
 
         public List<AccommodationQueryOut> GetAll(AccommodationQueryIn accommodationQueryIn)
@@ -27,7 +48,7 @@ namespace Obligatorio.BusinessLogic.Logics
         public List<AccommodationQueryOut> GetByTouristSpot(AccommodationQueryIn accommodationQueryIn)
         {
             List<AccommodationQueryOut> accommodationsToReturn = new List<AccommodationQueryOut>();
-            List<Accommodation> accommodations = this.accommodationRepository.GetByTouristSpot(accommodationQueryIn.TouristSpotName);
+            List<Accommodation> accommodations = this.accommodationRepository.GetByTouristSpot(accommodationQueryIn.TouristSpotId);
             List<Accommodation> emptyAccommodations = new List<Accommodation>();
             foreach (var item in accommodations)
             {

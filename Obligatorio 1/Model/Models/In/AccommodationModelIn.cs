@@ -6,7 +6,7 @@ namespace Obligatorio.Model.Models.In
 {
     public class AccommodationModelIn
     {
-        public string TouristSpotName { get; set; }
+        public int TouristSpotId { get; set; }
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
         public int CantTotalHuespedes { get; set; }

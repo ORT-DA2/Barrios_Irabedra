@@ -8,7 +8,7 @@ namespace Obligatorio.Model.Dtos
 {
     public class AccommodationQueryIn
     {
-        public string TouristSpotName { get; set; }
+        public int TouristSpotId { get; set; }
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
         public int CantTotalHuespedes { get; set; }
@@ -18,7 +18,7 @@ namespace Obligatorio.Model.Dtos
 
         public AccommodationQueryIn(AccommodationModelIn accommodationModelIn)
         {
-            this.TouristSpotName = accommodationModelIn.TouristSpotName;
+            this.TouristSpotId = accommodationModelIn.TouristSpotId;
             this.CheckIn = accommodationModelIn.CheckIn;
             this.CheckOut = accommodationModelIn.CheckOut;
             this.CantTotalHuespedes = accommodationModelIn.CantTotalHuespedes;

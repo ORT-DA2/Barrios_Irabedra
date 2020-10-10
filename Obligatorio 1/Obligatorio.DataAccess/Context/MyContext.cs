@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Obligatorio.Domain;
+using Obligatorio.Domain.AuxiliaryObjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,15 +16,22 @@ namespace Obligatorio.DataAccess.Context
         public DbSet<Region> Regions { get; set; }
         public DbSet<TouristSpotCategory> TouristSpotCategories { get; set; }
         public DbSet<Accommodation> Accommodations { get; set; }
+        public DbSet<ImageWrapper> ImageWrappers { get; set; }
         public MyContext() { }
         public MyContext(DbContextOptions options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Region>()
-            .HasMany(b => b.TouristSpots)
+            .HasMany(r => r.TouristSpots)
             .WithOne()
             .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Accommodation>()
+            .HasMany(a => a.Images)
+            .WithOne()
+            .OnDelete(DeleteBehavior.Restrict);
+
 
             modelBuilder.Entity<TouristSpotCategory>()
             .HasKey(tsc => new { tsc.TouristSpotId, tsc.CategoryId });
