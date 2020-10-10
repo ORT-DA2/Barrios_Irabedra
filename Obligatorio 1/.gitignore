@@ -9,6 +9,7 @@ DomainTest/bin/
 Model/obj/
 Model/bin/
 Obligatorio.BusinessLogic/obj/
+Obligatorio.BusinessLogic/bin/
 Obligatorio.BusinessLogicInterface/obj/
 Obligatorio.BusinessLogicInterface/bin/
 Obligatorio.DataAccess/obj/

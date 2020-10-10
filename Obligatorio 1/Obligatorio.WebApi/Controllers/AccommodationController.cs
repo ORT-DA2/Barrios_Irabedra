@@ -53,9 +53,9 @@ namespace Obligatorio.WebApi.Controllers
 
         // POST: api/Accommodation
         [HttpPost]
-        public void Post([FromBody] AccommodationRegisterModelIn value)
+        public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
         {
-
+            throw new NotImplementedException();
         }
 
         // PUT: api/Accommodation/5
