@@ -34,9 +34,9 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
-            catch (Exception ex) 
+            catch (RepeatedObjectException ex) 
             {
-                throw new Exception();
+                throw new RepeatedObjectException();
             }
         }
 

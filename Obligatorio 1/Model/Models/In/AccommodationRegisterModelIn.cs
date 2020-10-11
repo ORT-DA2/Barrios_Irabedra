@@ -16,6 +16,14 @@ namespace Obligatorio.Model.Models.In
         public bool FullCapacity { get; set; }
         public int TouristSpotId { get; set; }
 
+        public AccommodationRegisterModelIn()
+        {
+            this.Name = "Default Name";
+            this.Address = "Default Address";
+            this.Description = "Default description";
+            this.FullCapacity = false;
+        }
+
         public Accommodation ToEntity()
         {
             Accommodation accommodation = new Accommodation();

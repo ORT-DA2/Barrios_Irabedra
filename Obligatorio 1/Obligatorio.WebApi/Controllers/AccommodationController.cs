@@ -68,7 +68,11 @@ namespace Obligatorio.WebApi.Controllers
             {
                 return BadRequest("There is no such tourist spot id.");
             }
-            catch (Exception e)
+            catch (RepeatedObjectException e)
+            {
+                return BadRequest("An accommodation with such name has been already registered.");
+            }
+            catch (Exception exc) 
             {
                 return StatusCode(500, "Internal Server Error");
             }
@@ -95,12 +99,14 @@ namespace Obligatorio.WebApi.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+
         }
     }
 }
