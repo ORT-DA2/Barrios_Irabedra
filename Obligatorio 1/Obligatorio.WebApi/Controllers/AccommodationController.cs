@@ -29,7 +29,7 @@ namespace Obligatorio.WebApi.Controllers
         public IActionResult Get([FromBody] AccommodationModelIn accommodationModelIn)
         {
             int tot = accommodationModelIn.Babies + accommodationModelIn.Kids + accommodationModelIn.Adults;
-            if (accommodationModelIn.CantTotalHuespedes != tot)
+            if (accommodationModelIn.TotalGuests != tot)
             {
                 return BadRequest("Wrong input: the number of hosts is incorrect.");
             }

@@ -11,8 +11,8 @@ namespace Obligatorio.BusinessLogic.Logics
 {
     public class TouristSpotCategoryLogic : ITouristSpotCategoryLogic
     {
-        private readonly ITouristSpotRepository touristSpotRepository;//ts logic
-        private readonly ICategoryRepository categoryRepository; //category logic
+        private readonly ITouristSpotRepository touristSpotRepository;
+        private readonly ICategoryRepository categoryRepository;
         private readonly ITouristSpotCategoryRepository touristSpotCategoryRepository;
 
         public TouristSpotCategoryLogic(ITouristSpotRepository touristSpotRepository, ICategoryRepository categoryRepository, ITouristSpotCategoryRepository touristSpotCategoryRepository)
@@ -42,7 +42,7 @@ namespace Obligatorio.BusinessLogic.Logics
                     CategoryId = category.Id
                 };
                 this.categoryRepository.Add(category, touristSpotCategory);
-                this.touristSpotRepository.Add(touristSpot, touristSpotCategory);//----EN CASO DE EMERGENCIA AGREGAR EN LAS 3 TABLAS----//
+                this.touristSpotRepository.Add(touristSpot, touristSpotCategory);
                 this.touristSpotCategoryRepository.Add(category, touristSpot);
             }
             catch (ObjectNotFoundInDatabaseException)

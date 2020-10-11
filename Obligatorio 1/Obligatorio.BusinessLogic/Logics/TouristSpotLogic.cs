@@ -35,6 +35,11 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
+        public void Add(TouristSpot touristSpot, TouristSpotCategory touristSpotCategory)
+        {
+            this.touristSpotRepository.Add(touristSpot, touristSpotCategory);
+        }
+
         public void Delete(int id)
         {
             try

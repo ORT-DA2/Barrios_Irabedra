@@ -28,5 +28,5 @@ TestResults/obj/
 TestResults/bin/
 WebApiTest/obj/
 WebApiTest/bin/
-
+.vs/Obligatorio 1/DesignTimeBuild/
 appsettings.json

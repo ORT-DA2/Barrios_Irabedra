@@ -39,6 +39,7 @@ namespace Obligatorio.WebApi.Controllers
                 string arguments = Request.QueryString.Value.Split('?')[1];  //categoryName=%22Nautico%22&categoryName=%22Malls%22
                 List<string> criteria = arguments.Split('&').ToList<String>(); //categoryName=%22Nautico%22
                 string sortingRegion = "";
+                bool queryStringHasCategory = false;
                 foreach (var param in criteria)
                 {
                     string regionName = param.Split('=')[0];
@@ -48,10 +49,11 @@ namespace Obligatorio.WebApi.Controllers
                         value = value.Replace("%20", " ");
                         touristSpots.AddRange(
                             touristSpotLogic.FindByCategory(value).Select(ts => new TouristSpotModelOut(ts)));
+                        queryStringHasCategory = true;
                     }
-                    else 
+                    else
                     {
-                        if(sortingRegion != "") 
+                        if (sortingRegion != "")
                         {
                             return BadRequest("Remember to select only one region.");
                         }
@@ -83,7 +85,15 @@ namespace Obligatorio.WebApi.Controllers
                         touristSpotsReturn.Add(item);
                     }
                 }
-                return Ok(touristSpotsReturn);
+                if (queryStringHasCategory)
+                {
+                    return Ok(touristSpotsReturn);
+                }
+                else 
+                {
+                    return Ok(touristSpotbyRegion);
+                }
+
             }
         }
 

@@ -31,6 +31,11 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
+        public void Add(Category category, TouristSpotCategory touristSpotCategory)
+        {
+            this.categoryRepository.Add(category, touristSpotCategory);
+        }
+
         public void AddTouristSpotToCategory(string categoryName, int touristSpotId)
         {
             try
@@ -45,6 +50,11 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
+        }
+
+        public Category Find(string categoryName)
+        {
+            return this.categoryRepository.Find(categoryName);
         }
 
         public Category Get(string name)

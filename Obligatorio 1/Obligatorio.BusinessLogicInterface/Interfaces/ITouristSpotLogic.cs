@@ -8,5 +8,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
     {
         IEnumerable<TouristSpot> FindByCategory(string value);
         IEnumerable<TouristSpot> FindByRegion(string sortingRegion);
+        void Add(TouristSpot touristSpot, TouristSpotCategory touristSpotCategory);
     }
 }

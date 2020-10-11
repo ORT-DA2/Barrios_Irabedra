@@ -74,14 +74,12 @@ namespace Obligatorio.DataAccess.Repositories
 
         public void Update(Category category)
         {
-            //categories.Update(category);
             myContext.SaveChanges();
         }
 
         public void Add(Category category, TouristSpotCategory touristSpotCategory)
         {
             category.TouristSpotCategories.Add(touristSpotCategory);
-            //this.categories.Update(category);
             myContext.SaveChanges();
         }
     }

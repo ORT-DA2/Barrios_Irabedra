@@ -11,5 +11,7 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
         Category Get(string nameWithSpaces);
         void Add(Category category);
         void AddTouristSpotToCategory(string categoryName, int touristSpotId);
+        Category Find(string categoryName);
+        void Add(Category category, TouristSpotCategory touristSpotCategory);
     }
 }
