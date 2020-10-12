@@ -12,5 +12,7 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
         List<AccommodationQueryOut> GetAll(AccommodationQueryIn accommodationQueryIn);
         List<AccommodationQueryOut> GetByTouristSpot(AccommodationQueryIn accommodationQueryIn);
         void Add(Accommodation accommodation, int touristSpotId);
+        void Update(AccommodationPutQueryIn accommodationPutQueryIn);
+        Accommodation GetById(int accommodationId);
     }
 }

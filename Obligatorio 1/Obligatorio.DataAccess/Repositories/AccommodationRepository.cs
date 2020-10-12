@@ -2,6 +2,7 @@
 using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
+using Obligatorio.Domain.AuxiliaryObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace Obligatorio.DataAccess.Repositories
             {
                 throw new RepeatedObjectException();
             }
-            else 
+            else
             {
                 this.accommodations.Add(accommodation);
                 myContext.SaveChanges();
@@ -38,7 +39,7 @@ namespace Obligatorio.DataAccess.Repositories
             List<Accommodation> accommodationsToCompare = accommodations.ToList<Accommodation>();
             foreach (var item in accommodations)
             {
-                if (accommodation.Name == item.Name) 
+                if (accommodation.Name == item.Name)
                 {
                     return true;
                 }
@@ -61,12 +62,51 @@ namespace Obligatorio.DataAccess.Repositories
             List<Accommodation> accommodationsToReturn = new List<Accommodation>();
             foreach (var item in totalAccommodations)
             {
-                if (item.TouristSpot.Id.Equals(touristSpotId)) 
+                if (item.TouristSpot.Id.Equals(touristSpotId))
                 {
                     accommodationsToReturn.Add(item);
                 }
             }
             return accommodationsToReturn;
+        }
+
+        public void UpdateCapasity(int accommodationId, bool fullCapacity)
+        {
+            try
+            {
+                Accommodation accommodationToUpdate = this.GetById(accommodationId);
+                accommodationToUpdate.FullCapacity = fullCapacity;
+                myContext.SaveChanges();
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+
+        }
+
+        public void AddImages(int accommodationId, List<ImageWrapper> images)
+        {
+            try
+            {
+                Accommodation accommodationToUpdate = this.GetById(accommodationId);
+                accommodationToUpdate.Images.AddRange(images);
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+
+                throw new ObjectNotFoundInDatabaseException();
+            }
+        }
+
+        public Accommodation GetById(int accommodationId)
+        {
+            var accommodation = accommodations.Find(accommodationId);
+            if(accommodation is null) 
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+            return accommodation;
         }
     }
 }

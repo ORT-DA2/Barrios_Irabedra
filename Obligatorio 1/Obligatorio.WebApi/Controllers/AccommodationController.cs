@@ -79,7 +79,7 @@ namespace Obligatorio.WebApi.Controllers
         }
 
 
-        
+
 
 
 
@@ -97,9 +97,22 @@ namespace Obligatorio.WebApi.Controllers
 
         // PUT: api/Accommodation/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] AccommodationPutModelIn accommodationPutModelIn)
         {
-
+            try
+            {
+                AccommodationPutQueryIn accommodationPutQueryIn = new AccommodationPutQueryIn(accommodationPutModelIn,id);
+                this.accommodationLogic.Update(accommodationPutQueryIn);
+                return Ok(this.accommodationLogic.GetById(accommodationPutQueryIn.AccommodationId));
+            }
+            catch (ObjectNotFoundInDatabaseException ex)
+            {
+                return NotFound("There is no accommodation with such id.");
+            }
+            catch (Exception e) 
+            {
+                return StatusCode(500, "Internal Server Error");
+            }
         }
 
         // DELETE: api/ApiWithActions/5

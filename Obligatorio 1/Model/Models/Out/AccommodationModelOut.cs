@@ -27,5 +27,8 @@ namespace Obligatorio.Model.Models.Out
             this.Rating = a.Rating;
             this.TotalPrice = a.TotalPrice;
         }
+
+
+
     }
 }

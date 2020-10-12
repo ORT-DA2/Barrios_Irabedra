@@ -2,6 +2,7 @@
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
+using Obligatorio.Domain.AuxiliaryObjects;
 using Obligatorio.Model.Dtos;
 using Obligatorio.Model.DTOS;
 using System;
@@ -34,7 +35,7 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
-            catch (RepeatedObjectException ex) 
+            catch (RepeatedObjectException ex)
             {
                 throw new RepeatedObjectException();
             }
@@ -45,6 +46,19 @@ namespace Obligatorio.BusinessLogic.Logics
             throw new NotImplementedException();
         }
 
+        public Accommodation GetById(int accommodationId)
+        {
+            try
+            {
+                return this.accommodationRepository.GetById(accommodationId);
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+
+        }
+
         public List<AccommodationQueryOut> GetByTouristSpot(AccommodationQueryIn accommodationQueryIn)
         {
             List<AccommodationQueryOut> accommodationsToReturn = new List<AccommodationQueryOut>();
@@ -52,7 +66,7 @@ namespace Obligatorio.BusinessLogic.Logics
             List<Accommodation> emptyAccommodations = new List<Accommodation>();
             foreach (var item in accommodations)
             {
-                if (item.IsAvailable()) 
+                if (item.IsAvailable())
                 {
                     emptyAccommodations.Add(item);
                 }
@@ -67,11 +81,44 @@ namespace Obligatorio.BusinessLogic.Logics
             return accommodationsToReturn;
         }
 
+        public void Update(AccommodationPutQueryIn accommodationPutQueryIn)
+        {
+            try
+            {
+                if (accommodationPutQueryIn.ChangeCapacity)
+                {
+                    this.accommodationRepository.UpdateCapasity(accommodationPutQueryIn.AccommodationId, accommodationPutQueryIn.FullCapacity);
+                }
+                List<ImageWrapper> imagesToAdd = new List<ImageWrapper>();
+                imagesToAdd = StringToImageWrapper(accommodationPutQueryIn.Images);
+                if (imagesToAdd.Count > 0)
+                {
+                    this.accommodationRepository.AddImages(accommodationPutQueryIn.AccommodationId, imagesToAdd);
+                }
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+
+        }
+
+        private List<ImageWrapper> StringToImageWrapper(List<string> images)
+        {
+            List<ImageWrapper> listToReturn = new List<ImageWrapper>();
+            foreach (var item in images)
+            {
+                ImageWrapper i = new ImageWrapper(item);
+                listToReturn.Add(i);
+            }
+            return listToReturn;
+        }
+
         private double CalculateTotalPrice(AccommodationQueryIn accommodationQueryIn, AccommodationQueryOut a)
         {
             int totalDays = (accommodationQueryIn.CheckOut - accommodationQueryIn.CheckIn).Days;
-            double totalPrice = 
-                (accommodationQueryIn.Adults*totalDays*a.PricePerNight)+
+            double totalPrice =
+                (accommodationQueryIn.Adults * totalDays * a.PricePerNight) +
                 (accommodationQueryIn.Kids * totalDays * a.PricePerNight * 0.5) +
                 (accommodationQueryIn.Babies * totalDays * a.PricePerNight * 0.25);
             return totalPrice;
