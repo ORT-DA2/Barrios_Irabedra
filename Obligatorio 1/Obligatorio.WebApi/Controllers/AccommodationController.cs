@@ -10,11 +10,13 @@ using Obligatorio.Model.Dtos;
 using Obligatorio.Model.DTOS;
 using Obligatorio.Model.Models.In;
 using Obligatorio.Model.Models.Out;
+using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
 {
     [Route("api/accommodation")]
     [ApiController]
+    //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
     public class AccommodationController : ControllerBase
     {
         private readonly IAccommodationLogic accommodationLogic;

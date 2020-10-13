@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Obligatorio.Domain.DomainEntities
+{
+    public class Reservation
+    {
+        public int Id { get; set; }
+        public DateTime CheckIn { get; set; }
+        public DateTime CheckOut { get; set; }
+        public int TotalGuests { get; set; }
+        public int Babies { get; set; }
+        public int Kids { get; set; }
+        public int Adults { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public int PhoneNumber { get; set; }
+        public string Information { get; set; }
+
+        public Reservation()
+        {
+            this.TotalGuests = 0;
+            this.Babies = 0;
+            this.Kids = 0;
+            this.Adults = 0;
+            this.Name = "Default Name";
+            this.LastName = "Default LastName";
+            this.Email = "Default Email";
+            this.PhoneNumber = 0;
+            this.Information = "Default Information";
+        }
+    }
+}

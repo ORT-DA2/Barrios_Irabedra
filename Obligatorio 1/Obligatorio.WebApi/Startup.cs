@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Obligatorio.BusinessLogic.Logics;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.Factory.Factories;
+using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi
 {
@@ -32,6 +33,7 @@ namespace Obligatorio.WebApi
             ServiceFactory factory = new ServiceFactory(services);
             factory.AddCustomServices();
             factory.AddDbContextService();
+            services.AddScoped<AuthorizationAttributeFilter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

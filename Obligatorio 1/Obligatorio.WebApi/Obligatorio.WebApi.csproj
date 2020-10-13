@@ -9,6 +9,7 @@
     <ProjectReference Include="..\Obligatorio.BusinessLogic\Obligatorio.BusinessLogic.csproj" />
     <ProjectReference Include="..\Obligatorio.Factory\Obligatorio.Factory.csproj" />
     <ProjectReference Include="..\Model\Obligatorio.Model.csproj" />
+    <ProjectReference Include="..\Obligatorio.SessionInterface\Obligatorio.SessionInterface.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

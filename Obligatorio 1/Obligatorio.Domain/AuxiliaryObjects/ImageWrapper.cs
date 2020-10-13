@@ -6,15 +6,17 @@ namespace Obligatorio.Domain.AuxiliaryObjects
 {
     public class ImageWrapper
     {
-        private string item;
+        public int Id { get; set; }
+        public string Image { get; set; }
+
+        public ImageWrapper()
+        {
+        }
 
         public ImageWrapper(string item)
         {
-            this.item = item;
+            this.Image = item;
         }
-
-        public int Id { get; set; }
-        public string Image { get; set; }
 
         public override string ToString()
         {

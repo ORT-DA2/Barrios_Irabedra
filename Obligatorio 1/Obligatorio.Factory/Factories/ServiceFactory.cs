@@ -8,8 +8,7 @@ using Obligatorio.DataAccess;
 using Obligatorio.DataAccess.Context;
 using Obligatorio.DataAccess.Repositories;
 using Obligatorio.DataAccessInterface.Interfaces;
-
-
+using Obligatorio.SessionInterface;
 
 namespace Obligatorio.Factory.Factories
 {
@@ -34,6 +33,7 @@ namespace Obligatorio.Factory.Factories
             services.AddScoped<IAccommodationRepository, AccommodationRepository>();
             services.AddScoped<ITouristSpotRegionLogic, TouristSpotRegionLogic>();
             services.AddScoped<ITouristSpotRegionRepository, TouristSpotRegionRepository>();
+            services.AddScoped<ISessionLogic, SessionLogic>();
         }
         public void AddDbContextService()
         {
