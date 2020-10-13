@@ -14,9 +14,8 @@ using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
 {
-    [Route("api/accommodation")]
+    [Route("api/accommodations")]
     [ApiController]
-    //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
     public class AccommodationController : ControllerBase
     {
         private readonly IAccommodationLogic accommodationLogic;
@@ -56,6 +55,7 @@ namespace Obligatorio.WebApi.Controllers
 
         // POST: api/Accommodation
         [HttpPost]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
         {
             try
@@ -95,7 +95,7 @@ namespace Obligatorio.WebApi.Controllers
 
 
 
-
+            //HACER VERIFICACION MANUAL SOBRE QUE ES PARA EL PUT 
 
         // PUT: api/Accommodation/5
         [HttpPut("{id}")]
@@ -119,6 +119,7 @@ namespace Obligatorio.WebApi.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public void Delete(int id)
         {
 

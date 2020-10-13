@@ -13,11 +13,12 @@ namespace Obligatorio.Domain.DomainEntities
         public int Babies { get; set; }
         public int Kids { get; set; }
         public int Adults { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
+        public string GuestName { get; set; }
+        public string GuestLastName { get; set; }
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
         public string Information { get; set; }
+        public Accommodation AccommodationForReservation { get; set; }
 
         public Reservation()
         {
@@ -25,8 +26,8 @@ namespace Obligatorio.Domain.DomainEntities
             this.Babies = 0;
             this.Kids = 0;
             this.Adults = 0;
-            this.Name = "Default Name";
-            this.LastName = "Default LastName";
+            this.GuestName = "Default Guest Name";
+            this.GuestLastName = "Default Guest LastName";
             this.Email = "Default Email";
             this.PhoneNumber = 0;
             this.Information = "Default Information";

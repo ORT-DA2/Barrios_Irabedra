@@ -10,7 +10,7 @@ using Model.Models.In;
 using Model.Models.Out;
 using Newtonsoft.Json;
 using Obligatorio.BusinessLogicInterface.Interfaces;
-
+using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
 {
@@ -114,6 +114,7 @@ namespace Obligatorio.WebApi.Controllers
 
         //api/touristSpots/11
         [HttpPost]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] TouristSpotModelIn touristSpotModel)
         {
             try
@@ -131,6 +132,7 @@ namespace Obligatorio.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Delete(int id)
         {
             try
@@ -145,6 +147,7 @@ namespace Obligatorio.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put(int id, [FromBody] TouristSpotModelIn dataToUpdate)
         {
             try

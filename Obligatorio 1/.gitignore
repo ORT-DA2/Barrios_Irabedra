@@ -24,6 +24,8 @@ Obligatorio.Migrations/obj/
 Obligatorio.Migrations/bin/
 Obligatorio.WebApi/obj/
 Obligatorio.WebApi/bin/
+Obligatorio.SessionInterface/obj/
+Obligatorio.SessionInterface/bin/
 TestResults/obj/
 TestResults/bin/
 WebApiTest/obj/

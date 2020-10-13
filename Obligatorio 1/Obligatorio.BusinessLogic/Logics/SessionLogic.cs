@@ -9,7 +9,12 @@ namespace Obligatorio.BusinessLogic.Logics
     {
         public bool IsCorrectToken(string token)
         {
-            return true;
+            return token == "admin";
+        }
+
+        public bool IsValidAdmin(string email, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }

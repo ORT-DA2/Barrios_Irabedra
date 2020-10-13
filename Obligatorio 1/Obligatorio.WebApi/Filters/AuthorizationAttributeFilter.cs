@@ -32,21 +32,17 @@ namespace Obligatorio.WebApi.Filters
             }
             else
             {
-                /*
-                if (privilege.ToLower() == "admin")
+                if (!sessions.IsCorrectToken(privilege.ToLower()))
                 {
-                    if (!sessions.IsCorrectTokenAdmin(email, password))
+                    context.Result = new ContentResult()
                     {
-                        context.Result = new ContentResult()
-                        {
-                            StatusCode = 403,
-                            Content = "Forbidden."
-                        };
-                    }
+                        StatusCode = 403,
+                        Content = "Forbidden."
+                    };
                 }
                 else
                 {
-                    if (!sessions.IsCorrectTokenTourist(email, password))
+                    if (!sessions.IsValidAdmin(email, password)) 
                     {
                         context.Result = new ContentResult()
                         {
@@ -55,7 +51,6 @@ namespace Obligatorio.WebApi.Filters
                         };
                     }
                 }
-                */
             }
         }
     }

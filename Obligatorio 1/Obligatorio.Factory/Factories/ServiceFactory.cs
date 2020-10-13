@@ -34,6 +34,10 @@ namespace Obligatorio.Factory.Factories
             services.AddScoped<ITouristSpotRegionLogic, TouristSpotRegionLogic>();
             services.AddScoped<ITouristSpotRegionRepository, TouristSpotRegionRepository>();
             services.AddScoped<ISessionLogic, SessionLogic>();
+            services.AddScoped<IAdminLogic, AdminLogic>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<IReservationLogic, ReservationLogic>();
+            services.AddScoped<IReservationRepository, ReservationRepository>();
         }
         public void AddDbContextService()
         {

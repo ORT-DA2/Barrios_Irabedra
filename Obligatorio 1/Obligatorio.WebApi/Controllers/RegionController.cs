@@ -11,7 +11,7 @@ using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.BusinessLogicInterface;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.WebApi.AuxiliaryObjects;
-
+using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
 {
@@ -57,6 +57,7 @@ namespace Obligatorio.WebApi.Controllers
 
         //api/touristSpots/11
         [HttpPost]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] RegionModelIn regionModel)
         {
             try
@@ -75,6 +76,7 @@ namespace Obligatorio.WebApi.Controllers
 
         //api/regions
         [HttpPut]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] RegionAndTouristSpotIdentifier data)  
         {
             try
@@ -98,6 +100,7 @@ namespace Obligatorio.WebApi.Controllers
 
         [HttpPut("modify")]
         //[Route("api/regions/modify")]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult TouristSpotRegionUpdate([FromBody] RegionAndTouristSpotIdentifier data)
         {
             try

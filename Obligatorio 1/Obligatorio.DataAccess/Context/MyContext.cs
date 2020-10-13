@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
+using Obligatorio.Domain.DomainEntities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,8 @@ namespace Obligatorio.DataAccess.Context
         public DbSet<TouristSpotCategory> TouristSpotCategories { get; set; }
         public DbSet<Accommodation> Accommodations { get; set; }
         public DbSet<ImageWrapper> ImageWrappers { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
         public MyContext() { }
         public MyContext(DbContextOptions options) : base(options) { }
 

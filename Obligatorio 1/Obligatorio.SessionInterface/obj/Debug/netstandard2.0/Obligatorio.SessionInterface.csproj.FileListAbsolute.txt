@@ -1,8 +1,0 @@
-D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.SessionInterface\bin\Debug\netstandard2.0\Obligatorio.SessionInterface.deps.json
-D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.SessionInterface\bin\Debug\netstandard2.0\Obligatorio.SessionInterface.dll
-D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.SessionInterface\bin\Debug\netstandard2.0\Obligatorio.SessionInterface.pdb
-D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.SessionInterface\obj\Debug\netstandard2.0\Obligatorio.SessionInterface.csproj.CoreCompileInputs.cache
-D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.SessionInterface\obj\Debug\netstandard2.0\Obligatorio.SessionInterface.AssemblyInfoInputs.cache
-D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.SessionInterface\obj\Debug\netstandard2.0\Obligatorio.SessionInterface.AssemblyInfo.cs
-D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.SessionInterface\obj\Debug\netstandard2.0\Obligatorio.SessionInterface.dll
-D:\Juan\Ort\Barrios_Irabedra\Obligatorio 1\Obligatorio.SessionInterface\obj\Debug\netstandard2.0\Obligatorio.SessionInterface.pdb

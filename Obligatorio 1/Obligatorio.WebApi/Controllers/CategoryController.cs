@@ -5,6 +5,7 @@ using Model.Models.Out;
 using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.WebApi.AuxiliaryObjects;
+using Obligatorio.WebApi.Filters;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -47,6 +48,7 @@ namespace Obligatorio.WebApi.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] CategoryModelIn categoryModel)
         {
             try
@@ -65,6 +67,7 @@ namespace Obligatorio.WebApi.Controllers
 
         // PUT api/<CategoryController>/5
         [HttpPut]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] CategoryAndTouristSpotIdentifier data)
         {
             try
