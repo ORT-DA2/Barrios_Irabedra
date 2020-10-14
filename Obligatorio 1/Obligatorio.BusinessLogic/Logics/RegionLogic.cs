@@ -1,6 +1,5 @@
 ﻿using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.BusinessLogicInterface.Interfaces;
-using Obligatorio.DataAccessInterface;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using System;
@@ -48,11 +47,6 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public Region Get(int id)
         {
             try
@@ -84,11 +78,6 @@ namespace Obligatorio.BusinessLogic.Logics
             return this.regionRepository.GetAll();
         }
 
-        public IEnumerable<Region> GetAllByCondition(Func<Region, bool> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
         public void ModifyTouristSpotRegion(string regionName, int touristSpotId)
         {
             try
@@ -99,11 +88,6 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
-        }
-
-        public void Update(int id, Region newEntity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

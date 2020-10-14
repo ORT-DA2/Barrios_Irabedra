@@ -12,7 +12,8 @@ namespace Obligatorio.BusinessLogic.Logics
         private readonly IAccommodationLogic accommodationLogic;
         private readonly IReservationRepository reservationRepository;
 
-        public ReservationLogic(IAccommodationLogic accommodationLogic, IReservationRepository reservationRepository)
+        public ReservationLogic(IAccommodationLogic accommodationLogic
+            , IReservationRepository reservationRepository)
         {
             this.accommodationLogic = accommodationLogic;
             this.reservationRepository = reservationRepository;
@@ -32,7 +33,7 @@ namespace Obligatorio.BusinessLogic.Logics
                 }
                 else
                 {
-                    throw new Exception(); //ver bien cual usar
+                    throw new Exception();
                 }
             }
             catch (ObjectNotFoundInDatabaseException e)

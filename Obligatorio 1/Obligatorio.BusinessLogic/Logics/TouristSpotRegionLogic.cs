@@ -2,21 +2,16 @@
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Obligatorio.BusinessLogic.Logics
 {
     public class TouristSpotRegionLogic : ITouristSpotRegionLogic
     {
-        private readonly ITouristSpotRepository touristSpotRepository;//ts logic
-        private readonly IRegionRepository regionRepository; //region logic
+        private readonly IRegionRepository regionRepository;
 
-        public TouristSpotRegionLogic(ITouristSpotRepository touristSpotRepository, IRegionRepository regionRepository)
+        public TouristSpotRegionLogic(IRegionRepository regionRepository)
         {
-            this.touristSpotRepository = touristSpotRepository;
             this.regionRepository = regionRepository;
         }
 

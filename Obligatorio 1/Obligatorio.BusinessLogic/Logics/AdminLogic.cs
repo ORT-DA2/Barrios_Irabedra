@@ -3,8 +3,6 @@ using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain.DomainEntities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.BusinessLogic.Logics
 {

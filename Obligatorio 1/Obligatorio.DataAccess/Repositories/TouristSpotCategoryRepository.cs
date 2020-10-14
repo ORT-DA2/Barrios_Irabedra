@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Obligatorio.DataAccess.Repositories
 {
@@ -51,7 +49,7 @@ namespace Obligatorio.DataAccess.Repositories
                     valid = false;
                 }
             }
-            if (valid) 
+            if (valid)
             {
                 TouristSpotCategory ts = new TouristSpotCategory
                 {

@@ -1,9 +1,5 @@
-﻿using Obligatorio.BusinessLogic.CustomExceptions;
-using Obligatorio.BusinessLogicInterface.Interfaces;
+﻿using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.SessionInterface;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.BusinessLogic.Logics
 {

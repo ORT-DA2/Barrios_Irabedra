@@ -1,7 +1,5 @@
 ﻿using Obligatorio.Domain.AuxiliaryObjects;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.Domain
 {
@@ -32,6 +30,5 @@ namespace Obligatorio.Domain
         {
             return !this.FullCapacity;
         }
-
     }
 }

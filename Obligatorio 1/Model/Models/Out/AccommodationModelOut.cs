@@ -1,9 +1,5 @@
-﻿using Obligatorio.Domain;
-using Obligatorio.Domain.AuxiliaryObjects;
-using Obligatorio.Model.DTOS;
-using System;
+﻿using Obligatorio.Model.DTOS;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.Model.Models.Out
 {
@@ -27,8 +23,5 @@ namespace Obligatorio.Model.Models.Out
             this.Rating = a.Rating;
             this.TotalPrice = a.TotalPrice;
         }
-
-
-
     }
 }

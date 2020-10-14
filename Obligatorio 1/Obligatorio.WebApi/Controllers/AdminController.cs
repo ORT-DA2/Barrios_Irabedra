@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.BusinessLogicInterface.Interfaces;
@@ -26,7 +22,6 @@ namespace Obligatorio.WebApi.Controllers
             this.adminLogic = adminLogic;
         }
 
-        // POST: api/admins
         [HttpPost]
         public IActionResult Post([FromBody] AdminModelIn value)
         {
@@ -35,7 +30,6 @@ namespace Obligatorio.WebApi.Controllers
                 Admin adminToRegister = value.ToEntity();
                 this.adminLogic.Add(adminToRegister);
                 return CreatedAtAction("AdminCreated", new AdminModelOut(adminToRegister));
-                //return StatusCode(201, adminToRegister.ToString());
             }
             catch (RepeatedObjectException e)
             {
@@ -47,7 +41,6 @@ namespace Obligatorio.WebApi.Controllers
             }
         }
 
-        // PUT: api/Admin/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] AdminModelIn value)
         {

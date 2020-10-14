@@ -1,12 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Obligatorio.DataAccess.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Obligatorio.DataAccess.Repositories
 {
@@ -14,7 +11,6 @@ namespace Obligatorio.DataAccess.Repositories
     {
         private readonly DbSet<TouristSpot> touristSpots;
         private readonly DbContext myContext;
-
 
         public TouristSpotRepository(DbContext context)
         {
@@ -30,7 +26,7 @@ namespace Obligatorio.DataAccess.Repositories
         public TouristSpot Get(int id)
         {
             var touristSpot = touristSpots.Find(id);
-            if(touristSpot is null)
+            if (touristSpot is null)
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
@@ -39,7 +35,7 @@ namespace Obligatorio.DataAccess.Repositories
 
         public void Add(TouristSpot newEntity)
         {
-            if(AlreadyExistsByName(newEntity))
+            if (AlreadyExistsByName(newEntity))
             {
                 throw new RepeatedObjectException();
             }
@@ -54,7 +50,7 @@ namespace Obligatorio.DataAccess.Repositories
         {
             foreach (var ts in this.touristSpots)
             {
-                if(ts.Name == newEntity.Name)
+                if (ts.Name == newEntity.Name)
                 {
                     return true;
                 }
@@ -62,15 +58,10 @@ namespace Obligatorio.DataAccess.Repositories
             return false;
         }
 
-        private bool AlreadyExistsById(TouristSpot newEntity)
-        {
-            return (!(touristSpots.Find(newEntity.Id) is null));
-        }
-
         public void Delete(int id)
         {
             var objectFound = this.touristSpots.Find(id);
-            if(objectFound is null)
+            if (objectFound is null)
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
@@ -98,7 +89,7 @@ namespace Obligatorio.DataAccess.Repositories
 
         private void UpdateEntity(TouristSpot objectToUpdate, TouristSpot newData)
         {
-            if(newData.Name != "Default Name")
+            if (newData.Name != "Default Name")
             {
                 objectToUpdate.Name = newData.Name;
             }
@@ -123,11 +114,6 @@ namespace Obligatorio.DataAccess.Repositories
                 }
             }
             return touristSpotsToReturn;
-        }
-
-        public IEnumerable<TouristSpot> GetByCategory(string value)
-        {
-            throw new NotImplementedException();
         }
 
         public void Update(TouristSpot touristSpot)

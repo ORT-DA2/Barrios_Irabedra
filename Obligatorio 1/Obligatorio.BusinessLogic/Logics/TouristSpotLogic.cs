@@ -13,7 +13,8 @@ namespace Obligatorio.BusinessLogic.Logics
         private readonly ITouristSpotCategoryLogic touristSpotCategoryLogic;
         private readonly ITouristSpotRegionLogic touristSpotRegionLogic;
 
-        public TouristSpotLogic(ITouristSpotRepository touristSpotRepository, ITouristSpotCategoryLogic touristSpotCategoryLogic, ITouristSpotRegionLogic touristSpotRegionLogic)
+        public TouristSpotLogic(ITouristSpotRepository touristSpotRepository
+            , ITouristSpotCategoryLogic touristSpotCategoryLogic, ITouristSpotRegionLogic touristSpotRegionLogic)
         {
             this.touristSpotRepository = touristSpotRepository;
             this.touristSpotCategoryLogic = touristSpotCategoryLogic;

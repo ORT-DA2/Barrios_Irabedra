@@ -2,7 +2,6 @@
 using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
-using System;
 using System.Collections.Generic;
 
 namespace Obligatorio.DataAccess.Repositories
@@ -12,6 +11,7 @@ namespace Obligatorio.DataAccess.Repositories
         private readonly DbSet<Region> regions;
         private readonly DbContext myContext;
         private readonly ITouristSpotRepository touristSpotRepository;
+
         public RegionRepository(DbContext context, ITouristSpotRepository touristSpotRepository)
         {
             this.myContext = context;
@@ -41,11 +41,6 @@ namespace Obligatorio.DataAccess.Repositories
                 }
             }
             return false;
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public Region Get(int id)
@@ -83,16 +78,6 @@ namespace Obligatorio.DataAccess.Repositories
         public IEnumerable<Region> GetAll()
         {
             return this.regions;
-        }
-
-        public IEnumerable<Region> GetAllByCondition(Func<Region, bool> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(int id, Region newEntity)
-        {
-            throw new NotImplementedException();
         }
 
         public void AddTouristSpotToRegion(string regionName, int touristSpotId)

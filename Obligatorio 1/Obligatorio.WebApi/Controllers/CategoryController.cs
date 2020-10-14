@@ -7,8 +7,6 @@ using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.WebApi.AuxiliaryObjects;
 using Obligatorio.WebApi.Filters;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Obligatorio.WebApi.Controllers
 {
     [Route("api/categories")]
@@ -21,7 +19,7 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.categoryLogic = categoryLogic;
         }
-        // GET: api/categories
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -65,7 +63,6 @@ namespace Obligatorio.WebApi.Controllers
             }
         }
 
-        // PUT api/<CategoryController>/5
         [HttpPut]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] CategoryAndTouristSpotIdentifier data)

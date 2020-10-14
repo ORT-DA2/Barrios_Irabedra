@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.BusinessLogicInterface.Interfaces;
@@ -14,7 +13,6 @@ namespace Obligatorio.WebApi.Controllers
     [ApiController]
     public class ReservationController : ControllerBase
     {
-
         private readonly IReservationLogic reservationLogic;
 
         public ReservationController(IReservationLogic reservationLogic)
@@ -22,7 +20,6 @@ namespace Obligatorio.WebApi.Controllers
             this.reservationLogic = reservationLogic;
         }
 
-        //api/reservations/5
         [HttpGet("{id}", Name = "GetReservation")]
         public IActionResult Get(int id)
         {
@@ -44,7 +41,8 @@ namespace Obligatorio.WebApi.Controllers
             try
             {
                 var reservation = reservationModelIn.ToEntity();
-                ReservationModelOut reservationToReturn = new ReservationModelOut(this.reservationLogic.Add(reservation, reservationModelIn.AccommodationId));
+                ReservationModelOut reservationToReturn = new ReservationModelOut(
+                    this.reservationLogic.Add(reservation, reservationModelIn.AccommodationId));
                 return Ok(reservationToReturn);
             }
             catch (ObjectNotFoundInDatabaseException ex)
@@ -57,7 +55,6 @@ namespace Obligatorio.WebApi.Controllers
             }
         }
 
-        // PUT: api/reservations/5
         [HttpPut("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put(int id, [FromBody] ReservationPutModelIn reservationPutModelIn)

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.BusinessLogicInterface.Interfaces;
@@ -25,7 +22,6 @@ namespace Obligatorio.WebApi.Controllers
             this.accommodationLogic = accommodationLogic;
         }
 
-        // GET: api/Accommodation
         [HttpGet]
         public IActionResult Get([FromBody] AccommodationModelIn accommodationModelIn)
         {
@@ -45,15 +41,6 @@ namespace Obligatorio.WebApi.Controllers
             return Ok(accommodationsToReturn);
         }
 
-
-        // GET: api/Accommodation/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/Accommodation
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
@@ -80,13 +67,6 @@ namespace Obligatorio.WebApi.Controllers
             }
         }
 
-
-
-        //SOLO SE PUEDE AGREGAR IMAGENES EN EL PUT
-
-
-
-        // PUT: api/Accommodation/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] AccommodationPutModelIn accommodationPutModelIn)
         {
@@ -104,14 +84,6 @@ namespace Obligatorio.WebApi.Controllers
             {
                 return StatusCode(500, "Internal Server Error");
             }
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
-        public IActionResult Delete(int id)
-        {
-            return Ok();
         }
     }
 }

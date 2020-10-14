@@ -1,13 +1,17 @@
 ﻿using Obligatorio.Domain;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.DataAccessInterface.Interfaces
 {
-    public interface ITouristSpotRepository : ILogic<TouristSpot>
+    public interface ITouristSpotRepository
     {
-        IEnumerable<TouristSpot> GetByCategory(string value);
+        TouristSpot Get(int id);
+        IEnumerable<TouristSpot> GetAll();
+        IEnumerable<TouristSpot> GetAllByCondition(Func<TouristSpot, bool> predicate);
+        void Add(TouristSpot newEntity);
+        void Update(int id, TouristSpot newEntity);
+        void Delete(int id);
         void Update(TouristSpot touristSpot);
         void Add(TouristSpot touristSpot, TouristSpotCategory touristSpotCategory);
     }

@@ -1,7 +1,5 @@
 ﻿using Obligatorio.Model.Models.In;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.Model.DTOS
 {

@@ -1,8 +1,6 @@
 ﻿using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.Model.DTOS
 {

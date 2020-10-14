@@ -1,7 +1,5 @@
 ﻿using Obligatorio.Domain.AuxiliaryObjects;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.Domain.DomainEntities
 {
@@ -40,7 +38,8 @@ namespace Obligatorio.Domain.DomainEntities
 
         public void SetInfoText()
         {
-            this.Information = String.Format("Accommodation name: {0}, Total Guests: {1}.", this.AccommodationForReservation.Name, this.TotalGuests);
+            this.Information = String.Format("Accommodation name: {0}, Total Guests: {1}."
+                , this.AccommodationForReservation.Name, this.TotalGuests);
         }
 
         public void SetPhoneNumber()

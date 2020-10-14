@@ -1,10 +1,13 @@
-﻿using Obligatorio.BusinessLogicInterface.Interfaces;
-using Obligatorio.Domain;
+﻿using Obligatorio.Domain;
+using System.Collections.Generic;
 
 namespace Obligatorio.BusinessLogicInterface.Interfaces
 {
-    public interface IRegionLogic : ILogic<Region>
+    public interface IRegionLogic
     {
+        Region Get(int id);
+        IEnumerable<Region> GetAll();
+        void Add(Region newEntity);
         Region Get(string name);
         void AddTouristSpotToRegion(string regionName, int touristSpotId);
         void ModifyTouristSpotRegion(string regionName, int touristSpotId);

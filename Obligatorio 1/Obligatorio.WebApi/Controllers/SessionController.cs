@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Obligatorio.BusinessLogic.Logics;
-using Obligatorio.BusinessLogicInterface.Interfaces;
+﻿using Microsoft.AspNetCore.Mvc;
 using Obligatorio.Model.Models.In;
 using Obligatorio.SessionInterface;
 
@@ -22,7 +15,6 @@ namespace Obligatorio.WebApi.Controllers
             this.sessionLogic = sessionLogic;
         }
 
-        // POST: api/sessions
         [HttpPost]
         public IActionResult Post([FromBody] SessionModelIn value)
         {

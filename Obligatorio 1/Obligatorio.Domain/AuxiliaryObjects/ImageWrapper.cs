@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Obligatorio.Domain.AuxiliaryObjects
+﻿namespace Obligatorio.Domain.AuxiliaryObjects
 {
     public class ImageWrapper
     {

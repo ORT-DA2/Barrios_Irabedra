@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.Models.In;
 using Model.Models.Out;
-using Newtonsoft.Json;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.WebApi.Filters;
 
@@ -25,7 +20,6 @@ namespace Obligatorio.WebApi.Controllers
             this.touristSpotLogic = touristSpotLogic;
         }
 
-        //api/touristSpots
         [HttpGet]
         public IActionResult Get()
         {
@@ -36,8 +30,8 @@ namespace Obligatorio.WebApi.Controllers
             else
             {
                 List<TouristSpotModelOut> touristSpots = new List<TouristSpotModelOut>();
-                string arguments = Request.QueryString.Value.Split('?')[1];  //categoryName=%22Nautico%22&categoryName=%22Malls%22
-                List<string> criteria = arguments.Split('&').ToList<String>(); //categoryName=%22Nautico%22
+                string arguments = Request.QueryString.Value.Split('?')[1]; 
+                List<string> criteria = arguments.Split('&').ToList<String>(); 
                 string sortingRegion = "";
                 bool queryStringHasCategory = false;
                 foreach (var param in criteria)
@@ -97,7 +91,6 @@ namespace Obligatorio.WebApi.Controllers
             }
         }
 
-        //api/touristSpots/5
         [HttpGet("{id}", Name = "GetTouristSpot")]
         public IActionResult Get(int id)
         {
@@ -112,7 +105,6 @@ namespace Obligatorio.WebApi.Controllers
             }
         }
 
-        //api/touristSpots/11
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] TouristSpotModelIn touristSpotModel)

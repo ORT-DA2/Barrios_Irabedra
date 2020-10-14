@@ -2,9 +2,7 @@
 using Obligatorio.DataAccess.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.DataAccess.Repositories
 {

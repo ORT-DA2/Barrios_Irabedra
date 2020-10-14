@@ -1,10 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Obligatorio.BusinessLogic;
 using Obligatorio.BusinessLogic.Logics;
-using Obligatorio.BusinessLogicInterface;
 using Obligatorio.BusinessLogicInterface.Interfaces;
-using Obligatorio.DataAccess;
 using Obligatorio.DataAccess.Context;
 using Obligatorio.DataAccess.Repositories;
 using Obligatorio.DataAccessInterface.Interfaces;
@@ -32,7 +29,6 @@ namespace Obligatorio.Factory.Factories
             services.AddScoped<IAccommodationLogic, AccommodationLogic>();
             services.AddScoped<IAccommodationRepository, AccommodationRepository>();
             services.AddScoped<ITouristSpotRegionLogic, TouristSpotRegionLogic>();
-            services.AddScoped<ITouristSpotRegionRepository, TouristSpotRegionRepository>();
             services.AddScoped<ISessionLogic, SessionLogic>();
             services.AddScoped<IAdminLogic, AdminLogic>();
             services.AddScoped<IAdminRepository, AdminRepository>();

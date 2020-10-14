@@ -4,7 +4,6 @@ using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Obligatorio.BusinessLogic.Logics
 {
@@ -13,7 +12,8 @@ namespace Obligatorio.BusinessLogic.Logics
         private readonly ITouristSpotCategoryLogic touristSpotCategoryLogic;
         private readonly ICategoryRepository categoryRepository;
 
-        public CategoryLogic(ICategoryRepository categoryRepository, ITouristSpotCategoryLogic touristSpotCategoryLogic)
+        public CategoryLogic(ICategoryRepository categoryRepository
+            , ITouristSpotCategoryLogic touristSpotCategoryLogic)
         {
             this.touristSpotCategoryLogic = touristSpotCategoryLogic;
             this.categoryRepository = categoryRepository;

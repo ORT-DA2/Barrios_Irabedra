@@ -1,9 +1,5 @@
-﻿
-using Obligatorio.Domain;
+﻿using Obligatorio.Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Model.Models.Out
 {
@@ -37,7 +33,6 @@ namespace Model.Models.Out
                 Name = this.Name,
                 Image = this.Image,
                 Id = this.Id,
-                //Category = new Category(),
             };
             return ret;
         }

@@ -3,10 +3,8 @@ using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Obligatorio.DataAccess.Repositories
 {
@@ -102,7 +100,7 @@ namespace Obligatorio.DataAccess.Repositories
         public Accommodation GetById(int accommodationId)
         {
             var accommodation = accommodations.Find(accommodationId);
-            if(accommodation is null) 
+            if (accommodation is null)
             {
                 throw new ObjectNotFoundInDatabaseException();
             }

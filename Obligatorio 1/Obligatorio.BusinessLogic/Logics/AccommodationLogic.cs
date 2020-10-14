@@ -5,10 +5,7 @@ using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
 using Obligatorio.Model.Dtos;
 using Obligatorio.Model.DTOS;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 
 namespace Obligatorio.BusinessLogic.Logics
 {
@@ -17,7 +14,8 @@ namespace Obligatorio.BusinessLogic.Logics
         private readonly IAccommodationRepository accommodationRepository;
         private readonly ITouristSpotLogic touristSpotLogic;
 
-        public AccommodationLogic(IAccommodationRepository accommodationRepository, ITouristSpotLogic touristSpotLogic)
+        public AccommodationLogic(IAccommodationRepository accommodationRepository
+            , ITouristSpotLogic touristSpotLogic)
         {
             this.accommodationRepository = accommodationRepository;
             this.touristSpotLogic = touristSpotLogic;
@@ -41,11 +39,6 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
-        public List<AccommodationQueryOut> GetAll(AccommodationQueryIn accommodationQueryIn)
-        {
-            throw new NotImplementedException();
-        }
-
         public Accommodation GetById(int accommodationId)
         {
             try
@@ -62,7 +55,8 @@ namespace Obligatorio.BusinessLogic.Logics
         public List<AccommodationQueryOut> GetByTouristSpot(AccommodationQueryIn accommodationQueryIn)
         {
             List<AccommodationQueryOut> accommodationsToReturn = new List<AccommodationQueryOut>();
-            List<Accommodation> accommodations = this.accommodationRepository.GetByTouristSpot(accommodationQueryIn.TouristSpotId);
+            List<Accommodation> accommodations = this.accommodationRepository
+                .GetByTouristSpot(accommodationQueryIn.TouristSpotId);
             List<Accommodation> emptyAccommodations = new List<Accommodation>();
             foreach (var item in accommodations)
             {
@@ -87,7 +81,8 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 if (accommodationPutQueryIn.ChangeCapacity)
                 {
-                    this.accommodationRepository.UpdateCapacity(accommodationPutQueryIn.AccommodationId, accommodationPutQueryIn.FullCapacity);
+                    this.accommodationRepository.UpdateCapacity(
+                        accommodationPutQueryIn.AccommodationId, accommodationPutQueryIn.FullCapacity);
                 }
                 List<ImageWrapper> imagesToAdd = new List<ImageWrapper>();
                 imagesToAdd = StringToImageWrapper(accommodationPutQueryIn.Images);
