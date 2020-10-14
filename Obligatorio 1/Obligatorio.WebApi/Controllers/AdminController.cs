@@ -25,7 +25,7 @@ namespace Obligatorio.WebApi.Controllers
             this.adminLogic = adminLogic;
         }
 
-        // POST: api/Admin
+        // POST: api/admins
         [HttpPost]
         public IActionResult Post([FromBody] AdminModelIn value)
         {
