@@ -9,5 +9,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
     {
         Reservation Add(Reservation reservation);
         Reservation GetById(int id);
+        void Update(Reservation reservation);
     }
 }

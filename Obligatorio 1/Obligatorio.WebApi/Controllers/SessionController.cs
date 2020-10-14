@@ -14,7 +14,13 @@ namespace Obligatorio.WebApi.Controllers
     public class SessionController : ControllerBase
     {
         private readonly IAdminLogic adminLogic;
-        // POST: api/Session
+
+        public SessionController(IAdminLogic adminLogic)
+        {
+            this.adminLogic = adminLogic;
+        }
+
+        // POST: api/sessions
         [HttpPost]
         public IActionResult Post([FromBody] SessionModelIn value)
         {

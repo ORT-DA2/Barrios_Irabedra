@@ -55,7 +55,26 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
-            
+
+        }
+
+        public void Update(Reservation reservationToUpdate)
+        {
+            try
+            {
+                Reservation reservation = this.reservationRepository.GetById(reservationToUpdate.Id);
+                reservation.ActualReservationStatus = reservationToUpdate.ActualReservationStatus;
+                reservation.ChangeDescription = reservationToUpdate.ChangeDescription;
+                this.reservationRepository.Update(reservation);
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
         }
     }
 }

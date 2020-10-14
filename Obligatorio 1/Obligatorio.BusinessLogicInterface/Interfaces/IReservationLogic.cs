@@ -9,5 +9,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
     {
         Reservation Add(Reservation reservation, int accommodationId);
         Reservation Get(int id);
+        void Update(Reservation reservationToUpdate);
     }
 }

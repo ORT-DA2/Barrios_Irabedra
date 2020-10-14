@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Domain.AuxiliaryObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,7 +19,9 @@ namespace Obligatorio.Domain.DomainEntities
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
         public string Information { get; set; }
+        public string ChangeDescription { get; set; }
         public Accommodation AccommodationForReservation { get; set; }
+        public ReservationStatus ActualReservationStatus { get; set; }
 
         public Reservation()
         {
@@ -31,6 +34,8 @@ namespace Obligatorio.Domain.DomainEntities
             this.Email = "Default Email";
             this.PhoneNumber = 0;
             this.Information = "Default Information";
+            this.ChangeDescription = "No changes were made";
+            this.ActualReservationStatus = ReservationStatus.Created;
         }
 
         public void SetInfoText()

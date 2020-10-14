@@ -32,5 +32,11 @@ namespace Obligatorio.DataAccess.Repositories
             }
             return reservation;
         }
+
+        public void Update(Reservation reservation)
+        {
+            myContext.Entry(reservation).State = EntityState.Modified;
+            myContext.SaveChanges();
+        }
     }
 }

@@ -6,6 +6,7 @@ using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.Domain.DomainEntities;
 using Obligatorio.Model.Models.In;
 using Obligatorio.Model.Models.Out;
+using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
 {
@@ -37,6 +38,7 @@ namespace Obligatorio.WebApi.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] ReservationModelIn reservationModelIn)
         {
             try
@@ -52,6 +54,27 @@ namespace Obligatorio.WebApi.Controllers
             catch (Exception e) 
             {
                 return StatusCode(500, "The Accommodation Is Full.");
+            }
+        }
+
+        // PUT: api/reservations/5
+        [HttpPut("{id}")]
+        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
+        public IActionResult Put(int id, [FromBody] ReservationPutModelIn reservationPutModelIn)
+        {
+            try
+            {
+                Reservation reservationToUpdate = reservationPutModelIn.ToEntity(id);
+                this.reservationLogic.Update(reservationToUpdate);
+                return Ok(this.reservationLogic.Get(id));
+            }
+            catch (ObjectNotFoundInDatabaseException ex)
+            {
+                return NotFound("There is no accommodation with such id.");
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Internal Server Error");
             }
         }
 
