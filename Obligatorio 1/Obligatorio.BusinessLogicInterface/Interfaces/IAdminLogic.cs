@@ -6,6 +6,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
 {
     public interface IAdminLogic
     {
-
+        bool IsValidAdmin(string email, string password);
     }
 }

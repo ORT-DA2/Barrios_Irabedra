@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Obligatorio.BusinessLogic.Logics;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.Model.Models.In;
+using Obligatorio.SessionInterface;
 
 namespace Obligatorio.WebApi.Controllers
 {
@@ -13,19 +15,23 @@ namespace Obligatorio.WebApi.Controllers
     [ApiController]
     public class SessionController : ControllerBase
     {
-        private readonly IAdminLogic adminLogic;
+        private readonly ISessionLogic sessionLogic;
 
-        public SessionController(IAdminLogic adminLogic)
+        public SessionController(ISessionLogic sessionLogic)
         {
-            this.adminLogic = adminLogic;
+            this.sessionLogic = sessionLogic;
         }
 
         // POST: api/sessions
         [HttpPost]
         public IActionResult Post([FromBody] SessionModelIn value)
         {
-
-            return Ok("");
+            string token = "";
+            if (sessionLogic.IsValidAdmin(value.Email, value.Password)) 
+            {
+                token = sessionLogic.GetAdminToken();
+            }
+            return Ok(token);
         }
     }
 }

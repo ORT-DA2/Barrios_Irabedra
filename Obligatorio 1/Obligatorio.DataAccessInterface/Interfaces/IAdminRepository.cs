@@ -6,6 +6,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
 {
     public interface IAdminRepository
     {
-
+        bool IsValidAdmin(string email, string password);
     }
 }

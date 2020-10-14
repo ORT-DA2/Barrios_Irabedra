@@ -18,5 +18,18 @@ namespace Obligatorio.DataAccess.Repositories
             this.admins = context.Set<Admin>();
         }
 
+        public bool IsValidAdmin(string email, string password)
+        {
+            List<Admin> adminsToValidate = new List<Admin>();
+            bool isValid = false;
+            foreach (var item in adminsToValidate)
+            {
+                if((item.Email == email) && (item.Password == password)) 
+                {
+                    isValid = true;
+                }
+            }
+            return isValid;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Obligatorio.BusinessLogicInterface.Interfaces;
+﻿using Obligatorio.BusinessLogic.CustomExceptions;
+using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccessInterface.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,12 @@ namespace Obligatorio.BusinessLogic.Logics
         public AdminLogic(IAdminRepository adminRespository)
         {
             this.adminRespository = adminRespository;
+        }
+
+        public bool IsValidAdmin(string email, string password)
+        {
+            bool isValid = adminRespository.IsValidAdmin(email, password);
+            return isValid;
         }
     }
 }
