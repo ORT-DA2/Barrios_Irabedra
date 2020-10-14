@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Obligatorio.DataAccess.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain.DomainEntities;
 using System;
@@ -16,6 +17,33 @@ namespace Obligatorio.DataAccess.Repositories
         {
             this.myContext = context;
             this.admins = context.Set<Admin>();
+        }
+
+        public void Add(Admin adminToRegister)
+        {
+            if (IsRepetedAdmin(adminToRegister)) 
+            {
+                throw new RepeatedObjectException();
+            }
+            else 
+            {
+                admins.Add(adminToRegister);
+                myContext.SaveChanges();
+            }
+        }
+
+        public bool IsRepetedAdmin(Admin adminToVerify)
+        {
+            List<Admin> adminsToValidate = new List<Admin>();
+            bool isRepeted = false;
+            foreach (var item in adminsToValidate)
+            {
+                if (item.Email == adminToVerify.Email)
+                {
+                    isRepeted = true;
+                }
+            }
+            return isRepeted;
         }
 
         public bool IsValidAdmin(string email, string password)

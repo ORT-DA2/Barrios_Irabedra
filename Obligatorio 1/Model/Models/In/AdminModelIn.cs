@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Domain.DomainEntities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,7 +15,23 @@ namespace Obligatorio.Model.Models.In
         {
             this.Name = "Default Name";
             this.Email = "Default Email";
-            this.Email = "Default Password";
+            this.Password = "Default Password";
+        }
+
+        public AdminModelIn(Admin anAdmin)
+        {
+            this.Name = anAdmin.Name;
+            this.Email = anAdmin.Email;
+            this.Password = anAdmin.Password;
+        }
+
+        public Admin ToEntity()
+        {
+            Admin adminToReturn = new Admin();
+            adminToReturn.Name = this.Name;
+            adminToReturn.Email = this.Email;
+            adminToReturn.Password = this.Password;
+            return adminToReturn;
         }
     }
 }

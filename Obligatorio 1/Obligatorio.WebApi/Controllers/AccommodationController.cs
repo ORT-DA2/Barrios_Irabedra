@@ -82,20 +82,9 @@ namespace Obligatorio.WebApi.Controllers
 
 
 
-
-
-
-
-
-
         //SOLO SE PUEDE AGREGAR IMAGENES EN EL PUT
 
 
-
-
-
-
-            //HACER VERIFICACION MANUAL SOBRE QUE ES PARA EL PUT 
 
         // PUT: api/Accommodation/5
         [HttpPut("{id}")]
