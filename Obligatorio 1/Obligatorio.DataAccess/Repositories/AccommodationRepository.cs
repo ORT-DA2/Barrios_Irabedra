@@ -70,7 +70,7 @@ namespace Obligatorio.DataAccess.Repositories
             return accommodationsToReturn;
         }
 
-        public void UpdateCapasity(int accommodationId, bool fullCapacity)
+        public void UpdateCapacity(int accommodationId, bool fullCapacity)
         {
             try
             {

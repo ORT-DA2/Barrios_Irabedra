@@ -87,7 +87,7 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 if (accommodationPutQueryIn.ChangeCapacity)
                 {
-                    this.accommodationRepository.UpdateCapasity(accommodationPutQueryIn.AccommodationId, accommodationPutQueryIn.FullCapacity);
+                    this.accommodationRepository.UpdateCapacity(accommodationPutQueryIn.AccommodationId, accommodationPutQueryIn.FullCapacity);
                 }
                 List<ImageWrapper> imagesToAdd = new List<ImageWrapper>();
                 imagesToAdd = StringToImageWrapper(accommodationPutQueryIn.Images);

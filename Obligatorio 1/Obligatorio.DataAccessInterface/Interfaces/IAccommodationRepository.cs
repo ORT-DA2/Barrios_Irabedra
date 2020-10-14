@@ -9,9 +9,9 @@ namespace Obligatorio.DataAccessInterface.Interfaces
     public interface IAccommodationRepository
     {
         List<Accommodation> GetAll();
-        List<Accommodation> GetByTouristSpot(int touristSpotName);
+        List<Accommodation> GetByTouristSpot(int touristSpotId);
         void Add(Accommodation accommodation);
-        void UpdateCapasity(int accommodationId, bool fullCapacity);
+        void UpdateCapacity(int accommodationId, bool fullCapacity);
         void AddImages(int accommodationId, List<ImageWrapper> images);
         Accommodation GetById(int accommodationId);
     }

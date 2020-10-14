@@ -19,10 +19,8 @@ namespace Obligatorio.WebApi.Filters
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            string privilege = context.HttpContext.Request.Headers["Authorization"];
-            string email = context.HttpContext.Request.Headers["Email"];
-            string password = context.HttpContext.Request.Headers["Password"];
-            if (String.IsNullOrEmpty(privilege))
+            string token = context.HttpContext.Request.Headers["Authorization"];
+            if (String.IsNullOrEmpty(token))
             {
                 context.Result = new ContentResult()
                 {
@@ -32,24 +30,13 @@ namespace Obligatorio.WebApi.Filters
             }
             else
             {
-                if (!sessions.IsCorrectToken(privilege.ToLower()))
+                if (!sessions.IsCorrectToken(token.ToLower()))
                 {
                     context.Result = new ContentResult()
                     {
                         StatusCode = 403,
                         Content = "Forbidden."
                     };
-                }
-                else
-                {
-                    if (!sessions.IsValidAdmin(email, password)) 
-                    {
-                        context.Result = new ContentResult()
-                        {
-                            StatusCode = 403,
-                            Content = "Forbidden."
-                        };
-                    }
                 }
             }
         }

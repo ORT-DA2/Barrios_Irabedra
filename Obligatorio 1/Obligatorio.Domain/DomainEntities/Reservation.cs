@@ -32,5 +32,15 @@ namespace Obligatorio.Domain.DomainEntities
             this.PhoneNumber = 0;
             this.Information = "Default Information";
         }
+
+        public void SetInfoText()
+        {
+            this.Information = String.Format("Accommodation name: {0}, Total Guests: {1}.", this.AccommodationForReservation.Name, this.TotalGuests);
+        }
+
+        public void SetPhoneNumber()
+        {
+            this.PhoneNumber = 42069457;
+        }
     }
 }

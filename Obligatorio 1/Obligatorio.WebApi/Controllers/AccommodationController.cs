@@ -120,9 +120,9 @@ namespace Obligatorio.WebApi.Controllers
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
-
+            return Ok();
         }
     }
 }
