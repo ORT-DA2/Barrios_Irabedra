@@ -30,8 +30,9 @@ namespace Obligatorio.WebApi.Controllers
             if (sessionLogic.IsValidAdmin(value.Email, value.Password)) 
             {
                 token = sessionLogic.GetAdminToken();
+                return Ok(token);
             }
-            return Ok(token);
+            return BadRequest("Wrong Email or Password");
         }
     }
 }

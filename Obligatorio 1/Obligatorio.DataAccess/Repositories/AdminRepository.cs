@@ -4,6 +4,7 @@ using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain.DomainEntities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Obligatorio.DataAccess.Repositories
@@ -34,7 +35,7 @@ namespace Obligatorio.DataAccess.Repositories
 
         public bool IsRepetedAdmin(Admin adminToVerify)
         {
-            List<Admin> adminsToValidate = new List<Admin>();
+            List<Admin> adminsToValidate = admins.ToList();
             bool isRepeted = false;
             foreach (var item in adminsToValidate)
             {
@@ -48,7 +49,7 @@ namespace Obligatorio.DataAccess.Repositories
 
         public bool IsValidAdmin(string email, string password)
         {
-            List<Admin> adminsToValidate = new List<Admin>();
+            List<Admin> adminsToValidate = admins.ToList();
             bool isValid = false;
             foreach (var item in adminsToValidate)
             {

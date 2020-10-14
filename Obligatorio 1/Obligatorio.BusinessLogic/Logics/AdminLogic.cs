@@ -23,14 +23,9 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 this.adminRespository.Add(adminToRegister);
             }
-            catch (RepeatedObjectException e)
-            {
-
-                throw new RepeatedObjectException();
-            }
             catch (Exception ex) 
             {
-                throw new Exception();
+                throw new RepeatedObjectException();
             }
         }
 
