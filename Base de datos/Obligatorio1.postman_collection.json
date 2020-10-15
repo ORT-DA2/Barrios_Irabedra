@@ -1,0 +1,1240 @@
+{
+	"info": {
+		"_postman_id": "c8654cbb-8948-4d0b-8b48-a0d470875c1e",
+		"name": "Obligatorio1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Registration without Admin token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Pepitow\",\r\n    \"Email\" : \"admin1@gmail.com\",\r\n    \"Password\" : \"SafEPassW0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}admins",
+									"host": [
+										"{{uri}}admins"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registration with Admin token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Jose\",\r\n    \"Email\" : \"admin1@gmail.com\",\r\n    \"Password\" : \"SafEPassW0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}admins",
+									"host": [
+										"{{uri}}admins"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registration Repeated case",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Pepitow\",\r\n    \"Email\" : \"admin1@gmail.comn\",\r\n    \"Password\" : \"SafEPassW0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}admins",
+									"host": [
+										"{{uri}}admins"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Login Valid Case",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\" : \"admin1@gmail.com\",\r\n    \"Password\" : \"SafEPassW0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}sessions",
+									"host": [
+										"{{uri}}sessions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logic Not Valid Case",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\" : \"Does not exist\",\r\n    \"Password\" : \"Does not exist\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}sessions",
+									"host": [
+										"{{uri}}sessions"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Region",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Region Metropolitana",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Region metropolitana\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}regions",
+									"host": [
+										"{{uri}}regions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Region Centro Sur",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Region centro sur\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}regions",
+									"host": [
+										"{{uri}}regions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Region Este",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Region este\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}regions",
+									"host": [
+										"{{uri}}regions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Region Litoral Norte",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Region litoral norte\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}regions",
+									"host": [
+										"{{uri}}regions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Region Corredor de los pájaros pintados",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Region corredor de los pajaros pintados\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}regions",
+									"host": [
+										"{{uri}}regions"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Put Vincular tourist Sport de id 1 con región Metropolitana",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"RegionName\" : \"Region metropolitana\",\r\n\t\"TouristSpotId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}regions",
+									"host": [
+										"{{uri}}regions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Vincular tourist Sport de id 2 con región Metropolitana",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"RegionName\" : \"Region metropolitana\",\r\n\t\"TouristSpotId\" : 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}regions",
+									"host": [
+										"{{uri}}regions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Vincular tourist Sport de id 3 con región Este",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"RegionName\" : \"Region este\",\r\n\t\"TouristSpotId\" : 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}regions",
+									"host": [
+										"{{uri}}regions"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tourist Spot",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Tourist Spot Playa de la balconada",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Name\" : \"Playa de la balconada\",\r\n\t\"Description\" : \"There was an oil leak nearby\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}touristSpots",
+									"host": [
+										"{{uri}}touristSpots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Tourist Spot Rural del prado",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Name\" : \"Rural del prado\",\r\n\t\"Description\" : \"Traditional\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}touristSpots",
+									"host": [
+										"{{uri}}touristSpots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Tourist Spot Punta carretas shopping",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Name\" : \"Punta carretas shopping\",\r\n\t\"Description\" : \"Punta Carretas Shopping is a shopping center\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}touristSpots",
+									"host": [
+										"{{uri}}touristSpots"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Put",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "Serch for Tourist Spot with Category and withour Region",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{uri}}touristSpots/?categoryName=\"Ice cream stores\"",
+									"host": [
+										"{{uri}}touristSpots"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "categoryName",
+											"value": "\"Ice cream stores\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Serch for Tourist Spot with region and Category (metropolitana & Nautical)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{uri}}touristSpots/?regionName=\"Region metropolitana\"&categoryName=\"Nautical\"",
+									"host": [
+										"{{uri}}touristSpots"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "regionName",
+											"value": "\"Region metropolitana\""
+										},
+										{
+											"key": "categoryName",
+											"value": "\"Nautical\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Serch for Tourist Spot with region and Category (metropolitana & malls)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{uri}}touristSpots/?regionName=\"Region metropolitana\"&categoryName=\"Malls\"",
+									"host": [
+										"{{uri}}touristSpots"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "regionName",
+											"value": "\"Region metropolitana\""
+										},
+										{
+											"key": "categoryName",
+											"value": "\"Malls\""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Delete",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Category Nautical",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Nautical\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}categories",
+									"host": [
+										"{{uri}}categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Category Malls",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Malls\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}categories",
+									"host": [
+										"{{uri}}categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Category Ice cream stores",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Ice cream stores\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}categories",
+									"host": [
+										"{{uri}}categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Category Ecoturismo",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Ecotourism\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}categories",
+									"host": [
+										"{{uri}}categories"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Set Category To Tourist Spot 1 Nautica",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"CategoryName\" : \"Nautical\",\r\n\t\"TouristSpotId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}categories",
+									"host": [
+										"{{uri}}categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Category To Tourist Spot 2 Nautica",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"CategoryName\" : \"Nautical\",\r\n\t\"TouristSpotId\" : 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}categories",
+									"host": [
+										"{{uri}}categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Category To Tourist Spot 1 Malls",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"CategoryName\" : \"Malls\",\r\n\t\"TouristSpotId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}categories",
+									"host": [
+										"{{uri}}categories"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "Accommodation by Number",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{uri}}reservations/1",
+									"host": [
+										"{{uri}}reservations"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Accommodation by Tourist Spot Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TouristSpotId\" : 1,\r\n    \"TotalGuests\" : 4,\r\n    \"Babies\" : 1,\r\n    \"Kids\" : 1,\r\n    \"Adults\" : 2,\r\n    \"CheckIn\" : \"2020-10-13T23:28:56.782Z\",\r\n    \"CheckOut\" : \"2020-11-01T23:28:56.782Z\",\r\n    \"GuestName\" : \"Jose\",\r\n    \"GuestLastName\": \"Perez\",\r\n    \"Email\" : \"Josesito@gmail.com\",\r\n    \"AccommodationId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}reservations",
+									"host": [
+										"{{uri}}reservations"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Accommodation by Tourist Spot Copy 2",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"State\" : 2,\r\n    \"Description\" : \"Testing\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}reservations/1",
+									"host": [
+										"{{uri}}reservations"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Accommodation",
+			"item": [
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "Accommodation by Tourist Spot",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TouristSpotId\" : 1,\r\n    \"TotalGuests\" : 4,\r\n    \"Babies\" : 1,\r\n    \"Kids\" : 1,\r\n    \"Adults\" : 2,\r\n    \"CheckIn\" : \"2020-10-13T23:28:56.782Z\",\r\n    \"CheckOut\" : \"2020-11-01T23:28:56.782Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations",
+									"host": [
+										"{{uri}}accommodations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Accommodation by Tourist Spot Diferent Number Guests",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TouristSpotId\" : 1,\r\n    \"TotalGuests\" : 5,\r\n    \"Babies\" : 1,\r\n    \"Kids\" : 1,\r\n    \"Adults\" : 2,\r\n    \"CheckIn\" : \"2020-10-13T23:28:56.782Z\",\r\n    \"CheckOut\" : \"2020-11-01T23:28:56.782Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations",
+									"host": [
+										"{{uri}}accommodations"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Accommodation Negative Rating",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"La chosa dudosa\",\r\n    \"Rating\" : -3,\r\n    \"PricePerNight\" : 420,\r\n    \"TouristSpotId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations",
+									"host": [
+										"{{uri}}accommodations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Accommodation Borderline case 0 rating",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"La chosa dudosa\",\r\n    \"Rating\" : 0,\r\n    \"PricePerNight\" : 420,\r\n    \"TouristSpotId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations",
+									"host": [
+										"{{uri}}accommodations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Accommodation Over 5 rating",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"La chosa dudosa\",\r\n    \"Rating\" : 69,\r\n    \"PricePerNight\" : 420,\r\n    \"TouristSpotId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations",
+									"host": [
+										"{{uri}}accommodations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Accommodation Borderline Case 6 rating",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"La chosa dudosa\",\r\n    \"Rating\" : 6,\r\n    \"PricePerNight\" : 420,\r\n    \"TouristSpotId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations",
+									"host": [
+										"{{uri}}accommodations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Accommodation Correct",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"La chosa dudosa\",\r\n    \"Rating\" : 5,\r\n    \"PricePerNight\" : 420,\r\n    \"TouristSpotId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations",
+									"host": [
+										"{{uri}}accommodations"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Accommodation chane capasity to False",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"WantToChangeCapacity\" : true,\r\n    \"FullCapacity\" : false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations/1",
+									"host": [
+										"{{uri}}accommodations"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Accommodation chane capasity to True",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"WantToChangeCapacity\" : true,\r\n    \"FullCapacity\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{uri}}accommodations/1",
+									"host": [
+										"{{uri}}accommodations"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
