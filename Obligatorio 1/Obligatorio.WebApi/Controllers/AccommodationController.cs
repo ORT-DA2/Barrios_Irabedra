@@ -48,6 +48,10 @@ namespace Obligatorio.WebApi.Controllers
             try
             {
                 var accommodation = accommodationRegisterModel.ToEntity();
+                if (accommodation.Rating < 1 | accommodation.Rating > 5)
+                {
+                    throw new Exception();
+                }
                 this.accommodationLogic.Add(accommodation, accommodationRegisterModel.TouristSpotId);
                 return CreatedAtRoute(routeName: "GetAccommodation",
                                                     routeValues: new { name = accommodationRegisterModel.Name },

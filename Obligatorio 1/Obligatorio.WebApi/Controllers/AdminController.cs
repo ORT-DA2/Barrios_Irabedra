@@ -40,11 +40,5 @@ namespace Obligatorio.WebApi.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] AdminModelIn value)
-        {
-            return Ok("");
-        }
     }
 }

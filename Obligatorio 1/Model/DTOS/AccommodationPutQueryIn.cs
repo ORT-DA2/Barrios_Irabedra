@@ -13,7 +13,7 @@ namespace Obligatorio.Model.DTOS
         public AccommodationPutQueryIn(AccommodationPutModelIn accommodationPutModelIn, int id)
         {
             Images = accommodationPutModelIn.Images;
-            ChangeCapacity = accommodationPutModelIn.ChangeCapacity;
+            ChangeCapacity = accommodationPutModelIn.WantToChangeCapacity;
             FullCapacity = accommodationPutModelIn.FullCapacity;
             AccommodationId = id;
         }

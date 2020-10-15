@@ -13,7 +13,7 @@ namespace Obligatorio.Model.Models.In
             Reservation reservationToReturn = new Reservation();
             reservationToReturn.Id = id;
             reservationToReturn.ActualReservationStatus = State;
-            reservationToReturn.ChangeDescription = Description;
+            reservationToReturn.NewStatusDescription = Description;
             return reservationToReturn;
         }
     }

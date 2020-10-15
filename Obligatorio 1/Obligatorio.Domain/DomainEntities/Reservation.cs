@@ -17,7 +17,7 @@ namespace Obligatorio.Domain.DomainEntities
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
         public string Information { get; set; }
-        public string ChangeDescription { get; set; }
+        public string NewStatusDescription { get; set; }
         public Accommodation AccommodationForReservation { get; set; }
         public ReservationStatus ActualReservationStatus { get; set; }
 
@@ -32,7 +32,7 @@ namespace Obligatorio.Domain.DomainEntities
             this.Email = "Default Email";
             this.PhoneNumber = 0;
             this.Information = "Default Information";
-            this.ChangeDescription = "No changes were made";
+            this.NewStatusDescription = "No changes were made";
             this.ActualReservationStatus = ReservationStatus.Created;
         }
 
@@ -44,7 +44,7 @@ namespace Obligatorio.Domain.DomainEntities
 
         public void SetPhoneNumber()
         {
-            this.PhoneNumber = 42069457;
+            this.PhoneNumber = 0;
         }
     }
 }

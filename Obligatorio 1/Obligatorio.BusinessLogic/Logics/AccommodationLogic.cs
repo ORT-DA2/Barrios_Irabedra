@@ -5,6 +5,7 @@ using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
 using Obligatorio.Model.Dtos;
 using Obligatorio.Model.DTOS;
+using System;
 using System.Collections.Generic;
 
 namespace Obligatorio.BusinessLogic.Logics
@@ -36,6 +37,9 @@ namespace Obligatorio.BusinessLogic.Logics
             catch (RepeatedObjectException ex)
             {
                 throw new RepeatedObjectException();
+            }
+            catch(Exception e) 
+            { 
             }
         }
 

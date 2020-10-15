@@ -5,7 +5,7 @@
         Created,
         Pending,
         Accepted,
-        Denaied,
+        Denied,
         Expired
     }
 }

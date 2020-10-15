@@ -65,7 +65,7 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 Reservation reservation = this.reservationRepository.GetById(reservationToUpdate.Id);
                 reservation.ActualReservationStatus = reservationToUpdate.ActualReservationStatus;
-                reservation.ChangeDescription = reservationToUpdate.ChangeDescription;
+                reservation.NewStatusDescription = reservationToUpdate.NewStatusDescription;
                 this.reservationRepository.Update(reservation);
             }
             catch (ObjectNotFoundInDatabaseException e)
