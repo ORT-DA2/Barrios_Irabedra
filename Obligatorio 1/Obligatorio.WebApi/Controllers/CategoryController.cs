@@ -19,13 +19,17 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.categoryLogic = categoryLogic;
         }
-
+        /// <summary>
+        /// Returns all Categories.
+        /// </summary>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(this.categoryLogic.GetAll());
         }
-
+        /// <summary>
+        /// Returns a category given a name.
+        /// </summary>
         [HttpGet("{name}", Name = "GetCategory")]
         public IActionResult Get(string name)
         {
@@ -44,7 +48,9 @@ namespace Obligatorio.WebApi.Controllers
                 return NotFound("There is no such category name.");
             }
         }
-
+        /// <summary>
+        /// Adds a category.
+        /// </summary>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] CategoryModelIn categoryModel)
@@ -62,7 +68,9 @@ namespace Obligatorio.WebApi.Controllers
                 return BadRequest("A region with such name has been already registered.");
             }
         }
-
+        /// <summary>
+        /// Adds a TouristSpot to an existing Category.
+        /// </summary>
         [HttpPut]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] CategoryAndTouristSpotIdentifier data)

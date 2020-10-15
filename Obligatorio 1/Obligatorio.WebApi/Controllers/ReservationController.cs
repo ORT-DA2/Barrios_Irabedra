@@ -19,7 +19,9 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.reservationLogic = reservationLogic;
         }
-
+        /// <summary>
+        /// Returns a reservation given an id.
+        /// </summary>
         [HttpGet("{id}", Name = "GetReservation")]
         public IActionResult Get(int id)
         {
@@ -33,7 +35,9 @@ namespace Obligatorio.WebApi.Controllers
                 return NotFound("There is no such reservation id.");
             }
         }
-
+        /// <summary>
+        /// Adds a new reservation.
+        /// </summary>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] ReservationModelIn reservationModelIn)
@@ -54,7 +58,9 @@ namespace Obligatorio.WebApi.Controllers
                 return StatusCode(500, "The Accommodation Is Full.");
             }
         }
-
+        /// <summary>
+        /// Updates a reservation.
+        /// </summary>
         [HttpPut("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put(int id, [FromBody] ReservationPutModelIn reservationPutModelIn)

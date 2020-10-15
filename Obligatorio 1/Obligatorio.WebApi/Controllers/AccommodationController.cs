@@ -21,7 +21,9 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.accommodationLogic = accommodationLogic;
         }
-
+        /// <summary>
+        /// Returns available accommodations in certain TouristSpot, given check in and out dates, and the number of guests.
+        /// </summary>
         [HttpGet]
         public IActionResult Get([FromBody] AccommodationModelIn accommodationModelIn)
         {
@@ -40,7 +42,9 @@ namespace Obligatorio.WebApi.Controllers
             }
             return Ok(accommodationsToReturn);
         }
-
+        /// <summary>
+        /// Adds an Accommodation.
+        /// </summary>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
@@ -70,7 +74,9 @@ namespace Obligatorio.WebApi.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-
+        /// <summary>
+        /// Updates an accommodation.
+        /// </summary>
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] AccommodationPutModelIn accommodationPutModelIn)
         {

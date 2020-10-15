@@ -14,7 +14,9 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.sessionLogic = sessionLogic;
         }
-
+        /// <summary>
+        /// Creates a new Session.
+        /// </summary>
         [HttpPost]
         public IActionResult Post([FromBody] SessionModelIn value)
         {
