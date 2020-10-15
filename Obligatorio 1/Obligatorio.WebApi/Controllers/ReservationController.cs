@@ -67,7 +67,7 @@ namespace Obligatorio.WebApi.Controllers
             }
             catch (ObjectNotFoundInDatabaseException ex)
             {
-                return NotFound("There is no accommodation with such id.");
+                return NotFound("There is no reservation with such id.");
             }
             catch (Exception e)
             {

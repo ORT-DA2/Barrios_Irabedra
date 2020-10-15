@@ -46,5 +46,33 @@ namespace Obligatorio.Domain.DomainEntities
         {
             this.PhoneNumber = 0;
         }
+
+        public string EnumToString()
+        {
+            string ret = "";
+            switch (this.ActualReservationStatus)
+            {
+                case ReservationStatus.Created:
+                    ret = "Created";
+                    break;
+                case ReservationStatus.Pending:
+                    ret = "Pending";
+                    break;
+                case ReservationStatus.Accepted:
+                    ret = "Accepted";
+                    break;
+                case ReservationStatus.Denied:
+                    ret = "Denied";
+                    break;
+                case ReservationStatus.Expired:
+                    ret = "Expired";
+                    break;
+                default:
+                    ret = " ";
+                    break;
+            }
+            return ret;
+        }
+
     }
 }

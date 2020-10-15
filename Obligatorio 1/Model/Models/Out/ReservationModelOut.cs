@@ -1,4 +1,5 @@
-﻿using Obligatorio.Domain.DomainEntities;
+﻿using Obligatorio.Domain.AuxiliaryObjects;
+using Obligatorio.Domain.DomainEntities;
 
 namespace Obligatorio.Model.Models.Out
 {
@@ -6,13 +7,17 @@ namespace Obligatorio.Model.Models.Out
     {
         public int PhoneNumber { get; set; }
         public string InformativeText { get; set; }
-        public int UnicCode {get;set;}
+        public int UnicCode { get; set; }
+        public string ActualReservationStatus { get; set; }
+        public string NewStatusDescription {get;set;}
 
         public ReservationModelOut(Reservation reservation)
         {
             this.PhoneNumber = reservation.PhoneNumber;
             this.InformativeText = reservation.Information;
             this.UnicCode = reservation.Id;
+            this.ActualReservationStatus = reservation.EnumToString();
+            this.NewStatusDescription = reservation.NewStatusDescription;
         }
     }
 }
