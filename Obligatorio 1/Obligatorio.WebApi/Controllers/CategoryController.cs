@@ -22,6 +22,14 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Returns all Categories.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /categories
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
         [HttpGet]
         public IActionResult Get()
         {
@@ -30,6 +38,14 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Returns a category given a name.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /categories/"Malls"
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
         [HttpGet("{name}", Name = "GetCategory")]
         public IActionResult Get(string name)
         {
@@ -51,6 +67,15 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Adds a category.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /categories
+        ///     {
+        ///        "Name" : "Malls"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] CategoryModelIn categoryModel)
@@ -71,6 +96,16 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Adds a TouristSpot to an existing Category.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Put /categories
+        ///     {
+        ///        "CategoryName" : "Nautical",
+        ///        "TouristSpotId" : 1
+        ///     }
+        ///
+        /// </remarks>
         [HttpPut]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] CategoryAndTouristSpotIdentifier data)

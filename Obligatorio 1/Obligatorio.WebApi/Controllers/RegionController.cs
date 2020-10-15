@@ -23,6 +23,14 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Returns all regions.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /regions
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,6 +39,14 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Returns a region given a name.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /regions/"Region metropolitana"
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
         [HttpGet("{name}", Name = "GetRegion")]
         public IActionResult Get(string name)
         {
@@ -52,6 +68,15 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Adds a region.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Post /regions
+        ///     {
+        ///         "Name" : "Region metropolitana"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] RegionModelIn regionModel)
@@ -72,6 +97,16 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Adds a TouristSpot to an existing Region.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Put /regions
+        ///     {
+        ///         "RegionName" : "Region metropolitana",
+        ///         "TouristSpotId" : 1
+        ///     }
+        ///
+        /// </remarks>
         [HttpPut]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] RegionAndTouristSpotIdentifier data)  
@@ -97,6 +132,16 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Updates a TouristSpot moving it to a different Region.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Put /regions/modify
+        ///     {
+        ///         "RegionName" : "Region metropolitana",
+        ///         "TouristSpotId" : 1
+        ///     }
+        ///
+        /// </remarks>
         [HttpPut("modify")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult TouristSpotRegionUpdate([FromBody] RegionAndTouristSpotIdentifier data)

@@ -24,6 +24,17 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Adds an Admin.
         /// </summary>
+        /// /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /admin
+        ///     {
+        ///        "Name" : "Pepitow",
+        ///        "Email" : "admin1@gmail.com",
+        ///        "Password" : "SafEPassW0rd"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPost]
         public IActionResult Post([FromBody] AdminModelIn value)
         {

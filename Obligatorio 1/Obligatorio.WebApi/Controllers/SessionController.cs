@@ -17,6 +17,16 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Creates a new Session.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Post /sessions
+        ///     {
+        ///         "Email" : "admin1@gmail.com",
+        ///         "Password" : "SafEPassW0rd"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPost]
         public IActionResult Post([FromBody] SessionModelIn value)
         {

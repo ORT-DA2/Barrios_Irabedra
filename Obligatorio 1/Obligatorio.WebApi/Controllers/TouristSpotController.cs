@@ -22,6 +22,14 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Return all TouristSpots given a Region and a list of Categories.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /touristSpots/?regionName="Region metropolitana"&categoryName="Nautical"
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
         [HttpGet]
         public IActionResult Get()
         {
@@ -95,6 +103,14 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Returns a TouristSpot given an Id.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /touristSpots/1
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
         [HttpGet("{id}", Name = "GetTouristSpot")]
         public IActionResult Get(int id)
         {
@@ -111,6 +127,16 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Adds a new TouristSpot.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Post /touristSpots
+        ///     {
+        ///         "Name" : "Playa de la balconada",
+        ///         "Description" : "There was an oil leak nearby"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] TouristSpotModelIn touristSpotModel)
@@ -131,6 +157,14 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Deletes an existing TouristSpot.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Delete /touristSpots/1
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
         [HttpDelete("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Delete(int id)
@@ -148,6 +182,16 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Updates an existing TouristSpot.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Put /touristSpots/1
+        ///     {
+        ///         "Name" : "Playa de la balconada",
+        ///         "Description" : "There was an oil leak nearby"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPut("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put(int id, [FromBody] TouristSpotModelIn dataToUpdate)

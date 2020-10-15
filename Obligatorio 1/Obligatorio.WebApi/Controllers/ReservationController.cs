@@ -22,6 +22,14 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Returns a reservation given an id.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /reservations/1
+        ///     {
+        ///     }
+        ///
+        /// </remarks>
         [HttpGet("{id}", Name = "GetReservation")]
         public IActionResult Get(int id)
         {
@@ -38,6 +46,25 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Adds a new reservation.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Post /reservations
+        ///     {
+        ///         "TouristSpotId" : 1,
+        ///         "TotalGuests" : 4,
+        ///         "Babies" : 1,
+        ///         "Kids" : 1,
+        ///         "Adults" : 2,
+        ///         "CheckIn" : "2020-10-13T23:28:56.782Z",
+        ///         "CheckOut" : "2020-11-01T23:28:56.782Z",
+        ///         "GuestName" : "Jose",
+        ///         "GuestLastName": "Perez",
+        ///         "Email" : "Josesito@gmail.com",
+        ///         "AccommodationId" : 1
+        ///     }
+        ///
+        /// </remarks>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] ReservationModelIn reservationModelIn)
@@ -53,7 +80,7 @@ namespace Obligatorio.WebApi.Controllers
             {
                 return NotFound("There is no such accommodation id.");
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 return StatusCode(500, "The Accommodation Is Full.");
             }
@@ -61,6 +88,16 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Updates a reservation.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Put /reservations
+        ///     {
+        ///         "State" : 2,
+        ///         "Description" : "Testing"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPut("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put(int id, [FromBody] ReservationPutModelIn reservationPutModelIn)

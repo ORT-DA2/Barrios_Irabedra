@@ -24,6 +24,22 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Returns available accommodations in certain TouristSpot, given check in and out dates, and the number of guests.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /accommodations
+        ///     {
+        ///         "TouristSpotId" : 1,
+        ///         "TotalGuests" : 4,
+        ///         "Babies" : 1,
+        ///         "Kids" : 1,
+        ///         "Adults" : 2,
+        ///         "CheckIn" : "2020-10-13T23:28:56.782Z",
+        ///         "CheckOut" : "2020-11-01T23:28:56.782Z"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="accommodationModelIn"></param>   
         [HttpGet]
         public IActionResult Get([FromBody] AccommodationModelIn accommodationModelIn)
         {
@@ -45,6 +61,19 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Adds an Accommodation.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /accommodations
+        ///     {
+        ///         "Name" : "La chosa dudosa",
+        ///         "Rating" : 5,
+        ///         "PricePerNight" : 420,
+        ///         "TouristSpotId" : 1
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="accommodationRegisterModel"></param>     
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
@@ -69,7 +98,7 @@ namespace Obligatorio.WebApi.Controllers
             {
                 return BadRequest("An accommodation with such name has been already registered.");
             }
-            catch (Exception exc) 
+            catch (Exception exc)
             {
                 return StatusCode(500, "Internal Server Error");
             }
@@ -77,12 +106,23 @@ namespace Obligatorio.WebApi.Controllers
         /// <summary>
         /// Updates an accommodation.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Put /accommodations/1
+        ///     {
+        ///         "WantToChangeCapacity" : true,
+        ///         "FullCapacity" : false
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="accommodationPutModelIn"></param>
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] AccommodationPutModelIn accommodationPutModelIn)
         {
             try
             {
-                AccommodationPutQueryIn accommodationPutQueryIn = new AccommodationPutQueryIn(accommodationPutModelIn,id);
+                AccommodationPutQueryIn accommodationPutQueryIn = new AccommodationPutQueryIn(accommodationPutModelIn, id);
                 this.accommodationLogic.Update(accommodationPutQueryIn);
                 return Ok(this.accommodationLogic.GetById(accommodationPutQueryIn.AccommodationId));
             }
@@ -90,7 +130,7 @@ namespace Obligatorio.WebApi.Controllers
             {
                 return NotFound("There is no accommodation with such id.");
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 return StatusCode(500, "Internal Server Error");
             }
