@@ -1,1 +1,34 @@
-<p>accommodation-query works!</p>
+
+
+<div class="jumbotron" id="accommodationQueryWrapper">
+    <a class="btn btn-primary" routerLink="/accommodations" role="button">Go back</a>
+    <div>
+        <h1 class="display-4">Search accommodations</h1>
+        <p class="lead">Fill in the form in order to see all accommodations that fit your needs. </p>
+        <hr class="my-4">
+        <form>
+            <div class="form-group">
+                <label for="touristSpotPicker">Accommodation's tourist spot</label>
+                <select multiple class="form-control" id="touristSpotPicker">
+                </select>
+            </div>
+            <h1>Guests</h1>
+            <div class="form-row">
+                <div class="col">
+                  <input type="number" class="form-control" placeholder="Babies">
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control" placeholder="Kids">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" placeholder="Adults">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" placeholder="Retirees">
+                </div>
+              </div>
+        </form>
+        <button type="button" class="btn btn-primary btn-lg btn-block submitbtn">Search</button>
+    </div>
+
+</div>

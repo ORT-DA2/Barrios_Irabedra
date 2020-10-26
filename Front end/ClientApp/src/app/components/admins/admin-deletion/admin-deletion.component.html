@@ -1,11 +1,16 @@
-<div class="jumbotron" id="loginWrapper">
+<div class="jumbotron" id="adminDeleteWrapper">
+    <a class="btn btn-primary" routerLink="/admins" role="button">Go back</a>
     <div>
-        <h1 class="display-4">Login</h1>
-        <p class="lead">Login as an admin with a valid email and password. </p>
+        <h1 class="display-4">Delete an admin</h1>
+        <p class="lead">Delete an admin providing an existing valid email and its password. </p>
+        <div class="jumbotron" id="danger">
+            <h3>Warning!</h3>
+            <p>This action cannot be undone.</p>
+          </div> 
         <hr class="my-4">
         <form>
             <div class="form-group">
-                <label for="inputTouristSpotName">Email</label>
+                <label for="inputEmail">Email</label>
                 <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="">
             </div>
             <div class="form-group">
@@ -14,7 +19,7 @@
                 <small id="descriptionHelp" class="form-text text-muted"></small>
             </div>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Login</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block">Delete</button>
     </div>
 
 </div>
