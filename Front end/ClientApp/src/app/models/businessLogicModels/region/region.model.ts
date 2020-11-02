@@ -5,7 +5,7 @@ export class Region {
     public touristSpots: TouristSpot[];
     public id: number;
 
-    public Region(name: string, touristSpots: TouristSpot[], id: number){
+    constructor(name: string, touristSpots: TouristSpot[], id: number){
         this.id = id;
         this.name = name;
         this.touristSpots = touristSpots;

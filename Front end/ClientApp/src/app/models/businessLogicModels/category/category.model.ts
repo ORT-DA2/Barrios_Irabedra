@@ -6,7 +6,7 @@ export class Category {
     public id: number;
     public touristSpots: TouristSpot[];
 
-    public Category(name : string, id: number, touristSpots: TouristSpot[]) {
+    constructor(name : string, id: number, touristSpots: TouristSpot[]) {
         this.id = id;
         this.name = name;
         this.touristSpots = touristSpots;

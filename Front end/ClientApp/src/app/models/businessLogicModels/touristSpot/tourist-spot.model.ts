@@ -6,7 +6,7 @@ export class TouristSpot {
     public image: string;
     public categories: Category[];
 
-    public TouristSpot(name: string, description: string,
+    constructor(name: string, description: string,
          image: string, categories: Category[]){
         this.categories = categories;
         this.description = description;

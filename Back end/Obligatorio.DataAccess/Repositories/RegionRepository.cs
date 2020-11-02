@@ -69,6 +69,7 @@ namespace Obligatorio.DataAccess.Repositories
             {
                 if (item.Name.Equals(name))
                 {
+                    myContext.Entry(item).Collection(r => r.TouristSpots).Load();
                     return item;
                 }
             }

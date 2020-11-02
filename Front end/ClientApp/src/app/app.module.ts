@@ -25,6 +25,8 @@ import { AdminUpdateComponent } from './components/admins/admin-update/admin-upd
 import { CategoryRegisterComponent } from './components/categories/category-register/category-register.component';
 import { CategoryQueryComponent } from './components/categories/category-query/category-query.component';
 import { ReportComponent } from './components/report/report.component';
+import { TouristSpotService } from './services/tourist-spot.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'touristSpots', component: TouristSpotsComponent }, 
@@ -77,9 +79,10 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TouristSpotService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

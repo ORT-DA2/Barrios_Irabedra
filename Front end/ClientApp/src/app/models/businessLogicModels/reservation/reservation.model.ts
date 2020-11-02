@@ -25,7 +25,7 @@ export class Reservation {
             this.reservationStatus === 'Expired')
     }
 
-    public Reservation(id: number,checkIn: Date,checkOut: Date,
+    constructor(id: number,checkIn: Date,checkOut: Date,
         totalGuests: number,babies: number,kids: number,adults: number,
         guestName: string,guestLastName: string,email: string,
         phoneNumber: number,information: string,accommodation: Accommodation,reservationStatus: string){

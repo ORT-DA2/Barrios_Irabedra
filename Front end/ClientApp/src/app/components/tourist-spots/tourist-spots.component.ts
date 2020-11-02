@@ -12,4 +12,5 @@ export class TouristSpotsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }

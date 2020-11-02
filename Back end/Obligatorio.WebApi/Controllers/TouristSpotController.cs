@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using Model.Models.In;
 using Model.Models.Out;
 using Obligatorio.BusinessLogicInterface.Interfaces;
+using Obligatorio.Domain;
 using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
@@ -19,6 +21,9 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.touristSpotLogic = touristSpotLogic;
         }
+
+
+
         /// <summary>
         /// Return all TouristSpots given a Region and a list of Categories.
         /// </summary>
@@ -31,74 +36,78 @@ namespace Obligatorio.WebApi.Controllers
         ///
         /// </remarks>
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(string category = "all", string region = null)
         {
-            if (Request.QueryString.Value is null)
+            List<TouristSpotModelOut> ret = new List<TouristSpotModelOut>();
+            if (category == "all")
             {
-                return Ok(this.touristSpotLogic.GetAll().Select(ts => new TouristSpotModelOut(ts)));
+                if(region is null)
+                {
+                    ret = GetAll();
+                    return Ok(ret);
+                }
+                else
+                {
+                    return Ok(this.touristSpotLogic.FindByRegion(region).Select(ts => new TouristSpotModelOut(ts)));
+                }
             }
             else
             {
-                List<TouristSpotModelOut> touristSpots = new List<TouristSpotModelOut>();
-                string arguments = Request.QueryString.Value.Split('?')[1]; 
-                List<string> criteria = arguments.Split('&').ToList<String>(); 
-                string sortingRegion = "";
-                bool queryStringHasCategory = false;
-                foreach (var param in criteria)
-                {
-                    string regionName = param.Split('=')[0];
-                    if (regionName != "regionName")
-                    {
-                        string value = param.Split('=')[1].Replace("%22", "");
-                        value = value.Replace("%20", " ");
-                        touristSpots.AddRange(
-                            touristSpotLogic.FindByCategory(value).Select(ts => new TouristSpotModelOut(ts)));
-                        queryStringHasCategory = true;
-                    }
-                    else
-                    {
-                        if (sortingRegion != "")
-                        {
-                            return BadRequest("Remember to select only one region.");
-                        }
-                        sortingRegion = param.Split('=')[1].Replace("%22", "");
-                        sortingRegion = sortingRegion.Replace("%20", " ");
-                    }
-                }
-                List<TouristSpotModelOut> touristSpotsWithNoDuplicates = new List<TouristSpotModelOut>();
-                foreach (var ts in touristSpots)
-                {
-                    if (!touristSpotsWithNoDuplicates.Contains(ts))
-                    {
-                        touristSpotsWithNoDuplicates.Add(ts);
-                    }
-                }
-                sortingRegion = sortingRegion.Trim();
-                if (sortingRegion is null || sortingRegion == "")
-                {
-                    return BadRequest("You need to specify the region.");
-                }
-                List<TouristSpotModelOut> touristSpotbyRegion = new List<TouristSpotModelOut>();
-                touristSpotbyRegion.AddRange(
-                            touristSpotLogic.FindByRegion(sortingRegion).Select(ts => new TouristSpotModelOut(ts)));
-                List<TouristSpotModelOut> touristSpotsReturn = new List<TouristSpotModelOut>();
-                foreach (var item in touristSpotbyRegion)
-                {
-                    if (touristSpotsWithNoDuplicates.Contains(item))
-                    {
-                        touristSpotsReturn.Add(item);
-                    }
-                }
-                if (queryStringHasCategory)
-                {
-                    return Ok(touristSpotsReturn);
-                }
-                else 
-                {
-                    return Ok(touristSpotbyRegion);
-                }
-
+                List<TouristSpotModelOut> touristSpotsWithinRegion = GetByRegion(this.Request.QueryString.Value);
+                List<TouristSpotModelOut> touristSpotsWithinCategories = GetByAllCategories(this.Request.QueryString.Value);
+                ret = Intersect(touristSpotsWithinCategories, touristSpotsWithinRegion);
+                return Ok(ret);
             }
+        }
+
+        private List<TouristSpotModelOut> GetByAllCategories(string queryString)
+        {
+            List<TouristSpotModelOut> ret = new List<TouristSpotModelOut>();
+            var individualCategories = Parse("category", queryString);
+            foreach (var item in individualCategories)
+            {
+                var touristSpotsFoundByCategory = this.touristSpotLogic.FindByCategory(item).ToList<TouristSpot>();
+                if (ret.Count == 0)
+                {
+                    ret.AddRange(touristSpotsFoundByCategory.Select(ts => new TouristSpotModelOut(ts)));
+                }
+                else
+                {
+                    List<TouristSpotModelOut> foundToModelOut = touristSpotsFoundByCategory.Select(ts => new TouristSpotModelOut(ts)).ToList<TouristSpotModelOut>();
+                    ret = Intersect(foundToModelOut, ret);
+                }
+            }
+            return ret;
+        }
+
+        private List<TouristSpotModelOut> Intersect(List<TouristSpotModelOut> l1, List<TouristSpotModelOut> l2)
+        {
+            var ids = l1.Select(x => x.Id).Intersect(l2.Select(x => x.Id));
+            var result = l1.Where(x => ids.Contains(x.Id));
+            return result.ToList<TouristSpotModelOut>();
+        }
+
+        private List<TouristSpotModelOut> GetByRegion(string queryString)
+        {
+            var value = Parse("region", queryString);
+            string region = value.ElementAt<string>(0);
+            List<TouristSpot> touristSpotsFoundByRegion = this.touristSpotLogic.FindByRegion(region).ToList<TouristSpot>();
+            return touristSpotsFoundByRegion.Select(ts => new TouristSpotModelOut(ts)).ToList<TouristSpotModelOut>(); 
+        }
+
+        private List<string> Parse(string field, string queryString)
+        {
+            var parsed = HttpUtility.ParseQueryString(this.Request.QueryString.Value);
+            var myFieldValues = parsed[field];
+            List<string> ret = myFieldValues.Split(',').ToList<string>();
+            return ret;
+        }
+
+        private List<TouristSpotModelOut> GetAll()
+        {
+            IEnumerable<TouristSpot> found = this.touristSpotLogic.GetAll();
+            List<TouristSpotModelOut> retorno = found.Select(ts => new TouristSpotModelOut(ts)).ToList<TouristSpotModelOut>();
+            return retorno;
         }
         /// <summary>
         /// Returns a TouristSpot given an Id.
