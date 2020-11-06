@@ -1,0 +1,16 @@
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\obj\Debug\netstandard2.0\Obligatorio.JsonImport.csprojAssemblyReference.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\obj\Debug\netstandard2.0\Obligatorio.JsonImport.AssemblyInfoInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\obj\Debug\netstandard2.0\Obligatorio.JsonImport.AssemblyInfo.cs
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.JsonImport.deps.json
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.JsonImport.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.JsonImport.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.ImportLogicInterface.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.ImportLogicInterface.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\obj\Debug\netstandard2.0\Obligatorio.JsonImport.csproj.CopyComplete
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\obj\Debug\netstandard2.0\Obligatorio.JsonImport.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\obj\Debug\netstandard2.0\Obligatorio.JsonImport.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.ExternalFileImport.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.ExternalFileImport.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.JsonImport\obj\Debug\netstandard2.0\Obligatorio.JsonImport.csproj.CoreCompileInputs.cache

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import {TouristSpotWriteModel} from '../../../models/writeModels/tourist-spot-write-model';
 
 @Component({
   selector: 'app-tourist-spot-register',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TouristSpotRegisterComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('form') registerForm : NgForm;
+  public submittedObject: TouristSpotWriteModel = new TouristSpotWriteModel("", "", null, "");
+
 
   ngOnInit(): void {
   }
 
+  handleFileInput(files: FileList) {
+    this.submittedObject.image = files.item(0);
+}
+
+  onSubmit(){
+    console.log("TRIGGERED!");
+    this.submittedObject.name = this.registerForm.value.name;
+    this.submittedObject.description = this.registerForm.value.description;
+    this.submittedObject.regionName = this.registerForm.value.regionPicker;
+    console.log(this.submittedObject);
+  }
 }

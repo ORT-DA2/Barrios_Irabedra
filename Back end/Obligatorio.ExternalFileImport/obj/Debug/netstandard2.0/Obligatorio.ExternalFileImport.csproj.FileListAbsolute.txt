@@ -1,0 +1,12 @@
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\bin\Debug\netstandard2.0\Obligatorio.ExternalFileImport.deps.json
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\bin\Debug\netstandard2.0\Obligatorio.ExternalFileImport.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\bin\Debug\netstandard2.0\Obligatorio.ExternalFileImport.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\obj\Debug\netstandard2.0\Obligatorio.ExternalFileImport.csprojAssemblyReference.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\obj\Debug\netstandard2.0\Obligatorio.ExternalFileImport.AssemblyInfoInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\obj\Debug\netstandard2.0\Obligatorio.ExternalFileImport.AssemblyInfo.cs
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\obj\Debug\netstandard2.0\Obligatorio.ExternalFileImport.csproj.CoreCompileInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\obj\Debug\netstandard2.0\Obligatorio.ExternalFileImport.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\obj\Debug\netstandard2.0\Obligatorio.ExternalFileImport.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.ExternalFileImport\obj\Debug\netstandard2.0\Obligatorio.ExternalFileImport.csproj.CopyComplete

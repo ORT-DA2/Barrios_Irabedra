@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Obligatorio.ExternalFileImport\Obligatorio.ExternalFileImport.csproj" />
+    <ProjectReference Include="..\Obligatorio.ImportInterface\Obligatorio.ImportLogicInterface.csproj" />
+  </ItemGroup>
+
+</Project>

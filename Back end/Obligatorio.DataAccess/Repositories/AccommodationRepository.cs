@@ -106,5 +106,19 @@ namespace Obligatorio.DataAccess.Repositories
             }
             return accommodation;
         }
+
+        public bool AlreadyExistsByName(string name)
+        {
+            var list = this.accommodations.ToList<Accommodation>();
+            foreach (var item in list)
+            {
+                if (item.Name.ToLower().Equals(name.ToLower()))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
+    
 }

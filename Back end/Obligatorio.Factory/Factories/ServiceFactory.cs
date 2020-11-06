@@ -5,7 +5,10 @@ using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccess.Context;
 using Obligatorio.DataAccess.Repositories;
 using Obligatorio.DataAccessInterface.Interfaces;
+using Obligatorio.ImportLogic.Logics;
+using Obligatorio.ImportLogicInterface.Interfaces;
 using Obligatorio.SessionInterface;
+
 
 namespace Obligatorio.Factory.Factories
 {
@@ -34,6 +37,7 @@ namespace Obligatorio.Factory.Factories
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<IReservationLogic, ReservationLogic>();
             services.AddScoped<IReservationRepository, ReservationRepository>();
+            services.AddScoped<IImportLogic, ImportLogic.Logics.ImportLogic>();
         }
         public void AddDbContextService()
         {

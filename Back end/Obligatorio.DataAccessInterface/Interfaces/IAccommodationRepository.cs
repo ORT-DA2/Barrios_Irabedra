@@ -12,5 +12,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         void UpdateCapacity(int accommodationId, bool fullCapacity);
         void AddImages(int accommodationId, List<ImageWrapper> images);
         Accommodation GetById(int accommodationId);
+        bool AlreadyExistsByName(string name);
     }
 }

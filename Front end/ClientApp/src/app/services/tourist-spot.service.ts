@@ -11,6 +11,7 @@ import { TouristSpotReadModel } from '../models/readModels/tourist-spot-read-mod
 
 export class TouristSpotService {
 
+  public loadedTouristSpots : TouristSpotReadModel[] = [];
   private uri = environment.URI_BASE+"touristSpots";
 
   constructor(private http: HttpClient) { }
@@ -19,19 +20,22 @@ export class TouristSpotService {
 
   getAll() {
     this.http
-    .get(this.uri+"?category=all")
+    .get(this.uri+"?category=all") //lo podriamos sacar porque si no recibe args automaticamente recibe /?category=all
+    //lograr pasar params a la query
+    //para poder efectivamente cumplir con el ReqFun
+    //empezar a ver formularios tambien para hacer el POST
     .pipe(
       map((responseData : TouristSpotReadModel[]) => {
         const touristSpotsArray: TouristSpotReadModel[] = []; 
-        for (const id in responseData ){
-          if(responseData.hasOwnProperty(id)) {
-            touristSpotsArray.push({ ...responseData[id], id: parseInt(id) })
-          }
-        } 
+        this.loadedTouristSpots = [];
+        for(let i = 0; i < responseData.length; i++){
+          this.loadedTouristSpots.push(responseData[i]);
+          touristSpotsArray.push(responseData[i]);
+        }
         return touristSpotsArray;
       })
     ).subscribe(touristSpots => {
-      console.log(touristSpots);
+      
     })
   }
 

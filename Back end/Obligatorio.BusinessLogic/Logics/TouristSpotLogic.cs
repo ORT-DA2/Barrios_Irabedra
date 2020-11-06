@@ -41,6 +41,11 @@ namespace Obligatorio.BusinessLogic.Logics
             this.touristSpotRepository.Add(touristSpot, touristSpotCategory);
         }
 
+        public bool AlreadyExistsByName(string name)
+        {
+            return this.touristSpotRepository.AlreadyExistsByName(name);
+        }
+
         public void Delete(int id)
         {
             try
@@ -75,6 +80,7 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
+
         public IEnumerable<TouristSpot> GetAll()
         {
             return this.touristSpotRepository.GetAll();
@@ -83,6 +89,18 @@ namespace Obligatorio.BusinessLogic.Logics
         public IEnumerable<TouristSpot> GetAllByCondition(Func<TouristSpot, bool> predicate)
         {
             return this.touristSpotRepository.GetAllByCondition(predicate);
+        }
+
+        public TouristSpot GetByName(string name)
+        {
+            try
+            {
+                return this.touristSpotRepository.Find(name);
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
         }
 
         public void Update(int id, TouristSpot newEntity)
@@ -95,6 +113,11 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
+        }
+
+        int ITouristSpotLogic.Get(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }

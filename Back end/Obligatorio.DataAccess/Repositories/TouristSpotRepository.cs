@@ -4,6 +4,7 @@ using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Obligatorio.DataAccess.Repositories
 {
@@ -125,6 +126,32 @@ namespace Obligatorio.DataAccess.Repositories
         {
             touristSpot.TouristSpotCategories.Add(touristSpotCategory);
             myContext.SaveChanges();
+        }
+
+        public bool AlreadyExistsByName(string name)
+        {
+            var list = this.touristSpots.ToList<TouristSpot>();
+            foreach (var item in list)
+            {
+                if (item.Name.ToLower().Equals(name.ToLower()))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public TouristSpot Find(string name)
+        {
+            var list = this.touristSpots.ToList<TouristSpot>();
+            foreach (var item in list)
+            {
+                if (item.Name.ToLower().Equals(name.ToLower()))
+                {
+                    return item;
+                }
+            }
+            throw new ObjectNotFoundInDatabaseException();
         }
     }
 }

@@ -10,7 +10,7 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
                   <label class="mr-sm-2" for="regionPicker">Region</label>
-                  <select class="custom-select mr-sm-2" id="regionPicker">
+                  <select class="custom-select mr-sm-2" id="regionPicker" ngModel name="regionPicker">
                     <option value="Metropoliatana">Metropolitana</option>
                     <option value="Centro Sur">Centro Sur</option>
                     <option value="Este">Este</option>
@@ -21,10 +21,20 @@
             </div>
             <div class="form-group">
                 <label for="categoryPicker">Categories</label>
-                <select multiple class="form-control" id="categoryPicker">
+                <select multiple class="form-control" id="categoryPicker" ngModel name="categoryPicker">
                 </select>
               </div>
         </form>
         <button (click)="onSubmit()" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <div>
+          <table>
+            <tr *ngFor="let item of queryResponse">
+              <td>
+                      {{item}}
+            </td>
+              </tr>
+          </table>
+        </div>
+        
     </div>
 </div>

@@ -14,5 +14,7 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         void Delete(int id);
         void Update(TouristSpot touristSpot);
         void Add(TouristSpot touristSpot, TouristSpotCategory touristSpotCategory);
+        bool AlreadyExistsByName(string name);
+        TouristSpot Find(string name);
     }
 }

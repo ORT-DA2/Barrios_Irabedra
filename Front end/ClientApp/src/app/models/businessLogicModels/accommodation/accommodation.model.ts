@@ -12,7 +12,7 @@ export class Accommodation {
     public fullCapacityReached: boolean;
     public touristSpot: TouristSpot;
 
-    public Accommodation( id: number, name: string, rating: number, address: string,
+    constructor( id: number, name: string, rating: number, address: string,
          description: string, images: string[], pricePerNight: number, fullCapacityReached: boolean, touristSpot: TouristSpot){
             this.name = name;
             this.images = images;

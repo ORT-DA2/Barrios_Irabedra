@@ -1,0 +1,16 @@
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\obj\Debug\netstandard2.0\Obligatorio.XmlImport.csprojAssemblyReference.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\obj\Debug\netstandard2.0\Obligatorio.XmlImport.AssemblyInfoInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\obj\Debug\netstandard2.0\Obligatorio.XmlImport.AssemblyInfo.cs
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\obj\Debug\netstandard2.0\Obligatorio.XmlImport.csproj.CoreCompileInputs.cache
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.XmlImport.deps.json
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.XmlImport.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.XmlImport.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.ImportLogicInterface.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.ImportLogicInterface.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\obj\Debug\netstandard2.0\Obligatorio.XmlImport.csproj.CopyComplete
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\obj\Debug\netstandard2.0\Obligatorio.XmlImport.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\obj\Debug\netstandard2.0\Obligatorio.XmlImport.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.ExternalFileImport.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.ExternalFileImport.pdb
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.Domain.dll
+D:\Documentos\ORT\DA2\Barrios_Irabedra\Back end\Obligatorio.XmlImport\bin\Debug\netstandard2.0\Obligatorio.Domain.pdb

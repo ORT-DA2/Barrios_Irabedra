@@ -43,6 +43,8 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
+
+
         public Accommodation GetById(int accommodationId)
         {
             try
@@ -122,5 +124,17 @@ namespace Obligatorio.BusinessLogic.Logics
                 (accommodationQueryIn.Babies * totalDays * a.PricePerNight * 0.25);
             return totalPrice;
         }
+
+        public void Add(Accommodation accommodation)
+        {
+            this.accommodationRepository.Add(accommodation);
+        }
+
+        public bool AlreadyExistsByName(string name)
+        { 
+                return this.accommodationRepository.AlreadyExistsByName(name);
+        }
+
+       
     }
 }

@@ -15,7 +15,11 @@
     <ProjectReference Include="..\Obligatorio.BusinessLogic\Obligatorio.BusinessLogic.csproj" />
     <ProjectReference Include="..\Obligatorio.DataAccess\Obligatorio.DataAccess.csproj" />
     <ProjectReference Include="..\Obligatorio.DataAccessInterface\Obligatorio.DataAccessInterface.csproj" />
+    <ProjectReference Include="..\Obligatorio.ImportInterface\Obligatorio.ImportLogicInterface.csproj" />
+    <ProjectReference Include="..\Obligatorio.ImportLogic\Obligatorio.ImportLogic.csproj" />
+    <ProjectReference Include="..\Obligatorio.JsonImport\Obligatorio.JsonImport.csproj" />
     <ProjectReference Include="..\Obligatorio.SessionInterface\Obligatorio.SessionInterface.csproj" />
+    <ProjectReference Include="..\Obligatorio.XmlImport\Obligatorio.XmlImport.csproj" />
   </ItemGroup>
 
 </Project>
