@@ -5,6 +5,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { TouristSpotReadModel } from '../models/readModels/tourist-spot-read-model';
+import {TouristSpotWriteModel} from '../models/writeModels/tourist-spot-write-model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -39,6 +41,11 @@ export class TouristSpotService {
     })
   }
 
+  post(ts: TouristSpotWriteModel){
+    this.http.post(this.uri, ts).subscribe(responseData => {
+      console.log(responseData);
+    })
+  }
 
   /*----------------------HAY QUE VER ESTO MAS ADELANTE----------------*/
   /***********************

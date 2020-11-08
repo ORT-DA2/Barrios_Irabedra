@@ -3,6 +3,7 @@ using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -119,6 +120,38 @@ namespace Obligatorio.DataAccess.Repositories
             }
             return false;
         }
+
+        public void Delete(string name)
+        {
+            var list = this.accommodations.ToList<Accommodation>();
+            foreach (var item in list)
+            {
+                if (item.Name.ToLower().Equals(name.ToLower()))
+                {
+                    Accommodation toDelete = this.GetByName(name);
+                    if (toDelete is null)
+                    {
+                        throw new ObjectNotFoundInDatabaseException();
+                    }
+                    this.myContext.Entry(toDelete).State = EntityState.Deleted;
+                    this.myContext.Remove(toDelete);
+                    this.myContext.SaveChanges();
+                }
+            }
+        }
+
+        private Accommodation GetByName(string name)
+        {
+            var list = this.accommodations.ToList<Accommodation>();
+            foreach (var item in list)
+            {
+                if (item.Name.ToLower().Equals(name.ToLower()))
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
     }
-    
+
 }

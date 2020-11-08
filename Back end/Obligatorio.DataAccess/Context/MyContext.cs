@@ -28,12 +28,12 @@ namespace Obligatorio.DataAccess.Context
             modelBuilder.Entity<Region>()
             .HasMany(r => r.TouristSpots)
             .WithOne()
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Accommodation>()
             .HasMany(a => a.Images)
             .WithOne()
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Cascade);
 
 
             modelBuilder.Entity<TouristSpotCategory>()
@@ -46,6 +46,8 @@ namespace Obligatorio.DataAccess.Context
                 .HasOne(tsc => tsc.Category)
                 .WithMany(c => c.TouristSpotCategories)
                 .HasForeignKey(tsc => tsc.CategoryId);
+
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

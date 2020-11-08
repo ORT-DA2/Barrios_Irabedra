@@ -135,5 +135,22 @@ namespace Obligatorio.WebApi.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
+
+        [HttpDelete("{name}")]
+        public IActionResult Delete(string name)
+        {
+            try
+            {
+                //TESTEAR TODA LA PILA DE DE LLAMADAS
+                this.accommodationLogic.Delete(name);
+                return Ok("Success");
+            }
+            catch(ObjectNotFoundInDatabaseException)
+            //TESTEAR ESTE CASO
+            {
+                return NotFound("There is no accommodation with such name.");
+            }
+        }
+
     }
 }

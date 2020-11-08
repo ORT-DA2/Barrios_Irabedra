@@ -135,6 +135,9 @@ namespace Obligatorio.BusinessLogic.Logics
                 return this.accommodationRepository.AlreadyExistsByName(name);
         }
 
-       
+        public void Delete(string name)
+        {
+            this.accommodationRepository.Delete(name);
+        }
     }
 }

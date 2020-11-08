@@ -13,5 +13,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         void AddImages(int accommodationId, List<ImageWrapper> images);
         Accommodation GetById(int accommodationId);
         bool AlreadyExistsByName(string name);
+        void Delete(string name);
     }
 }

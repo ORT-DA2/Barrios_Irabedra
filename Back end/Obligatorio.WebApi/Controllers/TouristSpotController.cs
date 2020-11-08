@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Model.Models.In;
 using Model.Models.Out;
@@ -11,6 +12,7 @@ using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
 {
+    [EnableCors("AllowEverything")]
     [Route("api/touristSpots")]
     [ApiController]
     public class TouristSpotController : ControllerBase
@@ -147,7 +149,7 @@ namespace Obligatorio.WebApi.Controllers
         ///
         /// </remarks>
         [HttpPost]
-        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
+        //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] TouristSpotModelIn touristSpotModel)
         {
             try

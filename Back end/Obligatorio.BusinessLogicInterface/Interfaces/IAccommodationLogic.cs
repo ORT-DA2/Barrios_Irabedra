@@ -12,5 +12,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
         void Update(AccommodationPutQueryIn accommodationPutQueryIn);
         Accommodation GetById(int accommodationId);
         bool AlreadyExistsByName(string name);
+        void Delete(string name);
     }
 }

@@ -8,7 +8,7 @@ using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.ImportLogic.Logics;
 using Obligatorio.ImportLogicInterface.Interfaces;
 using Obligatorio.SessionInterface;
-
+using System.Runtime.CompilerServices;
 
 namespace Obligatorio.Factory.Factories
 {
@@ -43,5 +43,7 @@ namespace Obligatorio.Factory.Factories
         {
             services.AddDbContext<DbContext, MyContext>();
         }
+
+
     }
 }
