@@ -39,6 +39,7 @@ namespace Obligatorio.WebApi
             factory.AddCustomServices();
             factory.AddDbContextService();
             services.AddScoped<AuthorizationAttributeFilter>();
+            services.EnableAllCors();
         }
 
         
@@ -76,6 +77,8 @@ namespace Obligatorio.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            
+
             app.UseHttpsRedirection();
 
             app.UseSwagger();
@@ -85,6 +88,8 @@ namespace Obligatorio.WebApi
             });
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 

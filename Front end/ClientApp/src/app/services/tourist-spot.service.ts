@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+
+import { HttpParams, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, min, tap } from 'rxjs/operators';
 import { TouristSpotReadModel } from '../models/readModels/tourist-spot-read-model';
 import {TouristSpotWriteModel} from '../models/writeModels/tourist-spot-write-model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +16,65 @@ import {TouristSpotWriteModel} from '../models/writeModels/tourist-spot-write-mo
 export class TouristSpotService {
 
   public loadedTouristSpots : TouristSpotReadModel[] = [];
-  private uri = environment.URI_BASE+"touristSpots";
+  private uri = environment.URI_BASE+'/touristSpots';
 
   constructor(private http: HttpClient) { }
 
- 
+ get(regionName:string, categoryNames:string[]){
+   //let queryStringParams:string = "?";
+   let params = new HttpParams();
+
+
+   if( regionName === null && !(categoryNames === null)){
+     console.log("ONIIIIIIIIIIIICHAN 1")
+    for(var i = 0; i < categoryNames.length; i++){
+    params = params.append('category',  categoryNames[i]);
+      //queryStringParams = queryStringParams + "category=" + categoryNames[i] ;
+      if(!(i === categoryNames.length - 2)){
+        //queryStringParams = queryStringParams + "&";
+      }
+    }
+   }
+
+
+   if( !(regionName === null) && (categoryNames === null)){
+    console.log("ONIIIIIIIIIIIICHAN 2")
+    params = params.append('region', regionName );
+    //queryStringParams = queryStringParams + "region=" + regionName ;
+  }
+
+
+
+  if( !(regionName === null) && !(categoryNames === null)){
+    console.log("ONIIIIIIIIIIIICHAN 3")
+    for(var i = 0; i < categoryNames.length; i++){
+      params = params.append('category',  categoryNames[i] );
+      //queryStringParams = queryStringParams + "category=" + categoryNames[i] + "&";
+    }
+    params = params.append('region',   regionName );
+    //queryStringParams = queryStringParams + "region=" + regionName ;
+  }
+
+  this.http
+  .get(this.uri, {params})
+  .pipe(
+    map((responseData : TouristSpotReadModel[]) => {
+      const touristSpotsArray: TouristSpotReadModel[] = []; 
+      this.loadedTouristSpots = [];
+      for(let i = 0; i < responseData.length; i++){
+        this.loadedTouristSpots.push(responseData[i]);
+        touristSpotsArray.push(responseData[i]);
+      }
+      return touristSpotsArray;
+    })
+  ).subscribe(touristSpots => {
+    
+  })
+ }
 
   getAll() {
     this.http
-    .get(this.uri+"?category=all") //lo podriamos sacar porque si no recibe args automaticamente recibe /?category=all
+    .get(this.uri + '?category=all') //lo podriamos sacar porque si no recibe args automaticamente recibe /?category=all
     //lograr pasar params a la query
     //para poder efectivamente cumplir con el ReqFun
     //empezar a ver formularios tambien para hacer el POST

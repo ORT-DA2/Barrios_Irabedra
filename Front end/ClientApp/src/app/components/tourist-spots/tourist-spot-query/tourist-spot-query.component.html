@@ -3,6 +3,7 @@
     <div>
         <h1 class="display-4">Tourist Spots</h1>
         <p class="lead">So as to check existing tourist spots, select a region and at least one category. Then click the search button. </p>
+        <button (click)="onRefreshActivation()" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
         <hr class="my-4">
     </div>
     <div id="formWrapper">
@@ -10,18 +11,19 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
                   <label class="mr-sm-2" for="regionPicker">Region</label>
-                  <select class="custom-select mr-sm-2" id="regionPicker" ngModel name="regionPicker">
-                    <option value="Metropoliatana">Metropolitana</option>
-                    <option value="Centro Sur">Centro Sur</option>
-                    <option value="Este">Este</option>
-                    <option value="Este">Litoral Norte</option>
-                    <option value="Este">Corredor Pajaros Pintados</option>
+                  <select class="custom-select mr-sm-2" id="regionPicker" ngModel name="regionPicker" [(ngModel)] = "selectedRegionName">
+                    <option value='Region metropolitana'>Metropolitana</option>
+                    <option value='Region centro sur'>Centro Sur</option>
+                    <option value='Region este'>Este</option>
+                    <option value='Region litoral norte'>Litoral Norte</option>
+                    <option value='Region corredor de los pajaros pintados'>Corredor Pajaros Pintados</option>
                   </select>
                 </div>
             </div>
             <div class="form-group">
                 <label for="categoryPicker">Categories</label>
-                <select multiple class="form-control" id="categoryPicker" ngModel name="categoryPicker">
+                <select multiple="multiple" class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)] = "selectedCategoryNames" > 
+                  <option [value]="item" *ngFor="let item of categoriesString">{{item}}</option>
                 </select>
               </div>
         </form>

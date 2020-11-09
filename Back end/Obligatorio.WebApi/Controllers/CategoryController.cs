@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Model.Models.In;
 using Model.Models.Out;
@@ -9,6 +10,7 @@ using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
 {
+    [EnableCors("AllowAngularFrontEndClientApp")]
     [Route("api/categories")]
     [ApiController]
     public class CategoryController : ControllerBase
