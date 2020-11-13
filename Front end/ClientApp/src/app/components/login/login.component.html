@@ -1,21 +1,31 @@
 <div class="jumbotron" id="loginWrapper">
-    <div>
-        <h1 class="display-4">Login</h1>
-        <p class="lead">Login as an admin with a valid email and password. </p>
-        <hr class="my-4">
-        <form>
-            <div class="form-group">
-                <label for="inputTouristSpotName">Email</label>
-                <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="">
-                <small id="descriptionHelp" class="form-text text-muted"></small>
-            </div>
-        </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Login</button>
-    </div>
+    <div *ngIf="checkAdminToken(); then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <p>
+            Welcome {{email}}
+        </p>
+        <button (click)=logout() type="button" class="btn btn-primary btn-lg btn-block">Logout</button>
+    </ng-template>
+    <ng-template #elseBlock>
+        <div>
+            <h1 class="display-4">Login</h1>
+            <p class="lead">Login as an admin with a valid email and password. </p>
+            <hr class="my-4">
+            <form  #form="ngForm">
+                <div class="form-group">
+                    <label for="inputTouristSpotName">Email</label>
+                    <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="" name="email" [(ngModel)]="email">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="" name="password"  [(ngModel)]="password">
+                    <small id="descriptionHelp" class="form-text text-muted"></small>
+                </div>
+            </form>
+            <button (click)=onClick() type="button" class="btn btn-primary btn-lg btn-block">Login</button>
+        </div>
+    </ng-template>
+   
 
 </div>
 

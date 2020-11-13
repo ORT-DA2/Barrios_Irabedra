@@ -6,9 +6,9 @@
         <p>Given you need to access to a disabled option, you must login as an admin first. Please do it <a routerLink="/login" routerLinkActive="active">here</a>.</p>
     </div>
     <div class="btn-toolbar mb-3 blocks" role="group" aria-label="Toolbar with button group">
-        <button type="button" class="btn btn-secondary" routerLink="/accommodationRegister">Register a new accommodation</button>
-        <button type="button" class="btn btn-secondary" routerLink="/accommodationDeletion">Remove an existing accommodation</button>
-        <button type="button" class="btn btn-secondary" routerLink="/accommodationUpdate">Update an existing accommodation</button>
+        <button  *ngIf="checkAdminToken()" type="button" class="btn btn-secondary" routerLink="/accommodationRegister">Register a new accommodation</button>
+        <button  *ngIf="checkAdminToken()" type="button" class="btn btn-secondary" routerLink="/accommodationDeletion">Remove an existing accommodation</button>
+        <button  *ngIf="checkAdminToken()" type="button" class="btn btn-secondary" routerLink="/accommodationUpdate">Update an existing accommodation</button>
         <button type="button" class="btn btn-secondary" routerLink="/accommodationQuery">Search existing accommodations</button>
     </div>
 </div>

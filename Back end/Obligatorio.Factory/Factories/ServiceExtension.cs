@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Text;
 
 namespace Obligatorio.Factory.Factories
@@ -11,7 +12,7 @@ namespace Obligatorio.Factory.Factories
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowAngularFrontEndClientApp", builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
+                options.AddPolicy("AllowAngularFrontEndClientApp", builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials());
             });
             return services;
         }

@@ -13,6 +13,7 @@ using Obligatorio.WebApi.Filters;
 namespace Obligatorio.WebApi.Controllers
 {
     [EnableCors("AllowAngularFrontEndClientApp")]
+    //[System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
     [Route("api/touristSpots")]
     [ApiController]
     public class TouristSpotController : ControllerBase

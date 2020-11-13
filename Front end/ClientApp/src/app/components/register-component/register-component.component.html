@@ -1,0 +1,20 @@
+<div class="jumbotron" id="registerWrapper">
+    <div>
+        <h1 class="display-4">Register</h1>
+        <p class="lead">Register an admin with a valid email and password. </p>
+        <hr class="my-4">
+        <form  #form="ngForm">
+            <div class="form-group">
+                <label for="inputTouristSpotName">Email</label>
+                <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="" name="email" [(ngModel)]="email">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="" name="password" [(ngModel)]="password">
+                <small id="descriptionHelp" class="form-text text-muted"></small>
+            </div>
+        </form>
+        <button (click)=onClick() type="button" class="btn btn-primary btn-lg btn-block">Register</button>
+    </div>
+  
+</div>

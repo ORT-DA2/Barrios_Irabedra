@@ -16,5 +16,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         void Add(TouristSpot touristSpot, TouristSpotCategory touristSpotCategory);
         bool AlreadyExistsByName(string name);
         TouristSpot Find(string name);
+        TouristSpot Get(string touristSpotName);
     }
 }

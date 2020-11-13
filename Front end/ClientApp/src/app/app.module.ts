@@ -27,6 +27,9 @@ import { CategoryQueryComponent } from './components/categories/category-query/c
 import { ReportComponent } from './components/report/report.component';
 import { TouristSpotService } from './services/tourist-spot.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AddCategoryToTouristSpotComponent } from './components/tourist-spots/add-category-to-tourist-spot/add-category-to-tourist-spot.component';
+import { NameProyectingPipe } from '../app/components/tourist-spots/nameProyectingPipe';
+import { RegisterComponentComponent } from './components/register-component/register-component.component';
 
 const appRoutes: Routes = [
   { path: 'touristSpots', component: TouristSpotsComponent }, 
@@ -48,7 +51,9 @@ const appRoutes: Routes = [
   { path: 'adminUpdate', component: AdminUpdateComponent},
   { path: 'categoryRegister', component: CategoryRegisterComponent},
   { path: 'categoryQuery', component: CategoryQueryComponent},
-  { path: 'reports', component: ReportComponent}
+  { path: 'reports', component: ReportComponent},
+  { path: 'addCategoryToTouristSpot' , component: AddCategoryToTouristSpotComponent},
+  { path: 'register' , component: RegisterComponentComponent }
 ];
 
 @NgModule({
@@ -74,6 +79,9 @@ const appRoutes: Routes = [
     CategoryRegisterComponent,
     CategoryQueryComponent,
     ReportComponent,
+    AddCategoryToTouristSpotComponent,
+    NameProyectingPipe,
+    RegisterComponentComponent
   ],
   imports: [
     BrowserModule,

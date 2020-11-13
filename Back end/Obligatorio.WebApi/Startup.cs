@@ -89,7 +89,7 @@ namespace Obligatorio.WebApi
 
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors("AllowAngularFrontEndClientApp");
 
             app.UseAuthorization();
 

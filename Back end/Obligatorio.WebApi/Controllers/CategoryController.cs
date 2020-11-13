@@ -11,6 +11,7 @@ using Obligatorio.WebApi.Filters;
 namespace Obligatorio.WebApi.Controllers
 {
     [EnableCors("AllowAngularFrontEndClientApp")]
+    //[System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
     [Route("api/categories")]
     [ApiController]
     public class CategoryController : ControllerBase
@@ -109,12 +110,12 @@ namespace Obligatorio.WebApi.Controllers
         ///
         /// </remarks>
         [HttpPut]
-        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
+        //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] CategoryAndTouristSpotIdentifier data)
         {
             try
             {
-                this.categoryLogic.AddTouristSpotToCategory(data.CategoryName, data.TouristSpotId);
+                this.categoryLogic.AddTouristSpotToCategory(data.CategoryName, data.TouristSpotName);
                 return Ok("Updated");
             }
             catch (ObjectNotFoundInDatabaseException)

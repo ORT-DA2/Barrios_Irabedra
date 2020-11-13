@@ -153,5 +153,16 @@ namespace Obligatorio.DataAccess.Repositories
             }
             throw new ObjectNotFoundInDatabaseException();
         }
+
+        public TouristSpot Get(string touristSpotName)
+        {
+            var touristSpot = this.Find(touristSpotName);
+            if (touristSpot is null)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+            return touristSpot;
+        }
+
     }
 }

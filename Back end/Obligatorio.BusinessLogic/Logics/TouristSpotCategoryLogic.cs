@@ -96,5 +96,42 @@ namespace Obligatorio.BusinessLogic.Logics
             }
             return touristSpot;
         }
+
+        public void AddTouristSpotToCategory(string categoryName, string touristSpotName)
+        {
+            try
+            {
+                Category category = ValidateExistingCategory(categoryName);
+                TouristSpot touristSpot = ValidateExistingTouristSpot(touristSpotName);
+                TouristSpotCategory touristSpotCategory = new TouristSpotCategory
+                {
+                    TouristSpot = touristSpot,
+                    TouristSpotId = touristSpot.Id,
+                    Category = category,
+                    CategoryId = category.Id
+                };
+                this.categoryRepository.Add(category, touristSpotCategory);
+                this.touristSpotRepository.Add(touristSpot, touristSpotCategory);
+                this.touristSpotCategoryRepository.Add(category, touristSpot);
+            }
+            catch (ObjectNotFoundInDatabaseException)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+            catch (RepeatedObjectException)
+            {
+                throw new RepeatedObjectException();
+            }
+        }
+
+        private TouristSpot ValidateExistingTouristSpot(string touristSpotName)
+        {
+            TouristSpot touristSpot = this.touristSpotRepository.Get(touristSpotName);
+            if (touristSpot is null)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+            return touristSpot;
+        }
     }
 }

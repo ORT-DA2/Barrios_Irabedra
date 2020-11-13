@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 
-import { HttpParams, HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpParams, HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, min, tap } from 'rxjs/operators';
 import { TouristSpotReadModel } from '../models/readModels/tourist-spot-read-model';
 import {TouristSpotWriteModel} from '../models/writeModels/tourist-spot-write-model';
+import { tokenName } from '@angular/compiler';
 
 
 @Injectable({
@@ -15,44 +16,39 @@ import {TouristSpotWriteModel} from '../models/writeModels/tourist-spot-write-mo
 
 export class TouristSpotService {
 
+
   public loadedTouristSpots : TouristSpotReadModel[] = [];
   private uri = environment.URI_BASE+'/touristSpots';
+  
 
   constructor(private http: HttpClient) { }
 
+
+
  get(regionName:string, categoryNames:string[]){
-   //let queryStringParams:string = "?";
    let params = new HttpParams();
 
 
    if( regionName === null && !(categoryNames === null)){
-     console.log("ONIIIIIIIIIIIICHAN 1")
     for(var i = 0; i < categoryNames.length; i++){
     params = params.append('category',  categoryNames[i]);
-      //queryStringParams = queryStringParams + "category=" + categoryNames[i] ;
       if(!(i === categoryNames.length - 2)){
-        //queryStringParams = queryStringParams + "&";
       }
     }
    }
 
 
    if( !(regionName === null) && (categoryNames === null)){
-    console.log("ONIIIIIIIIIIIICHAN 2")
     params = params.append('region', regionName );
-    //queryStringParams = queryStringParams + "region=" + regionName ;
   }
 
 
 
   if( !(regionName === null) && !(categoryNames === null)){
-    console.log("ONIIIIIIIIIIIICHAN 3")
     for(var i = 0; i < categoryNames.length; i++){
       params = params.append('category',  categoryNames[i] );
-      //queryStringParams = queryStringParams + "category=" + categoryNames[i] + "&";
     }
     params = params.append('region',   regionName );
-    //queryStringParams = queryStringParams + "region=" + regionName ;
   }
 
   this.http

@@ -12,4 +12,12 @@ export class ReportComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkAdminToken(){
+    if(sessionStorage.getItem('admin') !== null){
+      return true;
+    }
+    else{
+      return false;
+    }
+   }
 }

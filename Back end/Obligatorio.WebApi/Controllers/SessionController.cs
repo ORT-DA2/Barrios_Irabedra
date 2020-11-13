@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Obligatorio.Domain.DomainEntities;
 using Obligatorio.Model.Models.In;
 using Obligatorio.SessionInterface;
+using Obligatorio.WebApi.AuxiliaryObjects;
+using System;
+using System.Collections.Generic;
 
 namespace Obligatorio.WebApi.Controllers
 {
@@ -14,6 +18,22 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.sessionLogic = sessionLogic;
         }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] SessionModelIn value)
+        {
+            try
+            {
+                Admin admin = value.ToEntity();
+                this.sessionLogic.Add(admin);
+                return Ok();
+            }
+            catch (Exception)
+            {
+               return BadRequest("Somewthing went wrong!");
+            }
+        }
+
         /// <summary>
         /// Creates a new Session.
         /// </summary>
@@ -27,14 +47,16 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
-        [HttpPost]
-        public IActionResult Post([FromBody] SessionModelIn value)
+        [HttpGet]
+        public IActionResult Get()
         {
-            string token = "";
-            if (sessionLogic.IsValidAdmin(value.Email, value.Password)) 
+            var headerValues = this.HttpContext.Request.Headers;
+            var email = headerValues["email"];
+            var password = headerValues["password"];
+            if (sessionLogic.IsValidAdmin(email, password)) 
             {
-                token = sessionLogic.GetAdminToken();
-                return Ok(token);
+                string token = sessionLogic.GetAdminToken();
+                return Ok(new ResponseMessage { Message = token });
             }
             return BadRequest("Wrong Email or Password");
         }

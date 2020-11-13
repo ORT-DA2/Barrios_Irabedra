@@ -5,7 +5,7 @@
         <hr class="my-4">
         <p>Given you need to access to a disabled option, you must login as an admin first. Please do it <a routerLink="/login" routerLinkActive="active">here</a>.</p>
     </div>
-    <button type="button" class="btn btn-secondary" >Create report</button>
+    <button *ngIf="checkAdminToken()" type="button" class="btn btn-secondary" >Create report</button>
         
 
 </div>

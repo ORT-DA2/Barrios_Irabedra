@@ -52,6 +52,22 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
+        public void AddTouristSpotToCategory(string categoryName, string touristSpotName)
+        {
+            try
+            {
+                this.touristSpotCategoryLogic.AddTouristSpotToCategory(categoryName, touristSpotName);
+            }
+            catch (RepeatedObjectException ex)
+            {
+                throw new RepeatedObjectException();
+            }
+            catch (Exception ex)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+        }
+
         public Category Find(string categoryName)
         {
             return this.categoryRepository.Find(categoryName);

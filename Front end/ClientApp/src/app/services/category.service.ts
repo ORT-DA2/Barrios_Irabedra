@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { CategoryReadModel } from '../models/readModels/category-read-model'; 
-import { HttpParams, HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpParams, HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, min, tap } from 'rxjs/operators';
 
@@ -14,6 +14,14 @@ export class CategoryService {
   private uri = environment.URI_BASE+'/categories';
 
   constructor(private http: HttpClient) { }
+
+  addCategoryToTouristSpot(touristSpotName:string, categoryName:string){
+    console.log(touristSpotName);
+    console.log(categoryName);
+    this.http.put(this.uri, {"TouristSpotName":touristSpotName, "CategoryName":categoryName}).subscribe(responseData => {
+      console.log(responseData);
+    })
+  }
 
   getAll() {
     this.http

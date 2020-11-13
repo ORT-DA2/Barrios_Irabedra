@@ -22,6 +22,9 @@ export class TouristSpotRegisterComponent implements OnInit {
   }
 
   
+  loadData(){
+    this.touristSpotService.getAll();
+  }
 
   onSubmit(){
     this.submittedObject.name = this.registerForm.value.name;
@@ -46,6 +49,14 @@ export class TouristSpotRegisterComponent implements OnInit {
   }
 
 
+  checkAdminToken(){
+    if(sessionStorage.getItem('admin') !== null){
+      return true;
+    }
+    else{
+      return false;
+    }
+   }
 }
 
 
