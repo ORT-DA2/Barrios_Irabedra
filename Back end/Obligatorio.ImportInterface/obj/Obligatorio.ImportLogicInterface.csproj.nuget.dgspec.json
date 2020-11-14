@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj": {}
+    "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj": {
+    "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj",
+        "projectUniqueName": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj",
         "projectName": "Obligatorio.ImportLogicInterface",
-        "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\obj\\",
+        "projectPath": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj",
+        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+        "outputPath": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +55,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

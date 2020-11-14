@@ -83,6 +83,7 @@
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -229,23 +230,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Juan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\Obligatorio.XmlImport.csproj",
+      "projectUniqueName": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\Obligatorio.XmlImport.csproj",
       "projectName": "Obligatorio.XmlImport",
-      "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\Obligatorio.XmlImport.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\obj\\",
+      "projectPath": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\Obligatorio.XmlImport.csproj",
+      "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+      "outputPath": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -258,11 +255,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ExternalFileImport\\Obligatorio.ExternalFileImport.csproj": {
-              "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ExternalFileImport\\Obligatorio.ExternalFileImport.csproj"
+            "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ExternalFileImport\\Obligatorio.ExternalFileImport.csproj": {
+              "projectPath": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ExternalFileImport\\Obligatorio.ExternalFileImport.csproj"
             },
-            "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj": {
-              "projectPath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj"
+            "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj": {
+              "projectPath": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportInterface\\Obligatorio.ImportLogicInterface.csproj"
             }
           }
         }
@@ -293,7 +290,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

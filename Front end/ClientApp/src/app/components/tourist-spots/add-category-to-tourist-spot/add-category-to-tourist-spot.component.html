@@ -16,7 +16,7 @@
 
               <div class="form-group">
                 <label for="categoryPicker">Categories</label>
-                <select  class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)]="this.selectedCategory" > 
+                <select  class="form-control" id="categoryPicker" name="categoryPicker" [(ngModel)]="this.selectedCategory" > 
                   <option  *ngFor="let item of this.categoryService.loadedCategories">{{item.name}}</option>
                 </select>
               </div>

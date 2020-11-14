@@ -43,20 +43,36 @@ namespace Obligatorio.WebApi.Controllers
         [HttpGet]
         public IActionResult Get([FromBody] AccommodationModelIn accommodationModelIn)
         {
-            int tot = accommodationModelIn.Babies + accommodationModelIn.Kids + accommodationModelIn.Adults;
-            if (accommodationModelIn.TotalGuests != tot)
+            if (accommodationModelIn == null)
             {
-                return BadRequest("Wrong input: the number of hosts is incorrect.");
+                AccommodationQueryIn accommodationQueryIn = new AccommodationQueryIn(accommodationModelIn);
+                List<AccommodationQueryOut> accommodations = this.accommodationLogic.GetAll();
+                List<AccommodationModelOut> accommodationsToReturn = new List<AccommodationModelOut>();
+                foreach (var item in accommodations)
+                {
+                    AccommodationModelOut a = new AccommodationModelOut(item);
+                    accommodationsToReturn.Add(a);
+                }
+                return Ok(accommodationsToReturn);
             }
-            AccommodationQueryIn accommodationQueryIn = new AccommodationQueryIn(accommodationModelIn);
-            List<AccommodationQueryOut> accommodations = this.accommodationLogic.GetByTouristSpot(accommodationQueryIn);
-            List<AccommodationModelOut> accommodationsToReturn = new List<AccommodationModelOut>();
-            foreach (var item in accommodations)
+            else
             {
-                AccommodationModelOut a = new AccommodationModelOut(item);
-                accommodationsToReturn.Add(a);
+                int tot = accommodationModelIn.Babies + accommodationModelIn.Kids + accommodationModelIn.Adults;
+                if (accommodationModelIn.TotalGuests != tot)
+                {
+                    return BadRequest("Wrong input: the number of hosts is incorrect.");
+                }
+                AccommodationQueryIn accommodationQueryIn = new AccommodationQueryIn(accommodationModelIn);
+                List<AccommodationQueryOut> accommodations = this.accommodationLogic.GetByTouristSpot(accommodationQueryIn);
+                List<AccommodationModelOut> accommodationsToReturn = new List<AccommodationModelOut>();
+                foreach (var item in accommodations)
+                {
+                    AccommodationModelOut a = new AccommodationModelOut(item);
+                    accommodationsToReturn.Add(a);
+                }
+
+                return Ok(accommodationsToReturn);
             }
-            return Ok(accommodationsToReturn);
         }
         /// <summary>
         /// Adds an Accommodation.
@@ -75,7 +91,7 @@ namespace Obligatorio.WebApi.Controllers
         /// </remarks>
         /// <param name="accommodationRegisterModel"></param>     
         [HttpPost]
-        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
+        //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
         {
             try
@@ -85,7 +101,7 @@ namespace Obligatorio.WebApi.Controllers
                 {
                     throw new Exception();
                 }
-                this.accommodationLogic.Add(accommodation, accommodationRegisterModel.TouristSpotId);
+                this.accommodationLogic.Add(accommodation, accommodationRegisterModel.TouristSpotName);
                 return CreatedAtRoute(routeName: "GetAccommodation",
                                                     routeValues: new { name = accommodationRegisterModel.Name },
                                                         value: new AccommodationRegisterModelIn(accommodation));
@@ -145,7 +161,7 @@ namespace Obligatorio.WebApi.Controllers
                 this.accommodationLogic.Delete(name);
                 return Ok("Success");
             }
-            catch(ObjectNotFoundInDatabaseException)
+            catch (ObjectNotFoundInDatabaseException)
             //TESTEAR ESTE CASO
             {
                 return NotFound("There is no accommodation with such name.");

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Yf/+kBH2BJpOIZvps5weeBJvWxvZgwTQwGa7W4Xo3CZGrnlHFya1mQXsZZNH9dvmrHuNRk49fL1UNiWiRNBpag==",
+  "dgSpecHash": "9+DIW1kRl8oP6C/oYuk+YGVshdu8mtdNNasn9DTLkZ+61DrSMl/W1J+w8OssAaaUGjKFbBcyjiZL4Pc2A22aKQ==",
   "success": true,
-  "projectFilePath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ExternalFileImport\\Obligatorio.ExternalFileImport.csproj",
+  "projectFilePath": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ExternalFileImport\\Obligatorio.ExternalFileImport.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Juan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Juan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

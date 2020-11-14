@@ -38,7 +38,6 @@ export class TouristSpotQueryComponent implements OnInit {
   
   loadData(){
     this.categoryService.getAll();
-    this.touristSpotService.getAll();
     this.categories = this.categoryService.loadedCategories;
   }
 

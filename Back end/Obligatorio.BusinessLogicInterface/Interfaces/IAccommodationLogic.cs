@@ -8,10 +8,11 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
     public interface IAccommodationLogic
     {
         List<AccommodationQueryOut> GetByTouristSpot(AccommodationQueryIn accommodationQueryIn);
-        void Add(Accommodation accommodation, int touristSpotId);
+        void Add(Accommodation accommodation, string touristSpotName);
         void Update(AccommodationPutQueryIn accommodationPutQueryIn);
         Accommodation GetById(int accommodationId);
         bool AlreadyExistsByName(string name);
         void Delete(string name);
+        List<AccommodationQueryOut> GetAll();
     }
 }

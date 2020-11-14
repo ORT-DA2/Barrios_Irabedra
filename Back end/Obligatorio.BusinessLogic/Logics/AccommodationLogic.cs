@@ -22,11 +22,11 @@ namespace Obligatorio.BusinessLogic.Logics
             this.touristSpotLogic = touristSpotLogic;
         }
 
-        public void Add(Accommodation accommodation, int touristSpotId)
+        public void Add(Accommodation accommodation, string touristSpotName)
         {
             try
             {
-                var touristSpot = accommodation.TouristSpot = touristSpotLogic.Get(touristSpotId);
+                var touristSpot = accommodation.TouristSpot = touristSpotLogic.GetByName(touristSpotName);
                 accommodation.TouristSpot = touristSpot;
                 accommodationRepository.Add(accommodation);
             }
@@ -76,6 +76,18 @@ namespace Obligatorio.BusinessLogic.Logics
                 AccommodationQueryOut a = new AccommodationQueryOut(item);
                 double totalPrice = this.CalculateTotalPrice(accommodationQueryIn, a);
                 a.TotalPrice = totalPrice;
+                accommodationsToReturn.Add(a);
+            }
+            return accommodationsToReturn;
+        }
+
+        public List<AccommodationQueryOut> GetAll()
+        {
+            List<AccommodationQueryOut> accommodationsToReturn = new List<AccommodationQueryOut>();
+            List<Accommodation> accommodations = this.accommodationRepository.GetAll();
+            foreach (var item in accommodations)
+            {
+                AccommodationQueryOut a = new AccommodationQueryOut(item);
                 accommodationsToReturn.Add(a);
             }
             return accommodationsToReturn;
@@ -139,5 +151,7 @@ namespace Obligatorio.BusinessLogic.Logics
         {
             this.accommodationRepository.Delete(name);
         }
+
+        
     }
 }

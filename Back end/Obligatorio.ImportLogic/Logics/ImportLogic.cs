@@ -29,8 +29,8 @@ namespace Obligatorio.ImportLogic.Logics
 
         public List<string> GetImplementationNames()
         {
-            Assembly jsonAssembly = Assembly.LoadFile("D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.JsonImport\\bin\\Debug\\netstandard2.0\\Obligatorio.JsonImport.dll"); //corregir path
-            Assembly xmlAssembly = Assembly.LoadFile("D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\bin\\Debug\\netstandard2.0\\Obligatorio.XmlImport.dll"); //corregir path
+            Assembly jsonAssembly = Assembly.LoadFile("D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.JsonImport\\bin\\Debug\\netstandard2.0\\Obligatorio.JsonImport.dll"); //corregir path
+            Assembly xmlAssembly = Assembly.LoadFile("D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\bin\\Debug\\netstandard2.0\\Obligatorio.XmlImport.dll"); //corregir path
             return FindImplementations(new List<Assembly> { jsonAssembly, xmlAssembly });
         }
 
@@ -65,7 +65,7 @@ namespace Obligatorio.ImportLogic.Logics
                 {
                     Accommodation acc = imported.ToEntity();
                     acc.TouristSpot = this.touristSpotLogic.GetByName(ts.Name);
-                    this.accommodationLogic.Add(acc, this.touristSpotLogic.GetByName(ts.Name).Id);
+                    this.accommodationLogic.Add(acc, this.touristSpotLogic.GetByName(ts.Name).Name);
                     return true;
                 }
 

@@ -10,7 +10,7 @@ namespace Obligatorio.Model.Models.In
         public string Description { get; set; }
         public double PricePerNight { get; set; }
         public bool FullCapacity { get; set; }
-        public int TouristSpotId { get; set; }
+        public string TouristSpotName { get; set; }
 
         public AccommodationRegisterModelIn()
         {

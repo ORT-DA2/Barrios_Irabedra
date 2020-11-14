@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "B6SJmUVgyI65NYJBkSNG2JCUBIGQ12AZ7hQQ/h8AUaTeIVuHdS3XxGpkGh84B7/yvz0zrATwG8i3XHw7Rk6OpQ==",
+  "dgSpecHash": "edrHWWYKC2smKYvbv7H9swubmQ6VpObLTad8tSBC+Nbvhli+mReJjCR701yYTzfqiUzPX4qFp4goU93qjTnDpg==",
   "success": true,
-  "projectFilePath": "D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportLogic\\Obligatorio.ImportLogic.csproj",
+  "projectFilePath": "D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.ImportLogic\\Obligatorio.ImportLogic.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\Juan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Juan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Juan\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }
