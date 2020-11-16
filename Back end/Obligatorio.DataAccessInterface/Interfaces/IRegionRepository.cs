@@ -9,7 +9,7 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         void Add(Region newEntity);
         Region Get(string name);
         IEnumerable<Region> GetAll();
-        void AddTouristSpotToRegion(string regionName, int touristSpotId);
+        void AddTouristSpotToRegion(string regionName, string touristSpotName);
         void ModifyTouristSpotRegion(string regionName, int touristSpotId);
     }
 }

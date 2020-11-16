@@ -40,7 +40,7 @@ namespace Obligatorio.WebApi.Controllers
             }
             catch (ObjectNotFoundInDatabaseException ex)
             {
-                return NotFound("There is no such reservation id.");
+                return NotFound("There is no such reservation code.");
             }
         }
         /// <summary>

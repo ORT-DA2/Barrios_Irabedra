@@ -13,6 +13,10 @@ namespace Obligatorio.Model.Dtos
         public int Kids { get; set; }
         public int Adults { get; set; }
 
+        public AccommodationQueryIn()
+        {
+        }
+
         public AccommodationQueryIn(AccommodationModelIn accommodationModelIn)
         {
             this.TouristSpotId = accommodationModelIn.TouristSpotId;

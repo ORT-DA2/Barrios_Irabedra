@@ -7,7 +7,7 @@ export class AccommodationPutWriteModel {
     constructor ()
     {
         this.images = [];
-        this.wantToChangeCapacity = false;
+        this.wantToChangeCapacity = true;
         this.fullCapacity = false;
     }
 }

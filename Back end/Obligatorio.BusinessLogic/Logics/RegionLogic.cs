@@ -31,11 +31,11 @@ namespace Obligatorio.BusinessLogic.Logics
             }
         }
 
-        public void AddTouristSpotToRegion(string regionName, int touristSpotId)
+        public void AddTouristSpotToRegion(string regionName, string touristSpotName)
         {
             try
             {
-                this.regionRepository.AddTouristSpotToRegion(regionName, touristSpotId);
+                this.regionRepository.AddTouristSpotToRegion(regionName, touristSpotName);
             }
             catch (ObjectNotFoundInDatabaseException)
             {

@@ -9,10 +9,11 @@
         <form>
             <div class="form-group">
                 <label for="accommodationPicker">Accommodations</label>
-                <select multiple class="form-control" id="accommodationPicker">
+                <select name="accommodation" class="form-control" id="accommodationPicker" [(ngModel)]="this.selectedAccommodationName">
+                    <option *ngFor="let item of this.loadedAccommodations">{{item.name}}</option>
                 </select>
               </div>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Delete</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Delete</button>
     </div>
 </div>

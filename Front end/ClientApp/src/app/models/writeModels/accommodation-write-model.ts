@@ -1,21 +1,23 @@
 export class AccommodationWriteModel 
 {
-    public name : string ;
-    public rating : number ;
-    public address : string;
-    public description : string;
-    public pricePerNight : number ;
-    public fullCapacity :boolean ;
-    public touristSpotName : string;
+    public Name : string ;
+    public Rating : number ;
+    public Address : string;
+    public Description : string;
+    public PricePerNight : number ;
+    public FullCapacity :boolean ;
+    public TouristSpotName : string;
 
+    /*
     constructor(name : string, rating : number, address : string, description : string, pricePerNight : number, fullCapacity :boolean, touristSpotName : string)
     {
-        this.name = name;
-        this.rating = rating;
-        this.description = description;
-        this.pricePerNight = pricePerNight;
-        this.fullCapacity = fullCapacity;
-        this.touristSpotName = touristSpotName;
-    }
+        this.Name = name;
+        this.Rating = rating;
+        this.Description = description;
+        this.PricePerNight = pricePerNight;
+        this.FullCapacity = fullCapacity;
+        this.TouristSpotName = touristSpotName;
+    }*/
+    contructor(){}
 
 }

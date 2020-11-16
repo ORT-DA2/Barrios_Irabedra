@@ -6,7 +6,6 @@ namespace Model.Models.In
     {
         public string Name { get; set; }
 
-        public int Id { get; set; }
 
         public CategoryModelIn()
         {
@@ -14,14 +13,12 @@ namespace Model.Models.In
         public CategoryModelIn(Category category)
         {
             this.Name = category.Name;
-            this.Id = category.Id;
         }
 
         public override bool Equals(object obj)
         {
             return obj is CategoryModelIn model &&
-                   Name == model.Name &&
-                   Id == model.Id;
+                   Name == model.Name; 
         }
 
         public Category ToEntity()

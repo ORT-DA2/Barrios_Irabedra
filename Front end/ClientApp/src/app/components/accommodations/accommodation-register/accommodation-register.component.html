@@ -4,26 +4,26 @@
         <h1 class="display-4">Accommodations Register</h1>
         <p class="lead">Fill in the form in order to register a new accommodation in an existing tourist spot. </p>
         <hr class="my-4">
-        <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <form #form="ngForm">
             <div class="form-group">
                 <label for="inputAccommodationName">Accommodation name</label>
-                <input type="text" class="form-control" id="inputAccommodationName" aria-describedby="accommodationNameHelp" placeholder="Enter name">
+                <input  [(ngModel)]="submittedObject.Name" type="text" name="name" class="form-control" id="inputAccommodationName" aria-describedby="accommodationNameHelp" placeholder="Enter name">
             </div>
             <div class="form-group">
                 <label for="inputDescription">Accommodation description</label>
-                <input type="text" class="form-control" id="inputDescription" aria-describedby="descriptionHelp" placeholder="Enter a nice description">
+                <input [(ngModel)]="submittedObject.Description"  type="text" name="description" class="form-control" id="inputDescription" aria-describedby="descriptionHelp" placeholder="Enter a nice description">
             </div>
             <div class="form-group">
                 <label for="inputAddress">Accommodation address</label>
-                <input type="text" class="form-control" id="inputAddress" aria-describedby="addressHelp" placeholder="Enter the accommodation's address">
+                <input [(ngModel)]="submittedObject.Address"  type="text" name="address" class="form-control" id="inputAddress" aria-describedby="addressHelp" placeholder="Enter the accommodation's address">
             </div>
             <div class="form-group">
                 <label for="inputPrice">Accommodation price per night</label>
-                <input type="text" class="form-control" id="inputPrice" aria-describedby="priceHelp" placeholder="Enter the accommodation's nominal price per night">
+                <input [(ngModel)]="submittedObject.PricePerNight"  type="number" name="price" class="form-control" id="inputPrice" aria-describedby="priceHelp" placeholder="Enter the accommodation's nominal price per night">
             </div>
             <div class="form-group">
                 <label for="ratingPicker">Accommodation's rating</label>
-                <select class="form-control form-control-sm" id="ratingPicker">
+                <select [(ngModel)]="submittedObject.Rating"  name="rating" class="form-control form-control-sm" id="ratingPicker">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -33,19 +33,12 @@
                   <small id="ratingHelp" class="form-text text-muted">Select it's rating from 1 to 5 possible stars.</small>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlFile">Upload an image</label>
-                <input type="file" accept="image/*">
-            </div>
-            <div class="form-group">
                 <label for="touristSpotPicker">Accommodation's tourist spot</label>
-                <select class="form-control" id="touristSpotPicker" name="touristSpotPicker" [(ngModel)]="this.selectedTouristSpot">
+                <select name="touristspot" class="form-control" id="touristSpotPicker" name="touristSpotPicker" [(ngModel)]="this.submittedObject.TouristSpotName">
                     <option  *ngFor="let item of this.touristSpotService.loadedTouristSpots">{{item.name}}</option>
                 </select>
             </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Submit</button>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
     </div>
-    <select class="form-control" id="touristSpotPicker" name="touristSpotPicker">
-        <option  *ngFor="let item of this.accommodationService.loadedAccommodations">{{item.name}}</option>
-    </select>
 </div>

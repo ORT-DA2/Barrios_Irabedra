@@ -6,7 +6,9 @@
         <hr class="my-4">
         <div class="jumbotron" id="categories">
             <div class="list-group">
-                <a>example</a>
+                <select class="form-control" readonly>
+                    <option *ngFor="let item of this.loadedCategories">{{item.name}}</option>
+                </select>
             </div>
         </div>
     </div>

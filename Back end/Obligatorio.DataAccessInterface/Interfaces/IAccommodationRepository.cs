@@ -9,10 +9,11 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         List<Accommodation> GetAll();
         List<Accommodation> GetByTouristSpot(int touristSpotId);
         void Add(Accommodation accommodation);
-        void UpdateCapacity(int accommodationId, bool fullCapacity);
-        void AddImages(int accommodationId, List<ImageWrapper> images);
+        void UpdateCapacity(string name, bool fullCapacity);
+        void AddImages(string name, List<ImageWrapper> images);
         Accommodation GetById(int accommodationId);
         bool AlreadyExistsByName(string name);
         void Delete(string name);
+        Accommodation GetByName(string name);
     }
 }

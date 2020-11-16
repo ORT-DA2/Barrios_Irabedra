@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {TouristSpotWriteModel} from '../../../models/writeModels/tourist-spot-write-model';
 import { TouristSpotService } from 'src/app/services/tourist-spot.service';
+import { waitForAsync } from '@angular/core/testing';
+import { rejects } from 'assert';
 
 @Component({
   selector: 'app-tourist-spot-register',
@@ -10,9 +12,13 @@ import { TouristSpotService } from 'src/app/services/tourist-spot.service';
 })
 export class TouristSpotRegisterComponent implements OnInit {
 
+  public show : boolean = false;
+  public Inactive:boolean = false;
   @ViewChild('form') registerForm : NgForm;
-  public submittedObject: TouristSpotWriteModel = new TouristSpotWriteModel("", "", null, "");
+  public submittedObject: TouristSpotWriteModel = new TouristSpotWriteModel();
   touristSpotService: TouristSpotService;
+  regionName:string;
+  regions=["Region metropolitana", "Region este", "Region litoral norte", "Region corredor pajaros pintados", "Region centro sur"];
 
   constructor(touristSpotService: TouristSpotService) {
     this.touristSpotService = touristSpotService;
@@ -21,19 +27,31 @@ export class TouristSpotRegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setRegion(value : string){
+    this.submittedObject.regionName=value;
+    this.Inactive=true;
+  }
   
   loadData(){
     this.touristSpotService.getAll();
   }
 
-  onSubmit(){
-    this.submittedObject.name = this.registerForm.value.name;
-    this.submittedObject.description = this.registerForm.value.description;
-    this.submittedObject.regionName = this.registerForm.value.regionPicker;
-    console.log(this.submittedObject);
-    this.touristSpotService.post(this.submittedObject);
+  
+
+
+   onSubmitRegister(){
+    this.show = !this.show;
+    //console.log(this.submittedObject);
+   this.touristSpotService.register(this.submittedObject);
+  }
+  
+  onSubmitUpdate(){
+    this.show = !this.show;
+    //console.log(this.submittedObject);
+    this.touristSpotService.update(this.submittedObject);
   }
 
+  
   changeListener($event) : void {
     this.readThis($event.target);
   }

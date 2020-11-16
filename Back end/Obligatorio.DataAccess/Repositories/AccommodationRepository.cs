@@ -13,11 +13,13 @@ namespace Obligatorio.DataAccess.Repositories
     {
         private readonly DbContext myContext;
         private readonly DbSet<Accommodation> accommodations;
+        private readonly DbSet<ImageWrapper> images;
 
         public AccommodationRepository(DbContext context)
         {
             this.myContext = context;
             this.accommodations = context.Set<Accommodation>();
+            this.images = context.Set<ImageWrapper>();
         }
 
         public void Add(Accommodation accommodation)
@@ -140,7 +142,7 @@ namespace Obligatorio.DataAccess.Repositories
             }
         }
 
-        private Accommodation GetByName(string name)
+        public Accommodation GetByName(string name)
         {
             var list = this.accommodations.ToList<Accommodation>();
             foreach (var item in list)
@@ -151,6 +153,43 @@ namespace Obligatorio.DataAccess.Repositories
                 }
             }
             return null;
+        }
+
+        public void UpdateCapacity(string name, bool fullCapacity)
+        {
+            try
+            {
+                Accommodation accommodationToUpdate = this.GetByName(name);
+                accommodationToUpdate.FullCapacity = fullCapacity;
+                myContext.SaveChanges();
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
+        }
+
+        public void AddImages(string name, List<ImageWrapper> images)
+        {
+            try
+            {
+                Accommodation accommodationToUpdate = this.GetByName(name);
+                var existingImages = accommodationToUpdate.Images;
+                foreach(var item in images)
+                {
+                    existingImages.Add(item);
+                    //this.images.Add(item);                
+                }
+                accommodationToUpdate.Images = existingImages;
+                
+                myContext.Entry(accommodationToUpdate).State = EntityState.Modified;
+                myContext.SaveChanges();
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+
+                throw new ObjectNotFoundInDatabaseException();
+            }
         }
     }
 

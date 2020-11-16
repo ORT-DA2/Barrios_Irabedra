@@ -12,6 +12,7 @@ namespace Obligatorio.Domain.DomainEntities
         public int Babies { get; set; }
         public int Kids { get; set; }
         public int Adults { get; set; }
+        public int Retirees { get; set; }
         public string GuestName { get; set; }
         public string GuestLastName { get; set; }
         public string Email { get; set; }
@@ -27,6 +28,7 @@ namespace Obligatorio.Domain.DomainEntities
             this.Babies = 0;
             this.Kids = 0;
             this.Adults = 0;
+            this.Retirees = 0;
             this.GuestName = "Default Guest Name";
             this.GuestLastName = "Default Guest LastName";
             this.Email = "Default Email";

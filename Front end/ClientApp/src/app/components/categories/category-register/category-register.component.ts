@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-category-register',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryRegisterComponent implements OnInit {
 
-  constructor() { }
+  public name:string;
+  public categoryService : CategoryService;
+  constructor(categoryService : CategoryService) {
+    this.categoryService = categoryService;
+   }
 
   ngOnInit(): void {
   }
 
+
+  onSubmit(){
+    this.categoryService.register(this.name);
+  }
 }

@@ -100,13 +100,14 @@ namespace Obligatorio.BusinessLogic.Logics
                 if (accommodationPutQueryIn.ChangeCapacity)
                 {
                     this.accommodationRepository.UpdateCapacity(
-                        accommodationPutQueryIn.AccommodationId, accommodationPutQueryIn.FullCapacity);
+                        accommodationPutQueryIn.Name, accommodationPutQueryIn.FullCapacity);
                 }
                 List<ImageWrapper> imagesToAdd = new List<ImageWrapper>();
-                imagesToAdd = StringToImageWrapper(accommodationPutQueryIn.Images);
+                Accommodation accommodationToUpdate = this.GetByName(accommodationPutQueryIn.Name);
+                imagesToAdd = StringToImageWrapper(accommodationPutQueryIn.Images, accommodationToUpdate.Id);
                 if (imagesToAdd.Count > 0)
                 {
-                    this.accommodationRepository.AddImages(accommodationPutQueryIn.AccommodationId, imagesToAdd);
+                    this.accommodationRepository.AddImages(accommodationPutQueryIn.Name, imagesToAdd);
                 }
             }
             catch (ObjectNotFoundInDatabaseException e)
@@ -116,12 +117,15 @@ namespace Obligatorio.BusinessLogic.Logics
 
         }
 
-        private List<ImageWrapper> StringToImageWrapper(List<string> images)
+        private List<ImageWrapper> StringToImageWrapper(List<string> images, int id)
         {
             List<ImageWrapper> listToReturn = new List<ImageWrapper>();
             foreach (var item in images)
             {
-                ImageWrapper i = new ImageWrapper(item);
+                ImageWrapper i = new ImageWrapper
+                {
+                    Image = item
+                };
                 listToReturn.Add(i);
             }
             return listToReturn;
@@ -152,6 +156,9 @@ namespace Obligatorio.BusinessLogic.Logics
             this.accommodationRepository.Delete(name);
         }
 
-        
+        public Accommodation GetByName(string name)
+        {
+            return this.accommodationRepository.GetByName(name);
+        }
     }
 }

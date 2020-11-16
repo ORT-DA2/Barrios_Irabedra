@@ -7,10 +7,10 @@
         <form>
             <div class="form-group">
                 <label for="inputCategoryName">Name</label>
-                <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Category name">
+                <input type="text" class="form-control" id="inputName" name="name" aria-describedby="nameHelp" [(ngModel)]="this.name" placeholder="Category name">
             </div>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Register</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Register</button>
     </div>
 
 </div>

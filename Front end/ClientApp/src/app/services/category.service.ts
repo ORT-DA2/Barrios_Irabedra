@@ -42,4 +42,10 @@ export class CategoryService {
     })
   }
 
+
+  register(categoryName : string){
+    let headers = new HttpHeaders().append("Authorization", "admin");
+    let options = { headers: headers };
+    this.http.post(this.uri, {Name:categoryName}, options).subscribe();
+  }
 }

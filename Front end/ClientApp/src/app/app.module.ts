@@ -11,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { AccommodationsComponent } from './components/accommodations/accommodation/accommodations.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TouristSpotRegisterComponent } from './components/tourist-spots/tourist-spot-register/tourist-spot-register.component';
 import { TouristSpotQueryComponent } from './components/tourist-spots/tourist-spot-query/tourist-spot-query.component';
 import { AccommodationQueryComponent } from './components/accommodations/accommodation-query/accommodation-query.component';
@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddCategoryToTouristSpotComponent } from './components/tourist-spots/add-category-to-tourist-spot/add-category-to-tourist-spot.component';
 import { NameProyectingPipe } from '../app/components/tourist-spots/nameProyectingPipe';
 import { RegisterComponentComponent } from './components/register-component/register-component.component';
+
 
 const appRoutes: Routes = [
   { path: 'touristSpots', component: TouristSpotsComponent }, 
@@ -53,7 +54,7 @@ const appRoutes: Routes = [
   { path: 'categoryQuery', component: CategoryQueryComponent},
   { path: 'reports', component: ReportComponent},
   { path: 'addCategoryToTouristSpot' , component: AddCategoryToTouristSpotComponent},
-  { path: 'register' , component: RegisterComponentComponent }
+  { path: 'register' , component: RegisterComponentComponent },
 ];
 
 @NgModule({
@@ -81,14 +82,15 @@ const appRoutes: Routes = [
     ReportComponent,
     AddCategoryToTouristSpotComponent,
     NameProyectingPipe,
-    RegisterComponentComponent
+    RegisterComponentComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [TouristSpotService],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
         IEnumerable<Region> GetAll();
         void Add(Region newEntity);
         Region Get(string name);
-        void AddTouristSpotToRegion(string regionName, int touristSpotId);
+        void AddTouristSpotToRegion(string regionName, string touristSpotName);
         void ModifyTouristSpotRegion(string regionName, int touristSpotId);
     }
 }

@@ -4,35 +4,47 @@
         <h1 class="display-4">Tourist Spots Register</h1>
         <p class="lead">Fill in the form in order to register a new tourist spot in an existing region. </p>
         <hr class="my-4">
-        <form (ngSubmit)="onSubmit()" #form="ngForm">
-            <div class="form-group">
-                <label for="inputTouristSpotName">Tourist spot name</label>
-                <input type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [ngModel]="submittedObject.name" name="name">
-            </div>
-            <div class="form-group">
-                <label for="inputDescription">Tourist spot description</label>
-                <input type="text" class="form-control" id="inputDescription" aria-describedby="descriptionHelp" placeholder="Enter a nice description" [ngModel]="submittedObject.description" name="description">
-                <small id="descriptionHelp" class="form-text text-muted">The description should not be larger than 2000 characters.</small>
-            </div>
-            <div class="form-row align-items-center">
-                <div class="col-auto my-1">
-                  <label class="mr-sm-2" for="regionPicker">Region</label>
-                  <select class="custom-select mr-sm-2" id="regionPicker" [ngModel]="submittedObject.regionName" name="regionPicker">
-                    <option value="Metropoliatana">Metropolitana</option>
-                    <option value="Centro Sur">Centro Sur</option>
-                    <option value="Este">Este</option>
-                    <option value="Este">Litoral Norte</option>
-                    <option value="Este">Corredor Pajaros Pintados</option>
-                  </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlFile">Upload an image</label>
-                <input type="file" accept="image/*" (change)="changeListener($event)">
-            </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
-        </form>
         
+            <form  #form="ngForm">
+                <div class="form-group">
+                    <label for="inputTouristSpotName">Tourist spot name</label>
+                    <input type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [(ngModel)]="submittedObject.name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="inputDescription">Tourist spot description</label>
+                    <input type="text" class="form-control" id="inputDescription" aria-describedby="descriptionHelp" placeholder="Enter a nice description" [(ngModel)]="submittedObject.description" name="description">
+                    <small id="descriptionHelp" class="form-text text-muted">The description should not be larger than 2000 characters.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile">Upload an image</label>
+                    <input type="file" accept="image/*" (change)="changeListener($event)">
+                </div>
+            
+                <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmitRegister()"
+                data-toggle="modal" data-target="#exampleModalCenter">Next</button>
+
+                <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Select a region</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <select  class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)] = "this.submittedObject.regionName" > 
+                <option  *ngFor="let item of regions">{{item}}</option>
+              </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="this.onSubmitUpdate()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+             </form>
+            </div>
     </div>
 
-</div>

@@ -8,14 +8,28 @@ namespace Obligatorio.Model.DTOS
         public List<string> Images { get; set; }
         public bool ChangeCapacity { get; set; }
         public bool FullCapacity { get; set; }
-        public int AccommodationId { get; set; }
+        public string Name { get; set; }
 
-        public AccommodationPutQueryIn(AccommodationPutModelIn accommodationPutModelIn, int id)
+        public AccommodationPutQueryIn(AccommodationPutModelIn accommodationPutModelIn)
         {
             Images = accommodationPutModelIn.Images;
-            ChangeCapacity = accommodationPutModelIn.WantToChangeCapacity;
-            FullCapacity = accommodationPutModelIn.FullCapacity;
-            AccommodationId = id;
+            if(accommodationPutModelIn.WantToChangeCapacity == "true")
+            {
+                ChangeCapacity = true;
+            }
+            else
+            {
+                ChangeCapacity = false;
+            }
+            if (accommodationPutModelIn.FullCapacity == "true")
+            {
+                FullCapacity = true;
+            }
+            else
+            {
+                FullCapacity = false;
+            }
+            Name = accommodationPutModelIn.Name;
         }
     }
 }

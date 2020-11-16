@@ -9,6 +9,7 @@ namespace Obligatorio.Model.Models.In
         public DateTime CheckOut { get; set; }
         public int TotalGuests { get; set; }
         public int Babies { get; set; }
+        public int Retirees { get; set; }
         public int Kids { get; set; }
         public int Adults { get; set; }
 

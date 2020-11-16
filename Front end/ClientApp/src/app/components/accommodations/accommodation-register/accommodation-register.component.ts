@@ -15,7 +15,7 @@ export class AccommodationRegisterComponent implements OnInit {
   public selectedTouristSpot : string;
   public accommodationService : AccommodationService;
   public touristSpotService : TouristSpotService;
-  public submittedObject: AccommodationWriteModel = new AccommodationWriteModel("", -1, "", "", -1, false, "");
+  public submittedObject: AccommodationWriteModel = new AccommodationWriteModel();
 
   constructor(accommodationService : AccommodationService, touritSpotService : TouristSpotService) 
   {
@@ -25,20 +25,24 @@ export class AccommodationRegisterComponent implements OnInit {
 
   loadData(){
     this.accommodationService.getAll();
+    this.touristSpotService.getAll();
   }
 
   onSubmit(){
-    this.submittedObject.name = this.registerForm.value.name;
-    this.submittedObject.rating = this.registerForm.value.rating;
-    this.submittedObject.description = this.registerForm.value.description;
-    this.submittedObject.pricePerNight = this.registerForm.value.pricePerNight;
-    this.submittedObject.fullCapacity = this.registerForm.value.fullCapacity;
-    this.submittedObject.touristSpotName = this.registerForm.value.touristSpotName;
+    console.log("PIJAAAAAAAAAAAAAAAAAAAAA");
+    this.submittedObject.Name = this.registerForm.value.name;
+    this.submittedObject.Rating = parseInt(this.registerForm.value.rating);
+    this.submittedObject.Description = this.registerForm.value.description;
+    this.submittedObject.PricePerNight = this.registerForm.value.price;
+    this.submittedObject.FullCapacity = this.registerForm.value.fullCapacity;
+    this.submittedObject.TouristSpotName = this.registerForm.value.touristSpotPicker;
+    this.submittedObject.FullCapacity = false;
     console.log(this.submittedObject);
     this.accommodationService.register(this.submittedObject);
   }
 
   ngOnInit(): void {
+    
   }
 
 }

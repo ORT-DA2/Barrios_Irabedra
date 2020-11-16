@@ -7,7 +7,7 @@ namespace Obligatorio.WebApi.AuxiliaryObjects
 {
     public class RegionAndTouristSpotIdentifier
     {
-        public int TouristSpotId { get; set; }
+        public string TouristSpotName { get; set; }
         public string RegionName { get; set; }
         public RegionAndTouristSpotIdentifier()
         {

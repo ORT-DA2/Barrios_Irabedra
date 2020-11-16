@@ -89,7 +89,7 @@ namespace Obligatorio.WebApi.Controllers
                                                     routeValues: new { name = regionModel.Name },
                                                         value: new RegionModelIn(region));
             }
-            catch (Exception ex)
+            catch (ObjectNotFoundInDatabaseException ex)
             {
                 return BadRequest("A region with such name has been already registered.");
             }
@@ -113,7 +113,7 @@ namespace Obligatorio.WebApi.Controllers
         {
             try
             {
-                this.regionLogic.AddTouristSpotToRegion(data.RegionName, data.TouristSpotId);
+                this.regionLogic.AddTouristSpotToRegion(data.RegionName, data.TouristSpotName);
                 return Ok("Updated");
             }
             catch (ObjectNotFoundInDatabaseException)
@@ -142,7 +142,7 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
-        [HttpPut("modify")]
+        /*[HttpPut("modify")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult TouristSpotRegionUpdate([FromBody] RegionAndTouristSpotIdentifier data)
         {
@@ -159,6 +159,6 @@ namespace Obligatorio.WebApi.Controllers
             {
                 return BadRequest("The input format is not correct.");
             }
-        }
+        }*/
     }
 }

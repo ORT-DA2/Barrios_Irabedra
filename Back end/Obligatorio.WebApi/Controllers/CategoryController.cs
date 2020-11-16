@@ -87,9 +87,7 @@ namespace Obligatorio.WebApi.Controllers
             {
                 var category = categoryModel.ToEntity();
                 this.categoryLogic.Add(category);
-                return CreatedAtRoute(routeName: "GetCategory",
-                                                    routeValues: new { name = categoryModel.Name },
-                                                        value: new CategoryModelIn(category));
+                return Ok();
             }
             catch (Exception ex)
             {

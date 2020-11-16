@@ -81,13 +81,13 @@ namespace Obligatorio.DataAccess.Repositories
             return this.regions;
         }
 
-        public void AddTouristSpotToRegion(string regionName, int touristSpotId)
+        public void AddTouristSpotToRegion(string regionName, string touristSpotName)
         {
             try
             {
                 Region region = ValidateExistingRegion(regionName);
-                TouristSpot touristSpot = ValidateExistingTouristSpot(touristSpotId);
-                this.ThereIsRegionWithThisTouristSpot(touristSpot);
+                TouristSpot touristSpot = this.touristSpotRepository.Find(touristSpotName);
+                //this.ThereIsRegionWithThisTouristSpot(touristSpot);
                 region.TouristSpots.Add(touristSpot);
                 regions.Update(region);
                 myContext.SaveChanges();

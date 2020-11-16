@@ -14,5 +14,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
         bool AlreadyExistsByName(string name);
         void Delete(string name);
         List<AccommodationQueryOut> GetAll();
+        Accommodation GetByName(string name);
     }
 }

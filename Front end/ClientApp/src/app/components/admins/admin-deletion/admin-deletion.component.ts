@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin-deletion',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDeletionComponent implements OnInit {
 
-  constructor() { }
+  
+  @ViewChild('form') registerForm:NgForm;
+  public email:string="";
+  public adminService:AdminService;
+
+  constructor(adminService:AdminService) { 
+    this.adminService=adminService;
+  }
 
   ngOnInit(): void {
   }
 
+
+  onSubmit(){
+    this.adminService.delete(this.email);
+  }
 }

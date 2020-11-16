@@ -42,7 +42,7 @@ namespace Obligatorio.WebApi.Controllers
             {
                 Admin adminToRegister = value.ToEntity();
                 this.adminLogic.Add(adminToRegister);
-                return CreatedAtAction("AdminCreated", new AdminModelOut(adminToRegister));
+                return Ok("AdminCreated");
             }
             catch (RepeatedObjectException e)
             {
@@ -51,6 +51,35 @@ namespace Obligatorio.WebApi.Controllers
             catch (Exception exc)
             {
                 return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpDelete("{email}")]
+        public IActionResult Delete(string email)
+        {
+            try
+            {
+                this.adminLogic.Delete(email);
+                return Ok();
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+                return BadRequest("Theres no admin with such email.");
+            }
+        }
+
+        [HttpPut("{email}")]
+        public IActionResult Put(string email, [FromBody] AdminModelIn value)
+        {
+            try
+            {
+                Admin adminToUpdate = value.ToEntity();
+                this.adminLogic.Update(email, adminToUpdate);
+                return Ok();
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+                return BadRequest("Theres no admin with such email.");
             }
         }
     }

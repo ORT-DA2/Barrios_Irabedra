@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.BusinessLogicInterface.Interfaces;
@@ -41,11 +42,11 @@ namespace Obligatorio.WebApi.Controllers
         /// </remarks>
         /// <param name="accommodationModelIn"></param>   
         [HttpGet]
-        public IActionResult Get([FromBody] AccommodationModelIn accommodationModelIn)
+        public IActionResult Get()
         {
-            if (accommodationModelIn == null)
+            var queryString = HttpUtility.ParseQueryString(this.HttpContext.Request.QueryString.Value);
+            if (queryString.Count == 0)
             {
-                AccommodationQueryIn accommodationQueryIn = new AccommodationQueryIn(accommodationModelIn);
                 List<AccommodationQueryOut> accommodations = this.accommodationLogic.GetAll();
                 List<AccommodationModelOut> accommodationsToReturn = new List<AccommodationModelOut>();
                 foreach (var item in accommodations)
@@ -57,7 +58,28 @@ namespace Obligatorio.WebApi.Controllers
             }
             else
             {
-                int tot = accommodationModelIn.Babies + accommodationModelIn.Kids + accommodationModelIn.Adults;
+                AccommodationModelIn accommodationModelIn = new AccommodationModelIn
+                {
+                    TouristSpotId = Int32.Parse(queryString.Get("touristSpotId")),
+                    CheckIn = new DateTime(
+                         Int32.Parse(queryString.Get("checkInYear")),
+                         Int32.Parse(queryString.Get("checkInMonth")),
+                         Int32.Parse(queryString.Get("checkInDay"))
+                        ),
+                    CheckOut = new DateTime(
+                         Int32.Parse(queryString.Get("checkOutYear")),
+                         Int32.Parse(queryString.Get("checkOutMonth")),
+                         Int32.Parse(queryString.Get("checkOutDay"))
+                        ),
+                    TotalGuests = Int32.Parse(queryString.Get("totalGuests")),
+                    Babies = Int32.Parse(queryString.Get("babies")),
+                    Kids = Int32.Parse(queryString.Get("kids")),
+                    Adults = Int32.Parse(queryString.Get("adults")),
+                    Retirees = Int32.Parse(queryString.Get("retirees"))
+                };
+
+
+                int tot = accommodationModelIn.Babies + accommodationModelIn.Kids + accommodationModelIn.Adults + accommodationModelIn.Retirees;
                 if (accommodationModelIn.TotalGuests != tot)
                 {
                     return BadRequest("Wrong input: the number of hosts is incorrect.");
@@ -90,8 +112,9 @@ namespace Obligatorio.WebApi.Controllers
         ///
         /// </remarks>
         /// <param name="accommodationRegisterModel"></param>     
-        [HttpPost]
+
         //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
+        [HttpPost]
         public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
         {
             try
@@ -102,9 +125,7 @@ namespace Obligatorio.WebApi.Controllers
                     throw new Exception();
                 }
                 this.accommodationLogic.Add(accommodation, accommodationRegisterModel.TouristSpotName);
-                return CreatedAtRoute(routeName: "GetAccommodation",
-                                                    routeValues: new { name = accommodationRegisterModel.Name },
-                                                        value: new AccommodationRegisterModelIn(accommodation));
+                return Ok();
             }
             catch (ObjectNotFoundInDatabaseException ex)
             {
@@ -133,14 +154,14 @@ namespace Obligatorio.WebApi.Controllers
         ///
         /// </remarks>
         /// <param name="accommodationPutModelIn"></param>
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] AccommodationPutModelIn accommodationPutModelIn)
+        [HttpPut]
+        public IActionResult Put([FromBody] AccommodationPutModelIn accommodationPutModelIn)
         {
             try
             {
-                AccommodationPutQueryIn accommodationPutQueryIn = new AccommodationPutQueryIn(accommodationPutModelIn, id);
+                AccommodationPutQueryIn accommodationPutQueryIn = new AccommodationPutQueryIn(accommodationPutModelIn);
                 this.accommodationLogic.Update(accommodationPutQueryIn);
-                return Ok(this.accommodationLogic.GetById(accommodationPutQueryIn.AccommodationId));
+                return Ok(this.accommodationLogic.GetByName(accommodationPutQueryIn.Name));
             }
             catch (ObjectNotFoundInDatabaseException ex)
             {

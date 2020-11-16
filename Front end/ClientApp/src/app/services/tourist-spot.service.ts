@@ -89,12 +89,20 @@ export class TouristSpotService {
     })
   }
 
-  post(ts: TouristSpotWriteModel){
+    register (ts: TouristSpotWriteModel) {
+    console.log("entre");
     this.http.post(this.uri, ts).subscribe(responseData => {
       console.log(responseData);
     })
   }
 
+  update(ts: TouristSpotWriteModel)
+  {    
+    console.log("entre 2");
+    let headers = new HttpHeaders().append("Authorization", "admin");
+    let options = { headers: headers };
+    this.http.put(environment.URI_BASE + '/regions', {TouristSpotName: ts.name, RegionName : ts.regionName}, options).subscribe();
+  }
   /*----------------------HAY QUE VER ESTO MAS ADELANTE----------------*/
   /***********************
    * *****************************

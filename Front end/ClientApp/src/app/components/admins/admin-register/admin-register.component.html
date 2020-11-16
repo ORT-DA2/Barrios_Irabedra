@@ -4,18 +4,22 @@
         <h1 class="display-4">Register an admin</h1>
         <p class="lead">Register an admin providing a valid email and its password. </p>
         <hr class="my-4">
-        <form>
+        <form #form="ngForm">
+            <div class="form-group"  >
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="" name="name" [(ngModel)]=this.submittedObject.Name>
+            </div>
             <div class="form-group">
-                <label for="inputTouristSpotName">Email</label>
-                <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="">
+                <label for="inputEmail">Email</label>
+                <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="" name="email" [(ngModel)]=this.submittedObject.Email>
             </div>
             <div class="form-group">
                 <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="">
+                <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="" name="password" [(ngModel)]=this.submittedObject.Password>
                 <small id="descriptionHelp" class="form-text text-muted"></small>
             </div>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Register</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Register</button>
     </div>
 
 </div>

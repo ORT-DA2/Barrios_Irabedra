@@ -33,6 +33,34 @@ namespace Obligatorio.DataAccess.Repositories
             }
         }
 
+        public void Delete(string email)
+        {
+            Admin adminToDelete = FindByEmail(email);
+            if(adminToDelete is null)
+            {
+                throw new Obligatorio.BusinessLogic.CustomExceptions.ObjectNotFoundInDatabaseException();
+            }
+            else
+            {
+                myContext.Entry(adminToDelete).State = EntityState.Deleted;
+                admins.Remove(adminToDelete);
+                myContext.SaveChanges();
+            }
+        }
+
+        private Admin FindByEmail(string email)
+        {
+            List<Admin> admins = this.admins.ToList();
+            foreach (var item in admins)
+            {
+                if(item.Email == email)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
         public bool IsRepetedAdmin(Admin adminToVerify)
         {
             List<Admin> adminsToValidate = admins.ToList();
@@ -59,6 +87,22 @@ namespace Obligatorio.DataAccess.Repositories
                 }
             }
             return isValid;
+        }
+
+        public void Update(string email, Admin value)
+        {
+            Admin adminFound = FindByEmail(email);
+            if(adminFound is null)
+            {
+                throw new Obligatorio.BusinessLogic.CustomExceptions.ObjectNotFoundInDatabaseException();
+            }
+            else
+            {
+                adminFound.Name = value.Name;
+                adminFound.Password = value.Password;
+                myContext.Entry(adminFound).State = EntityState.Modified;
+                myContext.SaveChanges();
+            }
         }
     }
 }

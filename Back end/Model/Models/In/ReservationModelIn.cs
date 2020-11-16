@@ -11,6 +11,7 @@ namespace Obligatorio.Model.Models.In
         public int Babies { get; set; }
         public int Kids { get; set; }
         public int Adults { get; set; }
+        public int Retirees { get; set; }
         public string GuestName { get; set; }
         public string GuestLastName { get; set; }
         public string Email { get; set; }
@@ -21,6 +22,7 @@ namespace Obligatorio.Model.Models.In
             this.TotalGuests = 0;
             this.Babies = 0;
             this.Kids = 0;
+            this.Retirees = 0;
             this.Adults = 0;
             this.GuestName = "Default Guest Name";
             this.GuestLastName = "Default Guest LastName";
@@ -33,6 +35,7 @@ namespace Obligatorio.Model.Models.In
             reservationToReturn.Adults = this.Adults;
             reservationToReturn.Babies = this.Babies;
             reservationToReturn.CheckIn = this.CheckIn;
+            reservationToReturn.Retirees = this.Retirees;
             reservationToReturn.CheckOut = this.CheckOut;
             reservationToReturn.Email = this.Email;
             reservationToReturn.GuestLastName = this.GuestLastName;
