@@ -160,6 +160,10 @@ namespace Obligatorio.DataAccess.Repositories
             try
             {
                 Accommodation accommodationToUpdate = this.GetByName(name);
+                if (accommodationToUpdate is null)
+                {
+                    throw new Exception();
+                }
                 accommodationToUpdate.FullCapacity = fullCapacity;
                 myContext.SaveChanges();
             }
@@ -175,13 +179,13 @@ namespace Obligatorio.DataAccess.Repositories
             {
                 Accommodation accommodationToUpdate = this.GetByName(name);
                 var existingImages = accommodationToUpdate.Images;
-                foreach(var item in images)
+                foreach (var item in images)
                 {
                     existingImages.Add(item);
                     //this.images.Add(item);                
                 }
                 accommodationToUpdate.Images = existingImages;
-                
+
                 myContext.Entry(accommodationToUpdate).State = EntityState.Modified;
                 myContext.SaveChanges();
             }

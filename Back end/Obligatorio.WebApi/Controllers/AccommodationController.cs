@@ -167,6 +167,10 @@ namespace Obligatorio.WebApi.Controllers
             {
                 return NotFound("There is no accommodation with such id.");
             }
+            catch (NullReferenceException e) 
+            {
+                return NotFound("There is no accommodation with such id.");
+            }
             catch (Exception e)
             {
                 return StatusCode(500, "Internal Server Error");
