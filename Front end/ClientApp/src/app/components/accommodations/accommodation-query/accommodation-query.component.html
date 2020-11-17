@@ -12,6 +12,7 @@
                 <select multiple class="form-control" id="touristSpotPicker">
                 </select>
             </div>
+            <app-datepicker  (toOut)="toDateHandler($event)"  (fromOut)="fromDateHandler($event)"></app-datepicker> 
             <h1>Guests</h1>
             <div class="form-row">
                 <div class="col">
@@ -28,7 +29,7 @@
                 </div>
               </div>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block submitbtn">Search</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block submitbtn" (click)="onSubmit()">Search</button>
     </div>
-
+    {{this.toDate | json}}
 </div>

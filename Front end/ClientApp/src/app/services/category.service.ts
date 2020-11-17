@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { CategoryReadModel } from '../models/readModels/category-read-model'; 
 import { HttpParams, HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, map, min, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -12,6 +12,7 @@ export class CategoryService {
 
   public loadedCategories : CategoryReadModel[] = [];
   private uri = environment.URI_BASE+'/categories';
+  error = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 
@@ -46,6 +47,24 @@ export class CategoryService {
   register(categoryName : string){
     let headers = new HttpHeaders().append("Authorization", "admin");
     let options = { headers: headers };
-    this.http.post(this.uri, {Name:categoryName}, options).subscribe();
+    this.http.post(this.uri, {Name:categoryName}, options).subscribe(responseData => {console.log(responseData)}, error => {
+      console.log(this.error);
+      this.error.next(error)})
   }
+
+  private handleError(error: HttpErrorResponse){
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(
+      'Something bad happened; please try again later.');
+    }
 }

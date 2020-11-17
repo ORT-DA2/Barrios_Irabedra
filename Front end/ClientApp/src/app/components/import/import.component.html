@@ -1,0 +1,36 @@
+<div class="jumbotron" id="importWrapper">
+    <div>
+        <h1 class="display-4">Import data</h1>
+        <p class="lead">Fill in the form in order to import data in an available format. </p>
+        <hr class="my-4">
+            <form  #form="ngForm">
+                <div class="form-group">
+                    <label for="inputTouristSpotName">Xml AssemblyPath</label>
+                    <input required type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [(ngModel)]="this.xmlPath" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="inputTouristSpotName">Json AssemblyPath</label>
+                    <input required type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [(ngModel)]="this.jsonPath" name="name">
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-block" (click)="loadAssemblies()">Load Assemblies</button>
+                <div class="form-group">
+                <select  required class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)] = "this.format" > 
+                    <option [value]=item *ngFor="let item of this.importService.loadedImplementations">{{item}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputTouristSpotName">Import file path</label>
+                    <input required type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [(ngModel)]="this.Filepath" name="name">
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Import</button>
+                <div *ngIf="this.show" class="alert alert-danger" role="alert">
+                    Something went wrong! Please verify that the paths you specified refer to the correct files.
+                  </div>
+            </form>
+    </div>
+    {{this.error}}
+</div>
+                
+            
+                
+

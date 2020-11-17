@@ -30,6 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddCategoryToTouristSpotComponent } from './components/tourist-spots/add-category-to-tourist-spot/add-category-to-tourist-spot.component';
 import { NameProyectingPipe } from '../app/components/tourist-spots/nameProyectingPipe';
 import { RegisterComponentComponent } from './components/register-component/register-component.component';
+import { DatepickerComponent } from './components/extras/datepicker/datepicker.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImportComponent } from './components/import/import.component';
 
 
 const appRoutes: Routes = [
@@ -55,6 +58,7 @@ const appRoutes: Routes = [
   { path: 'reports', component: ReportComponent},
   { path: 'addCategoryToTouristSpot' , component: AddCategoryToTouristSpotComponent},
   { path: 'register' , component: RegisterComponentComponent },
+  { path: 'import' , component : ImportComponent}
 ];
 
 @NgModule({
@@ -83,6 +87,8 @@ const appRoutes: Routes = [
     AddCategoryToTouristSpotComponent,
     NameProyectingPipe,
     RegisterComponentComponent,
+    DatepickerComponent,
+    ImportComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +96,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [TouristSpotService],
   bootstrap: [AppComponent]

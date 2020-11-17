@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 
 
 import { HttpParams, HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, map, min, tap } from 'rxjs/operators';
 import { TouristSpotReadModel } from '../models/readModels/tourist-spot-read-model';
 import {TouristSpotWriteModel} from '../models/writeModels/tourist-spot-write-model';
@@ -19,6 +19,7 @@ export class TouristSpotService {
 
   public loadedTouristSpots : TouristSpotReadModel[] = [];
   private uri = environment.URI_BASE+'/touristSpots';
+  error = new Subject<string>();
   
 
   constructor(private http: HttpClient) { }
@@ -63,10 +64,9 @@ export class TouristSpotService {
       }
       return touristSpotsArray;
     })
-  ).subscribe(touristSpots => {
-    
-  })
- }
+  ).subscribe(touristSpots => {}, error => {console.log(this.handleError(error));
+    this.error.next(error)})
+}
 
   getAll() {
     this.http
@@ -84,17 +84,14 @@ export class TouristSpotService {
         }
         return touristSpotsArray;
       })
-    ).subscribe(touristSpots => {
-      
-    })
+    ).subscribe(touristSpots => {}, error => {console.log(this.handleError(error))})
   }
 
     register (ts: TouristSpotWriteModel) {
-    console.log("entre");
-    this.http.post(this.uri, ts).subscribe(responseData => {
-      console.log(responseData);
-    })
+    this.http.post(this.uri, ts).subscribe(responseData => {console.log(responseData)}, error => {
+    this.error.next(error.message)})
   }
+  
 
   update(ts: TouristSpotWriteModel)
   {    
@@ -114,25 +111,20 @@ export class TouristSpotService {
    * *********************************************************************************
    * ********************************************************************************************
    */
+
   private handleError(error: HttpErrorResponse){
-    let message: string;
-
-    if(error.error instanceof ErrorEvent){
-      //Error de conexion del lado del cliente
-
-      message = "Error: do it again";
-    }else{
-      //El backend respondio con status code de error
-      //el body de la response debe de dar mas informacion
-
-      if(error.status == 0){
-        message = "The server is shutdown";
-      }else{
-        //Depende de como me mande la api la response del error es lo que tengo que agarrar
-        message = error.error.message;
-      }
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
     }
-    //Retornamos un Observable de tipo error para el que usa el servicio
-    return throwError(message);
-  }
+    // Return an observable with a user-facing error message.
+    return throwError(
+      'Something bad happened; please try again later.');
+    }
 }

@@ -11,6 +11,7 @@ using Obligatorio.ImportLogic.CustomExceptions;
 using Obligatorio.ImportLogicInterface.Interfaces;
 using Obligatorio.Model.Models.In;
 using Obligatorio.Model.Models.Out;
+using Obligatorio.WebApi.AuxiliaryObjects;
 using Obligatorio.WebApi.Filters;
 
 namespace Obligatorio.WebApi.Controllers
@@ -27,11 +28,11 @@ namespace Obligatorio.WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromHeader] string xmlPath, [FromHeader] string jsonPath)
         {
             try
             {
-                return Ok(this.importLogic.GetImplementationNames());
+                return Ok(this.importLogic.GetImplementationNames(jsonPath, xmlPath));
             }
             catch (Exception ex)
             {
@@ -55,13 +56,13 @@ namespace Obligatorio.WebApi.Controllers
         ///
         /// </remarks>
         [HttpPost("{format}")]
-        public IActionResult Post([FromBody] string path, string format)
+        public IActionResult Post([FromBody] StringWrapper path, string format)
         {
             if (validFormat(format))
             {
                 try
                 {
-                    if (this.importLogic.Import(path, format))
+                    if (this.importLogic.Import(path.Path , format))
                     {
                         return Ok();
                     }

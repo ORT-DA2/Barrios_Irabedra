@@ -8,41 +8,54 @@
             <form  #form="ngForm">
                 <div class="form-group">
                     <label for="inputTouristSpotName">Tourist spot name</label>
-                    <input type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [(ngModel)]="submittedObject.name" name="name">
+                    <input required type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [(ngModel)]="submittedObject.name" name="name">
                 </div>
                 <div class="form-group">
                     <label for="inputDescription">Tourist spot description</label>
-                    <input type="text" class="form-control" id="inputDescription" aria-describedby="descriptionHelp" placeholder="Enter a nice description" [(ngModel)]="submittedObject.description" name="description">
+                    <input  required type="text" class="form-control" id="inputDescription" aria-describedby="descriptionHelp" placeholder="Enter a nice description" [(ngModel)]="submittedObject.description" name="description">
                     <small id="descriptionHelp" class="form-text text-muted">The description should not be larger than 2000 characters.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile">Upload an image</label>
-                    <input type="file" accept="image/*" (change)="changeListener($event)">
+                    <input  required type="file" accept="image/*" (change)="changeListener($event)">
                 </div>
             
                 <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmitRegister()"
                 data-toggle="modal" data-target="#exampleModalCenter">Next</button>
 
+
+
                 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div  class="modal fade" id="exampleModalCenter" #modal tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
+        <div *ngIf="this.error === null; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Select a region</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-            <select  class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)] = "this.submittedObject.regionName" > 
+          <div class="modal-body">
+            <select  required class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)] = "this.submittedObject.regionName" > 
                 <option  *ngFor="let item of regions">{{item}}</option>
               </select>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" (click)="this.onSubmitUpdate()">Submit</button>
         </div>
+        <a (click)="resetError()" class="btn close_link" data-dismiss="modal">Close</a>
+    </ng-template>
+    <ng-template #elseBlock>
+      <div class="modal-body">
+        <h1>Oops! Check that this tourist spot hasnt been registered already.</h1>
+    </div>
+    <a  (click)="resetError()" class="btn close_link" data-dismiss="modal">Close</a>
+    </ng-template>
       </div>
     </div>
+    
   </div>
              </form>
             </div>

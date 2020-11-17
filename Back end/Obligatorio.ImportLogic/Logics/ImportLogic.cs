@@ -27,10 +27,10 @@ namespace Obligatorio.ImportLogic.Logics
             this.touristSpotLogic = touristSpotLogic;
         }
 
-        public List<string> GetImplementationNames()
+        public List<string> GetImplementationNames(string jsonPath, string xmlPath)
         {
-            Assembly jsonAssembly = Assembly.LoadFile("D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.JsonImport\\bin\\Debug\\netstandard2.0\\Obligatorio.JsonImport.dll"); //corregir path
-            Assembly xmlAssembly = Assembly.LoadFile("D:\\Juan\\Ort\\try2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\bin\\Debug\\netstandard2.0\\Obligatorio.XmlImport.dll"); //corregir path
+            Assembly jsonAssembly = Assembly.LoadFrom(jsonPath);
+            Assembly xmlAssembly = Assembly.LoadFrom(xmlPath); 
             return FindImplementations(new List<Assembly> { jsonAssembly, xmlAssembly });
         }
 
