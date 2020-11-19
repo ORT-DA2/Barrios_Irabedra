@@ -7,6 +7,7 @@ export class AccommodationWriteModel
     public PricePerNight : number ;
     public FullCapacity :boolean ;
     public TouristSpotName : string;
+  
 
     /*
     constructor(name : string, rating : number, address : string, description : string, pricePerNight : number, fullCapacity :boolean, touristSpotName : string)

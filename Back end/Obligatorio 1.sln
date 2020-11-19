@@ -42,9 +42,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obligatorio.JsonImport", "O
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obligatorio.XmlImport", "Obligatorio.XmlImport\Obligatorio.XmlImport.csproj", "{C0E7F497-4D39-4953-B0FB-803A8AF3AB47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obligatorio.ExternalFileImport", "Obligatorio.ExternalFileImport\Obligatorio.ExternalFileImport.csproj", "{339053A1-0D2A-4BE1-9141-3D191A7CEC6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obligatorio.ExternalFileImport", "Obligatorio.ExternalFileImport\Obligatorio.ExternalFileImport.csproj", "{339053A1-0D2A-4BE1-9141-3D191A7CEC6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obligatorio.ImportLogic", "Obligatorio.ImportLogic\Obligatorio.ImportLogic.csproj", "{AB827555-880A-4365-AC87-D949D6240DE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obligatorio.ImportLogic", "Obligatorio.ImportLogic\Obligatorio.ImportLogic.csproj", "{AB827555-880A-4365-AC87-D949D6240DE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

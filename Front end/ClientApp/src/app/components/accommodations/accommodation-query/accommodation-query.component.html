@@ -9,27 +9,30 @@
         <form>
             <div class="form-group">
                 <label for="touristSpotPicker">Accommodation's tourist spot</label>
-                <select multiple class="form-control" id="touristSpotPicker">
+                <select class="form-control" [(ngModel)]="this.submittedObject.TouristSpotName" name="touristSpots" id="touristSpotPicker" placeholder="TouristSpot">
+                    <option *ngFor="let item of this.touristSpotService.loadedTouristSpots">{{item.name}}</option>
                 </select>
             </div>
             <app-datepicker  (toOut)="toDateHandler($event)"  (fromOut)="fromDateHandler($event)"></app-datepicker> 
             <h1>Guests</h1>
             <div class="form-row">
                 <div class="col">
-                  <input type="number" class="form-control" placeholder="Babies">
+                  <input type="number" class="form-control" name="babies" [(ngModel)]="this.submittedObject.Babies" placeholder="Babies">
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control" placeholder="Kids">
+                  <input type="number" class="form-control"  name="kids" [(ngModel)]="this.submittedObject.Kids" placeholder="Kids">
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control" placeholder="Adults">
+                    <input type="number" class="form-control"  name="adults" [(ngModel)]="this.submittedObject.Adults" placeholder="Adults">
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control" placeholder="Retirees">
+                    <input type="number" class="form-control"  name="retirees" [(ngModel)]="this.submittedObject.Retirees" placeholder="Retirees">
                 </div>
               </div>
         </form>
         <button type="button" class="btn btn-primary btn-lg btn-block submitbtn" (click)="onSubmit()">Search</button>
     </div>
-    {{this.toDate | json}}
+   <select *ngIf="this.visible" class="form-control"  name="touristSpots" id="touristSpotPicker" placeholder="TouristSpot">
+        <option *ngFor="let item of this.queryResponse">{{item.name}}</option>
+    </select> 
 </div>
