@@ -58,43 +58,49 @@ namespace Obligatorio.WebApi.Controllers
             }
             else
             {
-                AccommodationModelIn accommodationModelIn = new AccommodationModelIn
+                try
                 {
-                    TouristSpotId = Int32.Parse(queryString.Get("touristSpotId")),
-                    CheckIn = new DateTime(
-                         Int32.Parse(queryString.Get("checkInYear")),
-                         Int32.Parse(queryString.Get("checkInMonth")),
-                         Int32.Parse(queryString.Get("checkInDay"))
-                        ),
-                    CheckOut = new DateTime(
-                         Int32.Parse(queryString.Get("checkOutYear")),
-                         Int32.Parse(queryString.Get("checkOutMonth")),
-                         Int32.Parse(queryString.Get("checkOutDay"))
-                        ),
-                    TotalGuests = Int32.Parse(queryString.Get("totalGuests")),
-                    Babies = Int32.Parse(queryString.Get("babies")),
-                    Kids = Int32.Parse(queryString.Get("kids")),
-                    Adults = Int32.Parse(queryString.Get("adults")),
-                    Retirees = Int32.Parse(queryString.Get("retirees"))
-                };
-
-
-                int tot = accommodationModelIn.Babies + accommodationModelIn.Kids + accommodationModelIn.Adults + accommodationModelIn.Retirees;
-                if (accommodationModelIn.TotalGuests != tot)
-                {
-                    return BadRequest("Wrong input: the number of hosts is incorrect.");
+                    AccommodationModelIn accommodationModelIn = new AccommodationModelIn
+                    {
+                        TouristSpotName = queryString.Get("touristSpotName"),
+                        CheckIn = new DateTime(
+                             Int32.Parse(queryString.Get("checkInYear")),
+                             Int32.Parse(queryString.Get("checkInMonth")),
+                             Int32.Parse(queryString.Get("checkInDay"))
+                            ),
+                        CheckOut = new DateTime(
+                             Int32.Parse(queryString.Get("checkOutYear")),
+                             Int32.Parse(queryString.Get("checkOutMonth")),
+                             Int32.Parse(queryString.Get("checkOutDay"))
+                            ),
+                        TotalGuests = Int32.Parse(queryString.Get("totalGuests")),
+                        Babies = Int32.Parse(queryString.Get("babies")),
+                        Kids = Int32.Parse(queryString.Get("kids")),
+                        Adults = Int32.Parse(queryString.Get("adults")),
+                        Retirees = Int32.Parse(queryString.Get("retirees"))
+                    };
+                    int tot = accommodationModelIn.Babies + accommodationModelIn.Kids 
+                        + accommodationModelIn.Adults + accommodationModelIn.Retirees;
+                    if (accommodationModelIn.TotalGuests != tot)
+                    {
+                        return BadRequest("Wrong input: the number of hosts is incorrect.");
+                    }
+                    AccommodationQueryIn accommodationQueryIn = new AccommodationQueryIn(accommodationModelIn);
+                    List<AccommodationQueryOut> accommodations = this.accommodationLogic.GetByTouristSpot(accommodationQueryIn);
+                    List<AccommodationModelOut> accommodationsToReturn = new List<AccommodationModelOut>();
+                    foreach (var item in accommodations)
+                    {
+                        AccommodationModelOut a = new AccommodationModelOut(item);
+                        accommodationsToReturn.Add(a);
+                    }
+                    return Ok(accommodationsToReturn);
                 }
-                AccommodationQueryIn accommodationQueryIn = new AccommodationQueryIn(accommodationModelIn);
-                List<AccommodationQueryOut> accommodations = this.accommodationLogic.GetByTouristSpot(accommodationQueryIn);
-                List<AccommodationModelOut> accommodationsToReturn = new List<AccommodationModelOut>();
-                foreach (var item in accommodations)
+                catch (Exception e) 
                 {
-                    AccommodationModelOut a = new AccommodationModelOut(item);
-                    accommodationsToReturn.Add(a);
+                    return BadRequest("Wrong input: incorrect query string");
                 }
-
-                return Ok(accommodationsToReturn);
             }
+            
         }
         /// <summary>
         /// Adds an Accommodation.

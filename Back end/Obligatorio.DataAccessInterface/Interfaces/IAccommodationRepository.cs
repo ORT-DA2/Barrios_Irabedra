@@ -15,5 +15,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         bool AlreadyExistsByName(string name);
         void Delete(string name);
         Accommodation GetByName(string name);
+        List<Accommodation> GetAllAvailableByTouristSpotName(string touristSpotName);
     }
 }

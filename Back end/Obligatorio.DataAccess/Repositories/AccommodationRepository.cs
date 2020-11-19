@@ -195,6 +195,31 @@ namespace Obligatorio.DataAccess.Repositories
                 throw new ObjectNotFoundInDatabaseException();
             }
         }
+
+        public List<Accommodation> GetAllAvailableByTouristSpotName(string touristSpotName)
+        {
+            List<Accommodation> totalAccommodations = this.accommodations.ToList();
+            List<Accommodation> accommodationsToReturn = new List<Accommodation>();
+            try 
+            {
+                foreach (var item in totalAccommodations)
+                {
+                    myContext.Entry(item).Reference(a => a.TouristSpot).Load();
+                }
+                foreach (var item in totalAccommodations)
+                {
+                    if (item.TouristSpot.Name.Equals(touristSpotName) && item.IsAvailable())
+                    {
+                        accommodationsToReturn.Add(item);
+                    }
+                }
+                return accommodationsToReturn;
+            } 
+            catch (Exception e) 
+            {
+                return accommodationsToReturn;
+            }
+        }
     }
 
 }

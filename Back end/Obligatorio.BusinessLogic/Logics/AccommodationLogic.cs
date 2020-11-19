@@ -62,16 +62,8 @@ namespace Obligatorio.BusinessLogic.Logics
         {
             List<AccommodationQueryOut> accommodationsToReturn = new List<AccommodationQueryOut>();
             List<Accommodation> accommodations = this.accommodationRepository
-                .GetByTouristSpot(accommodationQueryIn.TouristSpotId);
-            List<Accommodation> emptyAccommodations = new List<Accommodation>();
+                .GetAllAvailableByTouristSpotName(accommodationQueryIn.TouristSpotName);
             foreach (var item in accommodations)
-            {
-                if (item.IsAvailable())
-                {
-                    emptyAccommodations.Add(item);
-                }
-            }
-            foreach (var item in emptyAccommodations)
             {
                 AccommodationQueryOut a = new AccommodationQueryOut(item);
                 double totalPrice = this.CalculateTotalPrice(accommodationQueryIn, a);
@@ -135,10 +127,35 @@ namespace Obligatorio.BusinessLogic.Logics
         {
             int totalDays = (accommodationQueryIn.CheckOut - accommodationQueryIn.CheckIn).Days;
             double totalPrice =
-                (accommodationQueryIn.Adults * totalDays * a.PricePerNight) +
-                (accommodationQueryIn.Kids * totalDays * a.PricePerNight * 0.5) +
-                (accommodationQueryIn.Babies * totalDays * a.PricePerNight * 0.25);
+                CalculateTotalPriceForRetirees(accommodationQueryIn.Retirees, totalDays, a.PricePerNight) +
+                CalculateTotatPriceForAdults(accommodationQueryIn.Adults, totalDays, a.PricePerNight) +
+                CalculateTotalPriceForKids(accommodationQueryIn.Kids, a.PricePerNight, totalDays) +
+                CalculateTotalPriceForBabies(accommodationQueryIn.Babies, a.PricePerNight, totalDays);
             return totalPrice;
+        }
+
+        private double CalculateTotalPriceForRetirees(double retirees, int totalDays, double pricePerNight)
+        {
+            int retireesWithDiscount = (int)Math.Floor((retirees/ 2));
+            double retireesWithoutDiscount = retirees - retireesWithDiscount;
+            double priceForRetireesWithDiscount = retireesWithDiscount * totalDays * pricePerNight * 0.7;
+            double priceForRetireesWithoutDiscount = retireesWithoutDiscount * totalDays * pricePerNight;
+            return (priceForRetireesWithDiscount + priceForRetireesWithoutDiscount);
+        }
+
+        private double CalculateTotalPriceForBabies(int babies, double pricePerNight, int totalDays)
+        {
+            return (babies * totalDays * pricePerNight * 0.25);
+        }
+
+        private double CalculateTotalPriceForKids(int kids, double pricePerNight, int totalDays)
+        {
+            return (kids * totalDays * pricePerNight * 0.5);
+        }
+
+        private double CalculateTotatPriceForAdults(int adults, int totalDays, double pricePerNight)
+        {
+            return (adults * totalDays * pricePerNight);
         }
 
         public void Add(Accommodation accommodation)
