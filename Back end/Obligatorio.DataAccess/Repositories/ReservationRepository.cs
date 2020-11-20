@@ -2,6 +2,8 @@
 using Obligatorio.DataAccess.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain.DomainEntities;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Obligatorio.DataAccess.Repositories
 {
@@ -21,6 +23,12 @@ namespace Obligatorio.DataAccess.Repositories
             reservations.Add(reservation);
             myContext.SaveChanges();
             return reservation;
+        }
+
+        public List<Reservation> GetAll()
+        {
+            List<Reservation> reservationsToReturn = this.reservations.ToList();
+            return reservationsToReturn;
         }
 
         public Reservation GetById(int id)

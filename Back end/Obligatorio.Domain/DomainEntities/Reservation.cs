@@ -76,5 +76,23 @@ namespace Obligatorio.Domain.DomainEntities
             return ret;
         }
 
+        public bool ReservationSatusQualifiesForReport()
+        {
+            switch (this.ActualReservationStatus)
+            {
+                case ReservationStatus.Created:
+                    return true;
+                case ReservationStatus.Pending:
+                    return true;
+                case ReservationStatus.Accepted:
+                    return true;
+                case ReservationStatus.Denied:
+                    return false;
+                case ReservationStatus.Expired:
+                    return false;
+                default:
+                    return false;
+            }
+        }
     }
 }

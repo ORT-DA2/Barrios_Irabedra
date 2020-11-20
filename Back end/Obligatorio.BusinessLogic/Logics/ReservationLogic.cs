@@ -4,6 +4,7 @@ using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using Obligatorio.Domain.DomainEntities;
 using System;
+using System.Collections.Generic;
 
 namespace Obligatorio.BusinessLogic.Logics
 {
@@ -19,11 +20,11 @@ namespace Obligatorio.BusinessLogic.Logics
             this.reservationRepository = reservationRepository;
         }
 
-        public Reservation Add(Reservation reservation, int accommodationId)
+        public Reservation Add(Reservation reservation, string accommodationName)
         {
             try
             {
-                Accommodation accommodationForReservation = accommodationLogic.GetById(accommodationId);
+                Accommodation accommodationForReservation = accommodationLogic.GetByName(accommodationName);
                 if (!accommodationForReservation.FullCapacity)
                 {
                     reservation.AccommodationForReservation = accommodationForReservation;
@@ -57,6 +58,11 @@ namespace Obligatorio.BusinessLogic.Logics
                 throw new ObjectNotFoundInDatabaseException();
             }
 
+        }
+
+        public List<Reservation> GetAll()
+        {
+            return this.reservationRepository.GetAll();
         }
 
         public void Update(Reservation reservationToUpdate)

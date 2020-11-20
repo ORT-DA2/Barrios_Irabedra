@@ -91,7 +91,7 @@ namespace Obligatorio.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("A region with such name has been already registered.");
+                return BadRequest("A category with such name has been already registered.");
             }
         }
         /// <summary>

@@ -15,7 +15,7 @@ namespace Obligatorio.Model.Models.In
         public string GuestName { get; set; }
         public string GuestLastName { get; set; }
         public string Email { get; set; }
-        public int AccommodationId { get; set; }
+        public string AccommodationName { get; set; }
 
         public ReservationModelIn()
         {
@@ -27,6 +27,7 @@ namespace Obligatorio.Model.Models.In
             this.GuestName = "Default Guest Name";
             this.GuestLastName = "Default Guest LastName";
             this.Email = "Default Email";
+            this.AccommodationName = "Default Name";
         }
 
         public Reservation ToEntity()
