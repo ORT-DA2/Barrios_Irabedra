@@ -177,5 +177,12 @@ namespace Obligatorio.BusinessLogic.Logics
         {
             return this.accommodationRepository.GetByName(name);
         }
+
+        public List<Accommodation> GetAllByTouristSpotName(string touristSpotName)
+        {
+            List<Accommodation> accommodations = this.accommodationRepository
+                .GetAllByTouristSpotName(touristSpotName);
+            return accommodations;
+        }
     }
 }

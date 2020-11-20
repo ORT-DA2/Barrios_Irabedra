@@ -4,6 +4,7 @@ using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using Obligatorio.Domain.DomainEntities;
 using System;
+using System.Collections.Generic;
 
 namespace Obligatorio.BusinessLogic.Logics
 {
@@ -57,6 +58,11 @@ namespace Obligatorio.BusinessLogic.Logics
                 throw new ObjectNotFoundInDatabaseException();
             }
 
+        }
+
+        public List<Reservation> GetAll()
+        {
+            return this.reservationRepository.GetAll();
         }
 
         public void Update(Reservation reservationToUpdate)

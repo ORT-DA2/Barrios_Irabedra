@@ -38,6 +38,7 @@ namespace Obligatorio.Factory.Factories
             services.AddScoped<IReservationLogic, ReservationLogic>();
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IImportLogic, ImportLogic.Logics.ImportLogic>();
+            services.AddScoped<IReportLogic, ReportLogic>();
         }
         public void AddDbContextService()
         {

@@ -220,6 +220,31 @@ namespace Obligatorio.DataAccess.Repositories
                 return accommodationsToReturn;
             }
         }
+
+        public List<Accommodation> GetAllByTouristSpotName(string touristSpotName)
+        {
+            List<Accommodation> totalAccommodations = this.accommodations.ToList();
+            List<Accommodation> accommodationsToReturn = new List<Accommodation>();
+            try
+            {
+                foreach (var item in totalAccommodations)
+                {
+                    myContext.Entry(item).Reference(a => a.TouristSpot).Load();
+                }
+                foreach (var item in totalAccommodations)
+                {
+                    if (item.TouristSpot.Name.Equals(touristSpotName))
+                    {
+                        accommodationsToReturn.Add(item);
+                    }
+                }
+                return accommodationsToReturn;
+            }
+            catch (Exception e)
+            {
+                return accommodationsToReturn;
+            }
+        }
     }
 
 }

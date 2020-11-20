@@ -15,5 +15,6 @@ namespace Obligatorio.BusinessLogicInterface.Interfaces
         void Delete(string name);
         List<AccommodationQueryOut> GetAll();
         Accommodation GetByName(string name);
+        List<Accommodation> GetAllByTouristSpotName(string touristSpotName);
     }
 }

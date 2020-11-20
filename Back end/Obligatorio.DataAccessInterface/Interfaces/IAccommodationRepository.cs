@@ -16,5 +16,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         void Delete(string name);
         Accommodation GetByName(string name);
         List<Accommodation> GetAllAvailableByTouristSpotName(string touristSpotName);
+        List<Accommodation> GetAllByTouristSpotName(string touristSpotName);
     }
 }

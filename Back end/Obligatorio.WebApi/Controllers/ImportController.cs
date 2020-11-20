@@ -36,7 +36,7 @@ namespace Obligatorio.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest("Either such directory could not be found, or the file name is not correct.");
             }
         }
 
