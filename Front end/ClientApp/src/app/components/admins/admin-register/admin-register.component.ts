@@ -13,6 +13,9 @@ export class AdminRegisterComponent implements OnInit {
   public adminService:AdminService;
   public submittedObject : AdminWriteModel = new AdminWriteModel();
   @ViewChild('form') registerForm:NgForm;
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
 
   constructor(adminService:AdminService) { 
     this.adminService = adminService;
@@ -23,7 +26,16 @@ export class AdminRegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    this.adminService.register(this.submittedObject);
+    this.adminService.register(this.submittedObject).subscribe(res => {
+      this.errorOcurred = false;
+      this.success = true;
+    },
+    err => {
+      this.success=false;
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    })
   }
 }
 

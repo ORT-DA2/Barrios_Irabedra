@@ -10,13 +10,14 @@ import { AccommodationService } from 'src/app/services/accommodation.service';
 export class AccommodationDeletionComponent implements OnInit {
 
   public accommodationService: AccommodationService;
-  public loadedAccommodations: AccommodationReadModel[];
-  public selectedAccommodationName : string;
+  public selectedAccommodationName : string = '';
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
 
   constructor(accommodationService: AccommodationService) { 
     this.accommodationService = accommodationService;
     this.accommodationService.getAll();
-    this.loadedAccommodations = this.accommodationService.loadedAccommodations;
   }
 
   ngOnInit(): void {
@@ -24,6 +25,15 @@ export class AccommodationDeletionComponent implements OnInit {
 
 
   onSubmit(){
-    this.accommodationService.delete(this.selectedAccommodationName);
+    this.accommodationService.delete(this.selectedAccommodationName).subscribe(res => {
+      this.errorOcurred = false;
+      this.success = true;
+    },
+    err => {
+      this.success=false;
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    })
   }
 }

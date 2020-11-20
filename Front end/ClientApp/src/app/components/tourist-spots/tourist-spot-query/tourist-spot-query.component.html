@@ -1,13 +1,13 @@
-<div class="jumbotron" id="touristSpotQueryWrapper" (mouseenter)="loadData()" >
+<div class="jumbotron" id="touristSpotQueryWrapper" >
     <a class="btn btn-primary" routerLink="/touristSpots" role="button">Go back</a>
     <div>
         <h1 class="display-4">Tourist Spots</h1>
         <p class="lead">So as to check existing tourist spots, select a region and at least one category. Then click the search button. </p>
-        <button (click)="onRefreshActivation()" type="button" class="btn btn-primary btn-lg btn-block">Load existing categories!</button>
+        <!-- <button (click)="onRefreshActivation()" type="button" class="btn btn-primary btn-lg btn-block">Load existing categories!</button> -->
         <hr class="my-4">
     </div>
     <div id="formWrapper">
-        <form>
+        <form #form="ngForm">
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
                   <label class="mr-sm-2" for="regionPicker">Region</label>
@@ -22,14 +22,17 @@
             </div>
             <div class="form-group">
                 <label for="categoryPicker">Categories</label>
-                <select multiple="multiple" class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)] = "selectedCategoryNames" > 
-                  <option [value]="item" *ngFor="let item of categoriesString">{{item}}</option>
-                </select>
+                <select multiple="multiple" class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)]="selectedCategoryNames" > 
+                  <option  *ngFor="let item of this.categoryService.loadedCategories">{{item.name}}</option>
+                </select> 
               </div>
         </form>
-        <button (click)="onSubmit()" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <button [disabled]="!form.valid" (click)="onSubmit()" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+          An error ocurred! The error description is: {{this.errorMsg}}.
+        </div>
         <div>
-        <table class="table table-hover table-bordered table-info">
+        <table class="table table-hover table-bordered table-info miTabla">
           <tr>
             <th *ngFor="let column of headers">
               {{column | uppercase}}
@@ -44,6 +47,7 @@
           </tr>
         </table>
         </div>
-        
+    
+       
     </div>
 </div>

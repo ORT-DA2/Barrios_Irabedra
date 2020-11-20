@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { ImportService } from 'src/app/services/import.service';
 
 @Component({
@@ -14,9 +13,9 @@ export class ImportComponent implements OnInit {
   public jsonPath:string;
   public format : string;
   public importService: ImportService;
-  private errorSub: Subscription;
-  error = null;
-  show = false;
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
 
   constructor(importService: ImportService) {
     this.importService=importService;
@@ -24,24 +23,35 @@ export class ImportComponent implements OnInit {
 
 
   onSubmit(){
-    this.importService.import(this.format, this.Filepath);
-    this.error = null;
+    this.importService.import(this.format, this.Filepath).subscribe( 
+      res => {
+        this.errorOcurred=false;
+        console.log(res);
+        this.success = true;
+      },
+      err => {
+        this.success = false;
+        this.errorOcurred = true;
+        this.errorMsg = err.error;
+      },
+    )
+
   }
    
   loadAssemblies(){
-    this.importService.getImplementations( this.xmlPath, this.jsonPath);
+    this.importService.getImplementations( this.xmlPath, this.jsonPath).subscribe( 
+      res => {
+        console.log(res);
+      },
+      err => {
+        this.errorOcurred = true;
+        this.errorMsg = err.error;
+      },
+    )
   }
 
   ngOnInit(): void {
-    this.errorSub = this.importService.error.subscribe(errorMessage =>{
-      this.error = errorMessage;
-      console.log("reached");
-      this.show=true;
-    })
   }
 
-  ngOnDestroy(): void {
-    this.errorSub.unsubscribe();
-  }
   
 }

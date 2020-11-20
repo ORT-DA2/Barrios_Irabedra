@@ -20,6 +20,9 @@ export class TouristSpotQueryComponent implements OnInit {
   categoriesString : string[] = [];
   categories : CategoryReadModel[] = [];
 
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
   touristSpotService: TouristSpotService;
   categoryService: CategoryService;
 
@@ -29,37 +32,41 @@ export class TouristSpotQueryComponent implements OnInit {
   constructor(touristSpotService: TouristSpotService, categoryService: CategoryService) {
     this.touristSpotService = touristSpotService;
     this.categoryService = categoryService;
+    this.categoryService.getAll();
     }
 
   ngOnInit(): void {
-    this.categoryService.getAll();
   }
 
-  
-  loadData(){
-    this.categoryService.getAll();
-    this.categories = this.categoryService.loadedCategories;
-  }
-
-  onRefreshActivation(){
-    this.categories = this.categoryService.loadedCategories;
-    this.categoriesString = this.toStringArray(this.categories);
-    console.log(this.categories);
-    console.log(this.categoriesString);
-  }
 
   onSubmit(){
+    this.errorOcurred=false;
     this.categories = [];
     this.queryResponse = [];
     if(this.selectedCategoryNames === null && this.selectedRegionName === null){
-      this.touristSpotService.getAll();
-      console.log(this.touristSpotService.loadedTouristSpots);
+      this.touristSpotService.getAll().subscribe(
+        res => {
+          this.queryResponse = res;
+          this.success = true;
+        },
+        err => {
+          this.errorOcurred = true;
+          this.errorMsg = err.error;
+        },
+      )
     }
     else{
-      this.touristSpotService.get(this.selectedRegionName, this.selectedCategoryNames);
-      console.log(this.touristSpotService.loadedTouristSpots);
+      this.touristSpotService.get(this.selectedRegionName, this.selectedCategoryNames).subscribe(
+        res => {
+          this.queryResponse = res;
+          this.success = true;
+        },
+        err => {
+          this.errorOcurred = true;
+          this.errorMsg = err.error;
+        },
+      )
     }
-    this.queryResponse = this.touristSpotService.loadedTouristSpots;
   }
 
   toStringArray(categoryList : CategoryReadModel[] ){

@@ -14,18 +14,22 @@
             <form  #form="ngForm">
                 <div class="form-group">
                     <label for="inputTouristSpotName">Email</label>
-                    <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="" name="email" [(ngModel)]="email">
+                    <input required type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="" name="email" [(ngModel)]="email">
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="" name="password"  [(ngModel)]="password">
+                    <input required type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="" name="password"  [(ngModel)]="password">
                     <small id="descriptionHelp" class="form-text text-muted"></small>
                 </div>
             </form>
-            <button (click)=onClick() type="button" class="btn btn-primary btn-lg btn-block">Login</button>
+            <button [disabled]="!form.valid" (click)=onClick() type="button" class="btn btn-primary btn-lg btn-block">Login</button>
         </div>
+        <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+            Your login credentials are not correct. 
+          </div>
     </ng-template>
    
+ 
 
 </div>
 

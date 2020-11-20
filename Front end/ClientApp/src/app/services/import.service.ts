@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, Subject, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
  @Injectable({
@@ -19,23 +19,22 @@ import { environment } from 'src/environments/environment';
   
     }
 
-    getImplementations(xmlPath:string, jsonPath:string){
+    getImplementations(xmlPath:string, jsonPath:string) : Observable<any>{
         let headers = new HttpHeaders().append("jsonPath", jsonPath).append("xmlPath", xmlPath);
         let options = { headers: headers };
-        this.http
-        .get(this.uri, options)
+        return this.http
+        .get(this.uri,  {headers:headers})
         .pipe(
-          map((responseData : string[]) => {
-            const implementationsArray: string[] = []; 
-            this.loadedImplementations = [];
-            for(let i = 0; i < responseData.length; i++){
-              this.loadedImplementations.push(responseData[i]);
-              implementationsArray.push(responseData[i]);
-            }
-            return implementationsArray;
-          })
-        ).subscribe(response => {}, error => {console.log(this.handleError(error));
-          this.error.next(error)})
+           map((responseData : string[])=> {
+             for(let i = 0; i < responseData.length; i++){
+               this.loadedImplementations.push(responseData[i]);
+             }
+            return responseData;
+          }),
+            catchError(err => {
+              return throwError(err);
+            })
+          )
     }
 
     import(format:string, myPath:string){
@@ -46,15 +45,23 @@ import { environment } from 'src/environments/environment';
             console.log(format);
             let localuri:string = this.uri + "/xml";
             console.log(myPath);
-            this.http.post(localuri, {path : myPath}).subscribe(response => {}, error => {console.log(this.handleError(error));
-              this.error.next(error)});
+            return this.http.post(localuri, {path : myPath}, {responseType: 'text' as 'json'}).pipe(
+              res => {return res},
+              catchError(err => {
+                return throwError(err);
+              })
+            )
         }
         if(format.toLowerCase().includes("json")){
             console.log(format);
             let localuri:string = this.uri + "/json";
             console.log(myPath);
-            this.http.post(localuri,  {path : myPath}).subscribe(response => {}, error => {console.log(this.handleError(error));
-              this.error.next(error)});
+            return this.http.post(localuri,  {path : myPath},  {responseType: 'text' as 'json'}).pipe(
+              res => {return res},
+              catchError(err => {
+                return throwError(err);
+              })
+            )
         }
 
     }

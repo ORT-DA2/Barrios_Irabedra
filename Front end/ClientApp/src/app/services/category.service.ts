@@ -16,12 +16,13 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  addCategoryToTouristSpot(touristSpotName:string, categoryName:string){
-    console.log(touristSpotName);
-    console.log(categoryName);
-    this.http.put(this.uri, {"TouristSpotName":touristSpotName, "CategoryName":categoryName}).subscribe(responseData => {
-      console.log(responseData);
-    })
+  addCategoryToTouristSpot(touristSpotName:string, categoryName:string) : Observable<any>{
+    return this.http.put<string>(this.uri, {"TouristSpotName":touristSpotName, "CategoryName":categoryName}, { responseType: 'text' as 'json'}).pipe(
+      res => {return res} ,
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
 
   getAll() {
@@ -35,7 +36,7 @@ export class CategoryService {
           this.loadedCategories.push(responseData[i]);
           categoriesArray.push(responseData[i]);
         }
-        this.loadedCategories = categoriesArray;
+        //this.loadedCategories = categoriesArray;
         return categoriesArray;
       })
     ).subscribe(categories => {
@@ -47,9 +48,12 @@ export class CategoryService {
   register(categoryName : string){
     let headers = new HttpHeaders().append("Authorization", "admin");
     let options = { headers: headers };
-    this.http.post(this.uri, {Name:categoryName}, options).subscribe(responseData => {console.log(responseData)}, error => {
-      console.log(this.error);
-      this.error.next(error)})
+    return this.http.post(this.uri, {Name:categoryName}, options).pipe(
+      res => {return res} ,
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
 
   private handleError(error: HttpErrorResponse){

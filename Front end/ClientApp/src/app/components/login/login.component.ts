@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   @ViewChild('form') loginForm : NgForm;
   public email : string;
   public password : string;
+  errorOcurred = false;
+  errorMsg : string = null;
 
   constructor(loginService:LoginService) {
     this.loginService = loginService;
@@ -22,9 +24,20 @@ export class LoginComponent implements OnInit {
   }
 
   onClick(){
-    console.log("paso 1");
-    let token= this.loginService.login(this.loginForm.value.email, this.loginForm.value.password);
-    console.log(token);
+    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(
+      res =>{
+        let token : string = res;
+        console.log(token);
+        if(token.includes('admin')){
+          sessionStorage.setItem('admin', this.loginForm.value.email);
+      }
+      },
+      err => {
+        this.errorOcurred = true;
+        this.errorMsg = err.error;
+      },
+  
+    )
   }
 
   checkAdminToken(){

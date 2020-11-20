@@ -6,14 +6,21 @@
         <hr class="my-4">
     </div>
     <div id="formWrapper">
-        <form>
+        <form #form="ngForm">
             <div class="form-group">
                 <label for="accommodationPicker">Accommodations</label>
-                <select name="accommodation" class="form-control" id="accommodationPicker" [(ngModel)]="this.selectedAccommodationName">
-                    <option *ngFor="let item of this.loadedAccommodations">{{item.name}}</option>
+                <select required name="accommodation" class="form-control" id="accommodationPicker" [(ngModel)]="this.selectedAccommodationName">
+                    <option *ngFor="let item of this.accommodationService.loadedAccommodations">{{item.name}}</option>
                 </select>
               </div>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Delete</button>
+        <button [disabled]="!form.valid" type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Delete</button>
     </div>
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+        Success! {{this.selectedAccommodationName}} has been deleted.
+      </div>
+  
+      <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 </div>

@@ -24,10 +24,12 @@ export class AccommodationQueryComponent implements OnInit {
   constructor(accommodationService : AccommodationService, touristSpotService : TouristSpotService) {
     this.accommodationService = accommodationService;
     this.touristSpotService = touristSpotService;
+    this.touristSpotService.getAll();
+    this.accommodationService.getAll();
    }
 
   ngOnInit(): void {
-    this.touristSpotService.getAll();
+
   }
 
   toDateHandler($event : any){

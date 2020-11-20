@@ -12,7 +12,9 @@
                     <label for="inputTouristSpotName">Json AssemblyPath</label>
                     <input required type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [(ngModel)]="this.jsonPath" name="name">
                 </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" (click)="loadAssemblies()">Load Assemblies</button>
+                <button [disabled]="!form.valid" type="button" class="btn btn-primary btn-lg btn-block miButton" (click)="loadAssemblies()">Load Assemblies</button>
+            </form>
+            <form #form2="ngForm">
                 <div class="form-group">
                 <select  required class="form-control" id="categoryPicker" ngModel name="categoryPicker" [(ngModel)] = "this.format" > 
                     <option [value]=item *ngFor="let item of this.importService.loadedImplementations">{{item}}</option>
@@ -22,13 +24,16 @@
                     <label for="inputTouristSpotName">Import file path</label>
                     <input required type="text" class="form-control" id="inputTouristSpotName" aria-describedby="touristSpotHelp" placeholder="Enter name" [(ngModel)]="this.Filepath" name="name">
                 </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Import</button>
-                <div *ngIf="this.show" class="alert alert-danger" role="alert">
-                    Something went wrong! Please verify that the paths you specified refer to the correct files.
-                  </div>
+                <button [disabled]="!form2.valid" type="button" class="btn btn-primary btn-lg btn-block miButton" (click)="onSubmit()">Import</button>
             </form>
     </div>
-    {{this.error}}
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+        Success! .
+      </div>
+  
+      <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 </div>
                 
             

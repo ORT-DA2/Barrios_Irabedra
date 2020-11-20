@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -16,23 +17,25 @@ export class LoginService {
   }
 
 
-  login(email:string, password:string){
+  login(email:string, password:string) : Observable<any>{
     let headers = new HttpHeaders();
     headers = headers.set('email', email).set('password',password);
-    this.http.get(this.uri, {headers : headers}).subscribe(((response: {message:string})=> {
-      this.token=response.message;
-      console.log(response.message);
-      if(this.token === 'admin'){
-        sessionStorage.setItem(this.token, email);
-      }
-    }))
+    return this.http.get<string>(this.uri, {headers : headers,  responseType: 'text' as 'json'}).pipe(
+       res => {return res},
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
 
 
   //*******************************************************VER HTTP HEADERS******************/
-  register(email:string, password:string){
-    this.http.post(this.uri, {email, password}).subscribe(responseData => {
-      console.log(responseData);
-    })
+  register(email:string, password:string) :Observable<any>{
+    return this.http.post(this.uri, {email, password}, {responseType: 'text' as 'json'}).pipe(
+      res => {return res} ,
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
 }

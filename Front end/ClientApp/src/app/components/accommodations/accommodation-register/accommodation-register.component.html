@@ -1,4 +1,4 @@
-<div class="jumbotron" id="accommodationRegisterWrapper" (mouseenter)="loadData()" >
+<div class="jumbotron" id="accommodationRegisterWrapper" >
     <a class="btn btn-primary" routerLink="/accommodations" role="button">Go back</a>
     <div>
         <h1 class="display-4">Accommodations Register</h1>
@@ -7,23 +7,23 @@
         <form #form="ngForm">
             <div class="form-group">
                 <label for="inputAccommodationName">Accommodation name</label>
-                <input  [(ngModel)]="submittedObject.Name" type="text" name="name" class="form-control" id="inputAccommodationName" aria-describedby="accommodationNameHelp" placeholder="Enter name">
+                <input required [(ngModel)]="submittedObject.Name" type="text" name="name" class="form-control" id="inputAccommodationName" aria-describedby="accommodationNameHelp" placeholder="Enter name">
             </div>
             <div class="form-group">
                 <label for="inputDescription">Accommodation description</label>
-                <input [(ngModel)]="submittedObject.Description"  type="text" name="description" class="form-control" id="inputDescription" aria-describedby="descriptionHelp" placeholder="Enter a nice description">
+                <input  required [(ngModel)]="submittedObject.Description"  type="text" name="description" class="form-control" id="inputDescription" aria-describedby="descriptionHelp" placeholder="Enter a nice description">
             </div>
             <div class="form-group">
                 <label for="inputAddress">Accommodation address</label>
-                <input [(ngModel)]="submittedObject.Address"  type="text" name="address" class="form-control" id="inputAddress" aria-describedby="addressHelp" placeholder="Enter the accommodation's address">
+                <input required [(ngModel)]="submittedObject.Address"  type="text" name="address" class="form-control" id="inputAddress" aria-describedby="addressHelp" placeholder="Enter the accommodation's address">
             </div>
             <div class="form-group">
                 <label for="inputPrice">Accommodation price per night</label>
-                <input [(ngModel)]="submittedObject.PricePerNight"  type="number" name="price" class="form-control" id="inputPrice" aria-describedby="priceHelp" placeholder="Enter the accommodation's nominal price per night">
+                <input required [(ngModel)]="submittedObject.PricePerNight"  type="number" name="price" class="form-control" id="inputPrice" aria-describedby="priceHelp" placeholder="Enter the accommodation's nominal price per night">
             </div>
             <div class="form-group">
                 <label for="ratingPicker">Accommodation's rating</label>
-                <select [(ngModel)]="submittedObject.Rating"  name="rating" class="form-control form-control-sm" id="ratingPicker">
+                <select required [(ngModel)]="submittedObject.Rating"  name="rating" class="form-control form-control-sm" id="ratingPicker">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -34,11 +34,18 @@
             </div>
             <div class="form-group">
                 <label for="touristSpotPicker">Accommodation's tourist spot</label>
-                <select name="touristspot" class="form-control" id="touristSpotPicker" name="touristSpotPicker" [(ngModel)]="this.submittedObject.TouristSpotName">
+                <select required name="touristspot" class="form-control" id="touristSpotPicker" name="touristSpotPicker" [(ngModel)]="this.submittedObject.TouristSpotName">
                     <option  *ngFor="let item of this.touristSpotService.loadedTouristSpots">{{item.name}}</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Submit</button>
+            <button [disabled]="!form.valid" type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Submit</button>
         </form>
     </div>
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+        Success! {{this.submittedObject.Name}} has been registered as an accommodation.
+      </div>
+  
+      <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 </div>

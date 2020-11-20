@@ -5,35 +5,28 @@
         <h1 class="display-4">Register a tourist spot category</h1>
         <p class="lead">Register a category providing a new category name. </p>
         <hr class="my-4">
-        <form>
-            <div class="form-group">
+        <form #form="ngForm">
+            <div  class="form-group">
                 <label for="inputCategoryName">Name</label>
-                <input type="text" class="form-control" id="inputName" name="name" aria-describedby="nameHelp" [(ngModel)]="this.name" placeholder="Category name">
+                <input  required type="text" class="form-control" name='name'  aria-describedby="nameHelp" [(ngModel)]="this.name" placeholder="Category name">
             </div>
+            <button [disabled]="!form.valid && !form.dirty" type="submit"  type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Register</button>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Register</button>
+
     </div>
    
 
 
- 
-    <div *ngIf="this.show"  class="modal" id="exampleModalCenter" #modal tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Error!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="false">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                     <h1>Oops! Check that this category hasnt been registered already.</h1>
-                     <a (click)="resetError()" class="btn close_link" data-dismiss="modal">Close</a>
-                </div>
     
-        </div>
-    </div>
-    </div> 
-    
+
+
+
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+        Success! {{this.name}} has been registered as a category.
+      </div>
+  
+      <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 </div>
 

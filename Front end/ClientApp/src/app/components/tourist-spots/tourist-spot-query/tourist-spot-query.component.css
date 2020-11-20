@@ -1,3 +1,12 @@
 .touristSpotsDisplay{
     margin-top: 15px
 }
+.successMessage{
+    margin-top: 30px;
+}
+.miTabla{
+    margin-top: 30px;
+}
+input.ng-invalid, select.ng-invalid{
+    border: 1px solid red;
+}

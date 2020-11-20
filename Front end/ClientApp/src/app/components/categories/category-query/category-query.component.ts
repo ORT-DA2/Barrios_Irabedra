@@ -10,11 +10,9 @@ import { CategoryService } from 'src/app/services/category.service';
 export class CategoryQueryComponent implements OnInit {
 
   public categoryService : CategoryService;
-  public loadedCategories : CategoryReadModel[];
   constructor(categoryService : CategoryService) {
     this.categoryService = categoryService;
     this.categoryService.getAll();
-    this.loadedCategories=this.categoryService.loadedCategories;
    }
 
 

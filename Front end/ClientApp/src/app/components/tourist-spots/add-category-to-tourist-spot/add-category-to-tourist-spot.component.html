@@ -1,4 +1,4 @@
-<div class="jumbotron" id="touristSpotAddCategoryWrapper" (show)="onRefreshActivation()" (mouseenter)="loadData()" (mousemove)="loadData()">
+<div class="jumbotron" id="touristSpotAddCategoryWrapper">
     <a class="btn btn-primary" routerLink="/touristSpots" role="button">Go back</a>
     <div>
         <h1 class="display-4">Adding categories</h1>
@@ -9,8 +9,8 @@
         <form  #form="ngForm">
             <div class="form-group">
                 <label for="touristSpotPicker">TouristSpots</label>
-                <select  class="form-control" id="touristSpotPicker" ngModel name="touristSpotPicker" [(ngModel)]="this.selectedTouristSpot" (click)="loadData()" > 
-                  <option  (click)="loadData()" *ngFor="let item of this.touristSpotService.loadedTouristSpots ">{{item | nameProyectingPipe}}</option>
+                <select  class="form-control" id="touristSpotPicker" name="touristSpotPicker" [(ngModel)]="this.selectedTouristSpot"  > 
+                  <option  *ngFor="let item of this.touristSpotService.loadedTouristSpots ">{{item.name}}</option>
                 </select>
               </div>
 
@@ -21,10 +21,15 @@
                 </select>
               </div>
         </form>
-        <button (click)="onSubmit()" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <button [disabled]="!form.valid " (click)="onSubmit()" type="button" class="btn btn-primary btn-lg btn-block ">Submit</button>
         <div>
         </div>
-        <p> {{this.selectedCategory}} </p>
-        <p> {{this.selectedTouristSpot}} </p>
+    </div>
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+      Success! {{this.selectedTouristSpot}} now belongs to the {{this.selectedCategory}} category.
+    </div>
+
+    <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+      An error ocurred! The error description is: {{this.errorMsg}}.
     </div>
 </div>

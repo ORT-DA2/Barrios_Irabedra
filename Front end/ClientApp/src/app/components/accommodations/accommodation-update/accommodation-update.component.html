@@ -7,12 +7,12 @@
         <hr class="my-4">
     </div>
     <div id="formWrapper">
-        <form>
+        <form #form="ngForm">
             <div class="form-group" id="accommodationPicker">
                 <label for="accommodationPicker">Accommodations</label>
-                <select class="form-control" id="accommodationPicker" name="accommodation" [(ngModel)]="this.selectedAccommodationName"
+                <select required class="form-control" id="accommodationPicker" name="accommodation" [(ngModel)]="this.selectedAccommodationName"
                 (click)="onAccommodationSelect()">
-                <option *ngFor="let item of this.loadedAccommodations" >{{item.name}}</option>
+                <option *ngFor="let item of this.accommodationService.loadedAccommodations" >{{item.name}}</option>
                 </select>
             </div>
             <div class="form-group">
@@ -26,14 +26,20 @@
             </div>
             <div class="form-group">
                 <label for="inputNewCapacity">Updated current capacity</label>
-                <select class="form-control" id="newCapacityState" name="newCapacityState" [(ngModel)]="this.newData.fullCapacity">
+                <select required class="form-control" id="newCapacityState" name="newCapacityState" [(ngModel)]="this.newData.fullCapacity">
                 <option value="true">Full</option>
                 <option value="false">Not full</option>
                 </select>
             </div>
+            <button [disabled]="!form.valid" type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Update</button>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Update</button>
+       
     </div>
-
-
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+        Success! {{this.selectedAccommodationName}} has been updated.
+      </div>
+  
+      <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 </div>

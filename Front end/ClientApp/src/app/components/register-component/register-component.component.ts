@@ -13,6 +13,9 @@ export class RegisterComponentComponent implements OnInit {
   @ViewChild('form') loginForm : NgForm;
   public email : string;
   public password : string;
+  errorOcurred = false;
+  errorMsg : string = null;
+  success=false;
 
   constructor(loginService:LoginService) {
     this.loginService=loginService;
@@ -22,7 +25,18 @@ export class RegisterComponentComponent implements OnInit {
   }
 
   onClick(){
-    this.loginService.register(this.email, this.password);
+    this.loginService.register(this.email, this.password).subscribe( 
+      res => {
+        this.errorOcurred=false;
+        console.log(res);
+        this.success = true;
+      },
+      err => {
+        this.success = false;
+        this.errorOcurred = true;
+        this.errorMsg = err.error;
+      },
+    )
   }
 }
 

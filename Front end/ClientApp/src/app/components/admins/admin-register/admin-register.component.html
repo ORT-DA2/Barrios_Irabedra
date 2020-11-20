@@ -7,21 +7,27 @@
         <form #form="ngForm">
             <div class="form-group"  >
                 <label for="inputName">Name</label>
-                <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="" name="name" [(ngModel)]=this.submittedObject.Name>
+                <input required type="text" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="" name="name" [(ngModel)]=this.submittedObject.Name>
             </div>
             <div class="form-group">
                 <label for="inputEmail">Email</label>
-                <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="" name="email" [(ngModel)]=this.submittedObject.Email>
+                <input required type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="" name="email" [(ngModel)]=this.submittedObject.Email>
             </div>
             <div class="form-group">
                 <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="" name="password" [(ngModel)]=this.submittedObject.Password>
+                <input required type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" placeholder="" name="password" [(ngModel)]=this.submittedObject.Password>
                 <small id="descriptionHelp" class="form-text text-muted"></small>
             </div>
+            <button [disabled]="!form.valid" type="submit" type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Register</button>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Register</button>
     </div>
-
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+        Success! {{this.submittedObject.Name}}, your new admin credentials are your mail and your password.
+      </div>
+  
+      <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 </div>
 
 

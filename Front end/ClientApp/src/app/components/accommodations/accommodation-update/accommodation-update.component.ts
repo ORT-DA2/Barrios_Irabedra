@@ -6,20 +6,21 @@ import { AccommodationService } from 'src/app/services/accommodation.service';
 @Component({
   selector: 'app-accommodation-update',
   templateUrl: './accommodation-update.component.html',
-  styles: [
-  ]
+  styleUrls: ['./accommodation-update.component.css']
 })
 export class AccommodationUpdateComponent implements OnInit {
 
   public accommodationService: AccommodationService;
-  public loadedAccommodations: AccommodationReadModel[];
   public selectedAccommodationName : string;
   public newData: AccommodationPutWriteModel = new AccommodationPutWriteModel();
   public selectedAccommodation : AccommodationReadModel;
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
+
   constructor(accommodationService: AccommodationService) { 
     this.accommodationService = accommodationService;
     this.accommodationService.getAll();
-    this.loadedAccommodations = this.accommodationService.loadedAccommodations;
   }
 
   ngOnInit(): void {
@@ -51,7 +52,16 @@ export class AccommodationUpdateComponent implements OnInit {
  
 
   onSubmit(){
-    this.accommodationService.update(this.selectedAccommodationName, this.newData);
+    this.accommodationService.update(this.selectedAccommodationName, this.newData).subscribe(res => {
+      this.errorOcurred = false;
+      this.success = true;
+    },
+    err => {
+      this.success=false;
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    });
     this.newData.images = [];
   }
 }

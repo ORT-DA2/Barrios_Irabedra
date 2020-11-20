@@ -9,16 +9,18 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoryRegisterComponent implements OnInit {
 
+  public 
   public name:string;
   public show : boolean = false;
   public categoryService : CategoryService;
   private errorSub: Subscription;
   error = null;
-
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
   constructor(categoryService : CategoryService) {
     this.categoryService = categoryService;
    }
-
   ngOnInit(): void {
     this.errorSub = this.categoryService.error.subscribe(errorMessage =>{
       this.error = errorMessage;
@@ -30,13 +32,19 @@ export class CategoryRegisterComponent implements OnInit {
     if(this.error !== null){
       this.show = !this.show;
     }
-    this.categoryService.register(this.name);
+    this.categoryService.register(this.name).subscribe(res => {
+      this.errorOcurred = false;
+      this.success = true;
+    },
+    err => {
+      this.success=false;
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    })
   }
 
-  resetError(){
-    this.error=null;
-    this.show=!this.show;
-  }
+
 
   ngOnDestroy(): void {
     this.errorSub.unsubscribe();

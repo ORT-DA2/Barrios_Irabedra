@@ -20,10 +20,12 @@ export class TouristSpotRegisterComponent implements OnInit {
   public submittedObject: TouristSpotWriteModel = new TouristSpotWriteModel();
   touristSpotService: TouristSpotService;
   regionName:string;
-  regions=["Region metropolitana", "Region este", "Region litoral norte", "Region corredor pajaros pintados", "Region centro sur"];
+  regions=["Region metropolitana", "Region este", "Region litoral norte", "Region corredor de los pajaros pintados", "Region centro sur"];
   private errorSub: Subscription;
   error = null;
-
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
   constructor(touristSpotService: TouristSpotService) {
     this.touristSpotService = touristSpotService;
    }
@@ -38,7 +40,6 @@ export class TouristSpotRegisterComponent implements OnInit {
 
   setRegion(value : string){
     this.submittedObject.regionName=value;
-    this.Inactive=true;
   }
   
   loadData(){
@@ -46,13 +47,28 @@ export class TouristSpotRegisterComponent implements OnInit {
   }
 
    onSubmitRegister(){
-    this.show = !this.show;
-    this.touristSpotService.register(this.submittedObject);
+    this.touristSpotService.register(this.submittedObject).subscribe(res => {
+      console.log(res);
+      this.show = true;
+      this.errorOcurred = false;
+    },
+    err => {
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    })
   }
   
   onSubmitUpdate(){
-    this.show = !this.show;
-    this.touristSpotService.update(this.submittedObject);
+    this.touristSpotService.update(this.submittedObject).subscribe(res => {
+      console.log(res);
+      this.success = true;
+    },
+    err => {
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    })
   }
 
   

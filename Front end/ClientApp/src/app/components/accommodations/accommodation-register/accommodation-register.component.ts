@@ -16,20 +16,21 @@ export class AccommodationRegisterComponent implements OnInit {
   public accommodationService : AccommodationService;
   public touristSpotService : TouristSpotService;
   public submittedObject: AccommodationWriteModel = new AccommodationWriteModel();
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
 
-  constructor(accommodationService : AccommodationService, touritSpotService : TouristSpotService) 
+  constructor(accommodationService : AccommodationService, touristSpotService : TouristSpotService) 
   {
     this.accommodationService = accommodationService;
-    this.touristSpotService = touritSpotService;
+    this.touristSpotService = touristSpotService;
+    this.accommodationService.getAll();
+    this.touristSpotService.getAll().subscribe();
   }
 
-  loadData(){
-    this.accommodationService.getAll();
-    this.touristSpotService.getAll();
-  }
+ 
 
   onSubmit(){
-    console.log("PIJAAAAAAAAAAAAAAAAAAAAA");
     this.submittedObject.Name = this.registerForm.value.name;
     this.submittedObject.Rating = parseInt(this.registerForm.value.rating);
     this.submittedObject.Description = this.registerForm.value.description;
@@ -38,7 +39,16 @@ export class AccommodationRegisterComponent implements OnInit {
     this.submittedObject.TouristSpotName = this.registerForm.value.touristSpotPicker;
     this.submittedObject.FullCapacity = false;
     console.log(this.submittedObject);
-    this.accommodationService.register(this.submittedObject);
+    this.accommodationService.register(this.submittedObject).subscribe(res => {
+      this.errorOcurred = false;
+      this.success = true;
+    },
+    err => {
+      this.success=false;
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    })
   }
 
   ngOnInit(): void {

@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 
 
 import { HttpParams, HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, Subject, throwError } from 'rxjs';
+import { Observable, of, Subject, throwError } from 'rxjs';
 import { catchError, map, min, tap } from 'rxjs/operators';
 import { TouristSpotReadModel } from '../models/readModels/tourist-spot-read-model';
 import {TouristSpotWriteModel} from '../models/writeModels/tourist-spot-write-model';
@@ -26,7 +26,7 @@ export class TouristSpotService {
 
 
 
- get(regionName:string, categoryNames:string[]){
+ public get  (regionName:string, categoryNames:string[]) : Observable<any> {
    let params = new HttpParams();
 
 
@@ -52,8 +52,8 @@ export class TouristSpotService {
     params = params.append('region',   regionName );
   }
 
-  this.http
-  .get(this.uri, {params})
+  return this.http
+  .get<TouristSpotReadModel[]>(this.uri, {params})
   .pipe(
     map((responseData : TouristSpotReadModel[]) => {
       const touristSpotsArray: TouristSpotReadModel[] = []; 
@@ -62,18 +62,23 @@ export class TouristSpotService {
         this.loadedTouristSpots.push(responseData[i]);
         touristSpotsArray.push(responseData[i]);
       }
+      console.log(touristSpotsArray);
       return touristSpotsArray;
+    }),
+    catchError(err => {
+      return throwError(err);
     })
-  ).subscribe(touristSpots => {}, error => {console.log(this.handleError(error));
-    this.error.next(error)})
+  )
 }
 
-  getAll() {
-    this.http
-    .get(this.uri + '?category=all') //lo podriamos sacar porque si no recibe args automaticamente recibe /?category=all
-    //lograr pasar params a la query
-    //para poder efectivamente cumplir con el ReqFun
-    //empezar a ver formularios tambien para hacer el POST
+
+
+
+
+
+  getAll() : Observable<any> {
+    return this.http
+    .get<TouristSpotReadModel[]>(this.uri + '?category=all') 
     .pipe(
       map((responseData : TouristSpotReadModel[]) => {
         const touristSpotsArray: TouristSpotReadModel[] = []; 
@@ -83,34 +88,35 @@ export class TouristSpotService {
           touristSpotsArray.push(responseData[i]);
         }
         return touristSpotsArray;
+      }),
+      catchError(err => {
+        return throwError(err);
       })
-    ).subscribe(touristSpots => {}, error => {console.log(this.handleError(error))})
+    )
   }
-
-    register (ts: TouristSpotWriteModel) {
-    this.http.post(this.uri, ts).subscribe(responseData => {console.log(responseData)}, error => {
-    this.error.next(error.message)})
+    
+  register (ts: TouristSpotWriteModel) {
+    return this.http.post(this.uri, ts).pipe(
+      res => {return res},
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
   
 
-  update(ts: TouristSpotWriteModel)
+  public update(ts: TouristSpotWriteModel)
   {    
-    console.log("entre 2");
     let headers = new HttpHeaders().append("Authorization", "admin");
     let options = { headers: headers };
-    this.http.put(environment.URI_BASE + '/regions', {TouristSpotName: ts.name, RegionName : ts.regionName}, options).subscribe();
+    return this.http.put(environment.URI_BASE + '/regions', {TouristSpotName: ts.name, RegionName : ts.regionName}, { headers : headers, responseType: 'text' as 'json'}).pipe(
+      res => {return res},
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
-  /*----------------------HAY QUE VER ESTO MAS ADELANTE----------------*/
-  /***********************
-   * *****************************
-   * ******************************************
-   * *************************************************
-   * ************************************************************
-   * ********************************************************************
-   * ****************************************************************************
-   * *********************************************************************************
-   * ********************************************************************************************
-   */
+
 
   private handleError(error: HttpErrorResponse){
     if (error.error instanceof ErrorEvent) {

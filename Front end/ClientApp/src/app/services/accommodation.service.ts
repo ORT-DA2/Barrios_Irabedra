@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AccommodationReadModel } from '../models/readModels/accommodation-read-model';
 import { AccommodationPutWriteModel } from '../models/writeModels/accommodation-put-write-model';
@@ -17,9 +18,7 @@ export class AccommodationService {
   
   constructor(private http: HttpClient) { }
 
-  buildQueryString(){
-
-  }
+ 
 
   find(name:string){
     this.getAll(); 
@@ -80,14 +79,18 @@ export class AccommodationService {
     })
   }
 
-  register(submittedObject: AccommodationWriteModel)
-  {
+  register(submittedObject: AccommodationWriteModel) : Observable<any> {
     console.log(submittedObject);
-    this.http.post(this.uri, submittedObject).subscribe();
+    return this.http.post(this.uri, submittedObject).pipe(
+      res => {return res} ,
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
 
 
-  update(name:string, data:AccommodationPutWriteModel){
+  update(name:string, data:AccommodationPutWriteModel) : Observable<any>{
     let headers = new HttpHeaders().append("Authorization", "admin");
     let options = { headers: headers };
     let capacity:string;
@@ -98,13 +101,23 @@ export class AccommodationService {
     else{
       capacity="false";
     }
-    this.http.put(this.uri , {Name: name,  FullCapacity: capacity, Images: data.images, WantToChangeCapacity: "true"}, options).subscribe();
+    return this.http.put(this.uri , {Name: name,  FullCapacity: capacity, Images: data.images, WantToChangeCapacity: "true"}, {headers:headers , responseType: 'text' as 'json'}).pipe(
+      res => {return res} ,
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
 
-  delete(name:string){
+  delete(name:string) : Observable<any>{
     let headers = new HttpHeaders().append("Authorization", "admin");
     let options = { headers: headers };
     name = name.replace(' ', '%20');
-    this.http.delete(this.uri+ '/' + name, options).subscribe();
+    return this.http.delete(this.uri+ '/' + name, {headers:headers , responseType: 'text' as 'json'}).pipe(
+      res => {return res} ,
+      catchError(err => {
+        return throwError(err);
+      })
+    )
   }
 }

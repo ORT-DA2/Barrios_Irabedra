@@ -32,7 +32,8 @@
         </form>
         <button type="button" class="btn btn-primary btn-lg btn-block submitbtn" (click)="onSubmit()">Search</button>
     </div>
-   <select *ngIf="this.visible" class="form-control"  name="touristSpots" id="touristSpotPicker" placeholder="TouristSpot">
+   <select *ngIf="this.visible" class="form-control"  name="accommodations" id="touristSpotPicker" placeholder="TouristSpot">
         <option *ngFor="let item of this.queryResponse">{{item.name}}</option>
     </select> 
+    <button type="button" class="btn btn-primary btn-lg btn-block submitbtn" >Book</button>
 </div>

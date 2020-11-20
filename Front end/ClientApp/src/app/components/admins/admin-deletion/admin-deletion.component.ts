@@ -13,6 +13,9 @@ export class AdminDeletionComponent implements OnInit {
   @ViewChild('form') registerForm:NgForm;
   public email:string="";
   public adminService:AdminService;
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
 
   constructor(adminService:AdminService) { 
     this.adminService=adminService;
@@ -23,6 +26,15 @@ export class AdminDeletionComponent implements OnInit {
 
 
   onSubmit(){
-    this.adminService.delete(this.email);
+    this.adminService.delete(this.email).subscribe(res => {
+      this.errorOcurred = false;
+      this.success = true;
+    },
+    err => {
+      this.success=false;
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    })
   }
 }

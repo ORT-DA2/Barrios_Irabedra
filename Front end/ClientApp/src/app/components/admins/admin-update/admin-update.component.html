@@ -7,19 +7,27 @@
         <form>
             <div class="form-group">
                 <label for="inputTouristSpotName">Email</label>
-                <input type="text" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp" placeholder="" [(ngModel)]="this.admin.Email">
+                <input required type="text" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp" placeholder="" [(ngModel)]="this.admin.Email">
             </div>
             <div class="form-group">
                 <label for="inputTouristSpotName">New Name</label>
-                <input type="text" class="form-control" id="inputName" name="name" aria-describedby="emailHelp" placeholder="" [(ngModel)]="this.admin.Name">
+                <input required type="text" class="form-control" id="inputName" name="name" aria-describedby="emailHelp" placeholder="" [(ngModel)]="this.admin.Name">
             </div>
             <div class="form-group">
                 <label for="inputPassword">New password</label>
-                <input type="password" class="form-control" id="inputPassword" name="password" aria-describedby="passwordHelp" placeholder="" [(ngModel)]="this.admin.Password">
+                <input required type="password" class="form-control" id="inputPassword" name="password" aria-describedby="passwordHelp" placeholder="" [(ngModel)]="this.admin.Password">
                 <small id="descriptionHelp" class="form-text text-muted"></small>
             </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Update</button>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Update</button>
+
     </div>
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+        Success! Your new name is {{this.admin.Name}}, your mail remains {{this.admin.Email}} your password password has been updated..
+      </div>
+  
+      <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 
 </div>

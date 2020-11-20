@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit, Pipe, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { CategoryReadModel } from 'src/app/models/readModels/category-read-model';
 import { TouristSpotReadModel } from 'src/app/models/readModels/tourist-spot-read-model';
 import { CategoryService } from 'src/app/services/category.service';
@@ -18,6 +20,10 @@ export class AddCategoryToTouristSpotComponent implements OnInit {
   selectedCategory : CategoryReadModel;
   selectedTouristSpot: TouristSpotReadModel;
   touristSpots: TouristSpotReadModel[];
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
+
 
   touristSpotService: TouristSpotService;
   categoryService: CategoryService;
@@ -27,43 +33,34 @@ export class AddCategoryToTouristSpotComponent implements OnInit {
   constructor(touristSpotService: TouristSpotService, categoryService: CategoryService) {
     this.touristSpotService = touristSpotService;
     this.categoryService = categoryService;
+    this.touristSpotService.getAll().subscribe();
+    this.categoryService.getAll();
     }
 
   ngOnInit(): void {
-    this.categoryService.getAll();
-    this.touristSpotService.getAll();
-    this.categories = this.categoryService.loadedCategories;
-    this.touristSpots = this.touristSpotService.loadedTouristSpots;
   }
 
-  loadData(){
-    this.categoryService.getAll();
-    this.touristSpotService.getAll();
-    this.categories = this.categoryService.loadedCategories;
-    this.touristSpots = this.touristSpotService.loadedTouristSpots;
-  }
+
 
 onSubmit(){
-  console.log(this.registerForm.value.touristSpotPicker);
-  console.log(typeof this.registerForm.value.touristSpotPicker)
-  console.log(this.registerForm.value.categoryPicker);
-  console.log(typeof this.registerForm.value.categoryPicker)
-  this.categoryService.addCategoryToTouristSpot(this.registerForm.value.touristSpotPicker, this.registerForm.value.categoryPicker);
+  this.errorOcurred=false;
+  this.success=false;
+  this.categoryService.addCategoryToTouristSpot(this.registerForm.value.touristSpotPicker, this.registerForm.value.categoryPicker).subscribe( 
+    res => {
+      console.log(res);
+      this.success = true;
+    },
+    err => {
+      this.errorOcurred = true;
+      this.errorMsg = err.error;
+    },
+
+  )
+  
+  
 }
 
-  /*
-  onSubmit(touristSpot:TouristSpotReadModel, category:CategoryReadModel){
-    console.log(touristSpot.name);
-    console.log(category.name);
-    this.categoryService.addCategoryToTouristSpot(touristSpot.name, category.name);
-  }*/
 
-  onRefreshActivation(){
-    this.categories = this.categoryService.loadedCategories;
-    this.categoriesString = this.toStringArray(this.categories);
-    console.log(this.categories);
-    console.log(this.categoriesString);
-  }
 
   toStringArray(categoryList : CategoryReadModel[] ){
     let ret : string[] = [];

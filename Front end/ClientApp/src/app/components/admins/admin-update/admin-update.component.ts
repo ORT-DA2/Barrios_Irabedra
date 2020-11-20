@@ -11,6 +11,9 @@ export class AdminUpdateComponent implements OnInit {
 
   public admin:AdminWriteModel= new AdminWriteModel();
   public adminService:AdminService;
+  errorOcurred = false;
+  errorMsg : string = null;
+  success = false;
 
   constructor(adminService:AdminService) { 
     this.adminService=adminService;
@@ -21,6 +24,15 @@ export class AdminUpdateComponent implements OnInit {
   }
 
   onSubmit(){
-    this.adminService.update(this.admin);
+    this.adminService.update(this.admin).subscribe(res => {
+      this.errorOcurred = false;
+      this.success = true;
+    },
+    err => {
+      this.success=false;
+      this.errorOcurred = true;
+      console.log(err.error);
+      this.errorMsg = err.error;
+    })
   }
 }
