@@ -19,11 +19,11 @@ namespace Obligatorio.BusinessLogic.Logics
             this.reservationRepository = reservationRepository;
         }
 
-        public Reservation Add(Reservation reservation, int accommodationId)
+        public Reservation Add(Reservation reservation, string accommodationName)
         {
             try
             {
-                Accommodation accommodationForReservation = accommodationLogic.GetById(accommodationId);
+                Accommodation accommodationForReservation = accommodationLogic.GetByName(accommodationName);
                 if (!accommodationForReservation.FullCapacity)
                 {
                     reservation.AccommodationForReservation = accommodationForReservation;

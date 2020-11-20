@@ -71,9 +71,11 @@ namespace Obligatorio.WebApi.Controllers
         {
             try
             {
+                int tot = reservationModelIn.Babies + reservationModelIn.Kids
+                        + reservationModelIn.Adults + reservationModelIn.Retirees;
                 var reservation = reservationModelIn.ToEntity();
                 ReservationModelOut reservationToReturn = new ReservationModelOut(
-                    this.reservationLogic.Add(reservation, reservationModelIn.AccommodationId));
+                    this.reservationLogic.Add(reservation, reservationModelIn.AccommodationName));
                 return Ok(reservationToReturn);
             }
             catch (ObjectNotFoundInDatabaseException ex)
