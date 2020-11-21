@@ -16,5 +16,11 @@
         </form>
         <button (click)=onClick() type="button" class="btn btn-primary btn-lg btn-block">Register</button>
     </div>
+    <div *ngIf="this.success===true" class="alert alert-success successMessage" role="alert">
+        Success!
+      </div>
   
+      <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 </div>

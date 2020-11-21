@@ -44,20 +44,22 @@ export class AccommodationService {
     params = params.append('kids', String(accommodation.Kids));
     params = params.append('adults', String(accommodation.Adults));
     params = params.append('totalGuests', String(accommodation.TotalGuests));
-    this.http
+    return this.http
     .get(this.uri, {params})
     .pipe(
       map((responseData : AccommodationReadModel[]) => {
         const accommodationArray: AccommodationReadModel[] = []; 
+        console.log(responseData);
         this.queryResponse = [];
         for(let i = 0; i < responseData.length; i++){
           this.queryResponse.push(responseData[i]);
         }
         return this.queryResponse;
+      }),
+      catchError(err => {
+        return throwError(err);
       })
-    ).subscribe(accs => {
-      console.log(this.queryResponse);
-    })
+    )
   }
 
   getAll() {

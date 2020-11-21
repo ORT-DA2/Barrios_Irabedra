@@ -6,34 +6,65 @@
         <h1 class="display-4">Search accommodations</h1>
         <p class="lead">Fill in the form in order to see all accommodations that fit your needs. </p>
         <hr class="my-4">
-        <form>
+        <form #form="ngForm">
             <div class="form-group">
                 <label for="touristSpotPicker">Accommodation's tourist spot</label>
-                <select class="form-control" [(ngModel)]="this.submittedObject.TouristSpotName" name="touristSpots" id="touristSpotPicker" placeholder="TouristSpot">
-                    <option *ngFor="let item of this.touristSpotService.loadedTouristSpots">{{item.name}}</option>
-                </select>
+                <select required class="form-control" id="touristSpotPicker" name="touristSpotPicker" placeholder="'.......'" (change)="onChange($event.target.value)"  > 
+                    <option>     </option>
+                    <option  *ngFor="let item of this.touristSpotService.loadedTouristSpots ">{{item.name}}</option>
+                  </select>
             </div>
             <app-datepicker  (toOut)="toDateHandler($event)"  (fromOut)="fromDateHandler($event)"></app-datepicker> 
             <h1>Guests</h1>
             <div class="form-row">
                 <div class="col">
-                  <input type="number" class="form-control" name="babies" [(ngModel)]="this.submittedObject.Babies" placeholder="Babies">
+                  <input required type="number" class="form-control" name="babies" [(ngModel)]="this.submittedObject.Babies" placeholder="Babies">
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control"  name="kids" [(ngModel)]="this.submittedObject.Kids" placeholder="Kids">
+                  <input required type="number" class="form-control"  name="kids" [(ngModel)]="this.submittedObject.Kids" placeholder="Kids">
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control"  name="adults" [(ngModel)]="this.submittedObject.Adults" placeholder="Adults">
+                    <input required type="number" class="form-control"  name="adults" [(ngModel)]="this.submittedObject.Adults" placeholder="Adults">
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control"  name="retirees" [(ngModel)]="this.submittedObject.Retirees" placeholder="Retirees">
+                    <input required type="number" class="form-control"  name="retirees" [(ngModel)]="this.submittedObject.Retirees" placeholder="Retirees">
                 </div>
               </div>
+              <button [disabled]="!form.valid" type="button" class="btn btn-primary btn-lg btn-block submitbtn miTabla" (click)="onSubmit()">Search</button>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block submitbtn" (click)="onSubmit()">Search</button>
+
     </div>
-   <select *ngIf="this.visible" class="form-control"  name="accommodations" id="touristSpotPicker" placeholder="TouristSpot">
-        <option *ngFor="let item of this.queryResponse">{{item.name}}</option>
-    </select> 
-    <button type="button" class="btn btn-primary btn-lg btn-block submitbtn" >Book</button>
+    <form #form2="ngForm">
+        <select *ngIf="this.success1" class="form-control miTabla"  name="accommodations" id="touristSpotPicker"  placeholder="TouristSpot" (change)="onChange2($event.target.value)">
+            <option>          </option>
+             <option *ngFor="let item of this.queryResponse">{{item.name}}</option>
+         </select> 
+        <div *ngIf="this.success1" class="form-group">
+            <label for="inputPrice">Name</label>
+            <input  required [(ngModel)]="reservation.GuestName"  type="text" name="price" class="form-control" id="inputPrice" aria-describedby="priceHelp" placeholder="Your name">
+        </div>
+        <div *ngIf="this.success1" class="form-group">
+            <label for="inputPrice">Last name</label>
+            <input  required [(ngModel)]="reservation.GuestLastName"  type="text" name="price" class="form-control" id="inputPrice" aria-describedby="priceHelp" placeholder="Your last name">
+        </div>
+        <div *ngIf="this.success1" class="form-group">
+            <label for="inputPrice">Email</label>
+            <input  required [(ngModel)]="reservation.Email"  type="text" name="price" class="form-control" id="inputPrice" aria-describedby="priceHelp" placeholder="An email">
+        </div>
+        <button [disabled]="!form2.valid && !success1" (click)="onSubmit2()" type="button" class="btn btn-primary btn-lg btn-block submitbtn" >Book</button>
+    </form>
+   
+    <div *ngIf="this.success1===true && this.success2===true" class="alert alert-success successMessage" role="alert">
+        <h2>Success!</h2>
+        <p> Your reservation code is <label> {{this.numerito}}</label> </p>
+        <p> In case you need it, contact us through <label>{{this.reservationService.returned.phoneNumber}}</label> </p>
+        <p> Comments on your reservation are:<label>  {{this.reservationService.returned.informativeText}}</label> </p>
+        <p> The reservation now is :  <label>{{this.reservationService.returned.actualReservationStatus}}</label></p>
+      </div>
+
+      
+
+    <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! The error description is: {{this.errorMsg}}.
+      </div>
 </div>
