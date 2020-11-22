@@ -1,1 +1,39 @@
-<p>review-component works!</p>
+<div class="jumbotron" id="reservationsMainWrapper">
+    <div>
+        <h1 class="display-4">Review</h1>
+        <p class="lead">In order to create a review on an accommodation, please provide a valid reservation code. </p>
+        <hr class="my-4">
+        <form #form="ngForm">
+                <label for="inputCode">Code</label>
+                <input required type="number" class="form-control" id="inputCode" aria-describedby="codeHelp" name="code" placeholder="Code" [(ngModel)]="this.code">
+            <button [disabled]="!form.valid" type="button" class="btn btn-primary btn-lg btn-block successMessage" (click)="this.onClicked()">Search</button>
+        </form>
+
+    </div>
+    <div *ngIf="this.clicked && this.success1">
+        <a class="list-group-item list-group-item-action list-group-item-primary successMessage"> The accommodation is: {{this.accommodationName}}</a>
+        <form #form2="ngForm">
+            <label for="inputCode">Review</label>
+            <input required type="text" class="form-control" id="inputCode" aria-describedby="codeHelp" name="code" placeholder="..." [(ngModel)]="this.text">
+            <label for="inputCode">Rating</label>
+            <select required [(ngModel)]="this.rating"  name="rating" class="form-control form-control-sm" id="ratingPicker">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+        <button [disabled]="!form.valid" type="button" class="btn btn-primary btn-lg btn-block successMessage" (click)="this.onClicked2()">Submit review</button>
+    </form>
+
+
+    <div *ngIf="this.success2===true" class="alert alert-success successMessage" role="alert">
+        Success! Your review has been sent.
+      </div>
+  
+    </div>
+    <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! {{this.errorMsg}}.
+      </div>
+</div>
+

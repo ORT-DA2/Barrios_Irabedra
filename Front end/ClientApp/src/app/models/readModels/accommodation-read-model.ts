@@ -1,3 +1,5 @@
+import { ReviewWriteModel } from '../writeModels/review-write-model';
+
 export class AccommodationReadModel {
     public address: string;
     public description : string;
@@ -6,6 +8,7 @@ export class AccommodationReadModel {
     public pricePerNight : number;
     public totalPrice : number;
     public rating : number;
+    public reviews : ReviewWriteModel[];
 
     constructor(address: string, description : string, images : string[], name : string, pricePerNight : number, totalPrice : number, rating : number)
     {

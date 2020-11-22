@@ -5,8 +5,10 @@ import { ReservationReadModel } from 'src/app/models/readModels/reservation-read
 import { TouristSpotReadModel } from 'src/app/models/readModels/tourist-spot-read-model';
 import { AccommodationQueryOutModel } from 'src/app/models/writeModels/accommodation-query-out-model';
 import { ReservationWriteModel } from 'src/app/models/writeModels/reservation-write-model';
+import { ReviewWriteModel } from 'src/app/models/writeModels/review-write-model';
 import { AccommodationService } from 'src/app/services/accommodation.service';
 import { ReservationService } from 'src/app/services/reservation.service';
+import { ReviewService } from 'src/app/services/review.service';
 import { TouristSpotService } from 'src/app/services/tourist-spot.service';
 
 @Component({
@@ -33,9 +35,14 @@ export class AccommodationQueryComponent implements OnInit {
   success2=false;
   numerito:number;
   numeritoDeTelefono:number;
+  reviewService:ReviewService;
+  reviewLists:ReviewWriteModel[]=[];
+  headers = ['name', 'description', 'address', 'pricePerNight', 'totalPrice', 'rating']; 
+  reviewHeaders = ['text', 'rating', 'name', 'lastName'];
 
-  constructor(accommodationService : AccommodationService, touristSpotService : TouristSpotService, reservationService : ReservationService) {
+  constructor(accommodationService : AccommodationService, touristSpotService : TouristSpotService, reservationService : ReservationService,  reviewService:ReviewService) {
     this.accommodationService = accommodationService;
+    this.reviewService=reviewService;
     this.reservationService = reservationService;
     this.touristSpotService = touristSpotService;
     this.touristSpotService.getAll().subscribe();
@@ -50,6 +57,49 @@ export class AccommodationQueryComponent implements OnInit {
     this.toDate = $event;
   }
 
+  getReviewsForOneAccommodation(name:string){
+    let local = [];
+    for(let i = 0; i < this.reviewLists.length; i++){
+      if(this.reviewLists[i].name === name){
+        local.push(this.reviewLists[i]);
+      }
+    }
+    return local;
+  }
+
+  getAllReviews(list:AccommodationReadModel[]){
+    console.log("encontradas" , list);
+    let localResponse:ReviewWriteModel[] = []
+    for(let i = 0; i < list.length; i++){
+;
+      this.reviewService.get(list[i].name).subscribe((res:ReviewWriteModel[]) => {
+        console.log("para la accommodation" , name, "encontre", res);
+        for(let j = 0; j < res.length; j++){
+          list[i].reviews.push(res[j]);
+        }
+        console.log("ahora la accommodation" , list[i].name, "encontre", list[i].reviews);
+      }),
+      err => {
+        this.success1=false;
+        this.errorOcurred = true;
+        console.log(err.error);
+        this.errorMsg = err.error;
+      }
+    }
+    
+  }
+
+  calculateAverage(list:ReviewWriteModel[]){
+    let sum = 0;
+    let count = 0;
+    for(let i = 0; i < list.length; i++){
+      sum = sum + list[i].rating
+      count = i;
+    }
+    return (sum / count);
+
+  }
+
   fromDateHandler($event : any){
     this.fromDate = $event;
   }
@@ -58,15 +108,15 @@ export class AccommodationQueryComponent implements OnInit {
     this.submittedObject.CheckInDay = this.fromDate.day;
     this.submittedObject.CheckInMonth = this.fromDate.month;
     this.submittedObject.CheckInYear = this.fromDate.year;
-    this.submittedObject.CheckOutDay = this.fromDate.day;
-    this.submittedObject.CheckOutMonth = this.fromDate.month;
-    this.submittedObject.CheckOutYear = this.fromDate.year;
+    this.submittedObject.CheckOutDay = this.toDate.day;
+    this.submittedObject.CheckOutMonth = this.toDate.month;
+    this.submittedObject.CheckOutYear = this.toDate.year;
     this.submittedObject.TotalGuests = this.submittedObject.Retirees + this.submittedObject.Adults + this.submittedObject.Kids + this.submittedObject.Babies;
-    console.log(this.submittedObject.TouristSpotName);
     this.accommodationService.getForQuery(this.submittedObject).subscribe(res => {
       this.queryResponse = res;
       this.errorOcurred = false;
       this.success1 = true;
+      this.getAllReviews(this.queryResponse);
     },
     err => {
       this.success1=false;
@@ -91,12 +141,8 @@ export class AccommodationQueryComponent implements OnInit {
     this.reservation.Kids = this.submittedObject.Kids;
     this.reservation.Babies = this.submittedObject.Babies;
     this.reservation.TotalGuests = this.submittedObject.Retirees + this.submittedObject.Adults + this.submittedObject.Kids + this.submittedObject.Babies;
-    console.log(this.reservation);
     this.reservationService.createReservation(this.reservation).subscribe((res:number)=> {
-      console.log("valor inicial", res);
-      console.log("lo parseo como tres veces", parseInt(res.toString()));
       this.numerito = parseInt(res.toString());
-      console.log("imprimo despues de asignar a variable", this.numerito);
       this.errorOcurred = false;
       this.success2 = true;
        },

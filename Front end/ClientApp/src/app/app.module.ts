@@ -59,7 +59,8 @@ const appRoutes: Routes = [
   { path: 'reports', component: ReportComponent},
   { path: 'addCategoryToTouristSpot' , component: AddCategoryToTouristSpotComponent},
   { path: 'register' , component: RegisterComponentComponent },
-  { path: 'import' , component : ImportComponent}
+  { path: 'import' , component : ImportComponent},
+  { path: 'review' , component  : ReviewComponent}
 ];
 
 @NgModule({

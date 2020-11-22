@@ -34,7 +34,38 @@
         </form>
 
     </div>
+    <div *ngIf="this.success1">
+            <!-- TABLAAAAAAAAAAAAAAAAAAAAA -->>
+
+    <table class="table table-striped">
+        <th  *ngFor = "let column of headers">
+            {{column | uppercase}}
+          </th>
+          <th> REVIEWS</th>
+        <tr *ngFor = "let row of this.queryResponse">
+            <td>{{row.name}}</td>
+            <td>{{row.description}}</td>
+            <td>{{row.address}}</td>
+            <td>{{row.pricePerNight}}</td>
+            <td>{{row.totalPrice}}</td>
+            <td>{{row.rating}}</td>
+            <td>
+                <table class="table">
+                    <tr *ngFor = "let a of row.reviews">
+                        <td *ngFor = "let h of this.reviewHeaders">
+                          {{h}} : {{a[h]}}
+                        </td>
+                      </tr>
+                      <a>Rating average is: {{this.calculateAverage(row.reviews)}}</a>
+                </table>
+            </td>
+         </tr>
+    </table>
+
+    
+
     <form #form2="ngForm">
+        <label for="touristSpotPicker">Select your accommodation</label>
         <select *ngIf="this.success1" class="form-control miTabla"  name="accommodations" id="touristSpotPicker"  placeholder="TouristSpot" (change)="onChange2($event.target.value)">
             <option>          </option>
              <option *ngFor="let item of this.queryResponse">{{item.name}}</option>
@@ -61,7 +92,7 @@
         <p> Comments on your reservation are:<label>  {{this.reservationService.returned.informativeText}}</label> </p>
         <p> The reservation now is :  <label>{{this.reservationService.returned.actualReservationStatus}}</label></p>
       </div>
-
+    </div>
       
 
     <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">

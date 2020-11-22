@@ -4,6 +4,8 @@ export class ReservationReadModel {
     public unicCode:number;
     public actualReservationStatus:string;
     public newStatusDescription:string;
+    public name:string;
+    public lastName:string;
 
     constructor(){}
 }
