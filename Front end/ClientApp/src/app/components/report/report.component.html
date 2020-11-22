@@ -20,11 +20,12 @@
                         <option  *ngFor="let item of this.touristSpotService.loadedTouristSpots">{{item.name}}</option>
                     </select>
                 </div>
-                <button [disabled]="!form.valid && !form.dirty" type="submit"  type="button" class="btn btn-primary btn-lg btn-block successMessage" (click)="onSubmit()">Register</button>
+                <button [disabled]="!form.valid && !form.dirty" type="submit"  type="button" class="btn btn-primary btn-lg btn-block successMessage" (click)="onSubmit()">Report</button>
             </form>
             <li *ngFor="let line of this.reportService.lines" class="list-group successMessage">
             <span class="list-group-item list-group-item-action list-group-item-primary successMessage">{{line.accommodationName}} Has  {{line.reservations}} reservations for the period {{this.toDate.day}} / {{this.toDate.month}} / {{this.toDate.year}}  to {{this.fromDate.day}} / {{this.fromDate.month}} / {{this.fromDate.year}} </span>
             </li>
+            <button  type="submit"  type="button" class="btn btn-primary btn-lg btn-block successMessage" (click)="onOk()">Ok</button>
         </div>
         <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
             An error ocurred! {{this.errorMsg}}.

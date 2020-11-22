@@ -66,4 +66,18 @@ export class ReportComponent implements OnInit {
       return false;
     }
    }
+
+   onOk(){
+     this.create=false;
+     this.success=false;
+     this.errorOcurred=false;
+     this.errorMsg = null;
+
+   }
+
+   ngOnDestroy(): void {
+     //Called once, before the instance is destroyed.
+     //Add 'implements OnDestroy' to the class.
+     
+   }
 }
