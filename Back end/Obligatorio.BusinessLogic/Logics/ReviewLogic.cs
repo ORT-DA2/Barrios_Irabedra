@@ -2,6 +2,7 @@
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain.DomainEntities;
 using Obligatorio.Model.Models.In;
+using Obligatorio.Model.Models.Out;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,6 +24,32 @@ namespace Obligatorio.BusinessLogic.Logics
         {
             Review review = reviewRegistrationModelIn.ToEntity();
             accommodationLogic.AddReview(review);
+        }
+
+        public List<ReviewModelOut> GetReviewByAccommodationName(string accommodationName)
+        {
+            List<ReviewModelOut> reviewsToReturn = new List<ReviewModelOut>();
+            List<Review> reviews = reviewRepository.GetByAccommodationName(accommodationName);
+            reviewsToReturn = WrapReviews(reviews);
+            return reviewsToReturn;
+        }
+
+        private List<ReviewModelOut> WrapReviews(List<Review> reviews)
+        {
+            List<ReviewModelOut> reviewsToReturn = new List<ReviewModelOut>();
+            foreach (var review in reviews)
+            {
+                ReviewModelOut reviewToAdd = new ReviewModelOut()
+                {
+                    AcccommodationName = review.AcccommodationName,
+                    LastName = review.LastName,
+                    Name = review.Name,
+                    Rating = review.Rating,
+                    Text = review.Text
+                };
+                reviewsToReturn.Add(reviewToAdd);
+            }
+            return reviewsToReturn;
         }
     }
 }

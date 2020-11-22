@@ -8,7 +8,7 @@ namespace Obligatorio.Model.Models.In
     public class ReviewRegistrationModelIn
     {
         public string Text { get; set; }
-        public string AcccommodationName { get; set; }
+        public string AccommodationName { get; set; }
         public int Rating { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
@@ -23,7 +23,7 @@ namespace Obligatorio.Model.Models.In
             review.Name = this.Name;
             review.Text = this.Text;
             review.Rating = this.Rating;
-            review.AcccommodationName = this.AcccommodationName;
+            review.AcccommodationName = this.AccommodationName;
             review.LastName = this.LastName;
             return review;
         }

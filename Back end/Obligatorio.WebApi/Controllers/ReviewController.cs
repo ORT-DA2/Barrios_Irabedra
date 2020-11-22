@@ -6,6 +6,7 @@ using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.Model.Models.In;
+using Obligatorio.Model.Models.Out;
 
 namespace Obligatorio.WebApi.Controllers
 {
@@ -41,7 +42,8 @@ namespace Obligatorio.WebApi.Controllers
                 return BadRequest("Accommodation Name Required");
             }
             string accommodationName = queryString.Get("name");
-            return Ok();
+            List<ReviewModelOut> reviewModelOuts = reviewLogic.GetReviewByAccommodationName(accommodationName);
+            return Ok(reviewModelOuts);
         }
     }
 }
