@@ -60,8 +60,6 @@ namespace Obligatorio.DataAccess.Repositories
             foreach (var item in totalAccommodations)
             {
                 myContext.Entry(item).Reference(a => a.TouristSpot).Load();
-                myContext.Entry(item).Reference(a => a.Images).Load();
-                myContext.Entry(item).Reference(a => a.Reviews).Load();
             }
             List<Accommodation> accommodationsToReturn = new List<Accommodation>();
             foreach (var item in totalAccommodations)
@@ -208,8 +206,6 @@ namespace Obligatorio.DataAccess.Repositories
                 foreach (var item in totalAccommodations)
                 {
                     myContext.Entry(item).Reference(a => a.TouristSpot).Load();
-                    myContext.Entry(item).Reference(a => a.Images).Load();
-                    myContext.Entry(item).Reference(a => a.Reviews).Load();
                 }
                 foreach (var item in totalAccommodations)
                 {
@@ -235,8 +231,6 @@ namespace Obligatorio.DataAccess.Repositories
                 foreach (var item in totalAccommodations)
                 {
                     myContext.Entry(item).Reference(a => a.TouristSpot).Load();
-                    myContext.Entry(item).Reference(a => a.Images).Load();
-                    myContext.Entry(item).Reference(a => a.Reviews).Load();
                 }
                 foreach (var item in totalAccommodations)
                 {

@@ -12,6 +12,13 @@ namespace Obligatorio.BusinessLogic.Logics
     {
         private readonly IAccommodationLogic accommodationLogic;
         private readonly IReviewRepository reviewRepository;
+
+        public ReviewLogic(IAccommodationLogic accommodationLogic, IReviewRepository reviewRepository)
+        {
+            this.accommodationLogic = accommodationLogic;
+            this.reviewRepository = reviewRepository;
+        }
+
         public void AddReview(ReviewRegistrationModelIn reviewRegistrationModelIn)
         {
             Review review = reviewRegistrationModelIn.ToEntity();
