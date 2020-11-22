@@ -1,5 +1,8 @@
 ﻿using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
+using Obligatorio.Domain.DomainEntities;
+using Obligatorio.Model.Models.Out;
+using System;
 using System.Collections.Generic;
 
 namespace Obligatorio.Model.DTOS
@@ -13,6 +16,7 @@ namespace Obligatorio.Model.DTOS
         public double PricePerNight { get; set; }
         public double TotalPrice { get; set; }
         public int Rating { get; set; }
+        public List<ReviewModelOut> Reviews { get; set; }
 
         public AccommodationQueryOut(Accommodation a)
         {
@@ -22,6 +26,25 @@ namespace Obligatorio.Model.DTOS
             this.Name = a.Name;
             this.PricePerNight = a.PricePerNight;
             this.Rating = a.Rating;
+            this.Reviews = UnwrapReviews(a.Reviews);
+        }
+
+        private List<ReviewModelOut> UnwrapReviews(List<Review> reviews)
+        {
+            List<ReviewModelOut> reviewsToReturn = new List<ReviewModelOut>();
+            foreach (var review in reviews)
+            {
+                ReviewModelOut reviewToAdd = new ReviewModelOut() 
+                {
+                   AcccommodationName = review.AcccommodationName,
+                   LastName = review.LastName,
+                    Name = review.Name,
+                    Rating = review.Rating,
+                    Text = review.Text
+                };
+                reviewsToReturn.Add(reviewToAdd);
+            }
+            return reviewsToReturn;
         }
 
         public List<string> UnwrapImages(List<ImageWrapper> images)

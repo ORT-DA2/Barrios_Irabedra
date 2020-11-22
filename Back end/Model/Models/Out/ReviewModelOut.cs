@@ -15,5 +15,6 @@ namespace Obligatorio.Model.Models.Out
         public ReviewModelOut() 
         { 
         }
+
     }
 }
