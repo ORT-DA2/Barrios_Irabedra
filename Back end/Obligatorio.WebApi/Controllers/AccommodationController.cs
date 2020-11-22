@@ -188,12 +188,10 @@ namespace Obligatorio.WebApi.Controllers
         {
             try
             {
-                //TESTEAR TODA LA PILA DE DE LLAMADAS
                 this.accommodationLogic.Delete(name);
                 return Ok("Success");
             }
             catch (ObjectNotFoundInDatabaseException)
-            //TESTEAR ESTE CASO
             {
                 return NotFound("There is no accommodation with such name.");
             }

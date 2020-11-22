@@ -10,6 +10,8 @@ namespace Obligatorio.Model.Models.Out
         public int UnicCode { get; set; }
         public string ActualReservationStatus { get; set; }
         public string NewStatusDescription {get;set;}
+        public string Name { get; set; }
+        public string LastName { get; set; }
 
         public ReservationModelOut(Reservation reservation)
         {
@@ -18,6 +20,8 @@ namespace Obligatorio.Model.Models.Out
             this.UnicCode = reservation.Id;
             this.ActualReservationStatus = reservation.EnumToString();
             this.NewStatusDescription = reservation.NewStatusDescription;
+            this.Name = reservation.GuestName;
+            this.LastName = reservation.GuestLastName;
         }
     }
 }

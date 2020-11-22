@@ -57,6 +57,10 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
+            catch (Exception e) 
+            {
+                throw new ObjectNotFoundInDatabaseException();
+            }
 
         }
 

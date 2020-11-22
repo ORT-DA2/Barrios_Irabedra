@@ -1,4 +1,5 @@
 ﻿using Obligatorio.Domain.AuxiliaryObjects;
+using Obligatorio.Domain.DomainEntities;
 using System.Collections.Generic;
 
 namespace Obligatorio.Domain
@@ -14,7 +15,7 @@ namespace Obligatorio.Domain
         public double PricePerNight { get; set; }
         public bool FullCapacity { get; set; }
         public TouristSpot TouristSpot { get; set; }
-
+        public List<Review> Reviews { get; set; }
         public Accommodation()
         {
             this.Name = "Default Name";

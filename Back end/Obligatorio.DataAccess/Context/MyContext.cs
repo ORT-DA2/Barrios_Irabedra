@@ -20,6 +20,7 @@ namespace Obligatorio.DataAccess.Context
         public DbSet<ImageWrapper> ImageWrappers { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Review> Reviews { get; set; }
         public MyContext() { }
         public MyContext(DbContextOptions options) : base(options) { }
 
@@ -35,6 +36,10 @@ namespace Obligatorio.DataAccess.Context
             .WithOne()
             .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<Accommodation>()
+            .HasMany(r => r.Reviews)
+            .WithOne()
+            .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<TouristSpotCategory>()
             .HasKey(tsc => new { tsc.TouristSpotId, tsc.CategoryId });

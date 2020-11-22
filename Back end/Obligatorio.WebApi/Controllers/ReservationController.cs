@@ -76,7 +76,7 @@ namespace Obligatorio.WebApi.Controllers
                 var reservation = reservationModelIn.ToEntity();
                 ReservationModelOut reservationToReturn = new ReservationModelOut(
                     this.reservationLogic.Add(reservation, reservationModelIn.AccommodationName));
-                return Ok(reservationToReturn);
+                return Ok(reservationToReturn.UnicCode);
             }
             catch (ObjectNotFoundInDatabaseException ex)
             {
