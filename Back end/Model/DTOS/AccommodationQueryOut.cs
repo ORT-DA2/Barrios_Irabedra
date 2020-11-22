@@ -26,10 +26,10 @@ namespace Obligatorio.Model.DTOS
             this.Name = a.Name;
             this.PricePerNight = a.PricePerNight;
             this.Rating = a.Rating;
-            this.Reviews = UnwrapReviews(a.Reviews);
+            this.Reviews = WrapReviews(a.Reviews);
         }
 
-        private List<ReviewModelOut> UnwrapReviews(List<Review> reviews)
+        private List<ReviewModelOut> WrapReviews(List<Review> reviews)
         {
             List<ReviewModelOut> reviewsToReturn = new List<ReviewModelOut>();
             foreach (var review in reviews)

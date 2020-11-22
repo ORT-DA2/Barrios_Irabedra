@@ -23,6 +23,7 @@ namespace Obligatorio.Model.Models.Out
             this.PricePerNight=a.PricePerNight;
             this.Rating = a.Rating;
             this.TotalPrice = a.TotalPrice;
+            this.Reviews = a.Reviews;
         }
     }
 }
