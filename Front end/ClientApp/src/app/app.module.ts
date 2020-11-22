@@ -33,6 +33,7 @@ import { RegisterComponentComponent } from './components/register-component/regi
 import { DatepickerComponent } from './components/extras/datepicker/datepicker.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImportComponent } from './components/import/import.component';
+import { ReviewComponent } from './components/review-component/review.component';
 
 
 const appRoutes: Routes = [
@@ -89,6 +90,7 @@ const appRoutes: Routes = [
     RegisterComponentComponent,
     DatepickerComponent,
     ImportComponent,
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,

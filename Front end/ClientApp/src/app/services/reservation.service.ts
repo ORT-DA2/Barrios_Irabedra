@@ -40,4 +40,17 @@ export class ReservationService {
       })
     )
   }
+
+  get(code:number):Observable<any>{
+    let headers = new HttpHeaders().append("Authorization", "admin");
+    let options = { headers: headers };
+    return this.http.get<ReservationReadModel>(this.uri+ '/' + code, options).pipe(
+      res => {
+        return res;
+      },
+      catchError(err => {
+        return throwError(err);
+      })
+    )
+  }
 }

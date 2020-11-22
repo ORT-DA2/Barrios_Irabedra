@@ -3,14 +3,20 @@
         <h1 class="display-4">Reservations</h1>
         <p class="lead">Check an existing reservation given its code. </p>
         <hr class="my-4">
-        <form>
-            <div class="form-group">
+        <form #form="ngForm">
                 <label for="inputCode">Code</label>
-                <input type="text" class="form-control" id="inputCode" aria-describedby="codeHelp" placeholder="Code">
-            </div>
+                <input required type="number" class="form-control" id="inputCode" aria-describedby="codeHelp" name="code" placeholder="Code" [(ngModel)]="this.code">
+            <button [disabled]="!form.valid" type="button" class="btn btn-primary btn-lg btn-block successMessage" (click)="this.onClicked()">Find</button>
         </form>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Find</button>
-    </div>
 
+    </div>
+    <div *ngIf="this.clicked && this.success">
+        <a class="list-group-item list-group-item-action list-group-item-primary successMessage"> 
+            {{this.returned.informativeText}} , is : {{this.returned.actualReservationStatus}}
+        </a>
+    </div>
+    <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+        An error ocurred! {{this.errorMsg}}.
+      </div>
 </div>
 

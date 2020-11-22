@@ -32,6 +32,7 @@ export class AccommodationQueryComponent implements OnInit {
   success1 = false;
   success2=false;
   numerito:number;
+  numeritoDeTelefono:number;
 
   constructor(accommodationService : AccommodationService, touristSpotService : TouristSpotService, reservationService : ReservationService) {
     this.accommodationService = accommodationService;

@@ -5,7 +5,32 @@
         <hr class="my-4">
         <p>Given you need to access to a disabled option, you must login as an admin first. Please do it <a routerLink="/login" routerLinkActive="active">here</a>.</p>
     </div>
-    <button *ngIf="checkAdminToken()" type="button" class="btn btn-secondary" >Create report</button>
+    <div *ngIf="checkAdminToken()">
+        <button type="button" class="btn btn-secondary successMessage" (click)="wannaCreate()">Create report</button>
+        <div *ngIf="this.create">
+            <form #form="ngForm">
+
+                <div  class="form-group">
+                     <app-datepicker  (toOut)="toDateHandler($event)"  (fromOut)="fromDateHandler($event)"></app-datepicker> 
+                </div>
+
+                <div class="form-group">
+                    <select required name="touristspot" class="form-control" id="touristSpotPicker" name="touristSpotPicker" [(ngModel)]="this.touristSpotName">
+                        <option>   </option>
+                        <option  *ngFor="let item of this.touristSpotService.loadedTouristSpots">{{item.name}}</option>
+                    </select>
+                </div>
+                <button [disabled]="!form.valid && !form.dirty" type="submit"  type="button" class="btn btn-primary btn-lg btn-block successMessage" (click)="onSubmit()">Register</button>
+            </form>
+            <li *ngFor="let line of this.reportService.lines" class="list-group successMessage">
+            <span class="list-group-item list-group-item-action list-group-item-primary successMessage">{{line.accommodationName}} Has  {{line.reservations}} reservations for the period {{this.toDate.day}} / {{this.toDate.month}} / {{this.toDate.year}}  to {{this.fromDate.day}} / {{this.fromDate.month}} / {{this.fromDate.year}} </span>
+            </li>
+        </div>
+        <div *ngIf="this.errorOcurred===true" class="alert alert-danger successMessage" role="alert">
+            An error ocurred! {{this.errorMsg}}.
+          </div>
+    </div >
+
         
 
 </div>
