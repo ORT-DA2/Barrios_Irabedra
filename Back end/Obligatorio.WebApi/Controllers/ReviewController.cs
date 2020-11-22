@@ -21,8 +21,15 @@ namespace Obligatorio.WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] ReviewRegistrationModelIn reviewRegistrationModelIn)
         {
-
-            return Ok();
+            try
+            {
+                reviewLogic.AddReview(reviewRegistrationModelIn);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest("The accommodation name was not found");
+            }
         }
 
         [HttpGet]

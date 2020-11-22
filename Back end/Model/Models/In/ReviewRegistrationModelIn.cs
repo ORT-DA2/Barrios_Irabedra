@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Domain.DomainEntities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,17 @@ namespace Obligatorio.Model.Models.In
 
         public ReviewRegistrationModelIn() 
         { 
+        }
+
+        public Review ToEntity()
+        {
+            Review review = new Review();
+            review.Name = this.Name;
+            review.Text = this.Text;
+            review.Rating = this.Rating;
+            review.AcccommodationName = this.AcccommodationName;
+            review.LastName = this.LastName;
+            return review;
         }
     }
 }

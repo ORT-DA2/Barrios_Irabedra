@@ -3,8 +3,10 @@ using Obligatorio.BusinessLogicInterface.Interfaces;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
+using Obligatorio.Domain.DomainEntities;
 using Obligatorio.Model.Dtos;
 using Obligatorio.Model.DTOS;
+using Obligatorio.Model.Models.In;
 using System;
 using System.Collections.Generic;
 
@@ -183,6 +185,11 @@ namespace Obligatorio.BusinessLogic.Logics
             List<Accommodation> accommodations = this.accommodationRepository
                 .GetAllByTouristSpotName(touristSpotName);
             return accommodations;
+        }
+
+        public void AddReview(Review review)
+        {
+            accommodationRepository.AddReview(review);
         }
     }
 }

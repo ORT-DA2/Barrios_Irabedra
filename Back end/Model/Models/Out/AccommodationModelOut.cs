@@ -1,4 +1,5 @@
-﻿using Obligatorio.Model.DTOS;
+﻿using Obligatorio.Domain.DomainEntities;
+using Obligatorio.Model.DTOS;
 using System.Collections.Generic;
 
 namespace Obligatorio.Model.Models.Out
@@ -12,7 +13,7 @@ namespace Obligatorio.Model.Models.Out
         public double PricePerNight { get; set; }
         public double TotalPrice { get; set; }
         public int Rating { get; set; }
-
+        public List<ReviewModelOut> Reviews { get; set; } 
         public AccommodationModelOut(AccommodationQueryOut a)
         {
             this.Address = a.Address;

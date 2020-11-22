@@ -6,7 +6,7 @@ namespace Obligatorio.Domain
     {
         public string Name { set; get; }
         public string Description { set; get; }
-        public string Image { set; get; } //stringbase64
+        public string Image { set; get; }
         public int Id { get; set; }
         public List<TouristSpotCategory> TouristSpotCategories { get; set; }
 

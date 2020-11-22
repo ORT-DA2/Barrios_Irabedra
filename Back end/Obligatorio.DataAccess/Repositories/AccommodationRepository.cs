@@ -3,6 +3,7 @@ using Obligatorio.BusinessLogic.CustomExceptions;
 using Obligatorio.DataAccessInterface.Interfaces;
 using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
+using Obligatorio.Domain.DomainEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,6 +93,7 @@ namespace Obligatorio.DataAccess.Repositories
             {
                 Accommodation accommodationToUpdate = this.GetById(accommodationId);
                 accommodationToUpdate.Images.AddRange(images);
+                myContext.SaveChanges();
             }
             catch (ObjectNotFoundInDatabaseException e)
             {
@@ -191,7 +193,6 @@ namespace Obligatorio.DataAccess.Repositories
             }
             catch (ObjectNotFoundInDatabaseException e)
             {
-
                 throw new ObjectNotFoundInDatabaseException();
             }
         }
@@ -243,6 +244,24 @@ namespace Obligatorio.DataAccess.Repositories
             catch (Exception e)
             {
                 return accommodationsToReturn;
+            }
+        }
+
+        public void AddReview(Review review)
+        {
+            try
+            {
+                Accommodation accommodationToUpdate = this.GetByName(review.AcccommodationName);
+                var existingReviews = accommodationToUpdate.Reviews;
+                existingReviews.Add(review);
+                accommodationToUpdate.Reviews = existingReviews;
+                myContext.Entry(accommodationToUpdate).State = EntityState.Modified;
+                myContext.SaveChanges();
+            }
+            catch (ObjectNotFoundInDatabaseException e)
+            {
+
+                throw new ObjectNotFoundInDatabaseException();
             }
         }
     }

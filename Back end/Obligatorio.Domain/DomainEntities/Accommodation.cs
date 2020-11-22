@@ -25,6 +25,7 @@ namespace Obligatorio.Domain
             this.Images = new List<ImageWrapper>();
             this.PricePerNight = -1;
             this.FullCapacity = false;
+            this.Reviews = new List<Review>();
         }
 
         public bool IsAvailable() 

@@ -8,7 +8,7 @@ namespace Obligatorio.Domain.DomainEntities
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        public Accommodation acccommodation { get; set; }
+        public string AcccommodationName { get; set; }
         public int Rating { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }

@@ -1,5 +1,6 @@
 ﻿using Obligatorio.Domain;
 using Obligatorio.Domain.AuxiliaryObjects;
+using Obligatorio.Domain.DomainEntities;
 using System.Collections.Generic;
 
 namespace Obligatorio.DataAccessInterface.Interfaces
@@ -17,5 +18,6 @@ namespace Obligatorio.DataAccessInterface.Interfaces
         Accommodation GetByName(string name);
         List<Accommodation> GetAllAvailableByTouristSpotName(string touristSpotName);
         List<Accommodation> GetAllByTouristSpotName(string touristSpotName);
+        void AddReview(Review review);
     }
 }
