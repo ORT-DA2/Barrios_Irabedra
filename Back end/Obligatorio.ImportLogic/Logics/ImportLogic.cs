@@ -20,11 +20,13 @@ namespace Obligatorio.ImportLogic.Logics
 
         private readonly ITouristSpotLogic touristSpotLogic;
         private readonly IAccommodationLogic accommodationLogic;
+        private readonly IRegionLogic regionLogic;
 
-        public ImportLogic(ITouristSpotLogic touristSpotLogic, IAccommodationLogic accommodationLogic)
+        public ImportLogic(ITouristSpotLogic touristSpotLogic, IAccommodationLogic accommodationLogic, IRegionLogic regionLogic)
         {
             this.accommodationLogic = accommodationLogic;
             this.touristSpotLogic = touristSpotLogic;
+            this.regionLogic = regionLogic;
         }
 
         public List<string> GetImplementationNames(string jsonPath, string xmlPath)
@@ -57,11 +59,15 @@ namespace Obligatorio.ImportLogic.Logics
                 AccommodationImportModel imported = requestedImplementation.CreateObjectModel(filePath);
                 TouristSpotImportModel tsm = imported.TouristSpot;
                 TouristSpot ts = tsm.ToEntity();
-                if (!this.touristSpotLogic.AlreadyExistsByName(tsm.Name))
+                if (regionLogic.Get(tsm.RegionName).Name == tsm.RegionName)
                 {
-                    this.touristSpotLogic.Add(ts);
+                    if (!this.touristSpotLogic.AlreadyExistsByName(tsm.Name))
+                    {
+                        this.touristSpotLogic.Add(ts);
+                        this.regionLogic.AddTouristSpotToRegion(tsm.RegionName, tsm.Name);
+                    }
                 }
-                if (!this.accommodationLogic.AlreadyExistsByName(imported.Name))
+                if (!this.accommodationLogic.AlreadyExistsByName(imported.Name) && this.touristSpotLogic.AlreadyExistsByName(tsm.Name))
                 {
                     Accommodation acc = imported.ToEntity();
                     acc.TouristSpot = this.touristSpotLogic.GetByName(ts.Name);

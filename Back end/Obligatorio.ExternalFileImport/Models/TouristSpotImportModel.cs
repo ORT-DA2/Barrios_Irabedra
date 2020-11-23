@@ -10,12 +10,8 @@ namespace Obligatorio.ExternalFileImport.Models
     {
         public string Name { set; get; }
         public string Description { set; get; }
-        public string Image { set; get; } //stringbase64
-        /*public TouristSpotImportModel(string data)
-        {
-            data = data.Replace("{", string.Empty);
-            data = data.Replace("}", string.Empty);
-        }*/
+        public string Image { set; get; }
+        public string RegionName { set; get; }
 
         public TouristSpotImportModel()
         {

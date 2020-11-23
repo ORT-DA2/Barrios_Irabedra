@@ -23,7 +23,10 @@ export class ImportComponent implements OnInit {
 
 
   onSubmit(){
-    if(this.format==='xml'){
+    console.log(this.format);
+    console.log(this.jsonPath);
+    console.log(this.xmlPath);
+    if(this.format.toLowerCase().includes('xml')){
       this.importService.import(this.xmlPath, this.format, this.Filepath).subscribe( 
         res => {
           this.errorOcurred=false;
