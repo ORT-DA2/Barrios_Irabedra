@@ -13,7 +13,6 @@ using Obligatorio.WebApi.Filters;
 namespace Obligatorio.WebApi.Controllers
 {
     [EnableCors("AllowAngularFrontEndClientApp")]
-    //[System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
     [Route("api/touristSpots")]
     [ApiController]
     public class TouristSpotController : ControllerBase
@@ -25,8 +24,6 @@ namespace Obligatorio.WebApi.Controllers
             this.touristSpotLogic = touristSpotLogic;
         }
 
-
-
         /// <summary>
         /// Return all TouristSpots given a Region and a list of Categories.
         /// </summary>
@@ -34,10 +31,11 @@ namespace Obligatorio.WebApi.Controllers
         /// Sample request:
         ///
         ///     Get /touristSpots/?regionName="Region metropolitana"&categoryName="Nautical"
-        ///     {
-        ///     }
         ///
         /// </remarks>
+        /// <param name="category"></param>
+        /// <param name="region"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get(string category = "all", string region = null)
         {
@@ -112,6 +110,7 @@ namespace Obligatorio.WebApi.Controllers
             List<TouristSpotModelOut> retorno = found.Select(ts => new TouristSpotModelOut(ts)).ToList<TouristSpotModelOut>();
             return retorno;
         }
+
         /// <summary>
         /// Returns a TouristSpot given an Id.
         /// </summary>
@@ -123,6 +122,8 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}", Name = "GetTouristSpot")]
         public IActionResult Get(int id)
         {
@@ -136,6 +137,7 @@ namespace Obligatorio.WebApi.Controllers
                 return NotFound("There is no such tourist spot id.");
             }
         }
+
         /// <summary>
         /// Adds a new TouristSpot.
         /// </summary>
@@ -146,9 +148,12 @@ namespace Obligatorio.WebApi.Controllers
         ///     {
         ///         "Name" : "Playa de la balconada",
         ///         "Description" : "There was an oil leak nearby"
+        ///         "Image" : "StringImage"
         ///     }
         ///
         /// </remarks>
+        /// <param name="touristSpotModel"></param>
+        /// <returns></returns>
         [HttpPost]
         //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] TouristSpotModelIn touristSpotModel)
@@ -166,6 +171,7 @@ namespace Obligatorio.WebApi.Controllers
                 return BadRequest("A tourist spot with such name has been already registered.");
             }
         }
+
         /// <summary>
         /// Deletes an existing TouristSpot.
         /// </summary>
@@ -173,10 +179,10 @@ namespace Obligatorio.WebApi.Controllers
         /// Sample request:
         ///
         ///     Delete /touristSpots/1
-        ///     {
-        ///     }
         ///
         /// </remarks>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Delete(int id)
@@ -191,6 +197,7 @@ namespace Obligatorio.WebApi.Controllers
                 return NotFound("There is no tourist spot with such id.");
             }
         }
+
         /// <summary>
         /// Updates an existing TouristSpot.
         /// </summary>
@@ -201,9 +208,13 @@ namespace Obligatorio.WebApi.Controllers
         ///     {
         ///         "Name" : "Playa de la balconada",
         ///         "Description" : "There was an oil leak nearby"
+        ///         "Image" : "StringImage"
         ///     }
         ///
         /// </remarks>
+        /// <param name="id"></param>
+        /// <param name="dataToUpdate"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put(int id, [FromBody] TouristSpotModelIn dataToUpdate)

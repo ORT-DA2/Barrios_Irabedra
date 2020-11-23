@@ -24,7 +24,15 @@ namespace Obligatorio.BusinessLogic.Logics
         {
             try
             {
+                if (!ValidAmountOfGuests(reservation))
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
                 Accommodation accommodationForReservation = accommodationLogic.GetByName(accommodationName);
+                if (accommodationForReservation is null)
+                {
+                    throw new ObjectNotFoundInDatabaseException();
+                }
                 if (!accommodationForReservation.FullCapacity)
                 {
                     reservation.AccommodationForReservation = accommodationForReservation;
@@ -41,10 +49,27 @@ namespace Obligatorio.BusinessLogic.Logics
             {
                 throw new ObjectNotFoundInDatabaseException();
             }
+            catch (ArgumentOutOfRangeException a)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             catch (Exception ex)
             {
                 throw new Exception();
             }
+        }
+
+        private bool ValidAmountOfGuests(Reservation reservation)
+        {
+            if (reservation.TotalGuests != reservation.Babies+ reservation.Kids+ reservation.Adults+ reservation.Retirees) 
+            {
+                return false;
+            }
+            if (reservation.Babies < 0 || reservation.Kids < 0 || reservation.Adults < 0 || reservation.Retirees < 0)
+            {
+                return false;
+            }
+            return true;
         }
 
         public Reservation Get(int id)

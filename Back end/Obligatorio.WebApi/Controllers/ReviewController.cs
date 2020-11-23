@@ -19,6 +19,11 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.reviewLogic = reviewLogic;
         }
+        /// <summary>
+        /// Create a Review.
+        /// </summary>
+        /// <param name="reviewRegistrationModelIn"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post([FromBody] ReviewRegistrationModelIn reviewRegistrationModelIn)
         {
@@ -32,7 +37,10 @@ namespace Obligatorio.WebApi.Controllers
                 return BadRequest("The accommodation name was not found");
             }
         }
-
+        /// <summary>
+        /// Get a Review.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {

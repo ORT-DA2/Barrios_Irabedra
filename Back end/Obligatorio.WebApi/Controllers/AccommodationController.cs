@@ -28,19 +28,9 @@ namespace Obligatorio.WebApi.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     Get /accommodations
-        ///     {
-        ///         "TouristSpotId" : 1,
-        ///         "TotalGuests" : 4,
-        ///         "Babies" : 1,
-        ///         "Kids" : 1,
-        ///         "Adults" : 2,
-        ///         "CheckIn" : "2020-10-13T23:28:56.782Z",
-        ///         "CheckOut" : "2020-11-01T23:28:56.782Z"
-        ///     }
+        ///     Get /accommodationsaccommodations?touristSpotName=Playa de la balconada&checkInYear=2020&checkInMonth=11&checkInDay=22&checkOutYear=2020&checkOutMonth=11&checkOutDay=28&totalGuests=18&babies=7&kids=2&adults=2&retirees=7
         ///
-        /// </remarks>
-        /// <param name="accommodationModelIn"></param>   
+        /// </remarks> 
         [HttpGet]
         public IActionResult Get()
         {
@@ -110,10 +100,12 @@ namespace Obligatorio.WebApi.Controllers
         ///
         ///     POST /accommodations
         ///     {
-        ///         "Name" : "La chosa dudosa",
+        ///         "Name" : "Hotel del mar",
         ///         "Rating" : 5,
-        ///         "PricePerNight" : 420,
-        ///         "TouristSpotId" : 1
+        ///         "Description" : "Rivera 379"
+        ///         "PricePerNight" : 400,
+        ///         FullCapacity : true,
+        ///         "TouristSpotName" : "Playa de la balconada"
         ///     }
         ///
         /// </remarks>
@@ -155,7 +147,8 @@ namespace Obligatorio.WebApi.Controllers
         ///     Put /accommodations/1
         ///     {
         ///         "WantToChangeCapacity" : true,
-        ///         "FullCapacity" : false
+        ///         "FullCapacity" : false,
+        ///         "Name" : "Hotel del mar"
         ///     }
         ///
         /// </remarks>
@@ -182,7 +175,17 @@ namespace Obligatorio.WebApi.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-
+        /// <summary>
+        /// Delete an Accommodation.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Delete /accommodations/Escollera
+        ///
+        /// </remarks>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpDelete("{name}")]
         public IActionResult Delete(string name)
         {

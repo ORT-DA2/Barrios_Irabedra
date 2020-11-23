@@ -21,20 +21,23 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.adminLogic = adminLogic;
         }
+
         /// <summary>
         /// Adds an Admin.
         /// </summary>
-        /// /// <remarks>
+        /// <remarks>
         /// Sample request:
         ///
         ///     POST /admin
         ///     {
-        ///        "Name" : "Pepitow",
+        ///        "Name" : "Juan",
         ///        "Email" : "admin1@gmail.com",
         ///        "Password" : "SafEPassW0rd"
         ///     }
         ///
         /// </remarks>
+        /// <param name="value"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post([FromBody] AdminModelIn value)
         {
@@ -54,6 +57,17 @@ namespace Obligatorio.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete an Admin.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Delete /admin/admin1@gmail.com
+        ///     
+        /// </remarks>
+        /// <param name="email"></param>
+        /// <returns></returns>
         [HttpDelete("{email}")]
         public IActionResult Delete(string email)
         {
@@ -67,7 +81,23 @@ namespace Obligatorio.WebApi.Controllers
                 return BadRequest("Theres no admin with such email.");
             }
         }
-
+        /// <summary>
+        /// Updates a Admin.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Put /admin/admin1@gmail.com
+        ///     {
+        ///        "Name" : "Juan",
+        ///        "Email" : "admin1@gmail.com",
+        ///        "Password" : "SafEPassW0rd"
+        ///     }
+        ///     
+        /// </remarks>
+        /// <param name="email"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         [HttpPut("{email}")]
         public IActionResult Put(string email, [FromBody] AdminModelIn value)
         {

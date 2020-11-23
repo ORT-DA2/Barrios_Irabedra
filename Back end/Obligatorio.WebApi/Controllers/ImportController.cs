@@ -27,6 +27,12 @@ namespace Obligatorio.WebApi.Controllers
             this.importLogic = importLogic;
         }
 
+        /// <summary>
+        /// Get Implementations.
+        /// </summary>
+        /// <param name="xmlPath"></param>
+        /// <param name="jsonPath"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get([FromHeader] string xmlPath, [FromHeader] string jsonPath)
         {
@@ -55,6 +61,9 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
+        /// <param name="path"></param>
+        /// <param name="format"></param>
+        /// <returns></returns>
         [HttpPost("{format}")]
         public IActionResult Post([FromBody] StringWrapper path, string format)
         {

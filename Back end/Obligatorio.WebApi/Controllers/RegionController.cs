@@ -20,6 +20,7 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.regionLogic = regionLogic;
         }
+
         /// <summary>
         /// Returns all regions.
         /// </summary>
@@ -27,8 +28,6 @@ namespace Obligatorio.WebApi.Controllers
         /// Sample request:
         ///
         ///     Get /regions
-        ///     {
-        ///     }
         ///
         /// </remarks>
         [HttpGet]
@@ -36,6 +35,7 @@ namespace Obligatorio.WebApi.Controllers
         {
             return Ok(this.regionLogic.GetAll().Select(r => new RegionModelOut(r)));
         }
+
         /// <summary>
         /// Returns a region given a name.
         /// </summary>
@@ -43,10 +43,10 @@ namespace Obligatorio.WebApi.Controllers
         /// Sample request:
         ///
         ///     Get /regions/"Region metropolitana"
-        ///     {
-        ///     }
         ///
         /// </remarks>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpGet("{name}", Name = "GetRegion")]
         public IActionResult Get(string name)
         {
@@ -65,6 +65,7 @@ namespace Obligatorio.WebApi.Controllers
                 return NotFound("There is no such region name.");
             }
         }
+
         /// <summary>
         /// Adds a region.
         /// </summary>
@@ -77,6 +78,8 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
+        /// <param name="regionModel"></param>
+        /// <returns></returns>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] RegionModelIn regionModel)
@@ -94,6 +97,7 @@ namespace Obligatorio.WebApi.Controllers
                 return BadRequest("A region with such name has been already registered.");
             }
         }
+
         /// <summary>
         /// Adds a TouristSpot to an existing Region.
         /// </summary>
@@ -103,10 +107,12 @@ namespace Obligatorio.WebApi.Controllers
         ///     Put /regions
         ///     {
         ///         "RegionName" : "Region metropolitana",
-        ///         "TouristSpotId" : 1
+        ///         "TouristSpotName" : "Playa de la balconada"
         ///     }
         ///
         /// </remarks>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPut]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] RegionAndTouristSpotIdentifier data)  
@@ -129,36 +135,5 @@ namespace Obligatorio.WebApi.Controllers
                 return BadRequest("The input format is not correct.");
             }
         }
-        /// <summary>
-        /// Updates a TouristSpot moving it to a different Region.
-        /// </summary>
-        /// <remarks>
-        /// Sample request:
-        ///
-        ///     Put /regions/modify
-        ///     {
-        ///         "RegionName" : "Region metropolitana",
-        ///         "TouristSpotId" : 1
-        ///     }
-        ///
-        /// </remarks>
-        /*[HttpPut("modify")]
-        [ServiceFilter(typeof(AuthorizationAttributeFilter))]
-        public IActionResult TouristSpotRegionUpdate([FromBody] RegionAndTouristSpotIdentifier data)
-        {
-            try
-            {
-                this.regionLogic.ModifyTouristSpotRegion(data.RegionName, data.TouristSpotId);
-                return Ok("Updated");
-            }
-            catch (ObjectNotFoundInDatabaseException)
-            {
-                return NotFound("Either there is no such region in our database, or there is no such tourist spot id.");
-            }
-            catch (InvalidCastException)
-            {
-                return BadRequest("The input format is not correct.");
-            }
-        }*/
     }
 }

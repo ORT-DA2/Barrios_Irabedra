@@ -19,6 +19,7 @@ namespace Obligatorio.WebApi.Controllers
         {
             this.reservationLogic = reservationLogic;
         }
+
         /// <summary>
         /// Returns a reservation given an id.
         /// </summary>
@@ -26,10 +27,10 @@ namespace Obligatorio.WebApi.Controllers
         /// Sample request:
         ///
         ///     Get /reservations/1
-        ///     {
-        ///     }
         ///
         /// </remarks>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}", Name = "GetReservation")]
         public IActionResult Get(int id)
         {
@@ -43,6 +44,7 @@ namespace Obligatorio.WebApi.Controllers
                 return NotFound("There is no such reservation code.");
             }
         }
+
         /// <summary>
         /// Adds a new reservation.
         /// </summary>
@@ -56,15 +58,18 @@ namespace Obligatorio.WebApi.Controllers
         ///         "Babies" : 1,
         ///         "Kids" : 1,
         ///         "Adults" : 2,
+        ///         "Retirees" : 3,
         ///         "CheckIn" : "2020-10-13T23:28:56.782Z",
         ///         "CheckOut" : "2020-11-01T23:28:56.782Z",
         ///         "GuestName" : "Jose",
         ///         "GuestLastName": "Perez",
-        ///         "Email" : "Josesito@gmail.com",
-        ///         "AccommodationId" : 1
+        ///         "Email" : "Jose@gmail.com",
+        ///         "AccommodationName" : "Hotel del mar"
         ///     }
         ///
         /// </remarks>
+        /// <param name="reservationModelIn"></param>
+        /// <returns></returns>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] ReservationModelIn reservationModelIn)
@@ -80,13 +85,18 @@ namespace Obligatorio.WebApi.Controllers
             }
             catch (ObjectNotFoundInDatabaseException ex)
             {
-                return NotFound("There is no such accommodation id.");
+                return NotFound("There is no such accommodation Name.");
+            }
+            catch (ArgumentOutOfRangeException a)
+            {
+                return BadRequest("Error Input data not valid.");
             }
             catch (Exception e)
             {
                 return StatusCode(500, "The Accommodation Is Full.");
             }
         }
+
         /// <summary>
         /// Updates a reservation.
         /// </summary>
@@ -100,6 +110,9 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
+        /// <param name="id"></param>
+        /// <param name="reservationPutModelIn"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put(int id, [FromBody] ReservationPutModelIn reservationPutModelIn)

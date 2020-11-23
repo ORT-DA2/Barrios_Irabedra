@@ -25,6 +25,10 @@ namespace Obligatorio.WebApi.Controllers
             this.reportLogic = reportLogic;
         }
 
+        /// <summary>
+        /// Get the report in base of the query string.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Get()

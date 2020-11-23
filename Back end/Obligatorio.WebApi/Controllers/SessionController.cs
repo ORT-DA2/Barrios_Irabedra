@@ -19,6 +19,11 @@ namespace Obligatorio.WebApi.Controllers
             this.sessionLogic = sessionLogic;
         }
 
+        /// <summary>
+        /// Add a new admin.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post([FromBody] SessionModelIn value)
         {

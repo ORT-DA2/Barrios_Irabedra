@@ -11,7 +11,6 @@ using Obligatorio.WebApi.Filters;
 namespace Obligatorio.WebApi.Controllers
 {
     [EnableCors("AllowAngularFrontEndClientApp")]
-    //[System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
     [Route("api/categories")]
     [ApiController]
     public class CategoryController : ControllerBase
@@ -39,7 +38,7 @@ namespace Obligatorio.WebApi.Controllers
             return Ok(this.categoryLogic.GetAll());
         }
         /// <summary>
-        /// Returns a category given a name.
+        ///     Returns a category given a name.
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -49,6 +48,8 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpGet("{name}", Name = "GetCategory")]
         public IActionResult Get(string name)
         {
@@ -67,6 +68,7 @@ namespace Obligatorio.WebApi.Controllers
                 return NotFound("There is no such category name.");
             }
         }
+
         /// <summary>
         /// Adds a category.
         /// </summary>
@@ -79,6 +81,8 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
+        /// <param name="categoryModel"></param>
+        /// <returns></returns>
         [HttpPost]
         [ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Post([FromBody] CategoryModelIn categoryModel)
@@ -86,6 +90,15 @@ namespace Obligatorio.WebApi.Controllers
             try
             {
                 var category = categoryModel.ToEntity();
+                if (categoryModel.Name.Length == 0)
+                {
+                    return BadRequest("A category name is required.");
+                }
+                string combutida = categoryModel.Name.Remove(' ');
+                if (combutida.Length > 1) 
+                {
+                    return BadRequest("A category name is required.");
+                }
                 this.categoryLogic.Add(category);
                 return Ok();
             }
@@ -94,6 +107,7 @@ namespace Obligatorio.WebApi.Controllers
                 return BadRequest("A category with such name has been already registered.");
             }
         }
+
         /// <summary>
         /// Adds a TouristSpot to an existing Category.
         /// </summary>
@@ -107,6 +121,8 @@ namespace Obligatorio.WebApi.Controllers
         ///     }
         ///
         /// </remarks>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPut]
         //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
         public IActionResult Put([FromBody] CategoryAndTouristSpotIdentifier data)
