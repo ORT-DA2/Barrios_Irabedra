@@ -35,6 +35,7 @@
             <div class="form-group">
                 <label for="touristSpotPicker">Accommodation's tourist spot</label>
                 <select required name="touristspot" class="form-control" id="touristSpotPicker" name="touristSpotPicker" [(ngModel)]="this.submittedObject.TouristSpotName">
+                    <option> </option>
                     <option  *ngFor="let item of this.touristSpotService.loadedTouristSpots">{{item.name}}</option>
                 </select>
             </div>

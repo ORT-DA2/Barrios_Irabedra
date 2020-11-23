@@ -94,7 +94,7 @@ export class AccommodationQueryComponent implements OnInit {
     let count = 0;
     for(let i = 0; i < list.length; i++){
       sum = sum + list[i].rating
-      count = i;
+      count = i + 1;
     }
     return (sum / count);
 

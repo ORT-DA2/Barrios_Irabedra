@@ -10,6 +10,7 @@
             <div class="form-group">
                 <label for="accommodationPicker">Accommodations</label>
                 <select required name="accommodation" class="form-control" id="accommodationPicker" [(ngModel)]="this.selectedAccommodationName">
+                    <option> </option>
                     <option *ngFor="let item of this.accommodationService.loadedAccommodations">{{item.name}}</option>
                 </select>
               </div>

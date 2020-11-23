@@ -10,6 +10,7 @@
             <div class="form-group">
                 <label for="touristSpotPicker">TouristSpots</label>
                 <select  class="form-control" id="touristSpotPicker" name="touristSpotPicker" [(ngModel)]="this.selectedTouristSpot"  > 
+                  <option>  </option>
                   <option  *ngFor="let item of this.touristSpotService.loadedTouristSpots ">{{item.name}}</option>
                 </select>
               </div>
@@ -17,6 +18,7 @@
               <div class="form-group">
                 <label for="categoryPicker">Categories</label>
                 <select  class="form-control" id="categoryPicker" name="categoryPicker" [(ngModel)]="this.selectedCategory" > 
+                  <option>  </option>
                   <option  *ngFor="let item of this.categoryService.loadedCategories">{{item.name}}</option>
                 </select>
               </div>
