@@ -7,6 +7,7 @@ namespace Obligatorio.WebApi.AuxiliaryObjects
 {
     public class StringWrapper
     {
-        public string Path { get; set; }
+        public string FilePath { get; set; }
+        public string BinaryPath { get; set; }
     }
 }

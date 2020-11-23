@@ -71,7 +71,7 @@ namespace Obligatorio.WebApi.Controllers
             {
                 try
                 {
-                    if (this.importLogic.Import(path.Path , format))
+                    if (this.importLogic.Import(path.BinaryPath, path.FilePath, format))
                     {
                         return Ok();
                     }
@@ -91,6 +91,14 @@ namespace Obligatorio.WebApi.Controllers
                 catch (InvalidOperationException)
                 {
                     return BadRequest("When specified XML files, empty files are not supported. Nonempty files must be in XML format.");
+                }
+                catch (DllNotFoundException)
+                {
+                    return BadRequest("An error ocurred. Please check the input data.");
+                }
+                catch (Exception)
+                {
+                    return BadRequest("An error ocurred. Please check the input data.");
                 }
             }
             return BadRequest("File format must be specified either as an XML or JSON.");

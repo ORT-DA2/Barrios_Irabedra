@@ -49,12 +49,12 @@ namespace Obligatorio.ImportLogic.Logics
             return ret;
         }
 
-        public bool Import(string path, string type)
+        public bool Import(string binaryPath, string filePath,  string type)
         {
             try
             {
-                IAccommodationImport requestedImplementation = GetImplementation(path, type);
-                AccommodationImportModel imported = requestedImplementation.CreateObjectModel(path);
+                IAccommodationImport requestedImplementation = GetImplementation(binaryPath, type);
+                AccommodationImportModel imported = requestedImplementation.CreateObjectModel(filePath);
                 TouristSpotImportModel tsm = imported.TouristSpot;
                 TouristSpot ts = tsm.ToEntity();
                 if (!this.touristSpotLogic.AlreadyExistsByName(tsm.Name))
@@ -81,7 +81,7 @@ namespace Obligatorio.ImportLogic.Logics
         {
             if (type.ToLower().Equals("xml"))
             {
-                Assembly xmlAssembly = Assembly.LoadFrom("D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.XmlImport\\bin\\Debug\\netstandard2.0\\Obligatorio.XmlImport.dll");
+                Assembly xmlAssembly = Assembly.LoadFrom(path);
                 foreach (var item in xmlAssembly.GetTypes().Where(t => typeof(IAccommodationImport).IsAssignableFrom(t)))
                 {
                     if (item.FullName.ToLower().Contains("xml"))
@@ -92,7 +92,7 @@ namespace Obligatorio.ImportLogic.Logics
             }
             if (type.ToLower().Equals("json"))
             {
-                Assembly jsonAssembly = Assembly.LoadFrom("D:\\Documentos\\ORT\\DA2\\Barrios_Irabedra\\Back end\\Obligatorio.JsonImport\\bin\\Debug\\netstandard2.0\\Obligatorio.JsonImport.dll");
+                Assembly jsonAssembly = Assembly.LoadFrom(path);
                 foreach (var item in jsonAssembly.GetTypes().Where(t => typeof(IAccommodationImport).IsAssignableFrom(t)))
                 {
                     if (item.FullName.ToLower().Contains("json"))

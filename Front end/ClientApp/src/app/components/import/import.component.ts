@@ -23,18 +23,35 @@ export class ImportComponent implements OnInit {
 
 
   onSubmit(){
-    this.importService.import(this.format, this.Filepath).subscribe( 
-      res => {
-        this.errorOcurred=false;
-        console.log(res);
-        this.success = true;
-      },
-      err => {
-        this.success = false;
-        this.errorOcurred = true;
-        this.errorMsg = err.error;
-      },
-    )
+    if(this.format==='xml'){
+      this.importService.import(this.xmlPath, this.format, this.Filepath).subscribe( 
+        res => {
+          this.errorOcurred=false;
+          console.log(res);
+          this.success = true;
+        },
+        err => {
+          this.success = false;
+          this.errorOcurred = true;
+          this.errorMsg = err.error;
+        },
+      )
+    }
+    else{
+      this.importService.import(this.jsonPath, this.format, this.Filepath).subscribe( 
+        res => {
+          this.errorOcurred=false;
+          console.log(res);
+          this.success = true;
+        },
+        err => {
+          this.success = false;
+          this.errorOcurred = true;
+          this.errorMsg = err.error;
+        },
+      )
+    }
+
 
   }
    

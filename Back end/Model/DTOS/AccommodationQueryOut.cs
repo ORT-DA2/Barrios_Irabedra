@@ -36,7 +36,7 @@ namespace Obligatorio.Model.DTOS
             {
                 ReviewModelOut reviewToAdd = new ReviewModelOut() 
                 {
-                   AcccommodationName = review.AcccommodationName,
+                   AccommodationName = review.AcccommodationName,
                    LastName = review.LastName,
                     Name = review.Name,
                     Rating = review.Rating,

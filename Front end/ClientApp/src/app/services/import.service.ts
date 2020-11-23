@@ -37,7 +37,7 @@ import { environment } from 'src/environments/environment';
           )
     }
 
-    import(format:string, myPath:string){
+    import(binaryPath:string, format:string, myPath:string){
       
         console.log("entered");
         format = format.toLowerCase();
@@ -45,7 +45,7 @@ import { environment } from 'src/environments/environment';
             console.log(format);
             let localuri:string = this.uri + "/xml";
             console.log(myPath);
-            return this.http.post(localuri, {path : myPath}, {responseType: 'text' as 'json'}).pipe(
+            return this.http.post(localuri, {filePath : myPath, binaryPath:binaryPath}, {responseType: 'text' as 'json'}).pipe(
               res => {return res},
               catchError(err => {
                 return throwError(err);
@@ -56,7 +56,7 @@ import { environment } from 'src/environments/environment';
             console.log(format);
             let localuri:string = this.uri + "/json";
             console.log(myPath);
-            return this.http.post(localuri,  {path : myPath},  {responseType: 'text' as 'json'}).pipe(
+            return this.http.post(localuri,   {filePath : myPath, binaryPath:binaryPath},  {responseType: 'text' as 'json'}).pipe(
               res => {return res},
               catchError(err => {
                 return throwError(err);
