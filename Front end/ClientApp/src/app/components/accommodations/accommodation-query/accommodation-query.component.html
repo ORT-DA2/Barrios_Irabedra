@@ -52,6 +52,7 @@
             <td>
                 <table class="table">
                     <tr *ngFor = "let a of row.reviews">
+                        {{a.accommodationName}}
                         <td *ngFor = "let h of this.reviewHeaders">
                           {{h}} : {{a[h]}}
                         </td>

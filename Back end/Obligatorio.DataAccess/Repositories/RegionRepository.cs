@@ -87,7 +87,6 @@ namespace Obligatorio.DataAccess.Repositories
             {
                 Region region = ValidateExistingRegion(regionName);
                 TouristSpot touristSpot = this.touristSpotRepository.Find(touristSpotName);
-                //this.ThereIsRegionWithThisTouristSpot(touristSpot);
                 region.TouristSpots.Add(touristSpot);
                 regions.Update(region);
                 myContext.SaveChanges();
@@ -120,18 +119,6 @@ namespace Obligatorio.DataAccess.Repositories
                 throw new ObjectNotFoundInDatabaseException();
             }
             return region;
-        }
-
-        private void ThereIsRegionWithThisTouristSpot(TouristSpot touristSpot)
-        {
-            foreach (var r in regions)
-            {
-                if ((r.TouristSpots is null)
-                || (r.TouristSpots.Contains(touristSpot)))
-                {
-                    throw new RepeatedObjectException();
-                }
-            }
         }
 
         public void ModifyTouristSpotRegion(string regionName, int touristSpotId)

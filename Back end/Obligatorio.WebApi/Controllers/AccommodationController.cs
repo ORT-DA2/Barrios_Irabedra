@@ -110,8 +110,6 @@ namespace Obligatorio.WebApi.Controllers
         ///
         /// </remarks>
         /// <param name="accommodationRegisterModel"></param>     
-
-        //[ServiceFilter(typeof(AuthorizationAttributeFilter))]
         [HttpPost]
         public IActionResult Post([FromBody] AccommodationRegisterModelIn accommodationRegisterModel)
         {

@@ -94,8 +94,18 @@ namespace Obligatorio.WebApi.Controllers
                 {
                     return BadRequest("A category name is required.");
                 }
-                string combutida = categoryModel.Name.Remove(' ');
-                if (combutida.Length > 1) 
+
+                string categoryMod = "";
+                if (categoryModel.Name.Contains(' '))
+                {
+                    categoryMod = categoryModel.Name.Trim();
+                    if (categoryMod.Length < 1)
+                    {
+                        return BadRequest("A category name is required.");
+                    }
+                }
+                categoryMod = categoryModel.Name;
+                if (categoryMod.Length < 1)
                 {
                     return BadRequest("A category name is required.");
                 }

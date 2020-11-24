@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  URI_BASE: "https://localhost:44384/api"
-  //URI_BASE: "https://localhost:5001/api"
+  //URI_BASE: "https://localhost:44384/api"
+  URI_BASE: "https://localhost:5001/api"
 };
 
 /*

@@ -279,4 +279,7 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {166FF190-2B01-4317-8B74-EBEE239C2ACD}
 	EndGlobalSection
+	GlobalSection(NDepend) = preSolution
+		Project = ".\Obligatorio 1.ndproj"
+	EndGlobalSection
 EndGlobal
